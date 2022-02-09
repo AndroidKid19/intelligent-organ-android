@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/public_view_normal_background"
+    android:paddingLeft="@dimen/public_padding_12dp"
+    android:paddingTop="@dimen/public_padding_15dp"
+    android:paddingRight="@dimen/public_padding_12dp"
+    android:paddingBottom="@dimen/public_padding_15dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_room_name"
+        style="@style/TextDefault.Medium"
+        android:drawableLeft="@mipmap/organ_ic_room_circle"
+        android:drawablePadding="6dp"
+        android:text="区委机关1号楼(北楼)一楼会议室"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_room_desc"
+        style="@style/TextGray"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="5dp"
+        android:text="1号楼(北楼) · 座位数28 "
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_room_name" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_subscribe"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:background="@drawable/public_selector_button_redius_small"
+        android:gravity="center"
+        android:text="预约"
+        android:textColor="@color/public_white"
+        android:textSize="@dimen/public_font_12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_room_desc"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_room_name" />
+
+    <!-- 可预约时间 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        tools:listitem="@layout/organ_home_item_conference_room_time"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_room_desc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.SettingActivity"
+    tools:ignore="ResourceName">
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/user_setting_title"
+        />
+
+    <com.yway.scomponent.commonres.view.layout.SettingBar
+        android:id="@+id/bar_modify_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/user_setting_modify_phone"
+        app:bar_rightIcon="@mipmap/public_ic_left_identify"/>
+
+    <com.yway.scomponent.commonres.view.layout.SettingBar
+        android:id="@+id/bar_modify_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/user_setting_modify_pwd"
+        app:bar_rightIcon="@mipmap/public_ic_left_identify"/>
+
+    <com.yway.scomponent.commonres.view.layout.SettingBar
+        android:id="@+id/bar_common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:bar_leftText="@string/user_setting_common"
+        app:bar_rightIcon="@mipmap/public_ic_left_identify"/>
+
+    <com.yway.scomponent.commonres.view.layout.SettingBar
+        android:id="@+id/bar_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/user_setting_update"
+        app:bar_rightIcon="@mipmap/public_ic_left_identify"/>
+    <com.yway.scomponent.commonres.view.layout.SettingBar
+        android:id="@+id/bar_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/user_setting_about"
+        app:bar_rightIcon="@mipmap/public_ic_left_identify"/>
+    <com.yway.scomponent.commonres.view.layout.SettingBar
+        android:id="@+id/bar_clear_cache"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bar_leftText="@string/user_setting_cache"
+        app:bar_rightIcon="@mipmap/public_ic_left_identify"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_exit"
+            style="@style/public_style_rect_small_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/user_setting_exit"/>
+    </LinearLayout>
+</LinearLayout>

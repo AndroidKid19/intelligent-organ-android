@@ -1,0 +1,25 @@
+include ':app',
+        ':CommonSDK',
+        ':CommonService',
+        ':CommonRes',
+        ':module_organ',
+        ':module_user',
+        ':module_login',
+        ':doubleclicklibrary',
+        ':shimmerlayout',
+        ':skeleton',
+        ':umlibrary',
+        ':libzxing',
+        ':popuplibrary',
+        ':wheelview',
+        ':pickerview',
+        ':recyclertreelibrary'
+project(':shimmerlayout').projectDir = new File('ThirdLibrarys/shimmerlayout')
+project(':wheelview').projectDir = new File('ThirdLibrarys/wheelview')
+project(':pickerview').projectDir = new File('ThirdLibrarys/pickerview')
+project(':skeleton').projectDir = new File('ThirdLibrarys/skeleton')
+project(':libzxing').projectDir = new File('ThirdLibrarys/libzxing')
+project(':umlibrary').projectDir = new File('ThirdLibrarys/umlibrary')
+project(':doubleclicklibrary').projectDir = new File('ThirdLibrarys/doubleclicklibrary')
+project(':popuplibrary').projectDir = new File('ThirdLibrarys/popuplibrary')
+project(':recyclertreelibrary').projectDir = new File('ThirdLibrarys/recyclertreelibrary')

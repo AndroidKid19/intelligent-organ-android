@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/public_padding_20dp"
+    android:layout_marginRight="@dimen/public_padding_20dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/organ_shape_background_border"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/public_padding_15dp"
+    android:paddingBottom="@dimen/public_padding_15dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="15dp"
+            android:background="@color/public_color_text_sign" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time_name"
+            style="@style/TextGray.Medium"
+            android:layout_marginLeft="10dp"
+            android:text="2021-11-08 11:00-12:00" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextDefault.Medium"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/organ_ic_vr_user"
+        android:drawablePadding="10dp"
+        android:text="赵志龙" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextDefault.Medium"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/organ_ic_vr_phone"
+        android:drawablePadding="10dp"
+        android:text="18888888888" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextDefault.Medium"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:drawableLeft="@drawable/organ_ic_vr_location"
+        android:drawablePadding="10dp"
+        android:text="北京" />
+</androidx.appcompat.widget.LinearLayoutCompat>

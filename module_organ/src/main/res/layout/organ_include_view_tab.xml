@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yway.scomponent.commonres.view.tablayout.SlidingTabLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tab_layout"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/public_white"
+    app:tl_divider_color="@color/public_color_text_dark_gray"
+    app:tl_indicator_color="@color/public_color_text_select"
+    app:tl_indicator_corner_radius="10dp"
+    app:tl_indicator_height="3dp"
+    app:tl_indicator_width="15dp"
+    app:tl_indicator_width_equal_title="true"
+    app:tl_tab_padding="15dp"
+    app:tl_tab_space_equal="true"
+    app:tl_textBold="SELECT"
+    app:tl_textSelectColor="@color/public_color_text_select"
+    app:tl_textSizeDef="true"
+    app:tl_textUnselectColor="@color/public_color_text_dark_gray"
+    app:tl_text_selectsize="@dimen/public_font_16sp"
+    app:tl_text_unselectsize="@dimen/public_font_16sp"
+    app:tl_textsize="@dimen/public_font_16sp"
+    app:tl_underline_color="@color/public_white"
+    app:tl_underline_gravity="BOTTOM"
+    app:tl_underline_height="@dimen/public_line_size">
+
+</com.yway.scomponent.commonres.view.tablayout.SlidingTabLayout>

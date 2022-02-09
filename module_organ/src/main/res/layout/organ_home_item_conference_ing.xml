@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    android:layout_marginLeft="@dimen/public_padding_20dp"
+    android:layout_marginRight="@dimen/public_padding_20dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/organ_shape_cof_background_red"
+    android:paddingTop="15dp"
+    android:paddingRight="@dimen/public_mar_left_12dp"
+    android:paddingBottom="@dimen/public_padding_15dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cof_date"
+        style="@style/TextGray.Small"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:textColor="@color/public_white"
+        app:layout_constraintBottom_toTopOf="@+id/tv_cof_time"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_cof_time"
+        app:layout_constraintRight_toRightOf="@+id/tv_cof_time"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1"
+        android:text="今天" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cof_time"
+        style="@style/TextDefault"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/public_white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cof_date"
+        app:layout_constraintVertical_weight="1"
+        android:text="15:00" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="@dimen/public_line_size"
+        android:layout_height="match_parent"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/public_colorLine"
+        app:layout_constraintLeft_toRightOf="@+id/tv_cof_time" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cof_title"
+        style="@style/TextDefault.Medium"
+        android:layout_width="0dp"
+        android:layout_marginLeft="17dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/public_white"
+        app:layout_constraintLeft_toRightOf="@+id/view_line"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="部署我办党支部下一步党建活动内容" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cof_location"
+        style="@style/TextGray.Small"
+        android:drawableLeft="@drawable/organ_home_svg_cog_location_white"
+        android:drawablePadding="5dp"
+        android:textColor="@color/public_white"
+        app:layout_constraintBottom_toTopOf="@+id/tv_cof_remark"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_cof_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cof_title"
+        android:text="区委机关1号楼(北楼)一楼会议室" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cof_remark"
+        style="@style/TextGray.Small"
+        android:drawableLeft="@drawable/organ_home_svg_cog_remark_white"
+        android:drawablePadding="5dp"
+        android:textColor="@color/public_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_cof_title"
+        android:text="请带上本子、笔" />
+</androidx.constraintlayout.widget.ConstraintLayout>

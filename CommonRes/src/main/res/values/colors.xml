@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="public_colorPrimary">#eb320a</color>
+    <color name="public_colorPrimaryDark">#eb320a</color>
+    <color name="public_colorAccent">#eb320a</color>
+    <color name="public_windowBackground">#F8F8F8</color>
+    <color name="public_white">#FFFFFF</color>
+    <color name="public_black">#000000</color>
+    <color name="public_color_transparent">#00000000</color>
+    <color name="public_background">#FFF6F6F6</color>
+
+    <color name="public_black_title">#222222</color>
+
+    <!-- 背景渐变 -->
+    <color name="public_color_background_gradual_start">#F51100</color>
+    <color name="public_color_background_gradual_end">#E4803C</color>
+
+    <color name="public_color_btn">#0DC663</color>
+    <!-- Tab选中字体 -->
+    <color name="public_color_text_select">#eb320a</color>
+    <!-- Tab未选中字体 -->
+    <color name="public_color_text_unselect">#151515</color>
+
+    <!-- 蒙版背景 -->
+    <color name="public_color_masking_bg">#70eb320a</color>
+
+    <!-- 突出字体颜色 -->
+    <color name="public_color_text_sign">#eb320a</color>
+    <!-- 突出字体颜色 高亮 -->
+    <color name="public_color_text_highlight">#eb320a</color>
+    <!-- 默认字体 -->
+    <color name="public_color_text_default">#222222</color>
+    <!-- 中灰色字体颜色 -->
+    <color name="public_color_text_center_gray">#333333</color>
+    <!-- 灰色字体颜色 -->
+    <color name="public_color_text_gray">#B0B0B0</color>
+    <!-- 深色灰色字体颜色 -->
+    <color name="public_color_text_dark_gray">#ff666666</color>
+    <!-- 按钮默认字体 -->
+    <color name="public_button_color_text_default">#606060</color>
+    <!-- 按钮默认字体 -->
+    <color name="public_color_border_default">#D7D7D7</color>
+
+    <!-- 第一套按钮羊样式 -->
+
+    <!-- 按钮背景颜色 -->
+    <color name="public_style1_color_button_background">#eb320a</color>
+    <!-- 按钮按压时的颜色 -->
+    <color name="public_style1_color_button_pressed">#80eb320a</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="public_style1_color_button_disable">#50eb320a</color>
+
+
+    <!-- 第二套按钮样式 -->
+
+    <!-- 按钮背景颜色 -->
+    <color name="public_style2_color_button_background">#FFFFFF</color>
+    <!-- 按钮按压时的颜色 -->
+    <color name="public_style2_color_button_pressed">#80FFFFFF</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="public_style2_color_button_disable">#50FFFFFF</color>
+    <!-- 按钮字体颜色 高亮-->
+    <color name="public_color_btn_highlight">#eb320a</color>
+
+    <!-- 分割线的颜色 -->
+    <color name="public_colorLine">#EFEFEF</color>
+
+    <!-- 按钮禁用时的颜色 -->
+    <color name="public_color_F0F0F0">#F0F0F0</color>
+    <!-- 对话框确认按钮文本颜色 -->
+    <color name="public_colorConfirm">#4D7CFE</color>
+    <!-- 对话框取消按钮文本颜色 -->
+    <color name="public_colorCancel">#eb320a</color>
+    <!-- 列表背景颜色 -->
+    <color name="public_view_background">#F9F9F9</color>
+
+
+    <!-- 搜索输入框背景 -->
+    <color name="public_color_search_bg">#F0F2F6</color>
+
+    <!-- 按钮效果 -->
+    <color name="public_color_click_item_selector">#ffc7c7c7</color>
+
+    <!-- 底部菜单 -->
+    <color name="public_color_bottom_tab_state_checked">#eb320a</color>
+    <color name="public_color_bottom_tab_state_pressed">#eb320a</color>
+    <color name="public_color_bottom_tab_default">#595959</color>
+
+
+    <color name="sidebar_default_side_text_color">#ff646464</color>
+    <color name="sidebar_default_side_text_select_color">#ffffffff</color>
+    <color name="sidebar_default_side_background">#ffb2b2b2</color>
+    <color name="sidebar_default_dialog_text_color">#ffffffff</color>
+    <color name="sidebar_default_dialog_text_bg_color">#80000000</color>
+</resources>

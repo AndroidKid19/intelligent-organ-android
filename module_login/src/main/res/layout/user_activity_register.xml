@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+    <!-- 标题view -->
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftIcon="@mipmap/public_bar_icon_back_black"
+        app:lineVisible="false"
+        app:barStyle="transparent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="36dp"
+        android:paddingRight="36dp">
+        <!-- 文案 view -->
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault"
+            android:fontFamily="sans-serif"
+            android:text="@string/login_register_leble"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/public_font_24sp" />
+
+        <com.yway.scomponent.commonres.view.layout.ClearEditText
+            android:id="@+id/et_username"
+            style="@style/login_style_edittext"
+            android:layout_marginTop="20dp"
+            android:hint="@string/login_hint_input_name"
+            android:inputType="text"
+            android:textCursorDrawable="@drawable/login_edit_cursor_color"
+            app:regexType="nonnull" />
+
+        <!-- 手机号 view -->
+        <com.yway.scomponent.commonres.view.layout.ClearEditText
+            android:id="@+id/et_phone"
+            style="@style/login_style_edittext"
+            android:layout_marginTop="20dp"
+            android:hint="@string/login_hint_input_phone"
+            android:inputType="phone"
+            android:textCursorDrawable="@drawable/login_edit_cursor_color"
+            app:regexType="nonnull" />
+
+        <!-- 验证码 view -->
+       <androidx.appcompat.widget.LinearLayoutCompat
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:orientation="horizontal"
+           android:layout_marginTop="20dp"
+           android:background="@drawable/public_edittext_normal_background"
+           >
+           <com.yway.scomponent.commonres.view.layout.ClearEditText
+               android:id="@+id/et_code"
+               style="@style/login_style_edittext"
+               android:layout_weight="1"
+               android:fontFamily="sans-serif"
+               android:hint="@string/login_hint_input_verify_code"
+               android:inputType="phone"
+               android:maxLength="6"
+               android:singleLine="true"
+               android:textCursorDrawable="@drawable/login_edit_cursor_color"
+               app:regexType="nonnull" />
+
+
+           <com.yway.scomponent.commonres.view.layout.CountdownView
+               android:id="@+id/cv_register_countdown"
+               style="@style/login_style_countdown_view"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentRight="true" />
+
+       </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.yway.scomponent.commonres.view.layout.PasswordEditText
+            android:id="@+id/et_pwd"
+            style="@style/login_style_edittext"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:hint="@string/login_hint_input_upwd"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/login_edit_cursor_color"
+            android:textSize="@dimen/public_font_16sp"
+            app:regexType="nonnull" />
+
+        <com.yway.scomponent.commonres.view.layout.SettingBar
+            android:id="@+id/bar_choose_company"
+            android:layout_marginTop="20dp"
+            style="@style/login_style_edittext"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            app:bar_leftHint="选择单位"
+            app:bar_rightIcon="@mipmap/public_ic_left_identify" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_commit"
+            style="@style/public_style_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/login_btn_register_text" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingBottom="40dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_login"
+                style="@style/TextDefault"
+                android:layout_centerInParent="true"
+                android:text="@string/login_use_login_now" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

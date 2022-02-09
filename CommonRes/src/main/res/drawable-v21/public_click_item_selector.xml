@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/public_color_click_item_selector">
+    <item android:drawable="@color/public_white"/>
+</ripple>

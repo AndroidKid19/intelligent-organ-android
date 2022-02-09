@@ -1,0 +1,81 @@
+<resources>
+
+    <!-- 申请会议室 Lable标题 -->
+    <style name="organ_style_bar_apply_room">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="bar_leftBold">true</item>
+        <item name="bar_leftSize">@dimen/public_font_16sp</item>
+        <item name="bar_lineVisible">false</item>
+    </style>
+
+    <!-- 默认文本框样式 -->
+    <style name="organ_style_edittext_apply_room">
+        <item name="android:background">@drawable/organ_edittext_normal_background</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/public_color_text_gray</item>
+        <item name="android:textColor">@color/public_color_text_default</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textCursorDrawable">@drawable/public_edit_cursor_color_red</item>
+    </style>
+
+    <!-- 申请会议室 TextView标题 -->
+    <style name="organ_style_tv_apply_room">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/organ_edittext_normal_background</item>
+        <item name="bar_lineVisible">false</item>
+    </style>
+
+
+    <!-- Switch 切换样式 -->
+    <style name="organ_style_switch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:checked">false</item>
+        <item name="android:textSize">@dimen/public_font_15sp</item>
+        <item name="showText">false</item>
+
+    </style>
+
+    <style name="organ_style_switch_appearanc" parent="Theme.AppCompat.Light">
+        <!--开启时的颜色-->
+        <item name="colorControlActivated">@color/public_color_text_sign</item>
+        <!--关闭时的颜色-->
+        <item name="colorSwitchThumbNormal">#A4A4A4</item>
+        <!--关闭时的轨迹颜色-->
+        <item name="android:colorForeground">#A4A4A4</item>
+
+    </style>
+
+
+    <!-- RadioButton stytle -->
+    <style name="organ_radio_button_style" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--背景-->
+        <item name="android:background">@drawable/public_selector_radio_radius_button</item>
+        <!--字体-->
+        <item name="android:textSize">@dimen/public_font_14sp</item>
+        <!--字体颜色-->
+        <item name="android:textColor">@drawable/public_selector_radio_button_text</item>
+        <!--是否显示原点-->
+        <item name="android:button">@null</item>
+        <!--边距-->
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+</resources>

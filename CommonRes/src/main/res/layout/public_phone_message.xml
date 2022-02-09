@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#F0F0F0"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/public_mar_10dp"
+        app:cardBackgroundColor="@color/public_white"
+        app:cardCornerRadius="@dimen/public_dialog_message_round_size"
+        app:cardElevation="0px">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.yway.scomponent.commonres.view.layout.SmartTextView
+                android:id="@+id/tv_camera"
+                android:padding="@dimen/public_mar_16dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                style="@style/TextDefault.Medium"
+                android:text="@string/public_common_camera" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/public_line_size"
+                android:background="@color/public_colorLine" />
+            <com.yway.scomponent.commonres.view.layout.SmartTextView
+                android:id="@+id/tv_album"
+                android:padding="@dimen/public_mar_16dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                style="@style/TextDefault.Medium"
+                android:text="@string/public_common_album" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/public_white"
+        app:cardElevation="0px">
+
+        <com.yway.scomponent.commonres.view.layout.SmartTextView
+            android:padding="@dimen/public_mar_16dp"
+            android:layout_gravity="center_horizontal"
+            style="@style/TextDefault.Medium"
+            android:text="@string/public_common_cancel" />
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

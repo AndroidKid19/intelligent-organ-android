@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:barStyle="transparent"
+        app:leftIcon="@mipmap/public_bar_icon_back_black"
+        app:title="@string/user_title"
+        app:titleColor="@color/public_color_text_default" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/public_white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="89dp"
+                    android:layout_height="89dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal">
+
+                    <com.yway.scomponent.commonres.view.layout.NiceImageView
+                        android:id="@+id/iv_head_sculpture"
+                        android:layout_width="89dp"
+                        android:layout_height="89dp"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/public_ic_default_head"
+                        app:border_color="@color/public_white"
+                        app:border_width="4dp"
+                        app:is_circle="true" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/user_ic_photo_head" />
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="@dimen/public_dialog_message_round_size"
+                    app:cardElevation="4dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.yway.scomponent.commonres.view.layout.SettingBar
+                            android:id="@+id/bar_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:bar_leftText="证件照片"
+                            app:bar_lineVisible="false"
+                            app:bar_rightColor="@color/public_color_text_sign"
+                            app:bar_rightIcon="@mipmap/public_ic_right_tag_gray"
+                            app:bar_rightText="未上传" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:bar_leftSize="@dimen/public_font_17sp"
+                app:bar_leftText="个人信息"
+                app:bar_lineVisible="false"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightText="" />
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="昵称"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightIcon="@mipmap/public_ic_right_tag_gray"
+                app:bar_rightText="" />
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="姓名"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightText="" />
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="性别"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightIcon="@mipmap/public_ic_right_tag_gray"
+                app:bar_rightText="" />
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_roles"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="国籍"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightText="" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="证件类型"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightText="身份证" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="证件号码"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightText="" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="证件有效期"
+                app:bar_lineVisible="true"
+                android:visibility="gone"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightText="" />
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="手机号"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightIcon="@mipmap/public_ic_right_tag_gray"
+                app:bar_rightText="" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:bar_leftText="所在单位"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightIcon="@mipmap/public_ic_right_tag_gray"
+                app:bar_rightText="" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftText="所任职务"
+                app:bar_lineVisible="true"
+                app:bar_rightColor="@color/public_color_text_default"
+                app:bar_rightIcon="@mipmap/public_ic_right_tag_gray"
+                app:bar_rightText="" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

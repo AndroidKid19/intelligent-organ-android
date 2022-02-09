@@ -1,0 +1,281 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="public_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/public_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/public_colorPrimaryDark</item>
+        <item name="colorAccent">@color/public_colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/public_Activity_Animation</item>
+    </style>
+
+    <style name="public_Activity_Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/public_translate_right_to_center</item>
+        <item name="android:activityOpenExitAnimation">@anim/public_translate_center_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/public_translate_left_to_center</item>
+        <item name="android:activityCloseExitAnimation">@anim/public_translate_center_to_right</item>
+    </style>
+
+    <style name="public_dialog_inout_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_dialog_enter</item>
+        //进入时的动画
+        <item name="android:windowExitAnimation">@anim/public_dialog_exit</item>
+        //退出时的动画
+    </style>
+
+    <style name="public_dialog_progress" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="public_layout_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="public_layout_match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="public_layout_height_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="public_layout_width_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <style name="BannerDefaultStyle" tools:ignore="ResourceName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <!-- 自定义属性在styles.xml中不需要命名空间,直接用属性名就可以了 -->
+        <!-- 开启自动轮播 -->
+        <!--<item name="banner_pointAutoPlayAble">true</item>-->
+        <!-- 自动轮播的时间间隔 -->
+        <item name="banner_pointAutoPlayInterval">3000</item>
+        <!-- 指示点容器背景 -->
+        <item name="banner_pointContainerBackground">#00ffffff</item>
+        <!-- 指示点背景 -->
+        <item name="banner_pointDrawable">@drawable/public_banner_selector_point_hollow</item>
+        <!-- 指示点容器左右内间距 -->
+        <item name="banner_pointContainerLeftRightPadding">10dp</item>
+        <!-- 指示点上下外间距 -->
+        <item name="banner_pointTopBottomMargin">36dp</item>
+        <!-- 指示点左右外间距 -->
+        <item name="banner_pointLeftRightMargin">3dp</item>
+        <!-- 指示器的位置 -->
+        <item name="banner_indicatorGravity">bottom|center_horizontal</item>
+        <!-- 页码切换过程的时间长度 -->
+        <item name="banner_pageChangeDuration">800</item>
+        <!-- 提示文案的文字大小 -->
+        <item name="banner_tipTextSize">10sp</item>
+        <!-- 提示文案的文字颜色 -->
+        <item name="banner_tipTextColor">@android:color/white</item>
+        <!-- 加载网络数据时覆盖在BGABanner最上层的占位图 -->
+        <!--<item name="banner_placeholderDrawable">@mipmap/ic_logo</item>-->
+    </style>
+
+
+    <!-- 默认圆角按钮样式 -->
+    <style name="public_style_button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/public_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/public_selector_button</item>
+        <item name="android:foreground">@null</item>
+    </style>
+
+    <!-- 小圆角按钮样式 -->
+    <style name="public_style_rect_small_button" parent="public_style_button">
+        <item name="android:background">@drawable/public_selector_button_redius_small</item>
+    </style>
+
+
+    <!-- 默认圆角按钮样式2 白色背景 -->
+    <style name="public_style2_button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/public_color_text_sign</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/public_selector_button_white</item>
+        <item name="android:foreground">@null</item>
+    </style>
+
+    <!-- 小圆角按钮样式 -->
+    <style name="public_style2_rect_small_button" parent="public_style2_button">
+        <item name="android:background">@drawable/public_selector_button_redius_small_white</item>
+    </style>
+
+    <!-- 获取验证码样式 -->
+    <style name="public_style_countdown_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@color/public_color_transparent</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:minWidth">90dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/public_common_code_send</item>
+        <item name="android:textColor">@color/public_color_text_gray</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+
+    <style name="public_basenoactionbartheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <!--白色主题样式，，注意每一项都不能少-->
+    <style name="public.picture.white.style" parent="public_basenoactionbartheme">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/public_white</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/public_white</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">true</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/ic_back_arrow</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/ic_orange_arrow_down</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/ic_orange_arrow_up</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/public_black</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/public_black</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/picture_checkbox_selector</item>
+        <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
+        <item name="picture.style.checkNumMode">false</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">true</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/public_windowBackground</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/picture_list_sina_text_color</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/picture_list_sina_text_color</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/picture_num_oval</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/public_white</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/public_black</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/picture_list_sina_text_color
+        </item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/picture_color_fa</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/ic_back_arrow</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/public_white</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/public_white</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/public_black</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/picture_orange_oval</item>
+    </style>
+
+    <style name="public_sidebar_dialog" parent="@android:style/Theme.Holo.Dialog">
+        <!-- 是否有边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--是否在悬浮Activity之上  -->
+        <item name="android:windowIsFloating">false</item>
+        <!--标题  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--透明背景-->
+        <item name="android:background">@android:color/transparent</item>
+        <!--窗口背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--弹窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+
+    <!-- tab style -->
+    <style name="public_style_tab_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@color/public_white</item>
+        <item name="tl_divider_color">@color/public_color_text_dark_gray</item>
+        <item name="tl_indicator_color">@color/public_color_text_select</item>
+        <item name="tl_indicator_corner_radius">10dp</item>
+        <item name="tl_indicator_height">3dp</item>
+        <item name="tl_indicator_width">15dp</item>
+        <item name="tl_indicator_width_equal_title">true</item>
+        <item name="tl_tab_padding">15dp</item>
+        <item name="tl_tab_space_equal">true</item>
+        <item name="tl_textBold">SELECT</item>
+        <item name="tl_textSelectColor">@color/public_color_text_select</item>
+        <item name="tl_textSizeDef">true</item>
+        <item name="tl_textUnselectColor">@color/public_color_text_dark_gray</item>
+        <item name="tl_text_selectsize">@dimen/public_font_16sp</item>
+        <item name="tl_text_unselectsize">@dimen/public_font_16sp</item>
+        <item name="tl_textsize">@dimen/public_font_16sp</item>
+        <item name="tl_underline_color">@color/public_white</item>
+        <item name="tl_underline_gravity">BOTTOM</item>
+        <item name="tl_underline_height">@dimen/public_line_size</item>
+    </style>
+
+    <!-- RadioButton stytle -->
+    <style name="public_radio_button_style_formula" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--背景-->
+        <item name="android:background">@drawable/public_selector_radio_button</item>
+        <!--字体-->
+        <item name="android:textSize">@dimen/public_font_14sp</item>
+        <!--字体颜色-->
+        <item name="android:textColor">@drawable/public_selector_radio_button_text</item>
+        <!--是否显示原点-->
+        <item name="android:button">@null</item>
+        <!--边距-->
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+    <!-- Checkbox stytle -->
+    <style name="public_checkbox_button_style" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--背景-->
+        <item name="android:background">@drawable/public_selector_checkbox</item>
+        <!--字体-->
+        <item name="android:textSize">@dimen/public_font_14sp</item>
+        <!--字体颜色-->
+        <item name="android:textColor">@drawable/public_selector_radio_button_text</item>
+        <!--是否显示原点-->
+        <item name="android:button">@null</item>
+    </style>
+
+</resources>

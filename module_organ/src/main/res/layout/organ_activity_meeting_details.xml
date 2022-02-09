@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineVisible="false"
+        app:title="会议详情" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:overScrollMode="never">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_metting_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_theme"
+                app:bar_leftText="主题"
+                app:bar_lineMargin="20dp"
+                app:bar_lineVisible="true"
+                app:bar_rightText="部署我办党支部下一步党建活动" />
+
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_loaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_room"
+                app:bar_leftText="会议室"
+                app:bar_lineMargin="20dp"
+                app:bar_lineVisible="true"
+                app:bar_rightText="雍和大厦805" />
+
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_date"
+                app:bar_leftText="时间"
+                app:bar_lineVisible="false"
+                app:bar_rightText="2021-11-16 10:00 ~ 12:00" />
+
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_organ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_organ"
+                app:bar_leftText="参会方"
+                app:bar_lineMargin="20dp"
+                app:bar_lineVisible="true"
+                app:bar_rightText="区人大办公室" />
+            <!--  参会人 -->
+            <include layout="@layout/organ_include_view_metting_users" />
+
+
+            <!--  附件 -->
+            <include layout="@layout/organ_include_view_metting_file" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/public_colorLine" />
+            <!--  设备 -->
+            <include layout="@layout/organ_include_view_metting_device" />
+
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_remark"
+                app:bar_leftText="备注"
+                app:bar_lineMargin="20dp"
+                app:bar_lineVisible="true"
+                app:bar_rightText="请携带会议文件" />
+
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_user"
+                app:bar_leftText="发起方"
+                app:bar_lineMargin="20dp"
+                app:bar_lineVisible="true"
+                app:bar_rightText="罗云锡" />
+
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_phone"
+                app:bar_leftText="电话"
+                app:bar_lineVisible="false"
+                app:bar_rightColor="@color/public_colorConfirm"
+                app:bar_rightText="185****5329" />
+
+            <!-- 通过/驳回 -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/public_style_button"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:text="通过" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/public_style2_button"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="驳回" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+    <!--GroupListFragment为setTag添加键值-->
+    <item name="tag_data" type="id"></item>
+    <item name="tag_view" type="id"></item>
+    <item name="tag_position" type="id"></item>
+    <item name="tag_flag" type="id"></item>
+    <item name="tag_adapter" type="id"></item>
+    <item name="selector_view" type="id"></item>
+    <item name="rect_view" type="id"></item>
+    <item name="banner_indicatorId" type="id" />
+    <item name="music_view_id" type="id" />
+
+    <item name="left_bar_view" type="id"/>
+
+    <item name="empty_view" type="id"/>
+    <item name="error_view" type="id"/>
+    <item name="loading_view" type="id"/>
+    <item name="content_view" type="id"/>
+    <item name="no_network_view" type="id"/>
+
+    <item name="empty_retry_view" type="id"/>
+    <item name="error_retry_view" type="id"/>
+    <item name="no_network_retry_view" type="id"/>
+</resources>

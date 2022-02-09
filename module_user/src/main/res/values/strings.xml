@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation"
+    >
+
+    <string name="user_title">个人信息</string>
+
+
+    <!-- 修改手机号 -->
+    <string name="user_hint_input_phone">请输入手机号</string>
+    <string name="user_modify_phone_title">更换手机号码</string>
+    <string name="user_hint_sms_code">请输入验证码</string>
+
+    <!-- 修改密码 -->
+    <string name="user_modify_pwd_title">更改密码</string>
+    <string name="user_hint_pwd">请输入密码</string>
+    <string name="user_hint_pwd_algin">请再次输入密码</string>
+    <string name="user_hint_double_pwd">两次密码不一致</string>
+    <string name="user_hint_mes_content">修改成功,请重新登陆!</string>
+
+    <!-- 常用语 -->
+    <string name="user_useful_title">常用语</string>
+    <string name="user_add_useful_title">添加常用语</string>
+    <string name="user_hint_useful_expr">请输入常用语内容…</string>
+
+
+    <!-- 关于我们 -->
+    <string name="user_about_title">关于我们</string>
+    <string name="user_about_copyright">北京蜂窝在线技术有限公司版权所有</string>
+    <string name="user_about_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</string>
+
+    <!-- 设置 -->
+    <string name="user_setting_title">设置</string>
+    <string name="user_setting_update">检查更新</string>
+    <string name="user_setting_cache">清空缓存</string>
+    <string name="user_setting_common">问题反馈</string>
+    <string name="user_setting_modify_phone">更换手机号</string>
+    <string name="user_setting_modify_pwd">修改密码</string>
+    <string name="user_setting_about">关于我们</string>
+    <string name="user_setting_exit">退出登录</string>
+    <string name="user_update_no_update">当前已是最新版本</string>
+
+</resources>

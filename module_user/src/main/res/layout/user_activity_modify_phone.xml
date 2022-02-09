@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.AboutActivity"
+    tools:ignore="ResourceName">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/user_modify_phone_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextDefault.Large"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="当前绑定手机号"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_mobile"
+        style="@style/TextGray.Medium"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/public_color_text_sign"
+        android:text="18888888888" />
+
+    <com.yway.scomponent.commonres.view.layout.ClearEditText
+        android:id="@+id/et_modify_phone"
+        style="@style/user_style_edittext"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="number"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"
+        android:hint="@string/user_hint_input_phone"
+        android:textCursorDrawable="@drawable/public_edit_cursor_color"
+        app:regexType="mobile" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/public_edittext_normal_background"
+        android:orientation="horizontal">
+
+        <com.yway.scomponent.commonres.view.layout.ClearEditText
+            android:id="@+id/et_sms_code"
+            style="@style/user_style_edittext"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:hint="@string/user_hint_sms_code"
+            android:inputType="phone"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/public_edit_cursor_color"
+            app:regexType="nonnull" />
+
+
+        <com.yway.scomponent.commonres.view.layout.CountdownView
+            android:id="@+id/cv_password_forget_countdown"
+            style="@style/public_style_countdown_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_commit"
+        style="@style/public_style_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/public_mar_left_16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="@dimen/public_mar_right_16dp"
+        android:text="@string/public_common_commit" />
+
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 搜索框 -->
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftIcon="@drawable/public_ic_svg_close"
+        app:lineVisible="false"
+        app:rightColor="@color/public_color_text_sign"
+        app:rightTitle="确认"
+        app:title="参会领导" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar_title"
+        android:background="@color/public_white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_search"
+            style="@style/TextGray"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/organ_stytle_shape_search"
+            android:drawableLeft="@mipmap/public_ic_filtrate"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="请输入姓名搜索"
+            android:textSize="@dimen/public_font_14sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/view_choose_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_search"
+        android:layout_marginTop="15dp"
+        android:background="@color/public_white"
+        android:minHeight="50dp"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_checked_count"
+            style="@style/TextDefault.Medium"
+            android:layout_marginLeft="15dp"
+            android:text="已选择(0人):" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view_choose_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/public_white"
+            android:overScrollMode="never"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- 通讯录组织机构选择 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_organ"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/view_choose_user"
+        android:layout_marginTop="15dp"
+        android:background="@color/public_white"
+        android:overScrollMode="never"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" />
+
+    <!-- 通讯录 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_parts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/recycle_view_organ"
+        android:layout_marginTop="15dp"
+        android:overScrollMode="never" />
+    <!-- 水印 -->
+    <include layout="@layout/organ_include_view_watermark" />
+</RelativeLayout>

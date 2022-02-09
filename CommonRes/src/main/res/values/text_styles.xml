@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <style name="Text" >
+        <item name="android:textSize">@dimen/public_font_12sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 默认字体 -->
+    <style name="TextNormal" parent="Text">
+        <item name="android:textColor">@color/public_color_text_default</item>
+    </style>
+
+    <!-- 大字体 -->
+    <style name="TextNormal.Large" parent="TextNormal">
+        <item name="android:textSize">@dimen/public_font_17sp</item>
+    </style>
+
+    <!-- 中等字体 -->
+    <style name="TextNormal.Medium" parent="Text">
+        <item name="android:textSize">@dimen/public_font_15sp</item>
+    </style>
+
+    <!-- 小字体 -->
+    <style name="TextNormal.Small" parent="Text">
+        <item name="android:textSize">@dimen/public_font_11sp</item>
+    </style>
+
+    <!-- 默认字体  默认颜色-->
+    <style name="TextDefault" parent="Text">
+        <item name="android:textColor">@color/public_color_text_default</item>
+    </style>
+
+    <!-- 大字体字体  默认颜色-->
+    <style name="TextDefault.Large" parent="TextNormal.Large">
+        <item name="android:textColor">@color/public_color_text_default</item>
+    </style>
+
+    <!-- 中等字体  默认颜色-->
+    <style name="TextDefault.Medium" parent="TextNormal.Medium">
+        <item name="android:textColor">@color/public_color_text_default</item>
+    </style>
+
+    <!-- 小字体  默认颜色-->
+    <style name="TextDefault.Small" parent="TextNormal.Small">
+        <item name="android:textColor">@color/public_color_text_default</item>
+    </style>
+
+
+    <!-- 默认字体  强调颜色-->
+    <style name="TextAccent" parent="Text">
+        <item name="android:textColor">@color/public_colorAccent</item>
+    </style>
+
+    <!-- 大字体字体  强调颜色-->
+    <style name="TextAccent.Large" parent="TextAccent">
+        <item name="android:textSize">@dimen/public_font_16sp</item>
+    </style>
+
+    <!-- 中等字体  强调颜色-->
+    <style name="TextAccent.Medium" parent="TextAccent">
+        <item name="android:textSize">@dimen/public_font_15sp</item>
+    </style>
+
+    <!-- 小字体  强调颜色-->
+    <style name="TextAccent.Small" parent="TextAccent">
+        <item name="android:textSize">@dimen/public_font_11sp</item>
+    </style>
+
+
+    <!-- 默认字体  灰色颜色-->
+    <style name="TextGray" parent="Text">
+        <item name="android:textColor">@color/public_color_text_gray</item>
+    </style>
+
+    <!-- 大字体字体  灰色颜色-->
+    <style name="TextGray.Large" parent="TextGray">
+        <item name="android:textSize">@dimen/public_font_16sp</item>
+    </style>
+
+    <!-- 中等字体  灰色颜色-->
+    <style name="TextGray.Medium" parent="TextGray">
+        <item name="android:textSize">@dimen/public_font_15sp</item>
+    </style>
+
+    <!-- 小字体  灰色颜色-->
+    <style name="TextGray.Small" parent="TextGray">
+        <item name="android:textSize">@dimen/public_font_12sp</item>
+    </style>
+
+    <!-- 数字小字体  灰色颜色-->
+    <style name="TextNumber" parent="TextNormal">
+        <item name="android:textSize">@dimen/public_font_12sp</item>
+    </style>
+
+    <!-- 数字大字体字体  灰色颜色-->
+    <style name="TextNumber.Large" parent="TextNormal">
+        <item name="android:textSize">@dimen/public_font_17sp</item>
+    </style>
+
+    <!-- 数字中等字体  灰色颜色-->
+    <style name="TextNumber.Medium" parent="TextNormal">
+        <item name="android:textSize">@dimen/public_font_15sp</item>
+    </style>
+
+    <!-- 数字小字体  灰色颜色-->
+    <style name="TextNumber.Small" parent="TextNormal">
+        <item name="android:textSize">@dimen/public_font_11sp</item>
+    </style>
+
+
+    <!-- Title 字体  默认颜色-->
+    <style name="Text.ToolbarTitle" parent="TextNormal.Medium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/public_color_text_default</item>
+    </style>
+
+
+</resources>

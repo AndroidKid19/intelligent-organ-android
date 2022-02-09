@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/public_white"
+    tools:context=".mvp.ui.activity.AboutActivity"
+    tools:ignore="ResourceName">
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/user_modify_pwd_title" />
+
+    <com.yway.scomponent.commonres.view.layout.PasswordEditText
+        android:id="@+id/et_modify_pwd"
+        style="@style/user_style_edittext"
+        android:background="@drawable/user_shape_edit_border"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        app:regexType="nonnull"
+        android:fontFamily="sans-serif"
+        android:textCursorDrawable="@drawable/public_edit_cursor_color"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:hint="@string/user_hint_pwd"
+        />
+
+    <com.yway.scomponent.commonres.view.layout.PasswordEditText
+        android:id="@+id/et_modify_pwd_algin"
+        style="@style/user_style_edittext"
+        android:background="@drawable/user_shape_edit_border"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        app:regexType="nonnull"
+        android:fontFamily="sans-serif"
+        android:textCursorDrawable="@drawable/public_edit_cursor_color"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/user_hint_pwd_algin"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_commit"
+        style="@style/public_style_button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/public_mar_left_16dp"
+        android:layout_marginRight="@dimen/public_mar_right_16dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/public_common_commit"/>
+
+
+
+</LinearLayout>

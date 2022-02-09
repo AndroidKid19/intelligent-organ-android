@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- 适配Android 7.0文件意图 -->
+<!--    <cache-path-->
+<!--        name="cache"-->
+<!--        path="files" />-->
+<!--    <external-cache-path-->
+<!--        name="externalcache"-->
+<!--        path="files" />-->
+<!--    <external-files-path-->
+<!--        name="externalfiles"-->
+<!--        path="files" />-->
+<!--    <external-path-->
+<!--        name="external"-->
+<!--        path="files" />-->
+    <!-- 适配Android 7.0文件意图 -->
+    <external-path
+        path="Android/data/${applicationId}/"
+        name="files_root" />
+    <external-path
+        path="."
+        name="external_storage_root" />
+    <files-path
+        name="my_images"
+        path="images" />
+    <root-path name="root_path"
+        path="."/>
+
+    <!--代表设备的根目录 new File("/")-->
+<!--    <root-path name="root" path="" />-->
+    <!--代表 context.getFileDir()-->
+<!--    <files-path name="files" path="." />-->
+    <!--代表 context.getCacheDir()-->
+<!--    <cache-path name="cache" path="." />-->
+    <!--代表 Environment.getExternalStorageDirectory()-->
+<!--    <external-path name="external" path="." />-->
+    <!--代表 context.getExternalFilesDirs()-->
+<!--    <external-files-path name="external-files" path="." />-->
+    <!--代表 getExternalCacheDirs()-->
+<!--    <external-cache-path name="external-cache" path="." />-->
+
+
+    </paths>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    android:orientation="vertical">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineVisible="false"
+        app:rightTitle="存入草稿箱"
+        app:rightColor="@color/public_color_text_sign"
+        app:title="预约申请" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="会议室"
+                app:bar_rightIcon="@mipmap/public_ic_left_identify"
+                app:bar_rightSize="@dimen/public_font_15sp"
+                app:bar_rightText="查看更多" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/home_stytle_apply_room"
+                android:paddingLeft="15dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_room_name"
+                    style="@style/TextDefault.Medium"
+                    android:layout_marginTop="15dp"
+                    android:text="区委机关1号楼（北楼）一楼会议室"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_room_count"
+                    style="@style/TextDefault"
+                    android:layout_below="@+id/tv_room_name"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="可容纳28人"
+                    android:textColor="@color/public_color_text_sign" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/organ_apply_svg_checked" />
+            </RelativeLayout>
+
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="会议主题" />
+
+            <com.yway.scomponent.commonres.view.layout.ClearEditText
+                android:id="@+id/et_metting_subject"
+                style="@style/organ_style_edittext_apply_room"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="请输入会议主题"
+                android:maxLines="2" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="开始时间-预计结束时间" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_date"
+                style="@style/organ_style_tv_apply_room"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:bar_leftHint="开始时间 - 预计结束时间" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="报到时间" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_report"
+                style="@style/organ_style_tv_apply_room"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:bar_leftHint="选择报到时间" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="参会领导" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_choose_user"
+                style="@style/organ_style_tv_apply_room"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:bar_leftHint="选择参会领导"
+                app:bar_rightIcon="@mipmap/public_ic_left_identify" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="参会单位" />
+
+            <!-- 请选择参会单位 (多选)-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/organ_edittext_normal_background"
+                android:overScrollMode="never"
+                tools:itemCount="3"
+                tools:listitem="@layout/organ_item_apply_choose_company" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_choose_company"
+                style="@style/organ_style_tv_apply_room"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                app:bar_leftHint="选择参会单位"
+                app:bar_rightIcon="@mipmap/public_ic_left_identify" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="会议附件" />
+            <!-- 请选择会议附件 (多选)-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/organ_file_normal_background"
+                android:overScrollMode="never"
+                tools:itemCount="3"
+                tools:listitem="@layout/organ_item_apply_choose_company" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_file_choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/organ_file_normal_background"
+                android:gravity="center"
+                android:minHeight="50dp"
+                android:text="点击上传附件" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="设备需求（多选）" />
+            <!-- 请选择设备需求 (多选)-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view_device"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/public_white"
+                android:overScrollMode="never"
+                tools:listitem="@layout/organ_item_check_box" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="备注" />
+
+            <com.yway.scomponent.commonres.view.layout.ClearEditText
+                android:id="@+id/et_remark"
+                style="@style/organ_style_edittext_apply_room"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="如需待纸笔、报告等"
+                android:maxLines="10" />
+
+            <com.yway.scomponent.commonres.view.layout.SettingBar
+                style="@style/organ_style_bar_apply_room"
+                app:bar_leftIcon="@mipmap/organ_ic_room_circle"
+                app:bar_leftText="会议设置" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sc_set_notice1"
+                style="@style/organ_style_switch"
+                android:text="预约成功后是否通知参会单位与参会领导"
+                app:switchTextAppearance="@style/organ_style_switch_appearanc" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sc_set_notice2"
+                style="@style/organ_style_switch"
+                android:text="我已确认本通知不含涉密信息"
+                app:switchTextAppearance="@style/organ_style_switch_appearanc" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sc_set_notice3"
+                style="@style/organ_style_switch"
+                android:text="开启短信通知"
+                app:switchTextAppearance="@style/organ_style_switch_appearanc" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/sc_set_notice4"
+                style="@style/organ_style_switch"
+                android:text="开启语音通知"
+                app:switchTextAppearance="@style/organ_style_switch_appearanc" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_commit"
+                style="@style/public_style_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/public_common_commit" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

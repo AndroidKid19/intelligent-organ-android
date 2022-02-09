@@ -1,0 +1,952 @@
+# compiler: R8
+# compiler_version: 1.5.68
+# pg_map_id: 7bcc841
+com.alibaba.android.arouter.routes.ARouter$$Group$$user -> com.alibaba.android.arouter.routes.ARouter$$Group$$user:
+    1:1:void <init>():18:18 -> <init>
+    1:6:void loadInto(java.util.Map):21:26 -> loadInto
+com.alibaba.android.arouter.routes.ARouter$$Providers$$module_user -> com.alibaba.android.arouter.routes.ARouter$$Providers$$module_user:
+    1:1:void <init>():13:13 -> <init>
+    1:1:void loadInto(java.util.Map):16:16 -> loadInto
+com.alibaba.android.arouter.routes.ARouter$$Root$$module_user -> com.alibaba.android.arouter.routes.ARouter$$Root$$module_user:
+    1:1:void <init>():12:12 -> <init>
+    1:1:void loadInto(java.util.Map):15:15 -> loadInto
+com.fatalsignal.outsourcing.user.app.AppLifecyclesImpl -> com.fatalsignal.outsourcing.user.app.a:
+    1:1:void <init>():25:25 -> <init>
+    1:1:void onCreate(android.app.Application):34:34 -> onCreate
+com.fatalsignal.outsourcing.user.app.GlobalConfiguration -> com.fatalsignal.outsourcing.user.app.GlobalConfiguration:
+    1:1:void <init>():33:33 -> <init>
+    1:1:void injectAppLifecycle(android.content.Context,java.util.List):44:44 -> injectAppLifecycle
+com.fatalsignal.outsourcing.user.component.service.UserInfoServiceImpl -> com.fatalsignal.outsourcing.user.a.a.a:
+    1:1:void <init>():40:40 -> <init>
+    1:1:com.fatalsignal.outsourcing.commonservice.user.bean.UserInfo getInfo():45:45 -> getInfo
+com.fatalsignal.outsourcing.user.di.component.AboutComponent -> com.fatalsignal.outsourcing.user.b.a.a:
+    void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.AboutActivity) -> a
+com.fatalsignal.outsourcing.user.di.component.AboutComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.a$a:
+    com.fatalsignal.outsourcing.user.di.component.AboutComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.fatalsignal.outsourcing.user.di.component.AboutComponent build() -> a
+    com.fatalsignal.outsourcing.user.di.component.AboutComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$View) -> a
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent -> com.fatalsignal.outsourcing.user.b.a.b:
+    com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> c
+    javax.inject.Provider aboutModelProvider -> d
+    javax.inject.Provider viewProvider -> e
+    com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> f
+    com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
+    com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> h
+    com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_gson gsonProvider -> b
+    com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_imageLoader imageLoaderProvider -> g
+    javax.inject.Provider aboutPresenterProvider -> i
+    1:1:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder,com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$1):28:28 -> <init>
+    2:3:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder):47:48 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.di.component.AboutComponent$Builder builder():52:52 -> a
+    2:9:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder):57:64 -> a
+    10:22:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder):63:75 -> a
+    23:23:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder):74:74 -> a
+    24:24:void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.AboutActivity):86:86 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.ui.activity.AboutActivity injectAboutActivity(com.fatalsignal.outsourcing.user.mvp.ui.activity.AboutActivity):91:91 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$1 -> com.fatalsignal.outsourcing.user.b.a.b$a:
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.b$b:
+    com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$View view -> b
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:1:void <init>():95:95 -> <init>
+    2:2:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$1):95:95 -> <init>
+    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder):95:95 -> a
+    2:2:com.fatalsignal.outsourcing.user.di.component.AboutComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):95:95 -> a
+    3:3:com.fatalsignal.outsourcing.user.di.component.AboutComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$View):95:95 -> a
+    4:11:com.fatalsignal.outsourcing.user.di.component.AboutComponent build():102:109 -> a
+    12:13:com.fatalsignal.outsourcing.user.di.component.AboutComponent build():106:107 -> a
+    14:14:com.fatalsignal.outsourcing.user.di.component.AboutComponent build():103:103 -> a
+    15:15:com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$View):114:114 -> a
+    16:16:com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):120:120 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$View access$200(com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$Builder):95:95 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.user.b.a.b$c:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):205:206 -> <init>
+    1:1:java.lang.Object get():201:201 -> get
+    2:3:com.jess.arms.integration.AppManager get():211:212 -> get
+    4:4:com.jess.arms.integration.AppManager get():211:211 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.user.b.a.b$d:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):159:160 -> <init>
+    1:1:java.lang.Object get():155:155 -> get
+    2:3:android.app.Application get():165:166 -> get
+    4:4:android.app.Application get():165:165 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_gson -> com.fatalsignal.outsourcing.user.b.a.b$e:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):144:145 -> <init>
+    1:1:java.lang.Object get():141:141 -> get
+    2:3:com.google.gson.Gson get():150:151 -> get
+    4:4:com.google.gson.Gson get():150:150 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.fatalsignal.outsourcing.user.b.a.b$f:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):190:191 -> <init>
+    1:1:java.lang.Object get():186:186 -> get
+    2:3:com.jess.arms.http.imageloader.ImageLoader get():196:197 -> get
+    4:4:com.jess.arms.http.imageloader.ImageLoader get():196:196 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.user.b.a.b$g:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):129:130 -> <init>
+    1:1:java.lang.Object get():125:125 -> get
+    2:3:com.jess.arms.integration.IRepositoryManager get():135:136 -> get
+    4:4:com.jess.arms.integration.IRepositoryManager get():135:135 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerAboutComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.user.b.a.b$h:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):174:175 -> <init>
+    1:1:java.lang.Object get():170:170 -> get
+    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:181 -> get
+    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:180 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent -> com.fatalsignal.outsourcing.user.b.a.c:
+    javax.inject.Provider firendInviteModelProvider -> d
+    com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> h
+    com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_gson gsonProvider -> b
+    javax.inject.Provider viewProvider -> e
+    com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
+    com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> f
+    com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_imageLoader imageLoaderProvider -> g
+    com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> c
+    javax.inject.Provider firendInvitePresenterProvider -> i
+    1:1:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder,com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$1):28:28 -> <init>
+    2:3:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder):47:48 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent$Builder builder():52:52 -> a
+    2:9:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder):57:64 -> a
+    10:22:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder):63:75 -> a
+    23:23:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder):74:74 -> a
+    24:24:void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity):86:86 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity injectFirendInviteActivity(com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity):91:91 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$1 -> com.fatalsignal.outsourcing.user.b.a.c$a:
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.c$b:
+    com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View view -> b
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:1:void <init>():95:95 -> <init>
+    2:2:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$1):95:95 -> <init>
+    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder):95:95 -> a
+    2:2:com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):95:95 -> a
+    3:3:com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View):95:95 -> a
+    4:11:com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent build():102:109 -> a
+    12:13:com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent build():106:107 -> a
+    14:14:com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent build():103:103 -> a
+    15:15:com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View):114:114 -> a
+    16:16:com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):120:120 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View access$200(com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$Builder):95:95 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.user.b.a.c$c:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):205:206 -> <init>
+    1:1:java.lang.Object get():201:201 -> get
+    2:3:com.jess.arms.integration.AppManager get():211:212 -> get
+    4:4:com.jess.arms.integration.AppManager get():211:211 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.user.b.a.c$d:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):159:160 -> <init>
+    1:1:java.lang.Object get():155:155 -> get
+    2:3:android.app.Application get():165:166 -> get
+    4:4:android.app.Application get():165:165 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_gson -> com.fatalsignal.outsourcing.user.b.a.c$e:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):144:145 -> <init>
+    1:1:java.lang.Object get():141:141 -> get
+    2:3:com.google.gson.Gson get():150:151 -> get
+    4:4:com.google.gson.Gson get():150:150 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.fatalsignal.outsourcing.user.b.a.c$f:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):190:191 -> <init>
+    1:1:java.lang.Object get():186:186 -> get
+    2:3:com.jess.arms.http.imageloader.ImageLoader get():196:197 -> get
+    4:4:com.jess.arms.http.imageloader.ImageLoader get():196:196 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.user.b.a.c$g:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):129:130 -> <init>
+    1:1:java.lang.Object get():125:125 -> get
+    2:3:com.jess.arms.integration.IRepositoryManager get():135:136 -> get
+    4:4:com.jess.arms.integration.IRepositoryManager get():135:135 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerFirendInviteComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.user.b.a.c$h:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):174:175 -> <init>
+    1:1:java.lang.Object get():170:170 -> get
+    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:181 -> get
+    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:180 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent -> com.fatalsignal.outsourcing.user.b.a.d:
+    javax.inject.Provider settingModelProvider -> d
+    javax.inject.Provider viewProvider -> e
+    com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> h
+    com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> c
+    com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_imageLoader imageLoaderProvider -> g
+    com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_gson gsonProvider -> b
+    com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
+    com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> f
+    javax.inject.Provider settingPresenterProvider -> i
+    1:1:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder,com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$1):28:28 -> <init>
+    2:3:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder):47:48 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.di.component.SettingComponent$Builder builder():52:52 -> a
+    2:9:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder):57:64 -> a
+    10:22:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder):63:75 -> a
+    23:23:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder):74:74 -> a
+    24:24:void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity):86:86 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity injectSettingActivity(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity):91:91 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$1 -> com.fatalsignal.outsourcing.user.b.a.d$a:
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.d$b:
+    com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$View view -> b
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:1:void <init>():95:95 -> <init>
+    2:2:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$1):95:95 -> <init>
+    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder):95:95 -> a
+    2:2:com.fatalsignal.outsourcing.user.di.component.SettingComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):95:95 -> a
+    3:3:com.fatalsignal.outsourcing.user.di.component.SettingComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$View):95:95 -> a
+    4:11:com.fatalsignal.outsourcing.user.di.component.SettingComponent build():102:109 -> a
+    12:13:com.fatalsignal.outsourcing.user.di.component.SettingComponent build():106:107 -> a
+    14:14:com.fatalsignal.outsourcing.user.di.component.SettingComponent build():103:103 -> a
+    15:15:com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$View):114:114 -> a
+    16:16:com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):120:120 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$View access$200(com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$Builder):95:95 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.user.b.a.d$c:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):205:206 -> <init>
+    1:1:java.lang.Object get():201:201 -> get
+    2:3:com.jess.arms.integration.AppManager get():211:212 -> get
+    4:4:com.jess.arms.integration.AppManager get():211:211 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.user.b.a.d$d:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):159:160 -> <init>
+    1:1:java.lang.Object get():155:155 -> get
+    2:3:android.app.Application get():165:166 -> get
+    4:4:android.app.Application get():165:165 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_gson -> com.fatalsignal.outsourcing.user.b.a.d$e:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):144:145 -> <init>
+    1:1:java.lang.Object get():141:141 -> get
+    2:3:com.google.gson.Gson get():150:151 -> get
+    4:4:com.google.gson.Gson get():150:150 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.fatalsignal.outsourcing.user.b.a.d$f:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):190:191 -> <init>
+    1:1:java.lang.Object get():186:186 -> get
+    2:3:com.jess.arms.http.imageloader.ImageLoader get():196:197 -> get
+    4:4:com.jess.arms.http.imageloader.ImageLoader get():196:196 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.user.b.a.d$g:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):129:130 -> <init>
+    1:1:java.lang.Object get():125:125 -> get
+    2:3:com.jess.arms.integration.IRepositoryManager get():135:136 -> get
+    4:4:com.jess.arms.integration.IRepositoryManager get():135:135 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerSettingComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.user.b.a.d$h:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):174:175 -> <init>
+    1:1:java.lang.Object get():170:170 -> get
+    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:181 -> get
+    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:180 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent -> com.fatalsignal.outsourcing.user.b.a.e:
+    javax.inject.Provider userModelProvider -> d
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> c
+    javax.inject.Provider viewProvider -> e
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_gson gsonProvider -> b
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> f
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_imageLoader imageLoaderProvider -> g
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> h
+    javax.inject.Provider userPresenterProvider -> i
+    1:1:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder,com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$1):28:28 -> <init>
+    2:3:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder):47:48 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.di.component.UserComponent$Builder builder():52:52 -> a
+    2:9:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder):57:64 -> a
+    10:21:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder):63:74 -> a
+    22:22:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder):73:73 -> a
+    23:23:void inject(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):85:85 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment injectUserFragment(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):90:90 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$1 -> com.fatalsignal.outsourcing.user.b.a.e$a:
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.e$b:
+    com.fatalsignal.outsourcing.user.mvp.contract.UserContract$View view -> b
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:1:void <init>():94:94 -> <init>
+    2:2:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$1):94:94 -> <init>
+    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder):94:94 -> a
+    2:2:com.fatalsignal.outsourcing.user.di.component.UserComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):94:94 -> a
+    3:3:com.fatalsignal.outsourcing.user.di.component.UserComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.UserContract$View):94:94 -> a
+    4:11:com.fatalsignal.outsourcing.user.di.component.UserComponent build():101:108 -> a
+    12:13:com.fatalsignal.outsourcing.user.di.component.UserComponent build():105:106 -> a
+    14:14:com.fatalsignal.outsourcing.user.di.component.UserComponent build():102:102 -> a
+    15:15:com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.UserContract$View):113:113 -> a
+    16:16:com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):119:119 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.contract.UserContract$View access$200(com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$Builder):94:94 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.user.b.a.e$c:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):204:205 -> <init>
+    1:1:java.lang.Object get():200:200 -> get
+    2:3:com.jess.arms.integration.AppManager get():210:211 -> get
+    4:4:com.jess.arms.integration.AppManager get():210:210 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.user.b.a.e$d:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):158:159 -> <init>
+    1:1:java.lang.Object get():154:154 -> get
+    2:3:android.app.Application get():164:165 -> get
+    4:4:android.app.Application get():164:164 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_gson -> com.fatalsignal.outsourcing.user.b.a.e$e:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):143:144 -> <init>
+    1:1:java.lang.Object get():140:140 -> get
+    2:3:com.google.gson.Gson get():149:150 -> get
+    4:4:com.google.gson.Gson get():149:149 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.fatalsignal.outsourcing.user.b.a.e$f:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):189:190 -> <init>
+    1:1:java.lang.Object get():185:185 -> get
+    2:3:com.jess.arms.http.imageloader.ImageLoader get():195:196 -> get
+    4:4:com.jess.arms.http.imageloader.ImageLoader get():195:195 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.user.b.a.e$g:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):128:129 -> <init>
+    1:1:java.lang.Object get():124:124 -> get
+    2:3:com.jess.arms.integration.IRepositoryManager get():134:135 -> get
+    4:4:com.jess.arms.integration.IRepositoryManager get():134:134 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.user.b.a.e$h:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):173:174 -> <init>
+    1:1:java.lang.Object get():169:169 -> get
+    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():179:180 -> get
+    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():179:179 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent -> com.fatalsignal.outsourcing.user.b.a.f:
+    javax.inject.Provider userInfoModelProvider -> d
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> f
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> c
+    javax.inject.Provider viewProvider -> e
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_imageLoader imageLoaderProvider -> g
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_gson gsonProvider -> b
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> h
+    com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
+    javax.inject.Provider userInfoPresenterProvider -> i
+    1:1:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder,com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$1):28:28 -> <init>
+    2:3:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder):47:48 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.di.component.UserInfoComponent$Builder builder():52:52 -> a
+    2:9:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder):57:64 -> a
+    10:22:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder):63:75 -> a
+    23:23:void initialize(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder):74:74 -> a
+    24:24:void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity):86:86 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity injectUserInfoActivity(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity):91:91 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$1 -> com.fatalsignal.outsourcing.user.b.a.f$a:
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.f$b:
+    com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$View view -> b
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:1:void <init>():95:95 -> <init>
+    2:2:void <init>(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$1):95:95 -> <init>
+    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder):95:95 -> a
+    2:2:com.fatalsignal.outsourcing.user.di.component.UserInfoComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):95:95 -> a
+    3:3:com.fatalsignal.outsourcing.user.di.component.UserInfoComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$View):95:95 -> a
+    4:11:com.fatalsignal.outsourcing.user.di.component.UserInfoComponent build():102:109 -> a
+    12:13:com.fatalsignal.outsourcing.user.di.component.UserInfoComponent build():106:107 -> a
+    14:14:com.fatalsignal.outsourcing.user.di.component.UserInfoComponent build():103:103 -> a
+    15:15:com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$View):114:114 -> a
+    16:16:com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):120:120 -> a
+    1:1:com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$View access$200(com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$Builder):95:95 -> b
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.user.b.a.f$c:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):205:206 -> <init>
+    1:1:java.lang.Object get():201:201 -> get
+    2:3:com.jess.arms.integration.AppManager get():211:212 -> get
+    4:4:com.jess.arms.integration.AppManager get():211:211 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.user.b.a.f$d:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):159:160 -> <init>
+    1:1:java.lang.Object get():155:155 -> get
+    2:3:android.app.Application get():165:166 -> get
+    4:4:android.app.Application get():165:165 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_gson -> com.fatalsignal.outsourcing.user.b.a.f$e:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):144:145 -> <init>
+    1:1:java.lang.Object get():141:141 -> get
+    2:3:com.google.gson.Gson get():150:151 -> get
+    4:4:com.google.gson.Gson get():150:150 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.fatalsignal.outsourcing.user.b.a.f$f:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):190:191 -> <init>
+    1:1:java.lang.Object get():186:186 -> get
+    2:3:com.jess.arms.http.imageloader.ImageLoader get():196:197 -> get
+    4:4:com.jess.arms.http.imageloader.ImageLoader get():196:196 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.user.b.a.f$g:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):129:130 -> <init>
+    1:1:java.lang.Object get():125:125 -> get
+    2:3:com.jess.arms.integration.IRepositoryManager get():135:136 -> get
+    4:4:com.jess.arms.integration.IRepositoryManager get():135:135 -> get
+com.fatalsignal.outsourcing.user.di.component.DaggerUserInfoComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.user.b.a.f$h:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):174:175 -> <init>
+    1:1:java.lang.Object get():170:170 -> get
+    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:181 -> get
+    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:180 -> get
+com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent -> com.fatalsignal.outsourcing.user.b.a.g:
+    void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity) -> a
+com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.g$a:
+    com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent build() -> a
+    com.fatalsignal.outsourcing.user.di.component.FirendInviteComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View) -> a
+com.fatalsignal.outsourcing.user.di.component.SettingComponent -> com.fatalsignal.outsourcing.user.b.a.h:
+    void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity) -> a
+com.fatalsignal.outsourcing.user.di.component.SettingComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.h$a:
+    com.fatalsignal.outsourcing.user.di.component.SettingComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.fatalsignal.outsourcing.user.di.component.SettingComponent build() -> a
+    com.fatalsignal.outsourcing.user.di.component.SettingComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$View) -> a
+com.fatalsignal.outsourcing.user.di.component.UserComponent -> com.fatalsignal.outsourcing.user.b.a.i:
+    void inject(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment) -> a
+com.fatalsignal.outsourcing.user.di.component.UserComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.i$a:
+    com.fatalsignal.outsourcing.user.di.component.UserComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.fatalsignal.outsourcing.user.di.component.UserComponent build() -> a
+    com.fatalsignal.outsourcing.user.di.component.UserComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.UserContract$View) -> a
+com.fatalsignal.outsourcing.user.di.component.UserInfoComponent -> com.fatalsignal.outsourcing.user.b.a.j:
+    void inject(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity) -> a
+com.fatalsignal.outsourcing.user.di.component.UserInfoComponent$Builder -> com.fatalsignal.outsourcing.user.b.a.j$a:
+    com.fatalsignal.outsourcing.user.di.component.UserInfoComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.fatalsignal.outsourcing.user.di.component.UserInfoComponent build() -> a
+    com.fatalsignal.outsourcing.user.di.component.UserInfoComponent$Builder view(com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$View) -> a
+com.fatalsignal.outsourcing.user.di.module.AboutModule -> com.fatalsignal.outsourcing.user.b.b.a:
+com.fatalsignal.outsourcing.user.di.module.FirendInviteModule -> com.fatalsignal.outsourcing.user.b.b.b:
+com.fatalsignal.outsourcing.user.di.module.SettingModule -> com.fatalsignal.outsourcing.user.b.b.c:
+com.fatalsignal.outsourcing.user.di.module.UserInfoModule -> com.fatalsignal.outsourcing.user.b.b.d:
+com.fatalsignal.outsourcing.user.di.module.UserModule -> com.fatalsignal.outsourcing.user.b.b.e:
+com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$Model -> com.fatalsignal.outsourcing.user.c.a.a:
+com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$View -> com.fatalsignal.outsourcing.user.c.a.b:
+com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$Model -> com.fatalsignal.outsourcing.user.c.a.c:
+com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View -> com.fatalsignal.outsourcing.user.c.a.d:
+    void setAdapter(com.fatalsignal.outsourcing.user.mvp.ui.adapter.FirendAdapter) -> a
+com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$Model -> com.fatalsignal.outsourcing.user.c.a.e:
+com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$View -> com.fatalsignal.outsourcing.user.c.a.f:
+com.fatalsignal.outsourcing.user.mvp.contract.UserContract$Model -> com.fatalsignal.outsourcing.user.c.a.g:
+com.fatalsignal.outsourcing.user.mvp.contract.UserContract$View -> com.fatalsignal.outsourcing.user.c.a.h:
+    void resultError(java.lang.String) -> a
+    void resultSucceed(cy.protocols.MT4AssetInfo) -> a
+com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$Model -> com.fatalsignal.outsourcing.user.c.a.i:
+com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$View -> com.fatalsignal.outsourcing.user.c.a.j:
+com.fatalsignal.outsourcing.user.mvp.model.AboutModel -> com.fatalsignal.outsourcing.user.mvp.model.AboutModel:
+    android.app.Application mApplication -> b
+    com.google.gson.Gson mGson -> a
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):31:31 -> <init>
+    1:1:void onDestroy():36:36 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.model.AboutModel_Factory -> com.fatalsignal.outsourcing.user.mvp.model.a:
+    javax.inject.Provider mApplicationProvider -> c
+    javax.inject.Provider mGsonProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):24:27 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.model.AboutModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):49:49 -> a
+    1:3:com.fatalsignal.outsourcing.user.mvp.model.AboutModel provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):39:41 -> b
+    1:1:java.lang.Object get():10:10 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.model.AboutModel get():32:32 -> get
+com.fatalsignal.outsourcing.user.mvp.model.AboutModel_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.model.b:
+    1:1:void injectMGson(com.fatalsignal.outsourcing.user.mvp.model.AboutModel,com.google.gson.Gson):36:36 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.model.AboutModel,android.app.Application):40:40 -> a
+com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel -> com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel:
+    android.app.Application mApplication -> b
+    com.google.gson.Gson mGson -> a
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):33:33 -> <init>
+    1:1:void onDestroy():38:38 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel_Factory -> com.fatalsignal.outsourcing.user.mvp.model.c:
+    javax.inject.Provider mApplicationProvider -> c
+    javax.inject.Provider mGsonProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):24:27 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):49:49 -> a
+    1:3:com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):39:41 -> b
+    1:1:java.lang.Object get():10:10 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel get():32:32 -> get
+com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.model.d:
+    1:1:void injectMGson(com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel,com.google.gson.Gson):36:36 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.model.FirendInviteModel,android.app.Application):40:40 -> a
+com.fatalsignal.outsourcing.user.mvp.model.SettingModel -> com.fatalsignal.outsourcing.user.mvp.model.SettingModel:
+    android.app.Application mApplication -> b
+    com.google.gson.Gson mGson -> a
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):33:33 -> <init>
+    1:1:void onDestroy():38:38 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.model.SettingModel_Factory -> com.fatalsignal.outsourcing.user.mvp.model.e:
+    javax.inject.Provider mApplicationProvider -> c
+    javax.inject.Provider mGsonProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):24:27 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.model.SettingModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):49:49 -> a
+    1:3:com.fatalsignal.outsourcing.user.mvp.model.SettingModel provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):39:41 -> b
+    1:1:java.lang.Object get():10:10 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.model.SettingModel get():32:32 -> get
+com.fatalsignal.outsourcing.user.mvp.model.SettingModel_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.model.f:
+    1:1:void injectMGson(com.fatalsignal.outsourcing.user.mvp.model.SettingModel,com.google.gson.Gson):36:36 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.model.SettingModel,android.app.Application):40:40 -> a
+com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel -> com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel:
+    android.app.Application mApplication -> b
+    com.google.gson.Gson mGson -> a
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):31:31 -> <init>
+    1:1:void onDestroy():36:36 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel_Factory -> com.fatalsignal.outsourcing.user.mvp.model.g:
+    javax.inject.Provider mApplicationProvider -> c
+    javax.inject.Provider mGsonProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):24:27 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):49:49 -> a
+    1:3:com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):39:41 -> b
+    1:1:java.lang.Object get():10:10 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel get():32:32 -> get
+com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.model.h:
+    1:1:void injectMGson(com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel,com.google.gson.Gson):36:36 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.model.UserInfoModel,android.app.Application):40:40 -> a
+com.fatalsignal.outsourcing.user.mvp.model.UserModel -> com.fatalsignal.outsourcing.user.mvp.model.UserModel:
+    android.app.Application mApplication -> b
+    com.google.gson.Gson mGson -> a
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):39:39 -> <init>
+    1:1:void onDestroy():55:55 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.model.UserModel_Factory -> com.fatalsignal.outsourcing.user.mvp.model.i:
+    javax.inject.Provider mApplicationProvider -> c
+    javax.inject.Provider mGsonProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):24:27 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.model.UserModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):49:49 -> a
+    1:3:com.fatalsignal.outsourcing.user.mvp.model.UserModel provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):39:41 -> b
+    1:1:java.lang.Object get():10:10 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.model.UserModel get():32:32 -> get
+com.fatalsignal.outsourcing.user.mvp.model.UserModel_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.model.j:
+    1:1:void injectMGson(com.fatalsignal.outsourcing.user.mvp.model.UserModel,com.google.gson.Gson):36:36 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.model.UserModel,android.app.Application):40:40 -> a
+com.fatalsignal.outsourcing.user.mvp.model.entity.DailyListBean -> com.fatalsignal.outsourcing.user.mvp.model.entity.DailyListBean:
+    1:1:void <init>():28:28 -> <init>
+    1:1:java.lang.String getDate():56:56 -> getDate
+    1:1:java.util.List getStories():64:64 -> getStories
+    1:1:java.util.List getTop_stories():72:72 -> getTop_stories
+    1:1:void setDate(java.lang.String):60:60 -> setDate
+    1:1:void setStories(java.util.List):68:68 -> setStories
+    1:1:void setTop_stories(java.util.List):76:76 -> setTop_stories
+com.fatalsignal.outsourcing.user.mvp.model.entity.DailyListBean$StoriesBean -> com.fatalsignal.outsourcing.user.mvp.model.entity.DailyListBean$StoriesBean:
+    1:1:void <init>():79:79 -> <init>
+    1:1:java.lang.String getGa_prefix():112:112 -> getGa_prefix
+    1:1:int getId():104:104 -> getId
+    1:1:java.util.List getImages():128:128 -> getImages
+    1:1:boolean getReadState():88:88 -> getReadState
+    1:1:java.lang.String getTitle():120:120 -> getTitle
+    1:1:int getType():96:96 -> getType
+    1:1:void setGa_prefix(java.lang.String):116:116 -> setGa_prefix
+    1:1:void setId(int):108:108 -> setId
+    1:1:void setImages(java.util.List):132:132 -> setImages
+    1:1:void setReadState(boolean):92:92 -> setReadState
+    1:1:void setTitle(java.lang.String):124:124 -> setTitle
+    1:1:void setType(int):100:100 -> setType
+com.fatalsignal.outsourcing.user.mvp.model.entity.DailyListBean$TopStoriesBean -> com.fatalsignal.outsourcing.user.mvp.model.entity.DailyListBean$TopStoriesBean:
+    1:1:void <init>():136:136 -> <init>
+    1:1:java.lang.String getGa_prefix():168:168 -> getGa_prefix
+    1:1:int getId():160:160 -> getId
+    1:1:java.lang.String getImage():144:144 -> getImage
+    1:1:java.lang.String getTitle():176:176 -> getTitle
+    1:1:int getType():152:152 -> getType
+    1:1:void setGa_prefix(java.lang.String):172:172 -> setGa_prefix
+    1:1:void setId(int):164:164 -> setId
+    1:1:void setImage(java.lang.String):148:148 -> setImage
+    1:1:void setTitle(java.lang.String):180:180 -> setTitle
+    1:1:void setType(int):156:156 -> setType
+com.fatalsignal.outsourcing.user.mvp.model.entity.UserDetailBean -> com.fatalsignal.outsourcing.user.mvp.model.entity.UserDetailBean:
+    1:1:void <init>():28:28 -> <init>
+    1:1:java.lang.String getBody():132:132 -> getBody
+    1:1:java.util.List getCss():124:124 -> getCss
+    1:1:java.lang.String getGa_prefix():136:136 -> getGa_prefix
+    1:1:int getId():116:116 -> getId
+    1:1:java.lang.String getImage():140:140 -> getImage
+    1:1:java.lang.String getImage_source():144:144 -> getImage_source
+    1:1:java.util.List getJs():128:128 -> getJs
+    1:1:java.lang.String getShare_url():148:148 -> getShare_url
+    1:1:java.lang.String getTitle():152:152 -> getTitle
+    1:1:int getType():120:120 -> getType
+    1:1:void setBody(java.lang.String):76:76 -> setBody
+    1:1:void setCss(java.util.List):84:84 -> setCss
+    1:1:void setGa_prefix(java.lang.String):80:80 -> setGa_prefix
+    1:1:void setId(int):88:88 -> setId
+    1:1:void setImage(java.lang.String):92:92 -> setImage
+    1:1:void setImage_source(java.lang.String):96:96 -> setImage_source
+    1:1:void setJs(java.util.List):100:100 -> setJs
+    1:1:void setShare_url(java.lang.String):104:104 -> setShare_url
+    1:1:void setTitle(java.lang.String):108:108 -> setTitle
+    1:1:void setType(int):112:112 -> setType
+com.fatalsignal.outsourcing.user.mvp.model.entity.UserInfoBean -> com.fatalsignal.outsourcing.user.mvp.model.entity.UserInfoBean:
+    1:1:void <init>():5:5 -> <init>
+    1:1:java.lang.String getAddress():214:214 -> getAddress
+    1:1:int getAuth_status():238:238 -> getAuth_status
+    1:1:java.lang.String getBonus_amount():182:182 -> getBonus_amount
+    1:1:java.lang.String getBonus_pool_amount():286:286 -> getBonus_pool_amount
+    1:1:java.lang.String getBonus_pool_url():302:302 -> getBonus_pool_url
+    1:1:java.lang.String getBonus_url():246:246 -> getBonus_url
+    1:1:java.lang.String getHead_img():78:78 -> getHead_img
+    1:1:int getId():62:62 -> getId
+    1:1:int getIs_sign_in():110:110 -> getIs_sign_in
+    1:1:java.lang.String getItoc_amount():118:118 -> getItoc_amount
+    1:1:java.lang.String getItoc_url():278:278 -> getItoc_url
+    1:1:java.lang.String getLtb_count():150:150 -> getLtb_count
+    1:1:java.lang.String getLtb_url():262:262 -> getLtb_url
+    1:1:java.lang.String getMobile():198:198 -> getMobile
+    1:1:int getSex():102:102 -> getSex
+    1:1:int getSuper_node():94:94 -> getSuper_node
+    1:1:java.lang.String getSuper_node_name():86:86 -> getSuper_node_name
+    1:1:java.lang.String getSweet_amount():166:166 -> getSweet_amount
+    1:1:java.lang.String getSweet_url():254:254 -> getSweet_url
+    1:1:java.lang.String getToday_bonus_change():190:190 -> getToday_bonus_change
+    1:1:java.lang.String getToday_bonus_pool_change():294:294 -> getToday_bonus_pool_change
+    1:1:java.lang.String getToday_itoc_change():126:126 -> getToday_itoc_change
+    1:1:java.lang.String getToday_ltb_change():158:158 -> getToday_ltb_change
+    1:1:java.lang.String getToday_sweet_change():174:174 -> getToday_sweet_change
+    1:1:java.lang.String getToday_usdt_change():142:142 -> getToday_usdt_change
+    1:1:java.lang.String getUsdt_amount():134:134 -> getUsdt_amount
+    1:1:java.lang.String getUsdt_url():270:270 -> getUsdt_url
+    1:1:java.lang.String getUser_auth_idcard():222:222 -> getUser_auth_idcard
+    1:1:java.lang.String getUser_auth_name():230:230 -> getUser_auth_name
+    1:1:java.lang.String getUser_email():206:206 -> getUser_email
+    1:1:java.lang.String getUser_nickname():70:70 -> getUser_nickname
+    1:1:void setAddress(java.lang.String):218:218 -> setAddress
+    1:1:void setAuth_status(int):242:242 -> setAuth_status
+    1:1:void setBonus_amount(java.lang.String):186:186 -> setBonus_amount
+    1:1:void setBonus_pool_amount(java.lang.String):290:290 -> setBonus_pool_amount
+    1:1:void setBonus_pool_url(java.lang.String):306:306 -> setBonus_pool_url
+    1:1:void setBonus_url(java.lang.String):250:250 -> setBonus_url
+    1:1:void setHead_img(java.lang.String):82:82 -> setHead_img
+    1:1:void setId(int):66:66 -> setId
+    1:1:void setIs_sign_in(int):114:114 -> setIs_sign_in
+    1:1:void setItoc_amount(java.lang.String):122:122 -> setItoc_amount
+    1:1:void setItoc_url(java.lang.String):282:282 -> setItoc_url
+    1:1:void setLtb_count(java.lang.String):154:154 -> setLtb_count
+    1:1:void setLtb_url(java.lang.String):266:266 -> setLtb_url
+    1:1:void setMobile(java.lang.String):202:202 -> setMobile
+    1:1:void setSex(int):106:106 -> setSex
+    1:1:void setSuper_node(int):98:98 -> setSuper_node
+    1:1:void setSuper_node_name(java.lang.String):90:90 -> setSuper_node_name
+    1:1:void setSweet_amount(java.lang.String):170:170 -> setSweet_amount
+    1:1:void setSweet_url(java.lang.String):258:258 -> setSweet_url
+    1:1:void setToday_bonus_change(java.lang.String):194:194 -> setToday_bonus_change
+    1:1:void setToday_bonus_pool_change(java.lang.String):298:298 -> setToday_bonus_pool_change
+    1:1:void setToday_itoc_change(java.lang.String):130:130 -> setToday_itoc_change
+    1:1:void setToday_ltb_change(java.lang.String):162:162 -> setToday_ltb_change
+    1:1:void setToday_sweet_change(java.lang.String):178:178 -> setToday_sweet_change
+    1:1:void setToday_usdt_change(java.lang.String):146:146 -> setToday_usdt_change
+    1:1:void setUsdt_amount(java.lang.String):138:138 -> setUsdt_amount
+    1:1:void setUsdt_url(java.lang.String):274:274 -> setUsdt_url
+    1:1:void setUser_auth_idcard(java.lang.String):226:226 -> setUser_auth_idcard
+    1:1:void setUser_auth_name(java.lang.String):234:234 -> setUser_auth_name
+    1:1:void setUser_email(java.lang.String):210:210 -> setUser_email
+    1:1:void setUser_nickname(java.lang.String):74:74 -> setUser_nickname
+com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter -> com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter:
+    com.jess.arms.integration.AppManager mAppManager -> d
+    android.app.Application mApplication -> b
+    me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$Model,com.fatalsignal.outsourcing.user.mvp.contract.AboutContract$View):37:37 -> <init>
+    1:1:void onDestroy():42:42 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter_Factory -> com.fatalsignal.outsourcing.user.mvp.presenter.a:
+    javax.inject.Provider mApplicationProvider -> d
+    javax.inject.Provider mErrorHandlerProvider -> c
+    javax.inject.Provider mAppManagerProvider -> f
+    javax.inject.Provider mImageLoaderProvider -> e
+    javax.inject.Provider rootViewProvider -> b
+    javax.inject.Provider modelProvider -> a
+    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):35:41 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):77:77 -> a
+    1:5:com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):62:66 -> b
+    1:1:java.lang.Object get():12:12 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter get():46:46 -> get
+com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.presenter.b:
+    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):53:53 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter,android.app.Application):57:57 -> a
+    3:3:void injectMImageLoader(com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter,com.jess.arms.http.imageloader.ImageLoader):61:61 -> a
+    4:4:void injectMAppManager(com.fatalsignal.outsourcing.user.mvp.presenter.AboutPresenter,com.jess.arms.integration.AppManager):65:65 -> a
+com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter -> com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter:
+    com.fatalsignal.outsourcing.user.mvp.ui.adapter.FirendAdapter mFirendAdapter -> f
+    com.jess.arms.integration.AppManager mAppManager -> d
+    android.app.Application mApplication -> b
+    me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
+    java.util.List mDataLs -> e
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$Model,com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View):44:44 -> <init>
+    2:2:void <init>(com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$Model,com.fatalsignal.outsourcing.user.mvp.contract.FirendInviteContract$View):40:40 -> <init>
+    1:7:void initAdapter():48:54 -> a
+    1:1:void onDestroy():60:60 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter_Factory -> com.fatalsignal.outsourcing.user.mvp.presenter.c:
+    javax.inject.Provider mApplicationProvider -> d
+    javax.inject.Provider mErrorHandlerProvider -> c
+    javax.inject.Provider mAppManagerProvider -> f
+    javax.inject.Provider mImageLoaderProvider -> e
+    javax.inject.Provider rootViewProvider -> b
+    javax.inject.Provider modelProvider -> a
+    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):35:41 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):79:79 -> a
+    1:4:com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):62:65 -> b
+    5:9:com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):64:68 -> b
+    1:1:java.lang.Object get():12:12 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter get():46:46 -> get
+com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.presenter.d:
+    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):55:55 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter,android.app.Application):59:59 -> a
+    3:3:void injectMImageLoader(com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter,com.jess.arms.http.imageloader.ImageLoader):63:63 -> a
+    4:4:void injectMAppManager(com.fatalsignal.outsourcing.user.mvp.presenter.FirendInvitePresenter,com.jess.arms.integration.AppManager):67:67 -> a
+com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter -> com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter:
+    com.jess.arms.integration.AppManager mAppManager -> d
+    android.app.Application mApplication -> b
+    me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$Model,com.fatalsignal.outsourcing.user.mvp.contract.SettingContract$View):42:42 -> <init>
+    1:1:void onDestroy():49:49 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter_Factory -> com.fatalsignal.outsourcing.user.mvp.presenter.e:
+    javax.inject.Provider mApplicationProvider -> d
+    javax.inject.Provider mErrorHandlerProvider -> c
+    javax.inject.Provider mAppManagerProvider -> f
+    javax.inject.Provider mImageLoaderProvider -> e
+    javax.inject.Provider rootViewProvider -> b
+    javax.inject.Provider modelProvider -> a
+    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):35:41 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):77:77 -> a
+    1:5:com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):62:66 -> b
+    1:1:java.lang.Object get():12:12 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter get():46:46 -> get
+com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.presenter.f:
+    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):53:53 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter,android.app.Application):57:57 -> a
+    3:3:void injectMImageLoader(com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter,com.jess.arms.http.imageloader.ImageLoader):61:61 -> a
+    4:4:void injectMAppManager(com.fatalsignal.outsourcing.user.mvp.presenter.SettingPresenter,com.jess.arms.integration.AppManager):65:65 -> a
+com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter -> com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter:
+    com.jess.arms.integration.AppManager mAppManager -> d
+    android.app.Application mApplication -> b
+    me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$Model,com.fatalsignal.outsourcing.user.mvp.contract.UserInfoContract$View):41:41 -> <init>
+    1:1:com.tbruyelle.rxpermissions2.RxPermissions getRxPermissions(android.app.Activity):46:46 -> a
+    1:1:void onDestroy():51:51 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter_Factory -> com.fatalsignal.outsourcing.user.mvp.presenter.g:
+    javax.inject.Provider mApplicationProvider -> d
+    javax.inject.Provider mErrorHandlerProvider -> c
+    javax.inject.Provider mAppManagerProvider -> f
+    javax.inject.Provider mImageLoaderProvider -> e
+    javax.inject.Provider rootViewProvider -> b
+    javax.inject.Provider modelProvider -> a
+    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):35:41 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):77:77 -> a
+    1:5:com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):62:66 -> b
+    1:1:java.lang.Object get():12:12 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter get():46:46 -> get
+com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.presenter.h:
+    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):53:53 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter,android.app.Application):57:57 -> a
+    3:3:void injectMImageLoader(com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter,com.jess.arms.http.imageloader.ImageLoader):61:61 -> a
+    4:4:void injectMAppManager(com.fatalsignal.outsourcing.user.mvp.presenter.UserInfoPresenter,com.jess.arms.integration.AppManager):65:65 -> a
+com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter -> com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter:
+    com.jess.arms.integration.AppManager mAppManager -> d
+    android.app.Application mApplication -> b
+    me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.contract.UserContract$Model,com.fatalsignal.outsourcing.user.mvp.contract.UserContract$View):73:73 -> <init>
+    1:1:com.jess.arms.mvp.IView access$400(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter):61:61 -> a
+    2:44:void queryMT4AssetInfo(long):140:182 -> a
+    45:61:void lambda$queryMT4AssetInfo$2(cy.protocols.QueryMT4AssetInfoReq,io.reactivex.ObservableEmitter):144:160 -> a
+    62:70:void lambda$queryMT4AssetInfo$2(cy.protocols.QueryMT4AssetInfoReq,io.reactivex.ObservableEmitter):154:162 -> a
+    71:71:void lambda$queryMT4AssetInfo$3(io.reactivex.disposables.Disposable):174:174 -> a
+    72:72:void lambda$queryMT4AssetInfo$4():178:178 -> a
+    1:1:com.jess.arms.mvp.IView access$500(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter):61:61 -> b
+    1:1:com.jess.arms.mvp.IView access$600(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter):61:61 -> c
+    1:2:void onDestroy():205:206 -> onDestroy
+com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter$2 -> com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter$a:
+    com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter this$0 -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):182:182 -> <init>
+    1:5:void onNext(cy.protocols.QueryMT4AssetInfoResp):185:189 -> a
+    1:1:void onNext(java.lang.Object):182:182 -> onNext
+com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter_Factory -> com.fatalsignal.outsourcing.user.mvp.presenter.i:
+    javax.inject.Provider mApplicationProvider -> d
+    javax.inject.Provider mErrorHandlerProvider -> c
+    javax.inject.Provider mAppManagerProvider -> f
+    javax.inject.Provider mImageLoaderProvider -> e
+    javax.inject.Provider rootViewProvider -> b
+    javax.inject.Provider modelProvider -> a
+    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):35:41 -> <init>
+    1:1:com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):77:77 -> a
+    1:5:com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):62:66 -> b
+    1:1:java.lang.Object get():12:12 -> get
+    2:2:com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter get():46:46 -> get
+com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter_MembersInjector -> com.fatalsignal.outsourcing.user.mvp.presenter.j:
+    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):53:53 -> a
+    2:2:void injectMApplication(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter,android.app.Application):57:57 -> a
+    3:3:void injectMImageLoader(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter,com.jess.arms.http.imageloader.ImageLoader):61:61 -> a
+    4:4:void injectMAppManager(com.fatalsignal.outsourcing.user.mvp.presenter.UserPresenter,com.jess.arms.integration.AppManager):65:65 -> a
+com.fatalsignal.outsourcing.user.mvp.ui.activity.AboutActivity -> com.fatalsignal.outsourcing.user.mvp.ui.activity.AboutActivity:
+    1:1:void <init>():27:27 -> <init>
+    1:2:void initImmersionBar():46:47 -> initImmersionBar
+    1:1:int initView(android.os.Bundle):41:41 -> initView
+    1:1:void killMyself():79:79 -> killMyself
+    1:2:void launchActivity(android.content.Intent):73:74 -> launchActivity
+    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):32:36 -> setupActivityComponent
+    1:2:void showMessage(java.lang.String):67:68 -> showMessage
+com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity -> com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity:
+    1:1:void <init>():45:45 -> <init>
+    1:1:void setAdapter(com.fatalsignal.outsourcing.user.mvp.ui.adapter.FirendAdapter):115:115 -> a
+    1:7:void initData(android.os.Bundle):77:83 -> initData
+    1:2:void initImmersionBar():63:64 -> initImmersionBar
+    1:1:int initView(android.os.Bundle):71:71 -> initView
+    1:1:void killMyself():110:110 -> killMyself
+    1:2:void launchActivity(android.content.Intent):104:105 -> launchActivity
+    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):54:58 -> setupActivityComponent
+    1:2:void showMessage(java.lang.String):98:99 -> showMessage
+com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity_ViewBinding -> com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity_ViewBinding:
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity target -> a
+    1:5:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.FirendInviteActivity,android.view.View):24:28 -> <init>
+    1:6:void unbind():34:39 -> unbind
+    7:7:void unbind():35:35 -> unbind
+com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity -> com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity:
+    1:1:void <init>():51:51 -> <init>
+    1:2:void initData(android.os.Bundle):135:136 -> initData
+    1:2:void initImmersionBar():70:71 -> initImmersionBar
+    1:1:int initView(android.os.Bundle):76:76 -> initView
+    1:1:void killMyself():163:163 -> killMyself
+    1:2:void launchActivity(android.content.Intent):157:158 -> launchActivity
+    1:2:void onCacheClick(android.view.View):119:120 -> onCacheClick
+    1:3:void onExitClick(android.view.View):128:130 -> onExitClick
+    1:1:void onSettingClick(android.view.View):84:84 -> onSettingClick
+    1:19:void onUpdateClick(android.view.View):92:110 -> onUpdateClick
+    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):61:65 -> setupActivityComponent
+    1:2:void showMessage(java.lang.String):151:152 -> showMessage
+com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding -> com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding:
+    android.view.View view7f0b0118 -> c
+    android.view.View view7f0b011a -> b
+    android.view.View view7f0b0119 -> e
+    android.view.View view7f0b0116 -> d
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity target -> a
+    1:33:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity,android.view.View):32:64 -> <init>
+    1:15:void unbind():75:89 -> unbind
+    16:16:void unbind():76:76 -> unbind
+com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$1 -> com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$a:
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity):39:39 -> <init>
+    1:1:void doClick(android.view.View):42:42 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$2 -> com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$b:
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity):48:48 -> <init>
+    1:1:void doClick(android.view.View):51:51 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$3 -> com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$c:
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity):56:56 -> <init>
+    1:1:void doClick(android.view.View):59:59 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$4 -> com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding$d:
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.activity.SettingActivity):64:64 -> <init>
+    1:1:void doClick(android.view.View):67:67 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity -> com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity:
+    com.jess.arms.utils.PermissionUtil$RequestPermission mRequestPermission -> a
+    1:35:void <init>():44:78 -> <init>
+    1:1:com.jess.arms.utils.PermissionUtil$RequestPermission access$000(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity):44:44 -> a
+    2:14:void choicePhoto(android.app.Activity):101:113 -> a
+    1:1:com.jess.arms.mvp.IPresenter access$100(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity):44:44 -> b
+    1:2:void initImmersionBar():58:59 -> initImmersionBar
+    1:1:int initView(android.os.Bundle):65:65 -> initView
+    1:1:void killMyself():184:184 -> killMyself
+    1:2:void launchActivity(android.content.Intent):178:179 -> launchActivity
+    1:24:void onActivityResult(int,int,android.content.Intent):121:144 -> onActivityResult
+    25:31:void onActivityResult(int,int,android.content.Intent):134:140 -> onActivityResult
+    32:54:void onActivityResult(int,int,android.content.Intent):128:150 -> onActivityResult
+    1:1:void onUserInfoClick(android.view.View):73:73 -> onUserInfoClick
+    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):49:53 -> setupActivityComponent
+    1:2:void showMessage(java.lang.String):172:173 -> showMessage
+com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity$1 -> com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity$a:
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity this$0 -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity):78:78 -> <init>
+    1:1:void onRequestPermissionFailure(java.util.List):86:86 -> onRequestPermissionFailure
+    1:1:void onRequestPermissionFailureWithAskNeverAgain(java.util.List):91:91 -> onRequestPermissionFailureWithAskNeverAgain
+    1:1:void onRequestPermissionSuccess():81:81 -> onRequestPermissionSuccess
+com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity$2 -> com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity$b:
+    android.app.Activity val$activity -> a
+    1:1:void <init>(android.app.Activity):103:103 -> <init>
+    1:1:void onAlbum(com.fatalsignal.outsourcing.commonres.dialog.PhotoDialog):111:111 -> onAlbum
+    1:1:void onCamera(com.fatalsignal.outsourcing.commonres.dialog.PhotoDialog):106:106 -> onCamera
+com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity_ViewBinding -> com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity_ViewBinding:
+    android.view.View view7f0b00ad -> b
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity target -> a
+    1:7:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity,android.view.View):25:31 -> <init>
+    1:6:void unbind():42:47 -> unbind
+    7:7:void unbind():42:42 -> unbind
+com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity_ViewBinding$1 -> com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity_ViewBinding$a:
+    com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.activity.UserInfoActivity):31:31 -> <init>
+    1:1:void doClick(android.view.View):34:34 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.adapter.FirendAdapter -> com.fatalsignal.outsourcing.user.c.b.a.a:
+    1:1:void <init>(java.util.List):26:26 -> <init>
+    1:1:com.jess.arms.base.BaseHolder getHolder(android.view.View,int):41:41 -> getHolder
+    1:1:int getLayoutId(int):46:46 -> getLayoutId
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment:
+    com.scwang.smartrefresh.layout.listener.OnRefreshListener mOnRefreshListener -> a
+    1:46:void <init>():53:98 -> <init>
+    1:1:com.jess.arms.mvp.IPresenter access$000(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):53:53 -> a
+    2:2:com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment newInstance():64:64 -> a
+    3:3:void resultError(java.lang.String):236:236 -> a
+    4:5:void resultSucceed(cy.protocols.MT4AssetInfo):241:242 -> a
+    1:1:void hideLoading():118:118 -> hideLoading
+    1:4:void initData(android.os.Bundle):85:88 -> initData
+    1:1:android.view.View initView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):80:80 -> initView
+    1:2:void launchActivity(android.content.Intent):129:130 -> launchActivity
+    1:1:void onDestroy():248:248 -> onDestroy
+    1:1:void onFirendClick(android.view.View):229:229 -> onFirendClick
+    1:1:void onItocClick(android.view.View):197:197 -> onItocClick
+    1:22:void onPortalClick(android.view.View):160:181 -> onPortalClick
+    1:1:void onSettingClick(android.view.View):220:220 -> onSettingClick
+    1:1:void onUserInfoClick(android.view.View):150:150 -> onUserInfoClick
+    1:5:void setupFragmentComponent(com.jess.arms.di.component.AppComponent):71:75 -> setupFragmentComponent
+    1:2:void showMessage(java.lang.String):123:124 -> showMessage
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment$1 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment$a:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment this$0 -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):98:98 -> <init>
+    1:2:void onRefresh(com.scwang.smartrefresh.layout.api.RefreshLayout):101:102 -> onRefresh
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment$2 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment$b:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment this$0 -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):170:170 -> <init>
+    1:2:void onConfirm(com.fatalsignal.outsourcing.commonres.dialog.MessageDialog):173:174 -> onConfirm
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding:
+    android.view.View view7f0b004f -> i
+    android.view.View view7f0b0053 -> h
+    android.view.View view7f0b00ad -> c
+    android.view.View view7f0b0050 -> b
+    android.view.View view7f0b004e -> e
+    android.view.View view7f0b0052 -> d
+    android.view.View view7f0b004d -> g
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment target -> a
+    android.view.View view7f0b004c -> f
+    1:66:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment,android.view.View):37:102 -> <init>
+    1:24:void unbind():113:136 -> unbind
+    25:25:void unbind():114:114 -> unbind
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$1 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$a:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):46:46 -> <init>
+    1:1:void doClick(android.view.View):49:49 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$2 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$b:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):54:54 -> <init>
+    1:1:void doClick(android.view.View):57:57 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$3 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$c:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):62:62 -> <init>
+    1:1:void doClick(android.view.View):65:65 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$4 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$d:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):70:70 -> <init>
+    1:1:void doClick(android.view.View):73:73 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$5 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$e:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):78:78 -> <init>
+    1:1:void doClick(android.view.View):81:81 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$6 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$f:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):86:86 -> <init>
+    1:1:void doClick(android.view.View):89:89 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$7 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$g:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):94:94 -> <init>
+    1:1:void doClick(android.view.View):97:97 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$8 -> com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding$h:
+    com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment val$target -> a
+    1:1:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment_ViewBinding,com.fatalsignal.outsourcing.user.mvp.ui.fragment.UserFragment):102:102 -> <init>
+    1:1:void doClick(android.view.View):105:105 -> doClick
+com.fatalsignal.outsourcing.user.mvp.ui.holder.FirendItemHolder -> com.fatalsignal.outsourcing.user.mvp.ui.holder.FirendItemHolder:
+    com.jess.arms.di.component.AppComponent mAppComponent -> a
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> b
+    1:4:void <init>(android.view.View):53:56 -> <init>
+    1:8:void setData(cy.protocols.BriefRankingInfo,int):62:69 -> a
+    9:18:void setData(cy.protocols.BriefRankingInfo,int):62:71 -> a
+    19:19:void lambda$setData$0(java.lang.String):71:71 -> a
+    1:3:void onRelease():86:88 -> onRelease
+    4:4:void onRelease():86:86 -> onRelease
+    1:1:void setData(java.lang.Object,int):30:30 -> setData
+com.fatalsignal.outsourcing.user.mvp.ui.holder.FirendItemHolder_ViewBinding -> com.fatalsignal.outsourcing.user.mvp.ui.holder.FirendItemHolder_ViewBinding:
+    com.fatalsignal.outsourcing.user.mvp.ui.holder.FirendItemHolder target -> a
+    1:5:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.holder.FirendItemHolder,android.view.View):19:23 -> <init>
+    1:6:void unbind():29:34 -> unbind
+    7:7:void unbind():30:30 -> unbind
+com.fatalsignal.outsourcing.user.mvp.ui.holder.UserItemHolder_ViewBinding -> com.fatalsignal.outsourcing.user.mvp.ui.holder.UserItemHolder_ViewBinding:
+    com.fatalsignal.outsourcing.user.mvp.ui.holder.UserItemHolder target -> a
+    1:5:void <init>(com.fatalsignal.outsourcing.user.mvp.ui.holder.UserItemHolder,android.view.View):19:23 -> <init>
+    1:6:void unbind():29:34 -> unbind
+    7:7:void unbind():30:30 -> unbind

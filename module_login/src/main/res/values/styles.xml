@@ -1,0 +1,53 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Text" tools:ignore="ResourceName">
+        <item name="android:textSize">@dimen/public_font_12sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 登录页默认文本框样式 -->
+    <style name="login_style_edittext">
+        <item name="android:background">@drawable/public_edittext_normal_background</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/public_color_text_gray</item>
+        <item name="android:textColor">@color/public_color_text_default</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <!-- 获取验证码样式 -->
+    <style name="login_style_countdown_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@color/public_color_transparent</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:minWidth">90dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/public_common_code_send</item>
+        <item name="android:textColor">@drawable/login_selector_text_color_countdown_view</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- 获取验证码样式2 -->
+    <style name="login_style_countdown_view2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/login_selector_button_countdown_view</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:minWidth">90dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/public_common_code_send</item>
+        <item name="android:textColor">@drawable/login_selector_text_color_countdown_view</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+</resources>

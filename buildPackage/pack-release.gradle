@@ -1,0 +1,273 @@
+import java.util.zip.ZipEntry
+import java.util.zip.ZipOutputStream
+
+/***这些注释其实不想写的but #F%&G*HU$D& */
+/***360加固助手用户名 */
+def userName = rootProject.ext.jiagu["name"]
+/***360加固助手密码 */
+def password = rootProject.ext.jiagu["password"]
+/***脚本路径 */
+def jiaguSh = rootProject.ext.jiagu["sh"]
+/***加固包路径Linux */
+def baseLinux = rootProject.ext.jiagu["baseLinux"]
+/***加固包路径windows */
+def baseWin = rootProject.ext.jiagu["baseWin"]
+/***加固输出路径 */
+def outputPath = rootProject.ext.jiagu["outputPath"]
+/***签名文件路径 */
+def keystorePath = rootProject.ext.keystore["storeFile"]
+/***密码 */
+def keystorePwd = rootProject.ext.keystore["keyPassword"]
+/***别名 */
+def keystoreAlias = rootProject.ext.keystore["keyAlias"]
+/***密码 */
+def keystoreAliasPwd = rootProject.ext.keystore["storePassword"]
+
+
+/**
+ * shell 命令形式  不懂shell 自行www.baidu.com
+ * 打包加固包apk 并上传蒲公英
+ */
+task packagejiaguPgyRelease {
+
+    def apkDir = new File("./app/build/outputs/apk/release/")
+    filterApk(apkDir)
+
+    //执行编译
+    dependsOn("assembleRelease")
+
+    //执行加固
+    doLast {
+        //查找需要加固的apk
+        def apkPath = findApkFile("release").absolutePath
+        //jiagu.db中缓存了多渠道信息，如果不删除会合并到当前多渠道配置
+        def db = new File("./buildPackage/jiagu.db")
+        if (db.exists()) {
+            if (!db.delete()) {
+                throw new RuntimeException("delete jiagu.db failure!")
+            }
+        }
+        def jiaguBase = baseLinux
+        println "=======System.properties========"+ System.properties['os.name']
+        if(isWindows()){
+            jiaguBase = baseWin
+        }
+        println "=======开始执行shell 加固========"
+        exec {
+            ignoreExitValue true
+            commandLine "sh",jiaguSh, userName,password,apkPath,outputPath,keystorePath,keystorePwd,keystoreAlias,keystoreAliasPwd,jiaguBase
+        }
+        println "=======加固shell执行完成========"
+        def outputDir = new File("./buildPackage/output")
+        filterApk(outputDir)
+        compressDir(outputDir)
+        uploadApk(outputDir)
+    }
+}
+
+
+/**
+ * shell 命令形式  不懂shell 自行www.baidu.com
+ * 打包加固包apk
+ */
+task packagejiaguRelease {
+    def apkDir = new File("./app/build/outputs/apk/release/")
+    filterApk(apkDir)
+    //执行编译
+    dependsOn("assembleRelease")
+
+    //执行加固
+    doLast {
+        //查找需要加固的apk
+        def apkPath = findApkFile("release").absolutePath
+        //jiagu.db中缓存了多渠道信息，如果不删除会合并到当前多渠道配置
+        def db = new File("./buildPackage/jiagu.db")
+        if (db.exists()) {
+            if (!db.delete()) {
+                throw new RuntimeException("delete jiagu.db failure!")
+            }
+        }
+        def jiaguBase = baseLinux
+        println "=======System.properties========"+ System.properties['os.name']
+        if(isWindows()){
+            jiaguBase = baseWin
+        }
+        println "=======System.properties========"+ jiaguBase
+
+        println "=======开始执行shell 加固========"
+        exec {
+            ignoreExitValue true
+            commandLine "sh",jiaguSh, userName,password,apkPath,outputPath,keystorePath,keystorePwd,keystoreAlias,keystoreAliasPwd,jiaguBase
+        }
+        println "=======加固shell执行完成========"
+        def outputDir = new File("./buildPackage/output")
+        filterApk(outputDir)
+        //这是压缩
+//        compressDir(outputDir)
+    }
+}
+
+
+/**
+ * 查找编译完成的apk
+ * @param buildType release 或者 debug
+ * @return apk
+ */
+def findApkFile(String buildType) {
+    println "findApkFiles buildType: " + buildType
+    def apkDir = new File("./app/build/outputs/apk/"+buildType+"/")
+    if (!apkDir.exists()) {
+        throw new RuntimeException("apk output path not exists!")
+    }
+    def apk = null
+    for (int i = apkDir.listFiles().length - 1; i >= 0; i--) {
+        File file = apkDir.listFiles()[i]
+        if (file.name.endsWith(".apk")) {
+            apk = file
+            break
+        }
+    }
+    if (apk == null) {
+        throw new RuntimeException("apk file not exists!")
+    }
+    return apk
+}
+
+
+/**
+ * zip压缩apk保存目录，生成 build/outputs/release/pccb-x.x.x.zip
+ * @param outputDir apk保存目录
+ */
+def compressDir(File outputDir) {
+    println "*************** compress apk output dir ***************"
+    File filePath = new File(outputDir.getParent() + "/zip/")
+    if(!filePath.exists()){
+        filePath.mkdir()
+    }
+    File zipFile = new File(outputDir.getParent() + "/zip/" + new Date().format("yyyyMMdd") +".zip")
+    if (zipFile.exists()) {
+        zipFile.delete()
+    }
+    ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(zipFile))
+    File[] files = outputDir.listFiles()
+    for (int i = 0; i < files.length; i++) {
+        File file = files[i]
+
+        byte[] bf = new byte[8192]
+        FileInputStream fis = new FileInputStream(file)
+        zos.putNextEntry(new ZipEntry(file.getName()))
+
+        int len
+        while ((len = fis.read(bf)) > 0) {
+            zos.write(bf, 0, len)
+        }
+        zos.flush()
+        fis.close()
+    }
+
+    zos.close()
+}
+
+
+/**
+ * 删除一些临时文件
+ * @param outputDir apk保存目录
+ */
+def filterApk(File outputDir) {
+    File[] files = outputDir.listFiles()
+    if(files !=null){
+        for (int i = 0; i < files.length; i++) {
+            File file = files[i]
+            String fileName = file.getName()
+
+            if (fileName.endsWith("temp.apk")
+                    || !fileName.endsWith("_sign.apk")) {
+                file.delete()
+            }
+        }
+    }
+}
+
+/**
+ * 修改所有apk文件名
+ * @param outputDir apk保存目录
+ */
+def renameApk(File outputDir) {
+    println "*************** rename apk ***************"
+    File[] files = outputDir.listFiles()
+    for (int i = 0; i < files.length; i++) {
+        File file = files[i]
+        String fileName = file.getName()
+
+        String[] prefixArr = fileName.split("-")
+        String[] suffixArr = fileName.split("_")
+
+        String rename = prefixArr[0] + "-" + prefixArr[1] +
+                "-" + (i + 1) + "-" + suffixArr[suffixArr.length - 2] + ".apk"
+        file.renameTo(file.getParent() + "/" + rename)
+
+        println "rename apk: " + fileName + " --> " + rename
+    }
+}
+
+/**
+ * 上传apk到蒲公英，Linux  没有试过， 可以用Jenkins 上传
+ */
+def uploadApk(File apkDir) {
+    def apiKey = rootProject.ext.pgy["apiKey"] // todo 这里替换为自己的蒲公英的apiKey
+    def buildUpdateDescription = "release "
+    //查找上传的apk文件，这里需要换成自己apk路径
+    if (!apkDir.exists()) {
+        throw new RuntimeException("apk output path not exists!")
+    }
+
+    def apk = null
+    for (int i = apkDir.listFiles().length - 1; i >= 0; i--) {
+        File file = apkDir.listFiles()[i]
+        if (file.name.endsWith("_jiagu_sign.apk")) {
+            apk = file
+            break
+        }
+    }
+    if (apk == null) {
+        throw new RuntimeException("apk file not exists!")
+    }
+
+    println "*************** start upload file ***************"
+
+    //release修改这里
+    logger.log(LogLevel.ERROR, "start up load apk file : ${apk.absolutePath}")
+    def uploadCommand = "curl -F \"file=@${apk.absolutePath}\" -F \"_api_key=${apiKey}\" -F \"buildUpdateDescription=${buildUpdateDescription}\"  https://www.pgyer.com/apiv2/app/upload"
+    Runtime runtime = Runtime.getRuntime()
+    Process p = runtime.exec(uploadCommand)
+    InputStream fis = p.getInputStream()
+    InputStreamReader isr = new InputStreamReader(fis)
+    BufferedReader br = new BufferedReader(isr)
+    String line = null
+    logger.log(LogLevel.ERROR, "upload result :")
+
+    println "*************** upload finish ***************"
+
+    while ((line = br.readLine()) != null) {
+        logger.log(LogLevel.ERROR, line)
+        def startStr = "\"buildShortcutUrl\":\""
+        int start = line.indexOf(startStr) + startStr.length()
+        int end = line.indexOf("\"", start)
+        if (start > 0 && end > 0) {
+            String sUrl = line.substring(start, end)
+            runtime.exec("cmd   /c   start  https://www.pgyer.com/$sUrl")
+        }
+    }
+    br.close()
+    isr.close()
+    fis.close()
+
+}
+
+
+/**
+ * 判断系统内核
+ */
+def isWindows() {
+    return System.properties['os.name'].toLowerCase().contains('windows')
+}

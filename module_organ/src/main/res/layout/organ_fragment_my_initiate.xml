@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/rg_condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_1"
+            style="@style/organ_radio_button_style"
+            android:checked="true"
+            android:text="全部" />
+
+        <RadioButton
+            android:id="@+id/rb_2"
+            style="@style/organ_radio_button_style"
+            android:text="未审批" />
+
+        <RadioButton
+            android:id="@+id/rb_3"
+            style="@style/organ_radio_button_style"
+            android:text="通过" />
+
+        <RadioButton
+            android:id="@+id/rb_4"
+            style="@style/organ_radio_button_style"
+            android:text="驳回" />
+    </RadioGroup>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yway.scomponent.commonres.view.layout.MultipleStatusView
+            android:id="@+id/multiple_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"
+                android:overScrollMode="never"
+                android:scrollbarSize="2dp"
+                android:scrollbarThumbVertical="@color/public_colorPrimary"
+                android:scrollbars="vertical" />
+        </com.yway.scomponent.commonres.view.layout.MultipleStatusView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

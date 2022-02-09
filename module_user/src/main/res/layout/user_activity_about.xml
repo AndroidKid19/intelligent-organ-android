@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/public_white"
+    tools:context=".mvp.ui.activity.AboutActivity"
+    tools:ignore="ResourceName">
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/user_about_title" />
+
+    <com.yway.scomponent.commonres.view.layout.ScaleImageView
+        android:layout_width="142dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:src="@mipmap/user_ic_about_logo"
+        app:scaleRatio="1.5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/public_color_text_gray"
+            android:textSize="@dimen/public_font_14sp"
+            android:paddingRight="21dp"
+            android:paddingLeft="21dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/user_stytle_version_shape"
+            tools:text="V1.0.0"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="21dp"
+            app:lineHeight="24dp"
+            android:text="@string/user_about_content"
+            android:textColor="@color/public_color_text_dark_gray"
+            android:textSize="@dimen/public_font_15sp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/user_about_copyright"
+        android:textColor="#BDBDBD"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        // 仅保留两种架构的 so 库
+        ndk {
+            // armeabi：已经淘汰（0%）
+            // armeabi-v7a：曾经主流的架构平台（20%）
+            // arm64-v8a：目前主流架构平台（80%）
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+        renderscriptTargetApi rootProject.ext.android["targetSdkVersion"]
+        renderscriptSupportModeEnabled true
+        packagingOptions {
+            doNotStrip '*/mips/*.so'
+            doNotStrip '*/mips64/*.so'
+        }
+        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "USE_CANARY", "true"
+            buildConfigField "String", "HOST_ROOT", '\"http://8.141.167.159\"'
+            buildConfigField "String", "H5_HOST_ROOT", '\"http://8.141.167.159/\"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "USE_CANARY", "false"
+            buildConfigField "String", "HOST_ROOT", '\"http://192.168.1.125:8090/\"'
+            buildConfigField "String", "H5_HOST_ROOT", '\"http://192.168.1.125:8090/\"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'me.jessyan:arms:2.5.2'
+//    api project(':arms')
+    api 'me.jessyan:arms-imageloader-glide:2.5.2'
+
+    api rootProject.ext.dependencies["constraint"]
+    //tools
+    api rootProject.ext.dependencies["androideventbus"]
+    api(rootProject.ext.dependencies["arouter"]) {
+        exclude module: 'support-v4'
+        exclude module: 'support-annotations'
+    }
+    api rootProject.ext.dependencies["retrofit-url-manager"]
+
+    //zxing
+    api project(':libzxing')
+
+    //友盟社会化分享
+    api project(':umlibrary')
+
+    //mmkv
+    api rootProject.ext.dependencies["mmkv"]
+
+    api rootProject.ext.dependencies["recyclerview-swipe"]
+    //web view
+    api rootProject.ext.dependencies["agentweb"]
+    //防重复点击
+    api project(':doubleclicklibrary')
+    //图片选择
+    api(rootProject.ext.dependencies["pictureSelector"]) {
+        exclude group: "com.google.guava", module: "listenablefuture"
+    }
+
+    //腾讯Bugly 异常上报
+    api rootProject.ext.dependencies["crashreport"]
+    api rootProject.ext.dependencies["nativecrashreport"]
+    //工具类
+    api rootProject.ext.dependencies["blankj-util"]
+    api rootProject.ext.dependencies["design"]
+    //刷新View
+    api rootProject.ext.dependencies["smartRefreshLayout"]
+    api rootProject.ext.dependencies["smartRefreshHeader"]
+    //状态栏沉浸
+    api rootProject.ext.dependencies["immersionBar"]
+    api rootProject.ext.dependencies["immersionbar-components"]
+    //时间选择器
+//    api rootProject.ext.dependencies["pickerView"]
+    api project(':pickerview')
+
+    //骨架屏
+    api project(':skeleton')
+
+    api 'org.jsoup:jsoup:1.12.1'
+
+    api 'com.google.android:flexbox:2.0.1'
+}

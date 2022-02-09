@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="消息通知"
+        />
+    <com.yway.scomponent.commonres.view.layout.MultipleStatusView
+        android:id="@+id/multiple_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.yanzhenjie.recyclerview.SwipeRecyclerView
+            android:id="@+id/recycle_view"
+            android:overScrollMode="never"
+            android:background="@color/public_white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/user_item_message"
+            />
+    </com.yway.scomponent.commonres.view.layout.MultipleStatusView>
+</LinearLayout>

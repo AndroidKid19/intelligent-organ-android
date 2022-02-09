@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ResourceName">
+
+    <!-- 水印 -->
+    <include layout="@layout/organ_include_view_watermark" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.yway.scomponent.commonres.view.layout.ArcView
+                    android:id="@+id/view_arc_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:arc_height="30dp"
+                    app:bg_color="@color/public_color_background_gradual_start"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lg_color="@color/public_color_background_gradual_end" />
+
+                <com.yway.scomponent.commonres.view.titlebar.TitleBar
+                    android:id="@+id/bar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:barStyle="transparent"
+                    app:layout_constraintBottom_toTopOf="@+id/view_smart_outline"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:lineVisible="false"
+                    app:title="智慧访客" />
+
+                <View
+                    android:id="@+id/view_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/view_smart_outline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/public_view_normal_background"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/view_holder">
+
+                    <com.yway.scomponent.commonres.view.layout.AverageLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextDefault"
+                                android:drawableTop="@drawable/organ_ic_visitor_record"
+                                android:drawablePadding="8dp"
+                                android:text="本年度访客人数"
+                                android:textSize="@dimen/public_font_14sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextDefault.Medium"
+                                android:text="3600"
+                                android:textStyle="bold" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextDefault"
+                                android:drawableTop="@drawable/organ_ic_visitor_record"
+                                android:drawablePadding="8dp"
+                                android:text="本月访客人数"
+                                android:textSize="@dimen/public_font_14sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextDefault.Medium"
+                                android:text="3600"
+                                android:textStyle="bold" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextDefault"
+                                android:drawableTop="@drawable/organ_ic_visitor_record"
+                                android:drawablePadding="8dp"
+                                android:text="当日访客人数"
+                                android:textSize="@dimen/public_font_14sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextDefault.Medium"
+                                android:text="3600"
+                                android:textStyle="bold" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </com.yway.scomponent.commonres.view.layout.AverageLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.yway.scomponent.commonres.view.layout.MultipleStatusView
+                android:id="@+id/multiple_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="@+id/view_holder"
+                app:layout_constraintTop_toBottomOf="@+id/view_holder">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0dp"
+                    android:overScrollMode="never"
+                    android:scrollbarSize="2dp"
+                    android:scrollbarThumbVertical="@color/public_colorPrimary"
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/organ_item_visitor_record"
+                    />
+            </com.yway.scomponent.commonres.view.layout.MultipleStatusView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

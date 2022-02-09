@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yway.scomponent.commonres.view.layout.AverageLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_menu_address"
+        style="@style/TextDefault"
+        android:drawableTop="@mipmap/organ_ic_menu_address"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="通讯录"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_menu_room"
+        style="@style/TextDefault"
+        android:drawableTop="@mipmap/organ_ic_menu_room"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="智能会议"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_menu_canteen"
+        style="@style/TextDefault"
+        android:drawableTop="@mipmap/organ_ic_menu_eats"
+        android:drawablePadding="8dp"
+        android:text="健康食堂"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_menu_card"
+        style="@style/TextDefault"
+        android:drawableTop="@mipmap/organ_ic_menu_cards"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="我的卡包"
+        android:textSize="@dimen/public_font_14sp" />
+</com.yway.scomponent.commonres.view.layout.AverageLayout>

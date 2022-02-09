@@ -1,0 +1,35 @@
+<resources>
+    <string name="login_title_welcome_login">智慧机关</string>
+
+    <string name="login_lable_account">账号</string>
+    <string name="login_lable_phone">手机号</string>
+    <string name="login_lable_pwd">密码</string>
+    <string name="login_lable_new_pwd">输入新密码</string>
+    <string name="login_lable_agreement">登录代表您已同意用户协议和隐私协议</string>
+    <string name="login_lable_username">昵称</string>
+
+    <string name="login_hint_input_phone">请输入您的手机号</string>
+    <string name="login_hint_input_name">请输入您的昵称</string>
+    <string name="login_hint_input_pwd">请输入密码</string>
+    <string name="login_hint_input_upwd">密码长度8-20位</string>
+    <string name="login_hint_input_upwd_new">请输入确认密码</string>
+    <string name="login_hint_input_verify_code">请输入验证码</string>
+    <string name="login_hint_input_new_pwd">新密码</string>
+    <string name="login_login">登录</string>
+    <string name="login_reset_pwd">确定</string>
+    <string name="login_login_now">立即登录</string>
+    <string name="login_register">注册</string>
+    <string name="login_register_now">还没有账号？ 注册</string>
+    <string name="login_register_hint">手机号仅用于登录和保护账号安全</string>
+    <string name="login_forget_pwd">忘记密码?</string>
+    <string name="login_forget_pwd_text">忘记密码</string>
+    <string name="login_forget_pwd_tilp">重置密码</string>
+    <string name="login_code_input_hint">验证码</string>
+    <string name="login_phone_hint">手机号</string>
+    <string name="login_register_leble">注册</string>
+    <string name="login_use_login_now">已有账号？ 登录</string>
+
+    <string name="login_btn_register_text">同意协议并注册</string>
+
+
+</resources>

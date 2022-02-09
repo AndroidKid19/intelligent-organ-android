@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineVisible="false"
+        app:title="" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextDefault.Large"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="拍摄二代身份证"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_certification_warn"
+                style="@style/TextGray.Medium"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="请确保清晰完整，属于 **宇 本人" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextDefault.Large"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="请上传身份证正反面"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/user_stytle_id_card"
+                android:padding="15dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_lable_title_a"
+                    style="@style/TextDefault.Large"
+                    android:text="头像面"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_lable_desc_a"
+                    style="@style/TextGray"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="上传您的身份证头像面"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_lable_title_a"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_lable_title_a" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_card_a"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/user_ic_idcard_a"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_lable_desc_a"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/user_stytle_id_card"
+                android:padding="15dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_lable_title_b"
+                    style="@style/TextDefault.Large"
+                    android:text="国徽面"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_lable_desc_b"
+                    style="@style/TextGray"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="上传您的身份证国徽面"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_lable_title_b"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_lable_title_b" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_card_b"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/user_ic_idcard_b"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_lable_desc_b"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextDefault.Large"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="请完善您的个人信息"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextDefault.Medium"
+                    android:layout_width="65dp"
+                    android:text="姓名" />
+
+                <com.yway.scomponent.commonres.view.layout.ClearEditText
+                    android:id="@+id/et_user_name"
+                    style="@style/user_style_edittext"
+                    android:hint="请输入姓名"
+                    android:inputType="text"
+                    app:regexType="nonnull" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/public_line_size"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/public_colorLine" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextDefault.Medium"
+                    android:layout_width="65dp"
+                    android:text="身份证号" />
+
+                <com.yway.scomponent.commonres.view.layout.ClearEditText
+                    android:id="@+id/et_user_card_number"
+                    style="@style/user_style_edittext"
+                    android:hint="请输入本人身份证号"
+                    app:regexType="nonnull" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/public_line_size"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/public_colorLine" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_auth_status"
+                style="@style/TextDefault.Large"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/public_color_text_sign"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:visibility="gone"
+                tools:text="认证中" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_auth_desc"
+                style="@style/TextGray.Medium"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/public_color_text_sign"
+                android:visibility="gone"
+                tools:text="认证中" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_commit"
+                style="@style/public_style_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/public_common_commit" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

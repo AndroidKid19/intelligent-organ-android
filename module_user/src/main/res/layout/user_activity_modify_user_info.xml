@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".mvp.ui.activity.AboutActivity"
+    tools:ignore="ResourceName">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="用户名" />
+
+    <com.yway.scomponent.commonres.view.layout.ClearEditText
+        android:id="@+id/et_modify_text"
+        style="@style/user_style_edittext"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="请输入更换的用户名"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textCursorDrawable="@drawable/public_edit_cursor_color"
+        app:regexType="name" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_commit"
+        style="@style/public_style_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/public_mar_left_16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="@dimen/public_mar_right_16dp"
+        android:text="@string/public_common_commit" />
+
+
+</LinearLayout>

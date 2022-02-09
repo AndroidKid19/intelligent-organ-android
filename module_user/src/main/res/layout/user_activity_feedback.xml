@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backButton="false"
+        app:barStyle="transparent"
+        app:leftColor="@color/public_color_text_dark_gray"
+        app:leftTitle="取消"
+        app:lineVisible="false"
+        app:title="问题反馈"
+        app:titleColor="@color/public_color_text_default" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp">
+        <!-- 反馈内容 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault.Medium"
+            android:layout_marginTop="10dp"
+            android:text="反馈内容" />
+
+        <com.yway.scomponent.commonres.view.layout.FlowRadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/public_mar_top_10dp">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                style="@style/user_radio_button_style"
+                android:checked="true"
+                android:text="BUG反馈" />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                style="@style/user_radio_button_style"
+                android:text="功能建议/内容反馈" />
+
+            <RadioButton
+                android:id="@+id/rb_3"
+                style="@style/user_radio_button_style"
+                android:text="其他" />
+
+        </com.yway.scomponent.commonres.view.layout.FlowRadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp">
+        <!-- 问题补充说明 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault.Medium"
+            android:layout_marginTop="10dp"
+            android:text="问题补充说明" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/user_shape_edit_border"
+            android:padding="16dp">
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请输入内容"
+                android:lineHeight="22dp"
+                android:maxLines="7"
+                android:gravity="left|top"
+                android:layout_marginBottom="15dp"
+                android:maxLength="100"
+                android:textColor="@color/public_color_text_default"
+                android:textColorHint="@color/public_color_text_dark_gray"
+                android:textSize="@dimen/public_font_16sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_content_count"
+                style="@style/TextDefault"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:text="0/100"
+                android:textSize="@dimen/public_font_14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_delete_text"
+        android:layout_below="@+id/et_content"
+        android:layout_marginTop="10dp"
+        android:overScrollMode="never" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:layout_marginBottom="35dp"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_exit"
+            style="@style/public_style_button"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/public_common_step_commit"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="@dimen/public_padding_20dp"
+    android:paddingRight="@dimen/public_padding_20dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextDefault.Large"
+        android:layout_centerVertical="true"
+        android:text="消息"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextGray.Medium"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="查看更多" />
+</RelativeLayout>

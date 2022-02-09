@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="159dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    app:cardElevation="0dp"
+    app:cardCornerRadius="6dp">
+    <com.yway.scomponent.commonres.view.banner.BGABanner
+        android:id="@+id/banner_view"
+        android:layout_width="match_parent"
+        android:layout_height="159dp"
+        tools:background="@color/public_colorLine"
+        app:banner_pointContainerBackground="@color/public_color_transparent"
+        app:banner_pointDrawable="@drawable/organ_stytle_shape_search"
+         />
+</androidx.cardview.widget.CardView>

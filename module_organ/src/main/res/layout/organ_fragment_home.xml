@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    android:orientation="vertical">
+    <!-- 搜索框 -->
+    <LinearLayout
+        android:id="@+id/view_search"
+        style="@style/public_layout_height_wrap"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="left|center_vertical"
+            android:left="15dp"
+            android:text="榆阳智云"
+            android:textColor="@color/public_color_text_highlight"
+            android:textSize="@dimen/public_font_24sp"
+            android:textStyle="bold"
+            android:top="55dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextGray"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="28dp"
+            android:background="@drawable/organ_stytle_shape_search"
+            android:drawableLeft="@mipmap/public_ic_filtrate"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="关键字"
+            android:textSize="@dimen/public_font_14sp" />
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!-- Banner -->
+                <include layout="@layout/organ_include_view_banner" />
+                <!-- 金刚区 -->
+                <include layout="@layout/organ_include_view_menu" />
+                <!-- 消息 -->
+                <!-- 我的会议 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0dp"
+                    android:overScrollMode="never"
+                    android:scrollbarSize="2dp"
+                    android:scrollbarThumbVertical="@color/public_colorPrimary"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

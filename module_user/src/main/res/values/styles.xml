@@ -1,0 +1,75 @@
+<resources>
+    <!-- 默认文本框样式 -->
+    <style name="user_style_edittext">
+        <item name="android:background">@drawable/public_edittext_normal_background</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/public_color_text_gray</item>
+        <item name="android:textColor">@color/public_color_text_default</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="user_style_lable_left_text">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColorHint">@color/public_color_text_gray</item>
+        <item name="android:textColor">@color/public_color_text_default</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="user_style_lable_default_text">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColorHint">@color/public_color_text_gray</item>
+        <item name="android:textColor">@color/public_color_text_default</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="user_style_num_text">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColorHint">@color/public_color_text_gray</item>
+        <item name="android:textColor">@color/public_black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="user_rating_bar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/user_em_ratingbar_drawable</item>
+        <item name="android:minHeight">30dp</item>
+        <item name="android:maxHeight">30dp</item>
+    </style>
+
+    <!-- RadioButton stytle -->
+    <style name="user_radio_button_style" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--背景-->
+        <item name="android:background">@drawable/public_selector_radio_button</item>
+        <!--字体-->
+        <item name="android:textSize">@dimen/public_font_14sp</item>
+        <!--字体颜色-->
+        <item name="android:textColor">@drawable/public_selector_radio_button_text</item>
+        <!--是否显示原点-->
+        <item name="android:button">@null</item>
+        <!--边距-->
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+    </style>
+
+
+
+</resources>

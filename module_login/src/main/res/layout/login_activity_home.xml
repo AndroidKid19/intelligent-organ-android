@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="36dp"
+    android:paddingRight="36dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="135dp"
+        android:src="@mipmap/component_logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextDefault"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/login_title_welcome_login"
+        android:textSize="@dimen/public_font_24sp" />
+
+    <com.yway.scomponent.commonres.view.layout.ClearEditText
+        android:id="@+id/et_login_phone"
+        style="@style/login_style_edittext"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/login_hint_input_phone"
+        android:inputType="phone"
+        android:singleLine="true"
+        android:text="18515875329"
+        android:textCursorDrawable="@drawable/login_edit_cursor_color"
+        app:regexType="nonnull" />
+
+    <com.yway.scomponent.commonres.view.layout.PasswordEditText
+        android:id="@+id/et_login_pwd"
+        style="@style/login_style_edittext"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/login_hint_input_pwd"
+        android:singleLine="true"
+        android:text="11111111"
+        android:textCursorDrawable="@drawable/login_edit_cursor_color"
+        android:textSize="@dimen/public_font_16sp"
+        app:regexType="nonnull" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_forgetpwd"
+        style="@style/TextGray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:text="@string/login_forget_pwd"
+        android:textSize="@dimen/public_font_14sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login_commit"
+        style="@style/public_style_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/login_login" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="40dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_register"
+            style="@style/TextDefault"
+            android:layout_centerInParent="true"
+            android:text="@string/login_register_now" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_login_agreement"
+            style="@style/TextDefault"
+            android:layout_below="@+id/tv_register"
+            android:layout_centerInParent="true"
+            android:text="@string/login_lable_agreement"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

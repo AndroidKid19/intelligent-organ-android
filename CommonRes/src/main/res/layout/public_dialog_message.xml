@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="60dp"
+    android:layout_marginLeft="60dp"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/public_white"
+    app:cardCornerRadius="@dimen/public_dialog_message_round_size"
+    app:cardElevation="0px">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <com.yway.scomponent.commonres.view.layout.SmartTextView
+            android:id="@+id/tv_message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/public_color_text_sign"
+            android:textSize="@dimen/public_font_18sp"
+            android:text="@string/public_common_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_message_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/public_mar_top_16dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="@dimen/public_mar_bottom_16dp"
+            android:minHeight="40dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/public_color_text_gray"
+            android:textSize="@dimen/public_font_12sp"
+            tools:text="content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/public_mar_left_16dp"
+            android:layout_marginRight="@dimen/public_mar_right_16dp"
+            android:layout_height="@dimen/public_line_size"
+            android:background="@color/public_colorLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_message_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/public_selector_transparent"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/public_common_cancel"
+                android:textColor="@color/public_color_text_gray"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/v_message_line"
+                android:layout_width="@dimen/public_line_size"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/public_colorLine" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_message_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/public_selector_transparent"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/public_common_confirm"
+                android:textColor="@color/public_color_text_sign"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

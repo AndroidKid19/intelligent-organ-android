@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_time"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="5dp"
+    android:background="@drawable/organ_shape_subscribe_time_normal"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_am_pm"
+        style="@style/TextDefault"
+        android:text="上午"
+        android:textColor="@drawable/organ_selector_radio_button_text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_time"
+        style="@style/TextDefault"
+        android:text="10:00"
+        android:textColor="@drawable/organ_selector_radio_button_text" />
+</androidx.appcompat.widget.LinearLayoutCompat>

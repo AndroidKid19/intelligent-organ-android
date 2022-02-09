@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+    <color name="login_textAccent">#151515</color>
+    <color name="login_textSoftly">#999999</color>
+    <color name="login_textInverse">#FFFFFF</color>
+    <color name="login_textInverseSelected">#CACACA</color>
+</resources>

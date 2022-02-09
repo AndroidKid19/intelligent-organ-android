@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_gravity="center_vertical"
+    android:background="@color/public_white"
+    android:gravity="start|center_vertical"
+    android:minHeight="60dp"
+    android:orientation="horizontal"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/organ_ic_metting_details_file"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="附件"
+        android:textColor="@color/public_color_text_gray"
+        android:textSize="@dimen/public_font_15sp" />
+
+    <com.yway.scomponent.commonres.view.layout.FlowLayout
+        android:id="@+id/fview_files"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:flChildSpacing="15dp"
+        app:flRowSpacing="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault"
+            android:drawablePadding="5dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/public_colorConfirm"
+            android:text="活动内容.pdf" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault"
+            android:drawablePadding="5dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/public_colorConfirm"
+            android:text="活动内容.pdf" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault"
+            android:drawablePadding="5dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/public_colorConfirm"
+            android:text="活动内容.pdf" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault"
+            android:drawablePadding="5dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/public_colorConfirm"
+            android:text="活动内容.pdf" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextDefault"
+            android:drawablePadding="5dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/public_colorConfirm"
+            android:text="活动内容.pdf" />
+
+    </com.yway.scomponent.commonres.view.layout.FlowLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
