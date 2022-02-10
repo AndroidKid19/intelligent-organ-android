@@ -2,10 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="65dp"
+    android:layout_height="70dp"
+    android:id="@+id/view_information"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="15dp"
+    android:background="@color/public_white"
     android:paddingLeft="@dimen/public_padding_20dp"
-    android:paddingRight="@dimen/public_padding_20dp">
+    android:paddingRight="@dimen/public_padding_20dp"
+    >
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_msg_title"
@@ -14,15 +18,17 @@
         android:layout_marginRight="10dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="榆阳区委工作通报【2021】第 1 期榆阳区委工作通报"
+        android:layout_marginTop="5dp"
+        tools:text="榆阳区委工作通报【2021】第 1 期榆阳区委工作通报"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/tv_msg_cover"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_msg_date"
-        style="@style/TextDefault.Small"
-        android:text="2021-11-04  09:00:00"
+        style="@style/TextGray.Small"
+        tools:text="2021-11-04  09:00:00"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 

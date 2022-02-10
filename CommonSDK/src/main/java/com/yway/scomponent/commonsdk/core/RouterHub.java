@@ -138,6 +138,11 @@ public interface RouterHub {
     String HOME_VISITORRECORDACTIVITY = HOME + "/VisitorRecordActivity";
 
     /**
+     * 文章列表
+     */
+    String HOME_INFORMATIONACTIVITY = HOME + "/InformationActivity";
+
+    /**
      * 我的
      * *********************************************************************
      */

@@ -54,6 +54,7 @@ public class MsgItemHolder extends BaseHolder<Object> {
                             .imageView(mTvMsgCover)
                             .build());
         }
+        itemView.setOnClickListener(this);
     }
 
     @Override

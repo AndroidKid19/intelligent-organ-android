@@ -8,10 +8,11 @@
     <androidx.appcompat.widget.AppCompatTextView
         style="@style/TextDefault.Large"
         android:layout_centerVertical="true"
-        android:text="消息"
+        android:text="资讯"
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_more"
         style="@style/TextGray.Medium"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"

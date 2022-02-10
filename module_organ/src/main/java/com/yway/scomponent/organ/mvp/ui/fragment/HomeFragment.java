@@ -135,6 +135,16 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     }
 
     /**
+     * 搜索点击事件回调
+     * */
+    @OnClick(R2.id.tv_search)
+    void onSearchClick(View view){
+        Utils.postcard(RouterHub.HOME_INFORMATIONACTIVITY)
+                .navigation(getActivity());
+    }
+
+
+    /**
      * 初始化RecyclerView
      */
     private void initRecyclerView() {
@@ -159,6 +169,15 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
             Utils.postcard(RouterHub.HOME_MEETINGDETAILSACTIVITY)
                     .withString("mettingId",conferenceBean.getMeetingRecordId())
                     .withInt("pageFrom",6)
+                    .navigation(getActivity());
+        }else if(view.getId() == R.id.tv_more){
+            //文章查看更多
+            MessageTitleBean messageTitleBean = (MessageTitleBean) data;
+            Utils.postcard(RouterHub.HOME_INFORMATIONACTIVITY)
+                    .navigation(getActivity());
+        }else if(view.getId() == R.id.view_information){
+            Utils.postcard(RouterHub.APP_AGENTWEBACTIVITY)
+                    .withString(RouterHub.PARAM_WEBVIEWXURL,"http://www.baidu.com")
                     .navigation(getActivity());
         }
     };
@@ -259,6 +278,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         //创建我的会议标题
         if (!checkMetingTitle()){
             ConferenceTitleBean conferenceTitleBean = new ConferenceTitleBean();
+            conferenceTitleBean.setMetingCount(inMeetingPersonnelRspBOList.size()+todoMeetingPersonnelRspBOList.size());
             mDataLs.add(conferenceTitleBean);
         }
 

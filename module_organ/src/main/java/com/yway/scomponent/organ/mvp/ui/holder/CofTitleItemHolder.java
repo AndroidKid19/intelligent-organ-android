@@ -5,6 +5,7 @@ import android.view.View;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.jess.arms.base.BaseHolder;
+import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceTitleBean;
 
@@ -18,6 +19,8 @@ import butterknife.BindView;
 public class CofTitleItemHolder extends BaseHolder<Object> {
     @BindView(R2.id.tv_queryall)
     AppCompatTextView mTvQueryAll;
+    @BindView(R2.id.tv_conf_count)
+    AppCompatTextView mTvMetingCount;
 
     public CofTitleItemHolder(View itemView) {
         super(itemView);
@@ -26,6 +29,7 @@ public class CofTitleItemHolder extends BaseHolder<Object> {
     @Override
     public void setData(Object data, int position) {
         ConferenceTitleBean conferenceTitleBean = (ConferenceTitleBean) data;
+        mTvMetingCount.setText(Utils.appendStr("(",conferenceTitleBean.getMetingCount(),")"));
         mTvQueryAll.setOnClickListener(this);
     }
 
