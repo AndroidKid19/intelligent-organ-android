@@ -34,9 +34,9 @@ android {
         debug {
             buildConfigField "boolean", "LOG_DEBUG", "true"
             buildConfigField "boolean", "USE_CANARY", "true"
-            buildConfigField "String", "HOST_ROOT", '\"http://8.141.167.159:8990\"'//亚东
+            buildConfigField "String", "HOST_ROOT", '\"http://8.141.167.159:8990\"'
 //            buildConfigField "String", "HOST_ROOT", '\"http://192.168.1.154:8990\"'//风哥
-//            buildConfigField "String", "HOST_ROOT", '\"http://192.168.1.125:8090/\"'
+//            buildConfigField "String", "HOST_ROOT", '\"http://192.168.1.125:8090/\"'//亚东
             buildConfigField "String", "H5_HOST_ROOT", '\"http://8.141.167.159:8990/\"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

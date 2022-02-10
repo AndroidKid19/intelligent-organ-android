@@ -24,12 +24,17 @@ import com.yway.scomponent.commonres.dialog.IToast;
 import com.yway.scomponent.commonres.dialog.MessageDialog;
 import com.yway.scomponent.commonres.dialog.ProgresDialog;
 import com.yway.scomponent.commonres.view.layout.MultipleStatusView;
+import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.utils.CacheUtils;
+import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.di.component.DaggerDraftsComponent;
 import com.yway.scomponent.organ.mvp.contract.DraftsContract;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
+import com.yway.scomponent.organ.mvp.model.entity.RoomDetailsBean;
+import com.yway.scomponent.organ.mvp.model.entity.SubscribeTimeBean;
 import com.yway.scomponent.organ.mvp.presenter.DraftsPresenter;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.mvp.ui.adapter.DraftsAdapter;
@@ -82,6 +87,10 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
      * 记录当前删除的草稿下标
      * */
     private int delPosition;
+    /**
+     * 会议详情
+     * */
+    private RoomDetailsBean mRoomDetailsBean;
 
     public static DraftsFragment newInstance() {
         DraftsFragment fragment = new DraftsFragment();
@@ -134,7 +143,14 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
             delDrafts(meetingRecordBean.getId());
         } else {
             //预约会议室
-
+            //创建会议室预约信息
+            mRoomDetailsBean = new RoomDetailsBean();
+            //初始化预约时间
+            mRoomDetailsBean.setMeetingDate(meetingRecordBean.getMeetingStartTime());
+            //查询会议室详情
+            Map<String,Object> paramsMap = new HashMap<>();
+            paramsMap.put("id",meetingRecordBean.getId());
+            mPresenter.queryByMeetingRecordDetails(paramsMap);
         }
     };
 
@@ -190,6 +206,14 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
                 .show(); //default count is 10
     }
 
+    @Override
+    public void queryMessingDetailsSuccess(MeetingDetailsBean data) {
+        Utils.postcard(RouterHub.HOME_APPLYROOMACTIVITY)
+                .withParcelable("roomDetailsBean",mRoomDetailsBean)
+                .withParcelable("meetingDetailsBean",data)
+                .withInt("pageFrom",1)
+                .navigation(getActivity());
+    }
 
     @Override
     public void setData(@Nullable Object data) {
@@ -249,4 +273,6 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
         IToast.showFinishShort("删除成功");
         mAdapter.remove(delPosition);
     }
+
+
 }

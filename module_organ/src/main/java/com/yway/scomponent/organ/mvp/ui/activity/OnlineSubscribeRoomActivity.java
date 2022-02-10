@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.StringUtils;
@@ -163,49 +165,6 @@ public class OnlineSubscribeRoomActivity extends BaseActivity<OnlineSubscribeRoo
     private void initRecyclerView() {
         ArmsUtils.configRecyclerView(mRecyclerView, mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-        //设置下拉刷新监听
-//        mRefreshLayout.setOnRefreshListener(mOnRefreshListener);
-        //设置上拉加载
-//        mRefreshLayout.setOnLoadMoreListener(mOnLoadMoreListener);
-//        RoomDetailsBean roomDetailsBean = new RoomDetailsBean();
-//        roomDetailsBean.setId("1");
-//        roomDetailsBean.setName("区委机关1号楼(北楼)一楼会议室");
-//        roomDetailsBean.setLocation("1号楼(北楼)");
-//        roomDetailsBean.setSeatsNumber("30");
-//        List<SubscribeTimeBean> list = new ArrayList<>();
-//        SubscribeTimeBean subscribeTimeBean = new SubscribeTimeBean();
-//        subscribeTimeBean.setKey("上午");
-//        subscribeTimeBean.setTime("8:00");
-//        subscribeTimeBean.setWhetherAppointment("0");
-//        list.add(subscribeTimeBean);
-//        subscribeTimeBean = new SubscribeTimeBean();
-//        subscribeTimeBean.setKey("上午");
-//        subscribeTimeBean.setTime("9:00");
-//        subscribeTimeBean.setWhetherAppointment("0");
-//        list.add(subscribeTimeBean);
-//        subscribeTimeBean = new SubscribeTimeBean();
-//        subscribeTimeBean.setKey("上午");
-//        subscribeTimeBean.setTime("10:00");
-//        subscribeTimeBean.setWhetherAppointment("1");
-//        list.add(subscribeTimeBean);
-//        subscribeTimeBean = new SubscribeTimeBean();
-//        subscribeTimeBean.setKey("上午");
-//        subscribeTimeBean.setTime("11:00");
-//        subscribeTimeBean.setWhetherAppointment("1");
-//        list.add(subscribeTimeBean);
-//        subscribeTimeBean = new SubscribeTimeBean();
-//        subscribeTimeBean.setKey("上午");
-//        subscribeTimeBean.setTime("12:00");
-//        subscribeTimeBean.setWhetherAppointment("1");
-//        list.add(subscribeTimeBean);subscribeTimeBean = new SubscribeTimeBean();
-//        subscribeTimeBean.setKey("上午");
-//        subscribeTimeBean.setTime("13:00");
-//        subscribeTimeBean.setWhetherAppointment("1");
-//        list.add(subscribeTimeBean);
-//
-//        roomDetailsBean.setMeetingTimeBatRspBOList(list);
-//        mDataLs.add(roomDetailsBean);
-//        mDataLs.add(roomDetailsBean);
 
 
         mAdapter.setOnItemClickListener((view, viewType, data, position) -> {

@@ -197,15 +197,16 @@ public class SubscribeApplyFragment extends BaseFragment<SubscribeApplyPresenter
      * */
     @Override
     public void approvalResultsCallBack(int approvalResult) {
-        if (approvalResult == 2){
-            //通过
-            IToast.showFinishShort("审核通过");
-            mRefreshLayout.autoRefresh();
-        }else{
-            //驳回
-            IToast.showFinishShort("审核不通过");
-            mRefreshLayout.autoRefresh();
-        }
+        mRefreshLayout.autoRefresh();
+//        if (approvalResult == 2){
+//            //通过
+//            IToast.showFinishShort("审核通过");
+//            mRefreshLayout.autoRefresh();
+//        }else{
+//            //驳回
+//            IToast.showFinishShort("审核不通过");
+//            mRefreshLayout.autoRefresh();
+//        }
     }
 
     @Override

@@ -50,6 +50,8 @@ import com.yway.scomponent.organ.di.component.DaggerApplyRoomComponent;
 import com.yway.scomponent.organ.mvp.contract.ApplyRoomContract;
 import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.organ.mvp.model.entity.CheckBoxBean;
+import com.yway.scomponent.organ.mvp.model.entity.FileDetailsBean;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.RoomDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.SubscribeTimeBean;
 import com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter;
@@ -208,6 +210,20 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
     @Autowired(name = "roomDetailsBean")
     RoomDetailsBean mRoomDetailsBean;
 
+    /**
+     * 页面标记
+     * 1 草稿箱
+     * */
+    @Autowired
+    int pageFrom;
+
+    /**
+     * 草稿箱详细信息
+     * */
+    @Autowired(name = "meetingDetailsBean")
+    MeetingDetailsBean mMeetingDetailsBean;
+
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerApplyRoomComponent //如找不到该类,请编译一下项目
@@ -228,8 +244,6 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
         ImmersionBar.with(this).titleBar(R.id.bar_title).init();
 
         initRecyclerView();
-        //初始化预约开始时间
-        mBarDate.setLeftText(mRoomDetailsBean.getMeetingDate()+" "+mRoomDetailsBean.getSubscribeTimeBean().getTime());
         mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
             @Override
             public void onLeftClick(View v) {
@@ -246,6 +260,72 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
                 applyComit(0);
             }
         });
+
+
+        //初始化草稿箱会议信息
+        initDraftsData();
+    }
+
+
+    /**
+     * 初始化草稿箱
+     */
+    private void initDraftsData() {
+        if(pageFrom != 1){
+            //初始化预约开始时间
+            mBarDate.setLeftText(mRoomDetailsBean.getMeetingDate()+" "+mRoomDetailsBean.getSubscribeTimeBean().getTime());
+        }else{
+            //草稿箱初始化信息
+
+            //初始化会议室信息
+            mTvRoomName.setText(mMeetingDetailsBean.getMeetingRoomName());
+            mTvRoomCount.setText(Utils.appendStr(mRoomDetailsBean.getLocation(), " · 可容纳", mRoomDetailsBean.getSeatsNumber(), "人"));
+
+            //初始化会议主题
+            mEtMettingSubject.setText(mMeetingDetailsBean.getMeetingSubject());
+
+            //初始化开始时间
+            SubscribeTimeBean subscribeTimeBean = new SubscribeTimeBean();
+            subscribeTimeBean.setTime(mRoomDetailsBean.getMeetingDate().split(" ")[1]);
+
+            mRoomDetailsBean.setSubscribeTimeBean(subscribeTimeBean);
+
+            mRoomDetailsBean.setMeetingDate(mRoomDetailsBean.getMeetingDate().split(" ")[0]);
+            mBarDate.setLeftText(mRoomDetailsBean.getMeetingDate());
+
+            //初始化报道时间
+
+            //初始化参会领导
+            List<UserInfoBean> meetingPersonnelRspBOList = mMeetingDetailsBean.getMeetingPersonnelRspBOList();
+            //校验参会人员
+            if(CollectionUtils.isNotEmpty(meetingPersonnelRspBOList)){
+                //获取已选择用户信息
+//                userInfoBeans = meetingPersonnelRspBOList;
+                //展示参会领导
+//                mBarCheckedUser.setLeftText(mPresenter.generateStrUserNames(userInfoBeans));
+            }
+            //初始化参会单位
+            List<AddressCompanyBean> meetingOrganizationRspBOList = mMeetingDetailsBean.getMeetingOrganizationRspBOList();
+            //校验参会单位
+            if(CollectionUtils.isNotEmpty(meetingOrganizationRspBOList)){
+                //获取已选择单位
+                mAddressCompanyBeans.addAll(meetingOrganizationRspBOList);
+                mChooseCompanyAdapter.notifyDataSetChanged();
+            }
+
+            //初始化会议附件
+            List<FileDetailsBean> meetingFileRspBOList = mMeetingDetailsBean.getMeetingFileRspBOList();
+            //校验文件
+            if(CollectionUtils.isNotEmpty(meetingOrganizationRspBOList)){
+//                mFileDetailsBeans.addAll(meetingFileRspBOList);
+//                mChooseFileAdapter.notifyDataSetChanged();
+            }
+            //初始化设备
+
+            //初始化备注
+            mEtRemark.setText(mMeetingDetailsBean.getRemark());
+        }
+
     }
 
     /**
@@ -368,7 +448,11 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
         //创建参数
         Map<String, Object> paramMap = new HashMap<>();
         //会议室ID
-        paramMap.put("meetingRoomId", 1);
+        if (pageFrom == 1){
+            paramMap.put("meetingRoomId", mMeetingDetailsBean.getMeetingRoomId());
+        }else{
+            paramMap.put("meetingRoomId", mRoomDetailsBean.getId());
+        }
         //会议主题
         String meetingSubject = mEtMettingSubject.getText().toString();
         if (StringUtils.isEmpty(meetingSubject)){
@@ -459,8 +543,14 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
                 .setTitle("预约提醒")
                 .setMessage(message)
                 .setOnViewItemClickListener(v -> {
-                    //会议室预约提交
-                    mPresenter.createMeetingRecord(paramMap);
+                    if (pageFrom == 1){
+                        //草稿提交
+                        paramMap.put("id",mMeetingDetailsBean.getId());
+                        mPresenter.draftSubmitMeetingRecord(paramMap);
+                    }else{
+                        //会议室预约提交
+                        mPresenter.createMeetingRecord(paramMap);
+                    }
                 })
                 .showPopupWindow();
     }

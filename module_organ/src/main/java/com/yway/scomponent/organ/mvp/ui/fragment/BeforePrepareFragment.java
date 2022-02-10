@@ -190,15 +190,10 @@ public class BeforePrepareFragment extends BaseFragment<BeforePreparePresenter> 
      * 审批结果
      * */
     @Override
-    public void approvalResultsCallBack(int approvalResult) {
-        if (approvalResult == 2){
-            //通过
-            IToast.showFinishShort("已准备");
-            mRefreshLayout.autoRefresh();
-        }else{
-            //驳回
-            mRefreshLayout.autoRefresh();
-        }
+    public void approvalResultsCallBack() {
+        //通过
+//        IToast.showFinishShort("已准备");
+        mRefreshLayout.autoRefresh();
     }
 
     @Override

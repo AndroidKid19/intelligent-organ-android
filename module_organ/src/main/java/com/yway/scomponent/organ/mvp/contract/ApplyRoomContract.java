@@ -38,6 +38,8 @@ public interface ApplyRoomContract {
 
         Observable<BaseResponse> createMeetingRecord(Map<String, Object> params);
 
+        Observable<BaseResponse> draftSubmitMeetingRecord(Map<String, Object> params);
+
         Observable<BaseResponse<UploadFileBean>> uploadFile(List<File> files);
     }
 }

@@ -54,6 +54,12 @@ public class ApplyRoomModel extends BaseModel implements ApplyRoomContract.Model
                 .createMeetingRecord(params);
     }
 
+    @Override
+    public Observable<BaseResponse> draftSubmitMeetingRecord(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .draftSubmitMeetingRecord(params);
+    }
 
     /**
      * @description :上传文件

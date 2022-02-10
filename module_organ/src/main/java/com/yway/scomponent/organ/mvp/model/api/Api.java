@@ -93,4 +93,11 @@ public interface Api {
 
     //首页消息
     String API_QUERYARTICLEPUBLISHPAGELIST = "/organ/articlePublish/queryArticlePublishPageList";
+
+    //取消预约
+    String API_DOCANCELMEETINGRECORD = "/organ/meetingRecord/doCancelMeetingRecord";
+
+
+    //草稿创建会议
+    String API_DRAFTSUBMITMEETINGRECORD = "/organ/meetingRecord/draftSubmitMeetingRecord";
 }

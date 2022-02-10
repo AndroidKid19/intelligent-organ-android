@@ -169,4 +169,18 @@ public interface HomeService {
     @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
     @POST(Api.API_QUERYARTICLEPUBLISHPAGELIST)
     Observable<BaseResponse<MessageBean>> queryArticlePublishPageList(@Body() Map<String, Object> params);
+
+    /**
+     * 取消预约
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_DOCANCELMEETINGRECORD)
+    Observable<BaseResponse> doCancelMeetingRecord(@Body() Map<String, Object> params);
+
+    /**
+     * 草稿创建
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_DRAFTSUBMITMEETINGRECORD)
+    Observable<BaseResponse> draftSubmitMeetingRecord(@Body() Map<String, Object> params);
 }

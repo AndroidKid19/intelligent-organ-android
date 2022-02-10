@@ -58,6 +58,14 @@ public class MeetingDetailsModel extends BaseModel implements MeetingDetailsCont
                 .doMeetingRecordReady(params);
     }
 
+
+    @Override
+    public Observable<BaseResponse> doCancelMeetingRecord(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .doCancelMeetingRecord(params);
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();

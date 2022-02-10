@@ -3,6 +3,8 @@ package com.yway.scomponent.commonsdk.core;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.blankj.utilcode.util.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,7 +97,7 @@ public class AddressCompanyBean implements Parcelable {
     }
 
     public String getOrgTitle() {
-        return orgTitle;
+        return StringUtils.isEmpty(orgTitle) ? orgName : orgTitle;
     }
 
     public void setOrgTitle(String orgTitle) {
@@ -110,23 +112,24 @@ public class AddressCompanyBean implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeList(this.sysOrgRspBOList);
+        dest.writeTypedList(this.sysOrgRspBOList);
         dest.writeTypedList(this.sysUserRspBOList);
         dest.writeString(this.orgId);
         dest.writeString(this.parentId);
         dest.writeString(this.orgTitle);
         dest.writeInt(this.flag);
+        dest.writeString(this.orgName);
         dest.writeInt(this.count);
     }
 
     public void readFromParcel(Parcel source) {
-        this.sysOrgRspBOList = new ArrayList<AddressCompanyBean>();
-        source.readList(this.sysOrgRspBOList, AddressCompanyBean.class.getClassLoader());
+        this.sysOrgRspBOList = source.createTypedArrayList(AddressCompanyBean.CREATOR);
         this.sysUserRspBOList = source.createTypedArrayList(UserInfoBean.CREATOR);
         this.orgId = source.readString();
         this.parentId = source.readString();
         this.orgTitle = source.readString();
         this.flag = source.readInt();
+        this.orgName = source.readString();
         this.count = source.readInt();
     }
 
@@ -134,17 +137,17 @@ public class AddressCompanyBean implements Parcelable {
     }
 
     protected AddressCompanyBean(Parcel in) {
-        this.sysOrgRspBOList = new ArrayList<AddressCompanyBean>();
-        in.readList(this.sysOrgRspBOList, AddressCompanyBean.class.getClassLoader());
+        this.sysOrgRspBOList = in.createTypedArrayList(AddressCompanyBean.CREATOR);
         this.sysUserRspBOList = in.createTypedArrayList(UserInfoBean.CREATOR);
         this.orgId = in.readString();
         this.parentId = in.readString();
         this.orgTitle = in.readString();
         this.flag = in.readInt();
+        this.orgName = in.readString();
         this.count = in.readInt();
     }
 
-    public static final Parcelable.Creator<AddressCompanyBean> CREATOR = new Parcelable.Creator<AddressCompanyBean>() {
+    public static final Creator<AddressCompanyBean> CREATOR = new Creator<AddressCompanyBean>() {
         @Override
         public AddressCompanyBean createFromParcel(Parcel source) {
             return new AddressCompanyBean(source);

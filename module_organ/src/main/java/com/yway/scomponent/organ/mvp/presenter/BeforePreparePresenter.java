@@ -174,7 +174,7 @@ public class BeforePreparePresenter extends BasePresenter<BeforePrepareContract.
                     public void onNext(BaseResponse datas) {
                         mRootView.hideLoading();
                         if (datas.isSuccess()) {
-                            mRootView.approvalResultsCallBack((Integer) params.get("approvalResult"));
+                            mRootView.approvalResultsCallBack();
                         } else {
                             ArmsUtils.snackbarText(datas.getMessage());
                         }

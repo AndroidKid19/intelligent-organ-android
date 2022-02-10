@@ -71,7 +71,7 @@ public class GlobalConfiguration implements ConfigModule {
     public void applyOptions(Context context, GlobalConfigModule.Builder builder) {
         if (!BuildConfig.LOG_DEBUG) //Release 时,让框架不再打印 Http 请求和响应的信息
             builder.printHttpLogLevel(RequestInterceptor.Level.NONE);
-        builder.baseurl(Api.Domain.APP_DOMAIN)
+            builder.baseurl(Api.Domain.APP_DOMAIN)
 //                .formatPrinter(new FormatPrinter() {
 //                    @Override
 //                    public void printJsonRequest(@NonNull @NotNull Request request, @NonNull @NotNull String bodyString) {

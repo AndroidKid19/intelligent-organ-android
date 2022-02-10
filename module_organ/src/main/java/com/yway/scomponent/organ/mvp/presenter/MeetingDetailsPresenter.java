@@ -143,6 +143,35 @@ public class MeetingDetailsPresenter extends BasePresenter<MeetingDetailsContrac
                 });
     }
 
+    /**
+     * 取消预约
+     */
+    public void doCancelMeetingRecord(Map<String, Object> params) {
+        mModel.doCancelMeetingRecord(params)
+                .subscribeOn(Schedulers.io())
+                //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .retryWhen(new RetryWithDelay(0, 0))
+                .doOnSubscribe(disposable -> {
+                    mRootView.showLoading();
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+                    mRootView.hideLoading();
+                })
+                //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseResponse>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseResponse datas) {
+                        mRootView.hideLoading();
+                        if (datas.isSuccess()) {
+                            mRootView.doCancelMeetingRecordCallBack();
+                        } else {
+                            ArmsUtils.snackbarText(datas.getMessage());
+                        }
+                    }
+                });
+    }
 
     /**
      * @description TODO  加载图片
