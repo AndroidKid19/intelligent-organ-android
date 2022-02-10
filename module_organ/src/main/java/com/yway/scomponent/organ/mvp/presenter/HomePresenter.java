@@ -2,30 +2,43 @@ package com.yway.scomponent.organ.mvp.presenter;
 
 import android.app.Application;
 import android.widget.ImageView;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.OnLifecycleEvent;
+
+import com.blankj.utilcode.util.CollectionUtils;
+import com.blankj.utilcode.util.ObjectUtils;
+import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.di.scope.FragmentScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
+import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.RxLifecycleUtils;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.Constants;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
-import com.yway.scomponent.commonsdk.core.RouterHub;
+import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.commonsdk.imgaEngine.config.CommonImageConfigImpl;
+import com.yway.scomponent.commonsdk.utils.ArithUtils;
 import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
+import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
+import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.inject.Inject;
+
+import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
+
 /**
  * ================================================
  * Description:
@@ -53,16 +66,16 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
 
     public void queryDict() {
         String dictKey = Utils.appendStr(
-                Constants.SYS_DICT_MEETING_DEVICE,",",
-                        Constants.SYS_DICT_MEETING_CHECK_IN_TIME);
+                Constants.SYS_DICT_MEETING_DEVICE, ",",
+                Constants.SYS_DICT_MEETING_CHECK_IN_TIME);
         querySysByDictClassify(dictKey);
     }
 
     /**
-     * @description TODO  加载图片
      * @return
+     * @description TODO  加载图片
      */
-    public void imageLoader(String url, ImageView imageView){
+    public void imageLoader(String url, ImageView imageView) {
         //itemView 的 Context 就是 Activity, Glide 会自动处理并和该 Activity 的生命周期绑定
         mImageLoader.loadImage(mApplication,
                 CommonImageConfigImpl
@@ -71,6 +84,79 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                         .isCropCircle(true)
                         .imageView(imageView)
                         .build());
+    }
+
+    public void queryArticlePublishPageList() {
+        Map<String, Object> params = new HashMap<>();
+        params.put("pageNo", 1);
+        params.put("pageSize", 3);
+        mModel.queryArticlePublishPageList(params)
+                .subscribeOn(Schedulers.io())
+                //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .retryWhen(new RetryWithDelay(3, 2))
+                .doOnSubscribe(disposable -> {
+                }).subscribeOn(AndroidSchedulers.mainThread())
+
+                .flatMap((Function<BaseResponse<MessageBean>, ObservableSource<BaseResponse<HomeMetingBean>>>) baseResponse -> {
+                    mRootView.queryArticleCallBack(baseResponse.getData().getRows());
+                    Map<String, Object> paramsMap = new HashMap<>();
+                    //我的会议
+                    return mModel.queryMyMeetingList(paramsMap);
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+
+                })
+                //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseResponse<HomeMetingBean>>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseResponse<HomeMetingBean> datas) {
+                        if (datas.isSuccess()) {
+                            if (ObjectUtils.isEmpty(datas.getData()))return;
+                            mRootView.metingListCallBack(datas.getData());
+                        } else {
+                            ArmsUtils.snackbarText(datas.getMessage());
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        super.onError(t);
+
+                    }
+                });
+    }
+
+    /**
+     * 我的会议
+     */
+    public void queryMyMeetingList() {
+        mModel.queryMyMeetingList(new HashMap<>())
+                .subscribeOn(Schedulers.io())
+                //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .retryWhen(new RetryWithDelay(3, 2))
+                .doOnSubscribe(disposable -> {
+
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+
+                })
+                //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseResponse<HomeMetingBean>>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseResponse<HomeMetingBean> datas) {
+                        if (datas.isSuccess()) {
+                            if (ObjectUtils.isEmpty(datas.getData()))return;
+                            mRootView.metingListCallBack(datas.getData());
+                        } else {
+                            ArmsUtils.snackbarText(datas.getMessage());
+                        }
+                    }
+                });
     }
 
     /**

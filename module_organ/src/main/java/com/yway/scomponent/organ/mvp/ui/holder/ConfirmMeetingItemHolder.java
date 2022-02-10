@@ -7,6 +7,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import com.jess.arms.base.BaseHolder;
 import com.yway.scomponent.organ.R2;
+import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 
 import butterknife.BindView;
 
@@ -33,6 +35,12 @@ public class ConfirmMeetingItemHolder extends BaseHolder<Object> {
 
     @Override
     public void setData(Object data, int position) {
+        ConferenceBean conferenceBean = (ConferenceBean) data;
+        mTvConfDate.setText(conferenceBean.getIsToDay());
+        mTvConfTime.setText(conferenceBean.getStartTime());
+        mTvConfTitle.setText(conferenceBean.getMeetingSubject());
+        mTvConfLocation.setText(conferenceBean.getMeetingName());
+        mTvConfRemark.setText(conferenceBean.getMeetingRemark());
         itemView.setOnClickListener(this);
     }
 

@@ -66,7 +66,7 @@ public class MessagePresenter extends BasePresenter<MessageContract.Model, Messa
 
     public void requestData() {
         Map<String,Object> paramMap = new HashMap<>();
-        paramMap.put("doctor_id", CacheUtils.queryDoctorId());
+        paramMap.put("doctor_id", CacheUtils.queryUserId());
         paramMap.putAll(ParamsHelper.getCommonParams());
         queryMessage(paramMap);
     }

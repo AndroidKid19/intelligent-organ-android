@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginLeft="@dimen/public_padding_20dp"
     android:layout_marginRight="@dimen/public_padding_20dp"
     android:layout_marginBottom="10dp"
@@ -19,7 +20,7 @@
             android:id="@+id/tv_create_org"
             style="@style/TextDefault.Medium"
             android:layout_marginLeft="15dp"
-            android:text="发起人：区委办" />
+            tools:text="发起人：区委办" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_create_user"
@@ -28,7 +29,7 @@
             android:layout_marginRight="15dp"
             android:drawableLeft="@drawable/organ_ic_phone_volume"
             android:drawablePadding="5dp"
-            android:text="周末 18888888888" />
+            tools:text="周末 18888888888" />
     </RelativeLayout>
 
     <View
@@ -58,7 +59,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_loation_name"
             style="@style/TextDefault.Medium"
-            android:text="区委机关区委机关区委机关区委" />
+            tools:text="区委机关区委机关区委机关区委" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -81,7 +82,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_room_name"
             style="@style/TextDefault.Medium"
-            android:text="区委机关区委机关区委机关区委" />
+            tools:text="区委机关区委机关区委机关区委" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -103,7 +104,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_time_name"
             style="@style/TextDefault.Medium"
-            android:text="2021-11-08 11:00-12:00" />
+            tools:text="2021-11-08 11:00-12:00" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <!-- 通过/驳回 -->
@@ -118,6 +119,7 @@
         android:paddingRight="15dp">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_opt_reject"
             style="@style/public_style2_rect_small_button"
             android:layout_marginRight="20dp"
             android:paddingLeft="10dp"
@@ -126,6 +128,7 @@
             android:textSize="@dimen/public_font_12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_opt_adopt"
             style="@style/public_style_rect_small_button"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"

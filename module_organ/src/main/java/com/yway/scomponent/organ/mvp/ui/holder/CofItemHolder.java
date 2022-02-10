@@ -12,6 +12,8 @@ import butterknife.BindView;
  * ================================================
  */
 public class CofItemHolder extends BaseHolder<Object> {
+    @BindView(R2.id.view_metting)
+    View mView;
     @BindView(R2.id.tv_cof_date)
     AppCompatTextView mTvConfDate;
     @BindView(R2.id.tv_cof_time)
@@ -30,6 +32,12 @@ public class CofItemHolder extends BaseHolder<Object> {
     @Override
     public void setData(Object data, int position) {
         ConferenceBean conferenceBean = (ConferenceBean) data;
+        mTvConfDate.setText(conferenceBean.getIsToDay());
+        mTvConfTime.setText(conferenceBean.getStartTime());
+        mTvConfTitle.setText(conferenceBean.getMeetingSubject());
+        mTvConfLocation.setText(conferenceBean.getMeetingName());
+        mTvConfRemark.setText(conferenceBean.getMeetingRemark());
+        mView.setOnClickListener(this);
     }
 
     @Override

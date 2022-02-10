@@ -106,6 +106,10 @@ public interface RouterHub {
      */
     String HOME_SUBSCRIBESUCCEESACTIVITY = HOME + "/SubscribeSucceesActivity";
 
+    /**
+     * 通讯录搜索
+     */
+    String HOME_USERSEARCHACTIVITY = HOME + "/UserSearchActivity";
 
     /**
      * 服务项目
@@ -116,6 +120,12 @@ public interface RouterHub {
      * 预约审核
      */
     String HOME_APPROVEACTIVITY = HOME + "/ApproveActivity";
+
+    /**
+     * 准备会议
+     */
+    String HOME_PREPAREMETINGACTIVITY = HOME + "/PrepareMetingActivity";
+
 
     /**
      * 我的预约

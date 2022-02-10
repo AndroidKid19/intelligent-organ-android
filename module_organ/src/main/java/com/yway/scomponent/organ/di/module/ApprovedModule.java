@@ -14,7 +14,9 @@ import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.mvp.contract.ApprovedContract;
 import com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract;
 import com.yway.scomponent.organ.mvp.model.ApprovedModel;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.ui.adapter.ApprovedAdapter;
+import com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.SubscribeApplyAdapter;
 
 import java.util.ArrayList;
@@ -42,17 +44,15 @@ public abstract class ApprovedModule {
 
     @FragmentScope
     @Provides
-    static List<Object> provideList() {
+    static List<MeetingRecordBean> provideList() {
         return new ArrayList<>();
     }
 
     @FragmentScope
     @Provides
-    static ApprovedAdapter provideAdapter(List<Object> list, ApprovedContract.View iview) {
+    static ApprovedAdapter provideAdapter(List<MeetingRecordBean> list, ApprovedContract.View iview) {
         ApprovedAdapter adapter = new ApprovedAdapter(list);
-        adapter.setOnItemClickListener((view, viewType, data, position) -> {
-            Utils.navigation(iview.getActivity(), RouterHub.HOME_MEETINGDETAILSACTIVITY);
-        });
+
         return adapter;
     }
 }

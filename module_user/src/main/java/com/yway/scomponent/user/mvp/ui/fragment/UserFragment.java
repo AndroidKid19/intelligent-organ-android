@@ -63,6 +63,8 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
     AppCompatTextView mTvUserAuth;
     @BindView(R2.id.btn_auth)
     AppCompatButton mTBtnAuth;
+    @BindView(R2.id.tv_jop)
+    AppCompatTextView mTvJop;
 
 
     public static UserFragment newInstance() {
@@ -231,9 +233,9 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
      */
     private void initViewData() {
         //初始化个人信息
-        mTvUsername.setText(CacheUtils.queryNickName());
+        mTvUsername.setText(CacheUtils.queryName());
+        mTvJop.setText(CacheUtils.queryUserInfo().getOrgTitle());
         mPresenter.imageLoader(CacheUtils.queryUserInfo().getSysUserFilePath(), mNivHead);
-
         if (CacheUtils.isAuthUser()) {
             mTvUserAuth.setText("已完成实名认证");
             mTBtnAuth.setText("查看");

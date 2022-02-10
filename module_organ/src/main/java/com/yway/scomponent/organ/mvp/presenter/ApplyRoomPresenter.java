@@ -1,6 +1,9 @@
 package com.yway.scomponent.organ.mvp.presenter;
 
+import android.app.Activity;
 import android.app.Application;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
@@ -8,6 +11,7 @@ import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.RxLifecycleUtils;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
@@ -50,6 +54,9 @@ public class ApplyRoomPresenter extends BasePresenter<ApplyRoomContract.Model, A
         super(model, rootView);
     }
 
+    public RxPermissions getRxPermissions(Activity activity){
+        return new RxPermissions((FragmentActivity) activity);
+    }
     /**
      * @return
      * @method 会议预约接口 及 存入草稿箱接口

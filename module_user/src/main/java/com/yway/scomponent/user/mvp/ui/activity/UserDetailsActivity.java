@@ -85,7 +85,7 @@ public class UserDetailsActivity extends BaseActivity<UserDetailsPresenter> impl
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
         mPresenter.imageLoader(mUserInfoBean.getSysUserFilePath(),mNiceImageView);
-        mTvUserName.setText(mUserInfoBean.getNickName());
+        mTvUserName.setText(mUserInfoBean.getName());
         mBarPhone.setLeftText(mUserInfoBean.getCellPhone());
         mBarClass.setLeftText(mOrganName);
     }

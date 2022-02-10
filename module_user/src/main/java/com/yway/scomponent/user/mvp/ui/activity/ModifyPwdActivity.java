@@ -96,7 +96,7 @@ public class ModifyPwdActivity extends BaseActivity<ModifyPwdPresenter> implemen
         }
 
         Map<String,Object> paramMap = new HashMap<>();
-        paramMap.put("doctor_id", CacheUtils.queryDoctorId());
+        paramMap.put("doctor_id", CacheUtils.queryUserId());
         paramMap.put("pwd", pwd);
         paramMap.put("repeatpwd", pwdAlgin);
         paramMap.putAll(ParamsHelper.getCommonParams());

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/TextDefault"
+    android:drawablePadding="5dp"
+    android:gravity="center_horizontal"
+    android:textColor="@color/public_colorConfirm"
+    android:text="活动内容.pdf" >
+
+</androidx.appcompat.widget.AppCompatTextView>

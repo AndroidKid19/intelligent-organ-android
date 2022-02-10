@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/organ_shape_tag_background"
+    android:paddingLeft="15dp"
+    android:paddingTop="2dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="2dp"
+    android:text="投影仪"
+    android:textColor="@color/public_white"
+    android:textSize="12sp" >
+
+</androidx.appcompat.widget.AppCompatTextView>

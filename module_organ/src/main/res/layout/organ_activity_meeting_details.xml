@@ -32,7 +32,7 @@
                 app:bar_leftText="主题"
                 app:bar_lineMargin="20dp"
                 app:bar_lineVisible="true"
-                app:bar_rightText="部署我办党支部下一步党建活动" />
+                app:bar_rightText="" />
 
             <com.yway.scomponent.commonres.view.layout.CommonLableBar
                 android:id="@+id/bar_loaction"
@@ -42,17 +42,25 @@
                 app:bar_leftText="会议室"
                 app:bar_lineMargin="20dp"
                 app:bar_lineVisible="true"
-                app:bar_rightText="雍和大厦805" />
+                app:bar_rightText="" />
 
             <com.yway.scomponent.commonres.view.layout.CommonLableBar
                 android:id="@+id/bar_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftIcon="@mipmap/organ_ic_metting_details_date"
-                app:bar_leftText="时间"
+                app:bar_leftText="开始时间"
                 app:bar_lineVisible="false"
-                app:bar_rightText="2021-11-16 10:00 ~ 12:00" />
+                app:bar_rightText="" />
 
+            <com.yway.scomponent.commonres.view.layout.CommonLableBar
+                android:id="@+id/bar_end_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:bar_leftIcon="@mipmap/organ_ic_metting_details_date"
+                app:bar_leftText="结束时间"
+                app:bar_lineVisible="false"
+                app:bar_rightText="" />
             <com.yway.scomponent.commonres.view.layout.CommonLableBar
                 android:id="@+id/bar_organ"
                 android:layout_width="match_parent"
@@ -62,7 +70,7 @@
                 app:bar_leftText="参会方"
                 app:bar_lineMargin="20dp"
                 app:bar_lineVisible="true"
-                app:bar_rightText="区人大办公室" />
+                app:bar_rightText="" />
             <!--  参会人 -->
             <include layout="@layout/organ_include_view_metting_users" />
 
@@ -88,7 +96,7 @@
                 app:bar_leftText="备注"
                 app:bar_lineMargin="20dp"
                 app:bar_lineVisible="true"
-                app:bar_rightText="请携带会议文件" />
+                app:bar_rightText="" />
 
             <com.yway.scomponent.commonres.view.layout.CommonLableBar
                 android:id="@+id/bar_create"
@@ -99,7 +107,7 @@
                 app:bar_leftText="发起方"
                 app:bar_lineMargin="20dp"
                 app:bar_lineVisible="true"
-                app:bar_rightText="罗云锡" />
+                app:bar_rightText="" />
 
             <com.yway.scomponent.commonres.view.layout.CommonLableBar
                 android:id="@+id/bar_phone"
@@ -109,10 +117,12 @@
                 app:bar_leftText="电话"
                 app:bar_lineVisible="false"
                 app:bar_rightColor="@color/public_colorConfirm"
-                app:bar_rightText="185****5329" />
+                app:bar_rightText="" />
 
             <!-- 通过/驳回 -->
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/view_opt"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -121,6 +131,7 @@
                 android:paddingRight="20dp">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_opt_adopt"
                     style="@style/public_style_button"
                     android:layout_width="0dp"
                     android:layout_marginRight="20dp"
@@ -128,10 +139,31 @@
                     android:text="通过" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_opt_reject"
                     style="@style/public_style2_button"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:text="驳回" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- 准备 -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/view_prepare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_opt_prepare"
+                    style="@style/public_style_button"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:text="准备会议" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>

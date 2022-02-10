@@ -1,46 +1,43 @@
 package com.yway.scomponent.organ.mvp.ui.fragment;
 
-import androidx.fragment.app.Fragment;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
-
-import static com.jess.arms.utils.Preconditions.checkNotNull;
-
 import com.jess.arms.utils.ArmsUtils;
-
-import android.content.Intent;
-import android.widget.RadioGroup;
-
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.yway.scomponent.commonres.dialog.ProgresDialog;
 import com.yway.scomponent.commonres.view.layout.MultipleStatusView;
+import com.yway.scomponent.commonsdk.utils.CacheUtils;
+import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.di.component.DaggerMyInitiateComponent;
 import com.yway.scomponent.organ.mvp.contract.MyInitiateContract;
-import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
 import com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter;
-import com.yway.scomponent.organ.R;
-import com.yway.scomponent.organ.mvp.ui.adapter.ApprovedAdapter;
+import com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
+
+import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 /**
  * 我发起的
@@ -62,14 +59,16 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      **/
     @BindView(R2.id.recycle_view)
     RecyclerView mRecyclerView;
-    /**赛选条件**/
+    /**
+     * 赛选条件
+     **/
     @BindView(R2.id.rg_condition)
     RadioGroup mRadioGroup;
 
     @Inject
     RecyclerView.LayoutManager mLayoutManager;
     @Inject
-    ApprovedAdapter mAdapter;
+    MyInitiateAdapter mAdapter;
 
     /**
      * 查询参数
@@ -80,11 +79,6 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      * 骨架屏
      **/
     private SkeletonScreen mSkeletonScreen;
-    /**
-     * 注入列表数据源
-     */
-    @Inject
-    List<Object> mDataLs;
 
     public static MyInitiateFragment newInstance() {
         MyInitiateFragment fragment = new MyInitiateFragment();
@@ -113,7 +107,7 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
     public void initData(@Nullable Bundle savedInstanceState) {
         initRecyclerView();
         //初始化骨架屏
-//        initSkeletonScreen();
+        initSkeletonScreen();
         //监听赛选条件
         mRadioGroup.setOnCheckedChangeListener(mOnCheckedChangeListener);
     }
@@ -123,14 +117,17 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      * 状态监听回调
      */
     private RadioGroup.OnCheckedChangeListener mOnCheckedChangeListener = (group, checkedId) -> {
-        if (checkedId == R.id.rb_1){//全部
-        }else if(checkedId == R.id.rb_2){//未审批
-        }else if(checkedId == R.id.rb_3){//通过
-        }else if(checkedId == R.id.rb_4){//驳回
+        if (checkedId == R.id.rb_1) {//全部
+            paramMap.put("approvalStatusStrs", "1,2,3");
+        } else if (checkedId == R.id.rb_2) {//未审批
+            paramMap.put("approvalStatusStrs", "1");
+        } else if (checkedId == R.id.rb_3) {//通过
+            paramMap.put("approvalStatusStrs", "2");
+        } else if (checkedId == R.id.rb_4) {//驳回
+            paramMap.put("approvalStatusStrs", "3");
         }
-//        mRefreshLayout.autoRefresh();
+        mRefreshLayout.autoRefresh();
     };
-
 
 
     /**
@@ -139,15 +136,6 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
     private void initRecyclerView() {
         ArmsUtils.configRecyclerView(mRecyclerView, mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-        ConferenceBean conferenceBean = new ConferenceBean();
-        conferenceBean.setConfIng(true);
-        mDataLs.add(conferenceBean);
-        conferenceBean = new ConferenceBean();
-        mDataLs.add(conferenceBean);
-        conferenceBean = new ConferenceBean();
-        mDataLs.add(conferenceBean);
-
         //设置下拉刷新监听
         mRefreshLayout.setOnRefreshListener(mOnRefreshListener);
         mRefreshLayout.setOnLoadMoreListener(mOnLoadMoreListener);
@@ -160,7 +148,7 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      * @author : yuanweiwei
      */
     private OnRefreshListener mOnRefreshListener = refreshLayout -> {
-//        mPresenter.queryReportExceptionRecordPageByReportTypeList(paramMap, true);
+        mPresenter.queryMeetingRecordPageList(paramMap, true);
     };
 
     /**
@@ -168,7 +156,7 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      * @author : yuanweiwei
      */
     private OnLoadMoreListener mOnLoadMoreListener = refreshLayout -> {
-//        mPresenter.queryReportExceptionRecordPageByReportTypeList(paramMap, false);
+        mPresenter.queryMeetingRecordPageList(paramMap, false);
     };
 
 
@@ -179,18 +167,18 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      * @author: YIWUANYUAN
      */
     private void initSkeletonScreen() {
-//        paramMap.put("treatStatus", 0);
-//        //初始化数据
-////        mPresenter.queryReportExceptionRecordPageByReportTypeList(paramMap, true);
-//        mSkeletonScreen = Skeleton.bind(mRecyclerView)
-//                .adapter(mAdapter)
-//                .shimmer(true)
-//                .angle(20)
-//                .frozen(false)
-//                .duration(1200)
-//                .count(15)
-//                .load(R.layout.organ_item_skeleton_metting)
-//                .show(); //default count is 10
+        paramMap.put("approvalStatusStrs", "1,2,3");
+        //初始化数据
+        mPresenter.queryMeetingRecordPageList(paramMap, true);
+        mSkeletonScreen = Skeleton.bind(mRecyclerView)
+                .adapter(mAdapter)
+                .shimmer(true)
+                .angle(20)
+                .frozen(false)
+                .duration(1200)
+                .count(15)
+                .load(R.layout.organ_item_skeleton_metting)
+                .show(); //default count is 10
     }
 
 
@@ -208,7 +196,6 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
     public void hideLoading() {
         ProgresDialog.getInstance(getActivity()).dismissDialog();
     }
-
 
 
     @Override
@@ -230,5 +217,20 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
 
     public Fragment getFragment() {
         return this;
+    }
+
+    @Override
+    public SkeletonScreen skeletonScreen() {
+        return mSkeletonScreen;
+    }
+
+    @Override
+    public MultipleStatusView multipleStatusView() {
+        return mMultipleStatusView;
+    }
+
+    @Override
+    public RefreshLayout refreshLayout() {
+        return mRefreshLayout;
     }
 }

@@ -8,6 +8,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.blankj.utilcode.util.ObjectUtils;
+import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.TimeUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseActivity;
@@ -16,6 +18,7 @@ import com.jess.arms.utils.ArmsUtils;
 import com.yway.scomponent.commonres.calendar.Calendar;
 import com.yway.scomponent.commonres.calendar.CalendarLayout;
 import com.yway.scomponent.commonres.calendar.CalendarView;
+import com.yway.scomponent.commonres.dialog.IToast;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 import com.yway.scomponent.commonsdk.utils.Utils;
@@ -127,7 +130,7 @@ public class OnlineSubscribeRoomActivity extends BaseActivity<OnlineSubscribeRoo
         initCalendar();
         //初始化查询会议室
         paramMap.put("meetingDate", TimeUtils.getNowString(new SimpleDateFormat("yyyy-MM-dd")));
-//        mPresenter.queryMeetingRoomPageList(paramMap,true);
+        mPresenter.queryMeetingRoomPageList(paramMap,true);
     }
 
     /**
@@ -164,51 +167,57 @@ public class OnlineSubscribeRoomActivity extends BaseActivity<OnlineSubscribeRoo
 //        mRefreshLayout.setOnRefreshListener(mOnRefreshListener);
         //设置上拉加载
 //        mRefreshLayout.setOnLoadMoreListener(mOnLoadMoreListener);
-        RoomDetailsBean roomDetailsBean = new RoomDetailsBean();
-        roomDetailsBean.setId("1");
-        roomDetailsBean.setName("区委机关1号楼(北楼)一楼会议室");
-        roomDetailsBean.setLocation("1号楼(北楼)");
-        roomDetailsBean.setSeatsNumber("30");
-        List<SubscribeTimeBean> list = new ArrayList<>();
-        SubscribeTimeBean subscribeTimeBean = new SubscribeTimeBean();
-        subscribeTimeBean.setKey("上午");
-        subscribeTimeBean.setTime("8:00");
-        subscribeTimeBean.setWhetherAppointment("0");
-        list.add(subscribeTimeBean);
-        subscribeTimeBean = new SubscribeTimeBean();
-        subscribeTimeBean.setKey("上午");
-        subscribeTimeBean.setTime("9:00");
-        subscribeTimeBean.setWhetherAppointment("0");
-        list.add(subscribeTimeBean);
-        subscribeTimeBean = new SubscribeTimeBean();
-        subscribeTimeBean.setKey("上午");
-        subscribeTimeBean.setTime("10:00");
-        subscribeTimeBean.setWhetherAppointment("1");
-        list.add(subscribeTimeBean);
-        subscribeTimeBean = new SubscribeTimeBean();
-        subscribeTimeBean.setKey("上午");
-        subscribeTimeBean.setTime("11:00");
-        subscribeTimeBean.setWhetherAppointment("1");
-        list.add(subscribeTimeBean);
-        subscribeTimeBean = new SubscribeTimeBean();
-        subscribeTimeBean.setKey("上午");
-        subscribeTimeBean.setTime("12:00");
-        subscribeTimeBean.setWhetherAppointment("1");
-        list.add(subscribeTimeBean);subscribeTimeBean = new SubscribeTimeBean();
-        subscribeTimeBean.setKey("上午");
-        subscribeTimeBean.setTime("13:00");
-        subscribeTimeBean.setWhetherAppointment("1");
-        list.add(subscribeTimeBean);
-
-        roomDetailsBean.setMeetingTimeBatRspBOList(list);
-        mDataLs.add(roomDetailsBean);
-        mDataLs.add(roomDetailsBean);
+//        RoomDetailsBean roomDetailsBean = new RoomDetailsBean();
+//        roomDetailsBean.setId("1");
+//        roomDetailsBean.setName("区委机关1号楼(北楼)一楼会议室");
+//        roomDetailsBean.setLocation("1号楼(北楼)");
+//        roomDetailsBean.setSeatsNumber("30");
+//        List<SubscribeTimeBean> list = new ArrayList<>();
+//        SubscribeTimeBean subscribeTimeBean = new SubscribeTimeBean();
+//        subscribeTimeBean.setKey("上午");
+//        subscribeTimeBean.setTime("8:00");
+//        subscribeTimeBean.setWhetherAppointment("0");
+//        list.add(subscribeTimeBean);
+//        subscribeTimeBean = new SubscribeTimeBean();
+//        subscribeTimeBean.setKey("上午");
+//        subscribeTimeBean.setTime("9:00");
+//        subscribeTimeBean.setWhetherAppointment("0");
+//        list.add(subscribeTimeBean);
+//        subscribeTimeBean = new SubscribeTimeBean();
+//        subscribeTimeBean.setKey("上午");
+//        subscribeTimeBean.setTime("10:00");
+//        subscribeTimeBean.setWhetherAppointment("1");
+//        list.add(subscribeTimeBean);
+//        subscribeTimeBean = new SubscribeTimeBean();
+//        subscribeTimeBean.setKey("上午");
+//        subscribeTimeBean.setTime("11:00");
+//        subscribeTimeBean.setWhetherAppointment("1");
+//        list.add(subscribeTimeBean);
+//        subscribeTimeBean = new SubscribeTimeBean();
+//        subscribeTimeBean.setKey("上午");
+//        subscribeTimeBean.setTime("12:00");
+//        subscribeTimeBean.setWhetherAppointment("1");
+//        list.add(subscribeTimeBean);subscribeTimeBean = new SubscribeTimeBean();
+//        subscribeTimeBean.setKey("上午");
+//        subscribeTimeBean.setTime("13:00");
+//        subscribeTimeBean.setWhetherAppointment("1");
+//        list.add(subscribeTimeBean);
+//
+//        roomDetailsBean.setMeetingTimeBatRspBOList(list);
+//        mDataLs.add(roomDetailsBean);
+//        mDataLs.add(roomDetailsBean);
 
 
         mAdapter.setOnItemClickListener((view, viewType, data, position) -> {
             RoomDetailsBean roomDetailsBean1 = (RoomDetailsBean)data;
-            String strDate = Utils.appendStr(mCalendarView.getCurYear(),"-",mCalendarView.getCurMonth(),"-",mCalendarView.getCurDay());
+            String month = mCalendarView.getCurMonth() < 10 ? Utils.appendStr("0",mCalendarView.getCurMonth()) : mCalendarView.getCurMonth()+"";
+            String day = mCalendarView.getCurDay() < 10 ? Utils.appendStr("0",mCalendarView.getCurDay()) : mCalendarView.getCurDay()+"";
+            String strDate = Utils.appendStr(mCalendarView.getCurYear(),"-",month,"-",day);
             roomDetailsBean1.setMeetingDate(strDate);
+            if (ObjectUtils.isEmpty(roomDetailsBean1.getSubscribeTimeBean()) || StringUtils.isEmpty(roomDetailsBean1.getSubscribeTimeBean().getTime())){
+                ArmsUtils.snackbarText("请选择会议时间");
+                return;
+            }
             Utils.postcard(RouterHub.HOME_APPLYROOMACTIVITY)
                     .withParcelable("roomDetailsBean",roomDetailsBean1)
                     .navigation(getActivity());

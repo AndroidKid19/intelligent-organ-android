@@ -82,7 +82,7 @@ public class LoginPresenter extends BasePresenter<LoginHomeContract.Model, Login
     public void queryDoctorInfo() {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("biz", "doctor_prove_app");
-        paramMap.put("doctor_id", CacheUtils.queryDoctorId());
+        paramMap.put("doctor_id", CacheUtils.queryUserId());
         paramMap.putAll(ParamsHelper.getCommonParams());
         mModel.queryDoctorInfo(paramMap)
                 .subscribeOn(Schedulers.io())

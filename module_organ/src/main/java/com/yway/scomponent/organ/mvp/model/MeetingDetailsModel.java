@@ -43,6 +43,21 @@ public class MeetingDetailsModel extends BaseModel implements MeetingDetailsCont
                 .queryByMeetingRecordDetails(params);
     }
 
+
+    @Override
+    public Observable<BaseResponse> doMeetingRecordApproval(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .doMeetingRecordApproval(params);
+    }
+
+    @Override
+    public Observable<BaseResponse> doMeetingRecordReady(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .doMeetingRecordReady(params);
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();

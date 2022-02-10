@@ -10,11 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blankj.utilcode.util.BarUtils;
+import com.blankj.utilcode.util.CollectionUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseFragment;
+import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -32,15 +35,20 @@ import com.yway.scomponent.organ.di.component.DaggerHomeComponent;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceTitleBean;
+import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageTitleBean;
 import com.yway.scomponent.organ.mvp.presenter.HomePresenter;
 import com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter;
 
+import org.jetbrains.annotations.NotNull;
 import org.simple.eventbus.EventBus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -114,8 +122,16 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         initBanner();
         //初始化骨架屏
 //        initSkeletonScreen();
+        initQueryData();
+    }
+
+    private void initQueryData(){
         //初始化字段数据
         mPresenter.queryDict();
+        //查询我的会议
+//        mPresenter.queryMyMeetingList();
+        //查询资讯
+        mPresenter.queryArticlePublishPageList();
     }
 
     /**
@@ -128,28 +144,24 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         mRefreshLayout.setOnRefreshListener(mOnRefreshListener);
         //设置上拉加载
 //        mRefreshLayout.setOnLoadMoreListener(mOnLoadMoreListener);
-        //初始化默认数据
-        MessageTitleBean messageTitleBean = new MessageTitleBean();
-        mDataLs.add(messageTitleBean);
+        mRefreshLayout.setEnableLoadMore(false);
 
-        MessageBean messageBean = new MessageBean();
-        mDataLs.add(messageBean);
-        messageBean = new MessageBean();
-        mDataLs.add(messageBean);
-
-        ConferenceTitleBean conferenceTitleBean = new ConferenceTitleBean();
-        mDataLs.add(conferenceTitleBean);
-
-        ConferenceBean conferenceBean = new ConferenceBean();
-        conferenceBean.setConfIng(true);
-        mDataLs.add(conferenceBean);
-        conferenceBean = new ConferenceBean();
-        mDataLs.add(conferenceBean);
-        conferenceBean = new ConferenceBean();
-        mDataLs.add(conferenceBean);
-
-//        mAdapter.refreshData(mDataLs);
+        //列表事件监听
+        mAdapter.setOnItemClickListener(mOnRecyclerViewItemClickListener);
     }
+
+    private DefaultAdapter.OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener = (view, viewType, data, position) -> {
+        if (view.getId() == R.id.tv_queryall){
+            //查看更多会议 - 我的会议
+            Utils.navigation(getActivity(), RouterHub.HOME_MYMEETINGACTIVITY);
+        }else if(view.getId() == R.id.view_metting){
+            ConferenceBean conferenceBean = (ConferenceBean) data;
+            Utils.postcard(RouterHub.HOME_MEETINGDETAILSACTIVITY)
+                    .withString("mettingId",conferenceBean.getMeetingRecordId())
+                    .withInt("pageFrom",6)
+                    .navigation(getActivity());
+        }
+    };
 
     /**
      * @return
@@ -191,7 +203,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      */
     private OnRefreshListener mOnRefreshListener = refreshLayout -> {
         //初始化字段数据
-        mPresenter.queryDict();
+        initQueryData();
     };
 
     /**
@@ -233,6 +245,106 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         IToast.showWarnShort("正在努力开发中");
     }
 
+
+    /**
+     * 我的会议
+     */
+    @Override
+    public void metingListCallBack(HomeMetingBean data) {
+        //正在开会议
+        List<ConferenceBean> inMeetingPersonnelRspBOList = data.getInMeetingPersonnelRspBOList();
+        //待开会议
+        List<ConferenceBean> todoMeetingPersonnelRspBOList = data.getTodoMeetingPersonnelRspBOList();
+
+        //创建我的会议标题
+        if (!checkMetingTitle()){
+            ConferenceTitleBean conferenceTitleBean = new ConferenceTitleBean();
+            mDataLs.add(conferenceTitleBean);
+        }
+
+        //校验正在开的会议
+        if (CollectionUtils.isNotEmpty(inMeetingPersonnelRspBOList)){
+            for (ConferenceBean conferenceBean :inMeetingPersonnelRspBOList) {
+                conferenceBean.setConfIng(true);
+                /**
+                 * 校验会议是否展示 未展示则添加到首页展示
+                 * */
+                if (!checkMeting(conferenceBean.getMeetingRecordId())){
+                    mDataLs.add(conferenceBean);
+                }
+            }
+        }
+        //校验待开会议
+        if (CollectionUtils.isNotEmpty(todoMeetingPersonnelRspBOList)){
+            for (ConferenceBean conferenceBean :todoMeetingPersonnelRspBOList) {
+                /**
+                 * 校验会议是否展示 未展示则添加到首页展示
+                 * */
+                if (!checkMeting(conferenceBean.getMeetingRecordId())){
+                    mDataLs.add(conferenceBean);
+                }
+            }
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
+    /**
+     * 资讯
+     * */
+    @Override
+    public void queryArticleCallBack(List<MessageBean> rows) {
+        mDataLs.clear();
+        //创建我的会议标题
+        if (!checkMsgTitle()){
+            //初始化默认数据
+            MessageTitleBean messageTitleBean = new MessageTitleBean();
+            mDataLs.add(messageTitleBean);
+        }
+        mDataLs.addAll(rows);
+    }
+
+    /**
+     * 校验当前会议是否展示到首页
+     * */
+    public boolean checkMeting(String id){
+      List<Object> objectList =  mAdapter.getInfos();
+        for (Object o : objectList) {
+            if (o instanceof ConferenceBean){
+                ConferenceBean conferenceBean = (ConferenceBean) o;
+                if (conferenceBean.getMeetingRecordId().equals(id)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 校验当前会议是否展示到首页
+     * */
+    public boolean checkMetingTitle(){
+        List<Object> objectList =  mAdapter.getInfos();
+        for (Object o : objectList) {
+            if (o instanceof ConferenceTitleBean){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * 校验当前会议是否展示到首页
+     * */
+    public boolean checkMsgTitle(){
+        List<Object> objectList =  mAdapter.getInfos();
+        for (Object o : objectList) {
+            if (o instanceof MessageTitleBean){
+                return true;
+            }
+        }
+        return false;
+    }
 
     @Override
     public void setData(@Nullable Object data) {

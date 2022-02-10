@@ -72,6 +72,25 @@ public class UserInfoBean implements Parcelable {
      * 是否选中
      */
     private boolean isChecked;
+    private String userName;
+
+    private String orgTitle;
+
+    public String getOrgTitle() {
+        return orgTitle;
+    }
+
+    public void setOrgTitle(String orgTitle) {
+        this.orgTitle = orgTitle;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public String getUserId() {
         return userId;
@@ -201,6 +220,7 @@ public class UserInfoBean implements Parcelable {
         this.list = list;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -224,6 +244,8 @@ public class UserInfoBean implements Parcelable {
         dest.writeString(this.sysUserFilePath);
         dest.writeString(this.orgId);
         dest.writeByte(this.isChecked ? (byte) 1 : (byte) 0);
+        dest.writeString(this.userName);
+        dest.writeString(this.orgTitle);
     }
 
     public void readFromParcel(Parcel source) {
@@ -243,6 +265,8 @@ public class UserInfoBean implements Parcelable {
         this.sysUserFilePath = source.readString();
         this.orgId = source.readString();
         this.isChecked = source.readByte() != 0;
+        this.userName = source.readString();
+        this.orgTitle = source.readString();
     }
 
     public UserInfoBean() {
@@ -265,6 +289,8 @@ public class UserInfoBean implements Parcelable {
         this.sysUserFilePath = in.readString();
         this.orgId = in.readString();
         this.isChecked = in.readByte() != 0;
+        this.userName = in.readString();
+        this.orgTitle = in.readString();
     }
 
     public static final Creator<UserInfoBean> CREATOR = new Creator<UserInfoBean>() {

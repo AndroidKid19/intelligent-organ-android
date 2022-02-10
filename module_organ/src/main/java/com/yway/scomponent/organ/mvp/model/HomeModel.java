@@ -10,6 +10,8 @@ import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
 import com.yway.scomponent.organ.mvp.model.api.service.HomeService;
+import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
+import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 
 import java.util.Map;
 
@@ -50,6 +52,29 @@ public class HomeModel extends BaseModel implements HomeContract.Model {
                 .querySysByDictClassify(params);
     }
 
+    /**
+     * @description 会议列表
+     * @author: Yuan
+     * @return
+     */
+    @Override
+    public Observable<BaseResponse<HomeMetingBean>> queryMyMeetingList(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .queryMyMeetingList(params);
+    }
+
+    /**
+     * @description 首页消息
+     * @author: Yuan
+     * @return
+     */
+    @Override
+    public Observable<BaseResponse<MessageBean>> queryArticlePublishPageList(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .queryArticlePublishPageList(params);
+    }
 
     @Override
     public void onDestroy() {

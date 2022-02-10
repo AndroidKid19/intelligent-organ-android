@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.jess.arms.base.BaseFragment;
+import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.di.component.AppComponent;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 import com.jess.arms.utils.ArmsUtils;
@@ -17,15 +20,22 @@ import android.content.Intent;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.yway.scomponent.commonres.dialog.IToast;
+import com.yway.scomponent.commonres.dialog.MessageDialog;
 import com.yway.scomponent.commonres.dialog.ProgresDialog;
 import com.yway.scomponent.commonres.view.layout.MultipleStatusView;
+import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.di.component.DaggerDraftsComponent;
 import com.yway.scomponent.organ.mvp.contract.DraftsContract;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.presenter.DraftsPresenter;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.mvp.ui.adapter.DraftsAdapter;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,11 +77,11 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
      * 骨架屏
      **/
     private SkeletonScreen mSkeletonScreen;
+
     /**
-     * 注入列表数据源
-     */
-    @Inject
-    List<Object> mDataLs;
+     * 记录当前删除的草稿下标
+     * */
+    private int delPosition;
 
     public static DraftsFragment newInstance() {
         DraftsFragment fragment = new DraftsFragment();
@@ -100,7 +110,7 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
     public void initData(@Nullable Bundle savedInstanceState) {
         initRecyclerView();
         //初始化骨架屏
-//        initSkeletonScreen();
+        initSkeletonScreen();
     }
 
     /**
@@ -109,28 +119,45 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
     private void initRecyclerView() {
         ArmsUtils.configRecyclerView(mRecyclerView, mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-        ConferenceBean conferenceBean = new ConferenceBean();
-        conferenceBean.setConfIng(true);
-        mDataLs.add(conferenceBean);
-        conferenceBean = new ConferenceBean();
-        mDataLs.add(conferenceBean);
-        conferenceBean = new ConferenceBean();
-        mDataLs.add(conferenceBean);
-
+        mAdapter.setOnItemClickListener(mOnRecyclerViewItemClickListener);
         //设置下拉刷新监听
         mRefreshLayout.setOnRefreshListener(mOnRefreshListener);
         mRefreshLayout.setOnLoadMoreListener(mOnLoadMoreListener);
 
     }
 
+    private DefaultAdapter.OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener = (view, viewType, data, position) -> {
+        MeetingRecordBean meetingRecordBean = (MeetingRecordBean) data;
+        this.delPosition = position;
+        if (view.getId() == R.id.tv_apply_state) {
+            //删除草稿箱
+            delDrafts(meetingRecordBean.getId());
+        } else {
+            //预约会议室
+
+        }
+    };
+
+
+    private void delDrafts(String id){
+        new MessageDialog.Builder()
+                .setTitle("删除提醒")
+                .setMessage("确定要删除当前会议草稿")
+                .setOnViewItemClickListener(v -> {
+                    //删除草稿箱
+                    Map<String, Object> paramMap = new HashMap<>();
+                    paramMap.put("id",id);
+                    mPresenter.deleteMeetingRecord(paramMap);
+                })
+                .showPopupWindow();
+    }
 
     /**
      * @description : TODO 下拉刷新监听
      * @author : yuanweiwei
      */
     private OnRefreshListener mOnRefreshListener = refreshLayout -> {
-//        mPresenter.queryReportExceptionRecordPageByReportTypeList(paramMap, true);
+        mPresenter.queryMeetingRecordPageList(paramMap, true);
     };
 
     /**
@@ -138,7 +165,7 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
      * @author : yuanweiwei
      */
     private OnLoadMoreListener mOnLoadMoreListener = refreshLayout -> {
-//        mPresenter.queryReportExceptionRecordPageByReportTypeList(paramMap, false);
+        mPresenter.queryMeetingRecordPageList(paramMap, false);
     };
 
 
@@ -149,18 +176,18 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
      * @author: YIWUANYUAN
      */
     private void initSkeletonScreen() {
-//        paramMap.put("treatStatus", 0);
-//        //初始化数据
-////        mPresenter.queryReportExceptionRecordPageByReportTypeList(paramMap, true);
-//        mSkeletonScreen = Skeleton.bind(mRecyclerView)
-//                .adapter(mAdapter)
-//                .shimmer(true)
-//                .angle(20)
-//                .frozen(false)
-//                .duration(1200)
-//                .count(15)
-//                .load(R.layout.organ_item_skeleton_metting)
-//                .show(); //default count is 10
+        paramMap.put("approvalStatusStrs", "0");
+        //初始化数据
+        mPresenter.queryMeetingRecordPageList(paramMap, true);
+        mSkeletonScreen = Skeleton.bind(mRecyclerView)
+                .adapter(mAdapter)
+                .shimmer(true)
+                .angle(20)
+                .frozen(false)
+                .duration(1200)
+                .count(15)
+                .load(R.layout.organ_item_skeleton_metting)
+                .show(); //default count is 10
     }
 
 
@@ -199,5 +226,27 @@ public class DraftsFragment extends BaseFragment<DraftsPresenter> implements Dra
 
     public Fragment getFragment() {
         return this;
+    }
+
+
+    @Override
+    public SkeletonScreen skeletonScreen() {
+        return mSkeletonScreen;
+    }
+
+    @Override
+    public MultipleStatusView multipleStatusView() {
+        return mMultipleStatusView;
+    }
+
+    @Override
+    public RefreshLayout refreshLayout() {
+        return mRefreshLayout;
+    }
+
+    @Override
+    public void delMeetingSuccess() {
+        IToast.showFinishShort("删除成功");
+        mAdapter.remove(delPosition);
     }
 }

@@ -22,10 +22,13 @@ import com.blankj.utilcode.util.CollectionUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.StringUtils;
+import com.blankj.utilcode.util.TimeUtils;
 import com.blankj.utilcode.util.UriUtils;
+import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.PermissionUtil;
 import com.yway.scomponent.commonres.dialog.IToast;
 import com.yway.scomponent.commonres.dialog.MessageDialog;
 import com.yway.scomponent.commonres.dialog.ProgresDialog;
@@ -55,6 +58,7 @@ import com.yway.scomponent.organ.mvp.ui.adapter.ChooseCompanyAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.ChooseFileAdapter;
 import com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -221,6 +225,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
 
     @Override
     public void initData(@Nullable Bundle savedInstanceState) {
+        ImmersionBar.with(this).titleBar(R.id.bar_title).init();
 
         initRecyclerView();
         //初始化预约开始时间
@@ -313,6 +318,9 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
                 .initHour(hour,minute)
                 .setOnTimepickerClickListener((startTime, endTime) -> {
                     Timber.i(startTime + "---" + endTime);
+                    startTime = startTime.length() == 4 ? Utils.appendStr("0",startTime) : startTime;
+                    endTime = endTime.length() == 4 ? Utils.appendStr("0",endTime) : endTime;
+
                     this.meetingStartTime = mRoomDetailsBean.getMeetingDate()+" "+startTime;
                     this.meetingEndTime = mRoomDetailsBean.getMeetingDate()+" "+endTime;
                     mBarDate.setLeftText(Utils.appendStr(mRoomDetailsBean.getMeetingDate()," ",startTime, "-", endTime));
@@ -325,8 +333,27 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
      */
     @OnClick(R2.id.tv_file_choose)
     void onBarChooseFileClick(View view) {
-        showFileChooser();
+        PermissionUtil.externalStorage(mRequestPermission, mPresenter.getRxPermissions(this), ArmsUtils.obtainAppComponentFromContext(this).rxErrorHandler());
+
     }
+
+
+    private PermissionUtil.RequestPermission mRequestPermission = new PermissionUtil.RequestPermission() {
+        @Override
+        public void onRequestPermissionSuccess() {
+            showFileChooser();
+        }
+
+        @Override
+        public void onRequestPermissionFailure(List<String> permissions) {
+            PermissionUtil.launchCamera(mRequestPermission, mPresenter.getRxPermissions(getActivity()), ArmsUtils.obtainAppComponentFromContext(getActivity()).rxErrorHandler());
+        }
+
+        @Override
+        public void onRequestPermissionFailureWithAskNeverAgain(List<String> permissions) {
+            ArmsUtils.snackbarText(getString(R.string.public_common_permission_fail));
+        }
+    };
 
     /**
      * 提交
@@ -337,7 +364,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
 
     }
 
-    private void applyComit(int approvalStatus) {
+    private void applyComit(int approvalStatusStrs) {
         //创建参数
         Map<String, Object> paramMap = new HashMap<>();
         //会议室ID
@@ -354,7 +381,12 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
             IToast.showWarnShort("请选择会议开始时间");
             return;
         }
-        paramMap.put("meetingStartTime",meetingStartTime);
+        paramMap.put("meetingStartTime", meetingStartTime);
+
+        if (StringUtils.isEmpty(meetingEndTime)){
+            IToast.showWarnShort("请选择会议结束时间");
+            return;
+        }
         //会议结束时间
         paramMap.put("meetingEndTime",meetingEndTime);
         //会议报到时间（单位为分钟）字典code
@@ -387,7 +419,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
         paramMap.put("meetingSet", meetingSet);
 
         //预约会议审批状态：0待提交审批（草稿），1已提交审批（待审批），2审批已通过，3审批被驳回
-        paramMap.put("approvalStatus", approvalStatus);
+        paramMap.put("approvalStatus", approvalStatusStrs);
         //会议备注
         String remark = mEtRemark.getText().toString();
         paramMap.put("remark", remark);
@@ -420,7 +452,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
 
         LogUtils.json(paramMap);
         String message = "确定提交当前会议室预约吗？";
-        if (approvalStatus == 0){
+        if (approvalStatusStrs == 0){
             message = "确定当前会议室预约信息存入草稿吗？";
         }
         new MessageDialog.Builder()

@@ -59,4 +59,38 @@ public interface Api {
     //会议详情
     String API_QUERYBYMEETINGRECORDDETAILS = "/organ/meetingRecord/queryByMeetingRecordDetails";
 
+
+    //预约列表
+    String API_QUERYMEETINGRECORDPAGELIST = "/organ/meetingRecord/queryMeetingRecordPageList";
+
+
+    //删除草稿箱
+    String API_DELETEMEETINGRECORD = "/organ/meetingRecord/logicDeleteMeetingRecord";
+
+    //我的会议
+    String API_QUERYMYMEETINGPAGELIST = "/organ/meetingPersonnel/queryMyMeetingPageList";
+
+    //我的审批 - 待审核
+    String API_GETMEETINGRECORDAPPROVALINGLIST = "/organ/meetingRecord/getMeetingRecordApprovalingList";
+
+    //我的审批 - 已审核
+    String API_GETMEETINGRECORDAPPROVAEDLIST = "/organ/meetingRecord/getMeetingRecordApprovaledList";
+
+    //审批
+    String API_DOMEETINGRECORDAPPROVAL = "/organ/meetingRecord/doMeetingRecordApproval";
+
+    //待准备
+    String API_GETMEETINGRECORDREADYINGLIST = "/organ/meetingRecord/getMeetingRecordReadyingList";
+
+    //已准备
+    String API_GETMEETINGRECORDREADYEDLIST = "/organ/meetingRecord/getMeetingRecordReadyedList";
+
+    //准备
+    String API_DOMEETINGRECORDREADY = "/organ/meetingRecord/doMeetingRecordReady";
+
+    //首页我的会议
+    String API_QUERYMYMEETINGLIST = "/organ/meetingPersonnel/queryMyMeetingList";
+
+    //首页消息
+    String API_QUERYARTICLEPUBLISHPAGELIST = "/organ/articlePublish/queryArticlePublishPageList";
 }

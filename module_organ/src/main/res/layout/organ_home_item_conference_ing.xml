@@ -8,6 +8,7 @@
     android:layout_marginRight="@dimen/public_padding_20dp"
     android:layout_marginBottom="15dp"
     android:background="@drawable/organ_shape_cof_background_red"
+    android:id="@+id/view_metting"
     android:paddingTop="15dp"
     android:paddingRight="@dimen/public_mar_left_12dp"
     android:paddingBottom="@dimen/public_padding_15dp">
@@ -17,13 +18,18 @@
         style="@style/TextGray.Small"
         android:layout_height="0dp"
         android:gravity="bottom"
+        app:autoSizeMaxTextSize="@dimen/public_font_12sp"
+        app:autoSizeMinTextSize="4sp"
+        app:autoSizeStepGranularity="1sp"
+        app:autoSizeTextType="uniform"
+        android:maxLines="1"
         android:textColor="@color/public_white"
         app:layout_constraintBottom_toTopOf="@+id/tv_cof_time"
         app:layout_constraintLeft_toLeftOf="@+id/tv_cof_time"
         app:layout_constraintRight_toRightOf="@+id/tv_cof_time"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_weight="1"
-        android:text="今天" />
+        tools:text="2020-19-19" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_cof_time"
@@ -37,7 +43,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_cof_date"
         app:layout_constraintVertical_weight="1"
-        android:text="15:00" />
+        tools:text="15:00" />
 
     <View
         android:id="@+id/view_line"
@@ -59,7 +65,7 @@
         app:layout_constraintLeft_toRightOf="@+id/view_line"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="部署我办党支部下一步党建活动内容" />
+        tools:text="部署我办党支部下一步党建活动内容" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_cof_location"
@@ -70,7 +76,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_cof_remark"
         app:layout_constraintLeft_toLeftOf="@+id/tv_cof_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_cof_title"
-        android:text="区委机关1号楼(北楼)一楼会议室" />
+        tools:text="区委机关1号楼(北楼)一楼会议室" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_cof_remark"
@@ -80,5 +86,6 @@
         android:textColor="@color/public_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@+id/tv_cof_title"
-        android:text="请带上本子、笔" />
+        tools:text="请带上本子、笔" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

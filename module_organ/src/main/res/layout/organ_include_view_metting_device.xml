@@ -33,30 +33,6 @@
             android:layout_height="wrap_content"
             app:flChildSpacing="10dp"
             app:flRowSpacing="8dp">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/organ_shape_tag_background"
-                android:paddingLeft="15dp"
-                android:paddingTop="2dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="2dp"
-                android:text="投影仪"
-                android:textColor="@color/public_white"
-                android:textSize="12sp" />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/organ_shape_tag_background"
-                android:paddingLeft="15dp"
-                android:paddingTop="2dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="2dp"
-                android:text="话筒"
-                android:textColor="@color/public_white"
-                android:textSize="12sp" />
-
         </com.yway.scomponent.commonres.view.layout.FlowLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 

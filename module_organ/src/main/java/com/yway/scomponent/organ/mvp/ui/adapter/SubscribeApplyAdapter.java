@@ -9,6 +9,7 @@ import com.jess.arms.base.DefaultAdapter;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.mvp.model.entity.CheckBoxBean;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.ui.holder.CheckBoxItemHolder;
 import com.yway.scomponent.organ.mvp.ui.holder.SubscribeApplyItemHolder;
 
@@ -19,8 +20,8 @@ import java.util.List;
  * 预约审核
  * ================================================
  */
-public class SubscribeApplyAdapter extends DefaultAdapter<Object> {
-    public SubscribeApplyAdapter(List<Object> infos) {
+public class SubscribeApplyAdapter extends DefaultAdapter<MeetingRecordBean> {
+    public SubscribeApplyAdapter(List<MeetingRecordBean> infos) {
         super(infos);
     }
 
@@ -28,14 +29,14 @@ public class SubscribeApplyAdapter extends DefaultAdapter<Object> {
      * 刷新
      * @return
      */
-    public void refreshData(List<Object> data) {
+    public void refreshData(List<MeetingRecordBean> data) {
         //校验是否标签是否存在列表中，如果存在列表中则返回下标位置
         this.mInfos = data;
         notifyDataSetChanged();
     }
 
     @Override
-    public BaseHolder<Object> getHolder(View v, int viewType) {
+    public BaseHolder<MeetingRecordBean> getHolder(View v, int viewType) {
         return new SubscribeApplyItemHolder(v);
     }
 

@@ -6,7 +6,6 @@ import android.view.View;
 import com.jess.arms.base.BaseHolder;
 import com.jess.arms.base.DefaultAdapter;
 import com.yway.scomponent.organ.R;
-import com.yway.scomponent.organ.mvp.ui.holder.ApprovedItemHolder;
 import com.yway.scomponent.organ.mvp.ui.holder.VisitorItemHolder;
 
 import java.util.List;

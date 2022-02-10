@@ -96,6 +96,7 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
                 .setAgentWebParent(mLayoutWebView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
                 .useDefaultIndicator(-1, 2)
                 .setWebViewClient(getWebViewClient())
+                .setWebChromeClient(mWebChromeClient)
                 .setWebView(mBridgeWebView)
                 .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
 //                .setDownloadListener(mDownloadListener) 4.0.0 删除该API
@@ -157,6 +158,7 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
         @Override
         public void onReceivedTitle(WebView view, String title) {
             super.onReceivedTitle(view, title);
+            mTitleBar.setTitle(title);
         }
     };
 

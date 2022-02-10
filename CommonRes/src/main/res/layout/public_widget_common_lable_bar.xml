@@ -18,7 +18,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_setting_bar_left"
-            android:layout_width="80dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:drawablePadding="10dp"
             android:gravity="center_vertical"

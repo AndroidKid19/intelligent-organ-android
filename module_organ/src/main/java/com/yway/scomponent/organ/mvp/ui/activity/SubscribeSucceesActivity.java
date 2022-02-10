@@ -63,9 +63,11 @@ public class SubscribeSucceesActivity extends BaseActivity<SubscribeSucceesPrese
         });
     }
 
+
     @OnClick(R2.id.btn_query_details)
     void onDetailsClick(View view){
-
+        Utils.postcard(RouterHub.HOME_MYSUBSCRIBEACTIVITY)
+                .navigation(getActivity());
     }
 
     @Override

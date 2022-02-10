@@ -8,7 +8,10 @@ import com.jess.arms.mvp.IView;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
+import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
+import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -30,6 +33,10 @@ public interface HomeContract {
         SkeletonScreen skeletonScreen();
 
         Activity getActivity();
+
+        void metingListCallBack(HomeMetingBean data);
+
+        void queryArticleCallBack(List<MessageBean> rows);
     }
 
     //Model层定义接口,外部只需关心Model返回的数据,无需关心内部细节,即是否使用缓存
@@ -37,5 +44,9 @@ public interface HomeContract {
 
 
         Observable<BaseResponse<DictClassifyBean>> querySysByDictClassify(Map<String, Object> params);
+
+        Observable<BaseResponse<HomeMetingBean>> queryMyMeetingList(Map<String, Object> params);
+
+        Observable<BaseResponse<MessageBean>> queryArticlePublishPageList(Map<String, Object> params);
     }
 }

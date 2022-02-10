@@ -4,6 +4,12 @@
 
     <application>
         <activity
+            android:name=".mvp.ui.activity.PrepareMetingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.UserSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".mvp.ui.activity.VisitorRecordActivity"
             android:screenOrientation="portrait" />
         <activity

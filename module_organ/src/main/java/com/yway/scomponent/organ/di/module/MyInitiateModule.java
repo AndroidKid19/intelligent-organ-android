@@ -4,20 +4,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jess.arms.di.scope.FragmentScope;
+import com.yway.scomponent.commonsdk.core.RouterHub;
+import com.yway.scomponent.commonsdk.utils.Utils;
+import com.yway.scomponent.organ.mvp.contract.MyInitiateContract;
+import com.yway.scomponent.organ.mvp.model.MyInitiateModel;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
+import com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
-
-import com.yway.scomponent.commonsdk.core.RouterHub;
-import com.yway.scomponent.commonsdk.utils.Utils;
-import com.yway.scomponent.organ.mvp.contract.ApprovedContract;
-import com.yway.scomponent.organ.mvp.contract.MyInitiateContract;
-import com.yway.scomponent.organ.mvp.model.MyInitiateModel;
-import com.yway.scomponent.organ.mvp.ui.adapter.ApprovedAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ================================================
@@ -41,16 +40,20 @@ public abstract class MyInitiateModule {
 
     @FragmentScope
     @Provides
-    static List<Object> provideList() {
+    static List<MeetingRecordBean> provideList() {
         return new ArrayList<>();
     }
 
     @FragmentScope
     @Provides
-    static ApprovedAdapter provideAdapter(List<Object> list, MyInitiateContract.View iview) {
-        ApprovedAdapter adapter = new ApprovedAdapter(list);
+    static MyInitiateAdapter provideAdapter(List<MeetingRecordBean> list, MyInitiateContract.View iview) {
+        MyInitiateAdapter adapter = new MyInitiateAdapter(list);
         adapter.setOnItemClickListener((view, viewType, data, position) -> {
-            Utils.navigation(iview.getActivity(), RouterHub.HOME_MEETINGDETAILSACTIVITY);
+            MeetingRecordBean meetingRecordBean = (MeetingRecordBean) data;
+            Utils.postcard(RouterHub.HOME_MEETINGDETAILSACTIVITY)
+                    .withString("mettingId",meetingRecordBean.getId())
+                    .withInt("pageFrom",1)
+                    .navigation(iview.getActivity());
         });
         return adapter;
     }

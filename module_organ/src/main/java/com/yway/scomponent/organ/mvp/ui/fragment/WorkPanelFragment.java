@@ -95,7 +95,7 @@ public class WorkPanelFragment extends BaseFragment<WorkPanelPresenter> implemen
      * */
     @OnClick(R2.id.tv_menu_prepare)
     void onPrepareClick(View view){
-        Utils.navigation(getActivity(), RouterHub.HOME_APPROVEACTIVITY);
+        Utils.navigation(getActivity(), RouterHub.HOME_PREPAREMETINGACTIVITY);
     }
 
 

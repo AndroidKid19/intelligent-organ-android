@@ -10,6 +10,8 @@ import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 
+import java.util.List;
+
 import static com.yway.scomponent.commonsdk.core.Constants.APP_COMMON_DICT;
 import static com.yway.scomponent.commonsdk.core.Constants.APP_USER_ID;
 import static com.yway.scomponent.commonsdk.core.Constants.APP_USER_INFO;
@@ -75,8 +77,8 @@ public class CacheUtils {
     /**
      * 获取个人id
      */
-    public static int queryDoctorId() {
-        return initMMKV().decodeInt(APP_USER_ID);
+    public static String queryUserId() {
+        return queryUserInfo().getUserId();
     }
 
 
@@ -164,7 +166,19 @@ public class CacheUtils {
     public static String queryToken() {
         return initMMKV().decodeString(USER_TOKEN);
     }
-
+    /**
+     * 根据Key获取 字典value
+     */
+    public static String queryDictValue(List<DictClassifyBean> data, String key){
+        String strDictValue = "";
+        for (DictClassifyBean dictClassifyBean:data) {
+            if (dictClassifyBean.getSysDictCode().equals(key)){
+                strDictValue = dictClassifyBean.getSysDictName();
+                return  strDictValue;
+            }
+        }
+        return  strDictValue;
+    }
 
     /**
      * 清空缓存

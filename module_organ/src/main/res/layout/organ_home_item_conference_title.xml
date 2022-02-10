@@ -22,8 +22,8 @@
         android:textStyle="bold"
         tools:text="(3)" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_queryall"
         style="@style/TextGray.Medium"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginLeft="@dimen/public_padding_20dp"
     android:layout_marginRight="@dimen/public_padding_20dp"
     android:layout_marginBottom="10dp"
@@ -19,7 +20,7 @@
             android:id="@+id/tv_create_org"
             style="@style/TextDefault.Medium"
             android:layout_marginLeft="15dp"
-            android:text="发起人：区委办" />
+            android:text="发起人：" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_apply_state"
@@ -28,7 +29,7 @@
             android:layout_marginRight="15dp"
             android:drawablePadding="5dp"
             android:textColor="@color/public_color_text_sign"
-            android:text="不通过" />
+            tools:text="不通过" />
     </RelativeLayout>
 
     <View
@@ -58,7 +59,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_loation_name"
             style="@style/TextDefault.Medium"
-            android:text="区委机关区委机关区委机关区委" />
+            tools:text="区委机关区委机关区委机关区委" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -81,7 +82,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_room_name"
             style="@style/TextDefault.Medium"
-            android:text="区委机关区委机关区委机关区委" />
+            tools:text="区委机关区委机关区委机关区委" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -103,7 +104,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_time_name"
             style="@style/TextDefault.Medium"
-            android:text="2021-11-08 11:00-12:00" />
+            tools:text="2021-11-08 11:00-12:00" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

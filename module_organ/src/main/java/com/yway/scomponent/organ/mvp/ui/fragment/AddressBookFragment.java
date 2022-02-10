@@ -39,6 +39,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
@@ -212,6 +213,13 @@ public class AddressBookFragment extends BaseFragment<AddressBookPresenter> impl
 
     };
 
+
+    @OnClick(R2.id.tv_search_user)
+    void onUserSearchClick(View view){
+        Utils.postcard(RouterHub.HOME_USERSEARCHACTIVITY)
+                .withParcelable("addressCompanyBean",CacheUtils.initMMKV().decodeParcelable(Constants.APP_USER_ORGAN,AddressCompanyBean.class))
+                .navigation(getActivity());
+    }
 
     @Override
     public void setData(@Nullable Object data) {

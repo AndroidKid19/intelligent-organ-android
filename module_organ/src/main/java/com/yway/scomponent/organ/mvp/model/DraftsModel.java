@@ -9,7 +9,14 @@ import com.jess.arms.di.scope.FragmentScope;
 
 import javax.inject.Inject;
 
+import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.organ.mvp.contract.DraftsContract;
+import com.yway.scomponent.organ.mvp.model.api.service.HomeService;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
+
+import java.util.Map;
+
+import io.reactivex.Observable;
 
 /**
  * ================================================
@@ -28,6 +35,21 @@ public class DraftsModel extends BaseModel implements DraftsContract.Model {
     @Inject
     public DraftsModel(IRepositoryManager repositoryManager) {
         super(repositoryManager);
+    }
+
+    @Override
+    public Observable<BaseResponse<MeetingRecordBean>> queryMeetingRecordPageList(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .queryMeetingRecordPageList(params);
+    }
+
+
+    @Override
+    public Observable<BaseResponse> deleteMeetingRecord(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .deleteMeetingRecord(params);
     }
 
     @Override

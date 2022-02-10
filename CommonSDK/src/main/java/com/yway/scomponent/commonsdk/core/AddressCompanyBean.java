@@ -33,6 +33,16 @@ public class AddressCompanyBean implements Parcelable {
      */
     private int flag;
 
+    private String orgName;
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
+
     public int getFlag() {
         return flag;
     }

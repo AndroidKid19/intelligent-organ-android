@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="@dimen/public_padding_20dp"
+    android:layout_marginRight="@dimen/public_padding_20dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/organ_shape_background_border"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/public_padding_15dp"
+    android:paddingBottom="@dimen/public_padding_15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_create_org"
+            style="@style/TextDefault.Medium"
+            android:layout_marginLeft="15dp"
+            tools:text="发起人：区委办" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_create_user"
+            style="@style/TextDefault.Medium"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:drawableLeft="@drawable/organ_ic_phone_volume"
+            android:drawablePadding="5dp"
+            tools:text="周末 18888888888" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/public_line_size"
+        android:layout_marginTop="10dp"
+        android:background="@color/public_colorLine" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/view_line">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_loation_lable"
+            style="@style/TextGray.Medium"
+            android:layout_width="50dp"
+            android:text="会议室" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_loation_name"
+            style="@style/TextDefault.Medium"
+            tools:text="区委机关区委机关区委机关区委" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/view_line">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_room_lable"
+            style="@style/TextGray.Medium"
+            android:layout_width="50dp"
+            android:text="主题" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_room_name"
+            style="@style/TextDefault.Medium"
+            tools:text="区委机关区委机关区委机关区委" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/view_line">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time_lable"
+            style="@style/TextGray.Medium"
+            android:layout_width="50dp"
+            android:text="时间" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_time_name"
+            style="@style/TextDefault.Medium"
+            tools:text="2021-11-08 11:00-12:00" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

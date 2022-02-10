@@ -16,6 +16,7 @@
     <color name="public_color_background_gradual_end">#E4803C</color>
 
     <color name="public_color_btn">#0DC663</color>
+    <color name="public_color_text_success">#0DC663</color>
     <!-- Tab选中字体 -->
     <color name="public_color_text_select">#eb320a</color>
     <!-- Tab未选中字体 -->

@@ -12,9 +12,8 @@ import dagger.Provides;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.mvp.contract.DraftsContract;
-import com.yway.scomponent.organ.mvp.contract.MyInitiateContract;
 import com.yway.scomponent.organ.mvp.model.DraftsModel;
-import com.yway.scomponent.organ.mvp.ui.adapter.ApprovedAdapter;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.ui.adapter.DraftsAdapter;
 
 import java.util.ArrayList;
@@ -42,17 +41,14 @@ public abstract class DraftsModule {
 
     @FragmentScope
     @Provides
-    static List<Object> provideList() {
+    static List<MeetingRecordBean> provideList() {
         return new ArrayList<>();
     }
 
     @FragmentScope
     @Provides
-    static DraftsAdapter provideAdapter(List<Object> list, DraftsContract.View iview) {
+    static DraftsAdapter provideAdapter(List<MeetingRecordBean> list, DraftsContract.View iview) {
         DraftsAdapter adapter = new DraftsAdapter(list);
-        adapter.setOnItemClickListener((view, viewType, data, position) -> {
-            Utils.navigation(iview.getActivity(), RouterHub.HOME_APPLYROOMACTIVITY);
-        });
         return adapter;
     }
 }

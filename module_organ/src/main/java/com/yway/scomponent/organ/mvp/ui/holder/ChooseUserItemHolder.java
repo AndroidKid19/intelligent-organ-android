@@ -64,7 +64,7 @@ public class ChooseUserItemHolder extends BaseHolder<Object> {
         //加载姓名
         mTvUserName.setText(Utils.appendStr(userInfoBean.getName()));
         //加载头像
-        if (StringUtils.isEmpty(userInfoBean.getSysUserFilePath())) {
+        if (!StringUtils.isEmpty(userInfoBean.getSysUserFilePath())) {
             //itemView 的 Context 就是 Activity, Glide 会自动处理并和该 Activity 的生命周期绑定
             mImageLoader.loadImage(itemView.getContext(),
                     CommonImageConfigImpl

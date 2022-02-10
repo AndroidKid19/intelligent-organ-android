@@ -4,6 +4,7 @@ import android.view.View;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.base.BaseHolder;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
@@ -40,7 +41,7 @@ public class SubscribeTimeItemHolder extends BaseHolder<SubscribeTimeBean> {
         mTvTime.setText(data.getTime());
         itemView.setOnClickListener(this);
 
-        if (data.getWhetherAppointment().equals("1")){
+        if (!StringUtils.isEmpty(data.getWhetherAppointment()) && data.getWhetherAppointment().equals("1")){
             mViewTime.setBackground(itemView.getContext().getDrawable(R.drawable.organ_shape_subscribe_time_disable));
             mTvAmPm.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_default));
             mTvTime.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_default));

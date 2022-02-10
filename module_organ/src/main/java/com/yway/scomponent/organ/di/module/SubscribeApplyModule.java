@@ -8,6 +8,7 @@ import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract;
 import com.yway.scomponent.organ.mvp.model.SubscribeApplyModel;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.ui.adapter.SubscribeApplyAdapter;
 
 import java.util.ArrayList;
@@ -39,17 +40,15 @@ public abstract class SubscribeApplyModule {
 
     @FragmentScope
     @Provides
-    static List<Object> provideList() {
+    static List<MeetingRecordBean> provideList() {
         return new ArrayList<>();
     }
 
     @FragmentScope
     @Provides
-    static SubscribeApplyAdapter provideAdapter(List<Object> list, SubscribeApplyContract.View iview) {
+    static SubscribeApplyAdapter provideAdapter(List<MeetingRecordBean> list, SubscribeApplyContract.View iview) {
         SubscribeApplyAdapter adapter = new SubscribeApplyAdapter(list);
-        adapter.setOnItemClickListener((view, viewType, data, position) -> {
-            Utils.navigation(iview.getActivity(), RouterHub.HOME_MEETINGDETAILSACTIVITY);
-        });
+
         return adapter;
     }
 }

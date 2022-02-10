@@ -8,6 +8,7 @@
     android:layout_marginRight="@dimen/public_padding_20dp"
     android:layout_marginBottom="15dp"
     android:background="@drawable/organ_shape_cof_background"
+    android:id="@+id/view_metting"
     android:paddingTop="15dp"
     android:paddingRight="@dimen/public_mar_left_12dp"
     android:paddingBottom="@dimen/public_padding_15dp">

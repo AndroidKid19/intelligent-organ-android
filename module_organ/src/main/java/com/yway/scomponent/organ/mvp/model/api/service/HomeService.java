@@ -20,7 +20,11 @@ import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.organ.mvp.model.api.Api;
 import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
+import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
+import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingDetailsBean;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
+import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 import com.yway.scomponent.organ.mvp.model.entity.RoomDetailsBean;
 
 import java.util.Map;
@@ -86,4 +90,83 @@ public interface HomeService {
     @POST(Api.API_QUERYBYMEETINGRECORDDETAILS)
     Observable<BaseResponse<MeetingDetailsBean>> queryByMeetingRecordDetails(@Body() Map<String, Object> params);
 
+    /**
+     * 预约列表
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYMEETINGRECORDPAGELIST)
+    Observable<BaseResponse<MeetingRecordBean>> queryMeetingRecordPageList(@Body() Map<String, Object> params);
+
+    /**
+     * 删除草稿箱
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_DELETEMEETINGRECORD)
+    Observable<BaseResponse> deleteMeetingRecord(@Body() Map<String, Object> params);
+
+
+    /**
+     * 我的会议
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYMYMEETINGPAGELIST)
+    Observable<BaseResponse<ConferenceBean>> queryMyMeetingPageList(@Body() Map<String, Object> params);
+
+
+    /**
+     * 我的审批 - 待审核
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_GETMEETINGRECORDAPPROVALINGLIST)
+    Observable<BaseResponse<MeetingRecordBean>> getMeetingRecordApprovalingList(@Body() Map<String, Object> params);
+
+    /**
+     * 我的审批 - 待审核
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_GETMEETINGRECORDAPPROVAEDLIST)
+    Observable<BaseResponse<MeetingRecordBean>> getMeetingRecordApprovaedList(@Body() Map<String, Object> params);
+
+
+    /**
+     * 我的审批 - 已审核
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_DOMEETINGRECORDAPPROVAL)
+    Observable<BaseResponse> doMeetingRecordApproval(@Body() Map<String, Object> params);
+
+    /**
+     * 我的准备 - 待准备
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_GETMEETINGRECORDREADYINGLIST)
+    Observable<BaseResponse<MeetingRecordBean>> getMeetingRecordReadyingList(@Body() Map<String, Object> params);
+
+    /**
+     * 我的准备 - 已准备
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_GETMEETINGRECORDREADYEDLIST)
+    Observable<BaseResponse<MeetingRecordBean>> getMeetingRecordReadyedList(@Body() Map<String, Object> params);
+
+    /**
+     * 准备
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_DOMEETINGRECORDREADY)
+    Observable<BaseResponse> doMeetingRecordReady(@Body() Map<String, Object> params);
+
+    /**
+     * 首页会议列表
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYMYMEETINGLIST)
+    Observable<BaseResponse<HomeMetingBean>> queryMyMeetingList(@Body() Map<String, Object> params);
+
+    /**
+     * 首页消息
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYARTICLEPUBLISHPAGELIST)
+    Observable<BaseResponse<MessageBean>> queryArticlePublishPageList(@Body() Map<String, Object> params);
 }

@@ -9,7 +9,15 @@ import com.jess.arms.di.scope.FragmentScope;
 
 import javax.inject.Inject;
 
+import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
+import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.organ.mvp.contract.MyInitiateContract;
+import com.yway.scomponent.organ.mvp.model.api.service.HomeService;
+import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
+
+import java.util.Map;
+
+import io.reactivex.Observable;
 
 /**
  * ================================================
@@ -28,6 +36,13 @@ public class MyInitiateModel extends BaseModel implements MyInitiateContract.Mod
     @Inject
     public MyInitiateModel(IRepositoryManager repositoryManager) {
         super(repositoryManager);
+    }
+
+    @Override
+    public Observable<BaseResponse<MeetingRecordBean>> queryMeetingRecordPageList(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .queryMeetingRecordPageList(params);
     }
 
     @Override
