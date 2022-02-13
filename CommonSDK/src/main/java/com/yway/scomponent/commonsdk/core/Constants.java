@@ -69,4 +69,8 @@ public interface Constants {
 
     /**会议报道时间 字典**/
     String SYS_DICT_MEETING_CHECK_IN_TIME = "MEETING_CHECK_IN_TIME";
+
+
+    /**职务 字典**/
+    String SYS_DICT_POSITION = "POSITION";
 }

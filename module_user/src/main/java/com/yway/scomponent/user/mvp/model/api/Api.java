@@ -31,4 +31,17 @@ public interface Api {
 
     //个人信息查询
     String API_QUERYLOGINUSERINFOBYID = "/organ/queryloginUserInfoById";
+
+    //查询收藏
+    String API_QUERYARTICLEFAVORITESPAGELIST = "/organ/articleFavorites/queryArticleFavoritesPageList";
+
+
+
+    //取消收藏
+    String API_CANCELARTICLEFAVORITES = "/organ/articleFavorites/cancelArticleFavorites";
+
+
+
+    //通讯录查询
+    String API_QUERYALLSYSORGANDSYSUSERLIST = "/organ/org/queryAllSysOrgAndSysUserList";
 }

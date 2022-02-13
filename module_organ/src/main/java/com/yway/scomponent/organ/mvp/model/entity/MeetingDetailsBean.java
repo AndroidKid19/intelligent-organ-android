@@ -103,6 +103,32 @@ public class MeetingDetailsBean implements Parcelable {
      * 电话
      * */
     private String createCellPhone;
+    /**
+     * 人数
+     * */
+    private String seatsNumber;
+
+    /**
+     * 位置
+     * */
+    private String location;
+
+
+    public String getSeatsNumber() {
+        return seatsNumber;
+    }
+
+    public void setSeatsNumber(String seatsNumber) {
+        this.seatsNumber = seatsNumber;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public String getCreateCellPhone() {
         return createCellPhone;
@@ -256,7 +282,7 @@ public class MeetingDetailsBean implements Parcelable {
         dest.writeString(this.meetingCheckInTime);
         dest.writeString(this.meetingStartTime);
         dest.writeString(this.meetingEndTime);
-        dest.writeList(this.meetingFileRspBOList);
+        dest.writeTypedList(this.meetingFileRspBOList);
         dest.writeTypedList(this.meetingOrganizationRspBOList);
         dest.writeTypedList(this.meetingPersonnelRspBOList);
         dest.writeString(this.meetingRoomId);
@@ -264,6 +290,9 @@ public class MeetingDetailsBean implements Parcelable {
         dest.writeString(this.meetingSet);
         dest.writeString(this.meetingSubject);
         dest.writeString(this.remark);
+        dest.writeString(this.createCellPhone);
+        dest.writeString(this.seatsNumber);
+        dest.writeString(this.location);
     }
 
     public void readFromParcel(Parcel source) {
@@ -275,8 +304,7 @@ public class MeetingDetailsBean implements Parcelable {
         this.meetingCheckInTime = source.readString();
         this.meetingStartTime = source.readString();
         this.meetingEndTime = source.readString();
-        this.meetingFileRspBOList = new ArrayList<FileDetailsBean>();
-        source.readList(this.meetingFileRspBOList, UploadFileBean.class.getClassLoader());
+        this.meetingFileRspBOList = source.createTypedArrayList(FileDetailsBean.CREATOR);
         this.meetingOrganizationRspBOList = source.createTypedArrayList(AddressCompanyBean.CREATOR);
         this.meetingPersonnelRspBOList = source.createTypedArrayList(UserInfoBean.CREATOR);
         this.meetingRoomId = source.readString();
@@ -284,6 +312,9 @@ public class MeetingDetailsBean implements Parcelable {
         this.meetingSet = source.readString();
         this.meetingSubject = source.readString();
         this.remark = source.readString();
+        this.createCellPhone = source.readString();
+        this.seatsNumber = source.readString();
+        this.location = source.readString();
     }
 
     public MeetingDetailsBean() {
@@ -298,8 +329,7 @@ public class MeetingDetailsBean implements Parcelable {
         this.meetingCheckInTime = in.readString();
         this.meetingStartTime = in.readString();
         this.meetingEndTime = in.readString();
-        this.meetingFileRspBOList = new ArrayList<FileDetailsBean>();
-        in.readList(this.meetingFileRspBOList, UploadFileBean.class.getClassLoader());
+        this.meetingFileRspBOList = in.createTypedArrayList(FileDetailsBean.CREATOR);
         this.meetingOrganizationRspBOList = in.createTypedArrayList(AddressCompanyBean.CREATOR);
         this.meetingPersonnelRspBOList = in.createTypedArrayList(UserInfoBean.CREATOR);
         this.meetingRoomId = in.readString();
@@ -307,6 +337,9 @@ public class MeetingDetailsBean implements Parcelable {
         this.meetingSet = in.readString();
         this.meetingSubject = in.readString();
         this.remark = in.readString();
+        this.createCellPhone = in.readString();
+        this.seatsNumber = in.readString();
+        this.location = in.readString();
     }
 
     public static final Creator<MeetingDetailsBean> CREATOR = new Creator<MeetingDetailsBean>() {

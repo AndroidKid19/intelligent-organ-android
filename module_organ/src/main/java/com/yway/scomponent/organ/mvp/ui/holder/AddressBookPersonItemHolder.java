@@ -10,6 +10,7 @@ import com.jess.arms.utils.ArmsUtils;
 import com.yway.scomponent.commonres.view.layout.NiceImageView;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 import com.yway.scomponent.commonsdk.imgaEngine.config.CommonImageConfigImpl;
+import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
@@ -54,7 +55,7 @@ public class AddressBookPersonItemHolder extends BaseHolder<Object> {
         //加载姓名
         mTvUserName.setText(Utils.appendStr(userInfoBean.getName()));
         //加载头像
-        if (StringUtils.isEmpty(userInfoBean.getSysUserFilePath())) {
+        if (!StringUtils.isEmpty(userInfoBean.getSysUserFilePath())) {
             //itemView 的 Context 就是 Activity, Glide 会自动处理并和该 Activity 的生命周期绑定
             mImageLoader.loadImage(itemView.getContext(),
                     CommonImageConfigImpl
@@ -64,7 +65,9 @@ public class AddressBookPersonItemHolder extends BaseHolder<Object> {
                             .placeholder(R.mipmap.public_ic_default_head)
                             .build());
         }
-        mTvUserOffice.setText("干部");
+        String jop = Utils.appendStr(CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),userInfoBean.getPosition()+""));
+
+        mTvUserOffice.setText(jop);
         itemView.setOnClickListener(this);
     }
 

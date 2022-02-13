@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.CollectionUtils;
-import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
@@ -24,8 +23,8 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.yway.scomponent.commonres.dialog.IToast;
-import com.yway.scomponent.commonres.dialog.MessageDialog;
 import com.yway.scomponent.commonres.view.banner.BGABanner;
+import com.yway.scomponent.commonsdk.BuildConfig;
 import com.yway.scomponent.commonsdk.core.EventBusHub;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.utils.Utils;
@@ -40,19 +39,13 @@ import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageTitleBean;
 import com.yway.scomponent.organ.mvp.presenter.HomePresenter;
 import com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter;
-
-import org.jetbrains.annotations.NotNull;
 import org.simple.eventbus.EventBus;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.OnClick;
-
+import timber.log.Timber;
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 /**
@@ -176,8 +169,12 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
             Utils.postcard(RouterHub.HOME_INFORMATIONACTIVITY)
                     .navigation(getActivity());
         }else if(view.getId() == R.id.view_information){
-            Utils.postcard(RouterHub.APP_AGENTWEBACTIVITY)
-                    .withString(RouterHub.PARAM_WEBVIEWXURL,"http://www.baidu.com")
+            MessageBean messageBean = (MessageBean) data;
+            Timber.i(Utils.appendStr(BuildConfig.H5_HOST_ROOT,"articleMobile?id=",messageBean.getId()));
+            Utils.postcard(RouterHub.HOME_WEBVIEWACTIVITY)
+                    .withString(RouterHub.PARAM_WEBVIEWXURL,Utils.appendStr(BuildConfig.H5_HOST_ROOT,"articleMobile?id=",messageBean.getId()))
+                    .withInt("pageFrom",2)
+                    .withString("articleId",messageBean.getId())
                     .navigation(getActivity());
         }
     };
@@ -210,8 +207,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         mContentBanner.setDelegate(this);
         mContentBanner.setAdapter(this);
         List<String> bannerLs = new ArrayList<>();
-        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/breed/home_ic_banner1.jpg");
-        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/breed/home_ic_banner2.jpg");
+        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/ae7f-a1af70c602eb1a330311be5f27267a6a.png");
+        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/626516f9edd04aeaa50a0f73d21961f5.jpeg");
+        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/1b4c510fd9f9d72a3dca02673e85c93d359bbb53.jpeg");
         mContentBanner.setAutoPlayAble(bannerLs.size() > 1);
         mContentBanner.setData(bannerLs, null);
     }

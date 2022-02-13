@@ -15,17 +15,19 @@
  */
 package com.yway.scomponent.organ.mvp.model.api.service;
 
+import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.organ.mvp.model.api.Api;
-import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
+import com.yway.scomponent.organ.mvp.model.entity.FavoritesBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 import com.yway.scomponent.organ.mvp.model.entity.RoomDetailsBean;
+import com.yway.scomponent.organ.mvp.model.entity.VisitorRecordBean;
 
 import java.util.Map;
 
@@ -183,4 +185,42 @@ public interface HomeService {
     @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
     @POST(Api.API_DRAFTSUBMITMEETINGRECORD)
     Observable<BaseResponse> draftSubmitMeetingRecord(@Body() Map<String, Object> params);
+
+
+    /**
+     * 收藏
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_CREATEARTICLEFAVORITES)
+    Observable<BaseResponse> createArticleFavorites(@Body() Map<String, Object> params);
+
+
+    /**
+     * 取消收藏
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_CANCELARTICLEFAVORITES)
+    Observable<BaseResponse> cancelArticleFavorites(@Body() Map<String, Object> params);
+
+    /**
+     * 校验是否收藏
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYUSERISARTICLEFAVORITES)
+    Observable<BaseResponse<FavoritesBean>> queryUserIsArticleFavorites(@Body() Map<String, Object> params);
+
+    /**
+     * 访客记录
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYVISITREGISTERRECORDPAGELIST)
+    Observable<BaseResponse<VisitorRecordBean>> queryVisitRegisterRecordPageList(@Body() Map<String, Object> params);
+
+    /**
+     * 访客记录 统计
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYVISITCOUNTBYYEARANDMONTHANDTODAY)
+    Observable<BaseResponse<VisitorRecordBean>> queryVisitCountByYearAndMonthAndToday(@Body() Map<String, Object> params);
+
 }

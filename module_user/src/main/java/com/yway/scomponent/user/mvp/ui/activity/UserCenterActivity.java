@@ -36,7 +36,9 @@ import com.yway.scomponent.commonres.dialog.PhotoDialog;
 import com.yway.scomponent.commonres.dialog.ProgresDialog;
 import com.yway.scomponent.commonres.utils.GlideEngine;
 import com.yway.scomponent.commonres.view.layout.SettingBar;
+import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.commonsdk.core.Constants;
+import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.commonsdk.core.EventBusHub;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
@@ -93,7 +95,16 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
      */
     @BindView(R2.id.bar_mobile)
     SettingBar mBarMobile;
-
+    /**
+     * 所在单位
+     */
+    @BindView(R2.id.bar_organ)
+    SettingBar mBarOrgan;
+    /**
+     * 所任职务
+     */
+    @BindView(R2.id.bar_jop)
+    SettingBar mBarJop;
 
     //定义选择相机头像
     private List<LocalMedia> selectList = new ArrayList<>();
@@ -101,6 +112,8 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
     private String pathHead;
     //记录选择的性别
     private int sex = 0;
+    //记录选择的岗位
+    private int jop = 0;
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -134,6 +147,19 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
         mBarCardNumber.setRightText(CacheUtils.queryUserInfo().getCertificateNumber());
         mPresenter.imageLoader(CacheUtils.queryUserInfo().getSysUserFilePath(), mIvHeadImg);
         mBarSex.setRightText(CacheUtils.queryUserInfo().getSex() == 0 ? "女" : "男");
+        mBarOrgan.setRightText(CacheUtils.queryUserInfo().getOrgTitle());
+        mBarJop.setRightText(CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),CacheUtils.queryUserInfo().getPosition()+""));
+    }
+
+    @OnClick(R2.id.bar_organ)
+    void onOrganClick(){
+        Utils.postcard(RouterHub.HOME_CHOOSECOMPANYACTIVITY)
+                .navigation(getActivity(), Constants.RESULT_CHOOSE_COMPANY_CODE);
+    }
+
+    @OnClick(R2.id.bar_jop)
+    void onJopClick(){
+        chioseJop();
     }
 
     /**
@@ -214,6 +240,34 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
         pvOptions.show();
     }
 
+    /**
+     * @return
+     * @description 选择岗位
+     * @date: 2020/12/4 14:37
+     * @author: YIWUANYUAN
+     */
+    private void chioseJop() {
+        List<DictClassifyBean> dictJop = CacheUtils.queryDictData().getDictJop();
+        List<String> strArr = new ArrayList<>();
+        for (DictClassifyBean dictClassifyBean :
+                dictJop) {
+            strArr.add(dictClassifyBean.getSysDictName());
+        }
+        if (CollectionUtils.isEmpty(strArr)) return;
+        //条件选择器
+        OptionsPickerView pvOptions = new OptionsPickerBuilder(this, (options1, option2, options3, v) -> {
+            //返回的分别是三个级别的选中位置
+            this.jop = options1;
+            mBarJop.setRightText(strArr.get(options1));
+            Map<String, Object> mapParams = new HashMap<>();
+            mapParams.put("position", dictJop.get(options1).getSysDictCode());
+            mPresenter.modifyAppUserInfoById(mapParams);
+        })
+                .setTitleText("选择岗位")
+                .build();
+        pvOptions.setPicker(strArr);
+        pvOptions.show();
+    }
 
     private PermissionUtil.RequestPermission mRequestPermission = new PermissionUtil.RequestPermission() {
         @Override
@@ -348,8 +402,25 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == Constants.RESULT_COMMON_CODE && resultCode == RESULT_OK) {
-            initUserData();
+        switch (requestCode) {
+            case Constants.RESULT_CHOOSE_COMPANY_CODE:
+                if (resultCode == Activity.RESULT_OK) {
+                    AddressCompanyBean companyBean = data.getParcelableExtra("addressCompanyBean");
+                    //获取已选择用户信息
+                    mBarOrgan.setRightText(companyBean.getOrgTitle());
+
+                    Map<String, Object> mapParams = new HashMap<>();
+                    mapParams.put("orgId", companyBean.getOrgId());
+                    mPresenter.modifyAppUserInfoById(mapParams);
+                }
+                break;
+
+            case Constants.RESULT_COMMON_CODE:
+                if (resultCode == Activity.RESULT_OK) {
+                    initUserData();
+                }
+                break;
+
         }
     }
 

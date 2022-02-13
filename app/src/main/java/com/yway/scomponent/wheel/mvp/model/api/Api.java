@@ -21,5 +21,12 @@ package com.yway.scomponent.wheel.mvp.model.api;
  * ================================================
  */
 public interface Api {
-    String APP_DOMAIN = "https://api.github.com";
+    String HOME_DOMAIN_NAME = "wheelapi";
+
+    //草稿创建会议
+    String API_CREATEARTICLEFAVORITES = "/organ/articleFavorites/createArticleFavorites";
+
+
+    //取消收藏
+    String API_CANCELARTICLEFAVORITES = "/organ/articleFavorites/cancelArticleFavorites";
 }

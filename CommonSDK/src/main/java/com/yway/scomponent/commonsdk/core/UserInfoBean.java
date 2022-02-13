@@ -76,6 +76,16 @@ public class UserInfoBean implements Parcelable {
 
     private String orgTitle;
 
+    private int position;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
     public String getOrgTitle() {
         return orgTitle;
     }
@@ -246,6 +256,7 @@ public class UserInfoBean implements Parcelable {
         dest.writeByte(this.isChecked ? (byte) 1 : (byte) 0);
         dest.writeString(this.userName);
         dest.writeString(this.orgTitle);
+        dest.writeInt(this.position);
     }
 
     public void readFromParcel(Parcel source) {
@@ -267,6 +278,7 @@ public class UserInfoBean implements Parcelable {
         this.isChecked = source.readByte() != 0;
         this.userName = source.readString();
         this.orgTitle = source.readString();
+        this.position = source.readInt();
     }
 
     public UserInfoBean() {
@@ -291,6 +303,7 @@ public class UserInfoBean implements Parcelable {
         this.isChecked = in.readByte() != 0;
         this.userName = in.readString();
         this.orgTitle = in.readString();
+        this.position = in.readInt();
     }
 
     public static final Creator<UserInfoBean> CREATOR = new Creator<UserInfoBean>() {

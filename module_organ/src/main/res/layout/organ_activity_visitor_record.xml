@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:ignore="ResourceName">
 
-    <!-- 水印 -->
-    <include layout="@layout/organ_include_view_watermark" />
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -82,8 +79,9 @@
                                 android:textSize="@dimen/public_font_14sp" />
 
                             <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_year_count"
                                 style="@style/TextDefault.Medium"
-                                android:text="3600"
+                                android:text="0"
                                 android:textStyle="bold" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -101,8 +99,9 @@
                                 android:textSize="@dimen/public_font_14sp" />
 
                             <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_month_count"
                                 style="@style/TextDefault.Medium"
-                                android:text="3600"
+                                android:text="0"
                                 android:textStyle="bold" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -120,8 +119,9 @@
                                 android:textSize="@dimen/public_font_14sp" />
 
                             <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_day_count"
                                 style="@style/TextDefault.Medium"
-                                android:text="3600"
+                                android:text="0"
                                 android:textStyle="bold" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
                     </com.yway.scomponent.commonres.view.layout.AverageLayout>
@@ -129,29 +129,34 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.yway.scomponent.commonres.view.layout.MultipleStatusView
-                android:id="@+id/multiple_layout"
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="@+id/view_holder"
-                app:layout_constraintTop_toBottomOf="@+id/view_holder">
+                android:layout_height="match_parent">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycle_view"
+                <com.yway.scomponent.commonres.view.layout.MultipleStatusView
+                    android:id="@+id/multiple_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:background="@android:color/transparent"
-                    android:divider="@android:color/transparent"
-                    android:dividerHeight="0dp"
-                    android:overScrollMode="never"
-                    android:scrollbarSize="2dp"
-                    android:scrollbarThumbVertical="@color/public_colorPrimary"
-                    android:scrollbars="vertical"
-                    tools:listitem="@layout/organ_item_visitor_record"
-                    />
-            </com.yway.scomponent.commonres.view.layout.MultipleStatusView>
+                    app:layout_constraintBottom_toBottomOf="@+id/view_holder"
+                    app:layout_constraintTop_toBottomOf="@+id/view_holder">
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycle_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/transparent"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0dp"
+                        android:overScrollMode="never"
+                        android:scrollbarSize="2dp"
+                        android:scrollbarThumbVertical="@color/public_colorPrimary"
+                        android:scrollbars="vertical"
+                        tools:listitem="@layout/organ_item_visitor_record" />
+                </com.yway.scomponent.commonres.view.layout.MultipleStatusView>
+
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name=".mvp.ui.activity.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".mvp.ui.activity.InformationActivity"
             android:screenOrientation="portrait" />
         <activity

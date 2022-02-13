@@ -156,6 +156,7 @@
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
+                    android:visibility="gone"
                     app:bar_leftIcon="@mipmap/user_ic_bar_remind"
                     app:bar_leftText="提醒"
                     app:bar_lineMargin="20dp"

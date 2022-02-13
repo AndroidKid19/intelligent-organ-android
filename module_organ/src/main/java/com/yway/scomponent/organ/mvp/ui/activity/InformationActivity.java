@@ -135,10 +135,12 @@ public class InformationActivity extends BaseActivity<InformationPresenter> impl
     void onTextChanged(CharSequence text){
         //内容改变监听
         if (mTvContentCount.getText().length() > 0) {
-
+            paramMap.put("title",mTvContentCount.getText().toString());
         }else{
-            mPresenter.queryArticlePublishPageList(paramMap, true);
+
+            paramMap.remove("title");
         }
+        mPresenter.queryArticlePublishPageList(paramMap, true);
     }
 
 

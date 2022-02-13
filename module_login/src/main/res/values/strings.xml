@@ -1,5 +1,5 @@
 <resources>
-    <string name="login_title_welcome_login">智慧机关</string>
+    <string name="login_title_welcome_login">榆阳智云</string>
 
     <string name="login_lable_account">账号</string>
     <string name="login_lable_phone">手机号</string>

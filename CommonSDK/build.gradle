@@ -31,13 +31,13 @@ android {
     }
 
     buildTypes {
-        debug {
+        debug {//QMDH-MTNV-KLYX-TV6S
             buildConfigField "boolean", "LOG_DEBUG", "true"
             buildConfigField "boolean", "USE_CANARY", "true"
             buildConfigField "String", "HOST_ROOT", '\"http://8.141.167.159:8990\"'
 //            buildConfigField "String", "HOST_ROOT", '\"http://192.168.1.154:8990\"'//风哥
 //            buildConfigField "String", "HOST_ROOT", '\"http://192.168.1.125:8090/\"'//亚东
-            buildConfigField "String", "H5_HOST_ROOT", '\"http://8.141.167.159:8990/\"'
+            buildConfigField "String", "H5_HOST_ROOT", '\"http://8.141.167.159:8000/#/\"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -120,4 +120,5 @@ dependencies {
     api 'org.jsoup:jsoup:1.12.1'
 
     api 'com.google.android:flexbox:2.0.1'
+    api 'com.github.lzyzsd:jsbridge:1.0.4'
 }

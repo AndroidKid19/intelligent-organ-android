@@ -67,7 +67,8 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
     public void queryDict() {
         String dictKey = Utils.appendStr(
                 Constants.SYS_DICT_MEETING_DEVICE, ",",
-                Constants.SYS_DICT_MEETING_CHECK_IN_TIME);
+                Constants.SYS_DICT_MEETING_CHECK_IN_TIME, ",",
+                Constants.SYS_DICT_POSITION);
         querySysByDictClassify(dictKey);
     }
 
@@ -213,6 +214,13 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
             List<DictClassifyBean> dictDevice = dictClassifyBeans.get(1).getSysDictRspBOList();
             //缓存会议报道时间
             dictClassifyBean.setDictMeetingCheckInTime(dictDevice);
+        }
+
+        //获取岗位
+        if (dictClassifyBeans.get(2) != null) {
+            List<DictClassifyBean> dictDevice = dictClassifyBeans.get(2).getSysDictRspBOList();
+            //缓存岗位
+            dictClassifyBean.setDictJop(dictDevice);
         }
         //缓存数据字典
         CacheUtils.initMMKV().encode(Constants.APP_COMMON_DICT, dictClassifyBean);

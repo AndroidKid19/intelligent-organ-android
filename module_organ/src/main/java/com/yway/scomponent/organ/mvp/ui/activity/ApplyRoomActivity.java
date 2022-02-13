@@ -279,7 +279,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
 
             //初始化会议室信息
             mTvRoomName.setText(mMeetingDetailsBean.getMeetingRoomName());
-            mTvRoomCount.setText(Utils.appendStr(mRoomDetailsBean.getLocation(), " · 可容纳", mRoomDetailsBean.getSeatsNumber(), "人"));
+            mTvRoomCount.setText(Utils.appendStr(mMeetingDetailsBean.getLocation(), " · 可容纳", mMeetingDetailsBean.getSeatsNumber(), "人"));
 
             //初始化会议主题
             mEtMettingSubject.setText(mMeetingDetailsBean.getMeetingSubject());
@@ -316,9 +316,14 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
             //初始化会议附件
             List<FileDetailsBean> meetingFileRspBOList = mMeetingDetailsBean.getMeetingFileRspBOList();
             //校验文件
-            if(CollectionUtils.isNotEmpty(meetingOrganizationRspBOList)){
-//                mFileDetailsBeans.addAll(meetingFileRspBOList);
-//                mChooseFileAdapter.notifyDataSetChanged();
+            if(CollectionUtils.isNotEmpty(meetingFileRspBOList)){
+                for (FileDetailsBean fileDetailsBean :meetingFileRspBOList) {
+                    UploadFileBean uploadFileBean = new UploadFileBean();
+                    uploadFileBean.setName(fileDetailsBean.getFileName());
+                    uploadFileBean.setUrl(fileDetailsBean.getFilePath());
+                    mFileDetailsBeans.add(uploadFileBean);
+                }
+                mChooseFileAdapter.notifyDataSetChanged();
             }
             //初始化设备
 

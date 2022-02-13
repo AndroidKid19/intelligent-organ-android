@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import com.jess.arms.mvp.IView;
 import com.jess.arms.mvp.IModel;
+import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 
 import java.util.Map;
@@ -26,6 +27,8 @@ public interface RegisterContract {
         void sendSmsSuccess();
 
         void registerSuccess(String msg);
+
+        void queryOrgRspCallBack(AddressCompanyBean data);
     }
 
     //Model层定义接口,外部只需关心Model返回的数据,无需关心内部细节,即是否使用缓存
@@ -34,5 +37,7 @@ public interface RegisterContract {
         Observable<BaseResponse> sendSms(Map<String, Object> params);
 
         Observable<BaseResponse> register(Map<String, Object> params);
+
+        Observable<BaseResponse<AddressCompanyBean>> queryAllSysOrgAndSysUserList(Map<String, Object> params);
     }
 }

@@ -100,4 +100,20 @@ public interface Api {
 
     //草稿创建会议
     String API_DRAFTSUBMITMEETINGRECORD = "/organ/meetingRecord/draftSubmitMeetingRecord";
+
+    //收藏
+    String API_CREATEARTICLEFAVORITES = "/organ/articleFavorites/createArticleFavorites";
+
+
+    //取消收藏
+    String API_CANCELARTICLEFAVORITES = "/organ/articleFavorites/cancelArticleFavorites";
+
+    //查看是否收藏
+    String API_QUERYUSERISARTICLEFAVORITES = "/organ/articleFavorites/queryUserIsArticleFavorites";
+
+    //访客登记记录表列表查询
+    String API_QUERYVISITREGISTERRECORDPAGELIST = "/organ/visitRegisterRecord/queryVisitRegisterRecordPageList";
+
+    //查询本年度，本月份，今日总数
+    String API_QUERYVISITCOUNTBYYEARANDMONTHANDTODAY = "/organ/visitRegisterRecord/queryVisitCountByYearAndMonthAndToday";
 }

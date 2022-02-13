@@ -1,10 +1,12 @@
 
 package com.yway.scomponent.user.mvp.model.api.service;
 
+import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 import com.yway.scomponent.user.mvp.model.api.Api;
+import com.yway.scomponent.user.mvp.model.entity.ArticleBean;
 import com.yway.scomponent.user.mvp.model.entity.MessageBean;
 
 import java.util.List;
@@ -102,4 +104,24 @@ public interface UserService {
     @POST(Api.API_QUERYLOGINUSERINFOBYID)
     Observable<BaseResponse<UserInfoBean>> queryloginUserInfoById(@Body() Map<String,Object> params);
 
+    /**
+     * 查询收藏
+     */
+    @Headers({DOMAIN_NAME_HEADER +  Api.USER_DOMAIN_NAME})
+    @POST(Api.API_QUERYARTICLEFAVORITESPAGELIST)
+    Observable<BaseResponse<ArticleBean>> queryArticleFavoritesPageList(@Body() Map<String,Object> params);
+
+    /**
+     * 取消收藏
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.USER_DOMAIN_NAME})
+    @POST(Api.API_CANCELARTICLEFAVORITES)
+    Observable<BaseResponse> cancelArticleFavorites(@Body() Map<String, Object> params);
+
+    /**
+     * 通讯录查询
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.USER_DOMAIN_NAME})
+    @POST(Api.API_QUERYALLSYSORGANDSYSUSERLIST)
+    Observable<BaseResponse<AddressCompanyBean>> queryAllSysOrgAndSysUserList(@Body() Map<String, Object> params);
 }

@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -28,6 +29,9 @@ import com.jess.arms.utils.ArmsUtils;
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.WebChromeClient;
 import com.just.agentweb.WebViewClient;
+import com.yway.scomponent.commonres.dialog.IToast;
+import com.yway.scomponent.commonres.dialog.ProgresDialog;
+import com.yway.scomponent.commonres.view.titlebar.OnTitleBarListener;
 import com.yway.scomponent.commonres.view.titlebar.TitleBar;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.wheel.R;
@@ -62,6 +66,12 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
     @Autowired(name = RouterHub.PARAM_WEBVIEWXURL)
     String webviewxUrl;
 
+    @Autowired
+    int pageFrom;
+
+    @Autowired
+    String articleId;
+
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerWebViewComponent //如找不到该类,请编译一下项目
@@ -82,6 +92,28 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
     public void initData(@Nullable Bundle savedInstanceState) {
         ImmersionBar.with(this).titleBar(R.id.bar_title).statusBarDarkFont(true).init();
         initWebView();
+        if (pageFrom == 2){
+            mTitleBar.setRightIcon(getDrawable(R.mipmap.public_ic_collect));
+            mTitleBar.setOnTitleBarListener(new OnTitleBarListener() {
+                @Override
+                public void onLeftClick(View v) {
+
+                }
+
+                @Override
+                public void onTitleClick(View v) {
+
+                }
+
+                @Override
+                public void onRightClick(View v) {
+                    Map<String,Object> paramsMap = new HashMap<>();
+                    paramsMap.put("articleId",articleId);
+                    mPresenter.createArticleFavorites(paramsMap);
+                }
+            });
+        }
+
     }
 
     /**
@@ -105,24 +137,24 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
                 .go(webviewxUrl);
 //                .go(new StringBuilder().append(BuildConfig.H5_HOST_ROOT).append(webviewxUrl).toString());
         mAgentWeb.getWebCreator().getWebView().setBackgroundColor(ContextCompat.getColor(this,R.color.white));
-        mBridgeWebView.registerHandler("formatpParameter", new BridgeHandler() {
-            @Override
-            public void handler(String data, CallBackFunction function) {
-                Timber.i(data);
-                function.onCallBack("submitFromWeb exe, response data 中文 from Java");
-            }
-        });
-        Map<String,String> map = new HashMap<>();
-        map.put("dddd","dddddddd");
-        map.put("aaaa","aaaaaaaa");
-        mBridgeWebView.callHandler("functionInJs", new Gson().toJson(map), new CallBackFunction() {
-            @Override
-            public void onCallBack(String data) {
-                Timber.i("data:" + data);
-            }
-        });
-
-        mBridgeWebView.send("发送一个消息");
+//        mBridgeWebView.registerHandler("formatpParameter", new BridgeHandler() {
+//            @Override
+//            public void handler(String data, CallBackFunction function) {
+//                Timber.i(data);
+//                function.onCallBack("submitFromWeb exe, response data 中文 from Java");
+//            }
+//        });
+//        Map<String,String> map = new HashMap<>();
+//        map.put("dddd","dddddddd");
+//        map.put("aaaa","aaaaaaaa");
+//        mBridgeWebView.callHandler("functionInJs", new Gson().toJson(map), new CallBackFunction() {
+//            @Override
+//            public void onCallBack(String data) {
+//                Timber.i("data:" + data);
+//            }
+//        });
+//
+//        mBridgeWebView.send("发送一个消息");
     }
 
     private WebViewClient getWebViewClient(){
@@ -161,15 +193,30 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
             mTitleBar.setTitle(title);
         }
     };
-
+    /**
+     * 收藏
+     * */
     @Override
-    public void showLoading() {
+    public void createArticleFavoritesCallBack() {
+
+    }
+
+    /**
+     * 取消收藏
+     * */
+    @Override
+    public void cancelArticleFavoritesCallBack() {
 
     }
 
     @Override
-    public void hideLoading() {
+    public void showLoading() {
+        ProgresDialog.getInstance(this).show();
+    }
 
+    @Override
+    public void hideLoading() {
+        ProgresDialog.getInstance(this).dismissDialog();
     }
 
     @Override
@@ -195,4 +242,6 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
         super.onDestroy();
 
     }
+
+
 }

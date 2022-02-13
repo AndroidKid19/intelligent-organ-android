@@ -9,6 +9,7 @@ import com.jess.arms.di.scope.ActivityScope;
 
 import javax.inject.Inject;
 
+import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.login.mvp.contract.RegisterContract;
 import com.yway.scomponent.login.mvp.model.api.service.LoginService;
@@ -48,6 +49,12 @@ public class RegisterModel extends BaseModel implements RegisterContract.Model {
         return mRepositoryManager
                 .obtainRetrofitService(LoginService.class)
                 .register(params);
+    }
+    @Override
+    public Observable<BaseResponse<AddressCompanyBean>> queryAllSysOrgAndSysUserList(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(LoginService.class)
+                .queryAllSysOrgAndSysUserList(params);
     }
 
     @Override

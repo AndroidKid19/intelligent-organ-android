@@ -7,6 +7,7 @@ import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.di.scope.FragmentScope;
 import com.yway.scomponent.organ.mvp.contract.VisitorRecordContract;
 import com.yway.scomponent.organ.mvp.model.VisitorRecordModel;
+import com.yway.scomponent.organ.mvp.model.entity.VisitorRecordBean;
 import com.yway.scomponent.organ.mvp.ui.adapter.VisitorAdapter;
 
 import java.util.ArrayList;
@@ -38,13 +39,13 @@ public abstract class VisitorRecordModule {
 
     @ActivityScope
     @Provides
-    static List<Object> provideList() {
+    static List<VisitorRecordBean> provideList() {
         return new ArrayList<>();
     }
 
     @ActivityScope
     @Provides
-    static VisitorAdapter provideAdapter(List<Object> list, VisitorRecordContract.View iview) {
+    static VisitorAdapter provideAdapter(List<VisitorRecordBean> list, VisitorRecordContract.View iview) {
         VisitorAdapter adapter = new VisitorAdapter(list);
         return adapter;
     }

@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.blankj.utilcode.util.CollectionUtils;
 import com.blankj.utilcode.util.UriUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.di.component.AppComponent;
@@ -41,6 +42,8 @@ import com.yway.scomponent.commonres.view.titlebar.TitleBar;
 import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.commonsdk.core.Constants;
 import com.yway.scomponent.commonsdk.core.RouterHub;
+import com.yway.scomponent.commonsdk.core.UserInfoBean;
+import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.commonsdk.utils.FileUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.login.R2;
@@ -107,6 +110,10 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     @BindView(R2.id.bar_choose_company)
     SettingBar mBarChooseCompany;
 
+    /**
+     * 组织机构
+     * */
+    private AddressCompanyBean companyBean;
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
         DaggerRegisterComponent //如找不到该类,请编译一下项目
@@ -141,6 +148,8 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
 
         //初始化注册View
         initRegisterView();
+        //初始化组织机构
+        mPresenter.queryAllSysOrgAndSysUserList();
     }
 
     /**
@@ -198,8 +207,9 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         mapParams.put("cellPhone", mLoginPhone);
         mapParams.put("password", mPassword);
         mapParams.put("mobileCode", mCountryCode);
-        mPresenter.register(mapParams);
+        mapParams.put("orgId", companyBean.getOrgId());
 
+        mPresenter.register(mapParams);
     }
 
     /**
@@ -218,13 +228,18 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         switch (requestCode) {
             case Constants.RESULT_CHOOSE_COMPANY_CODE:
                 if (resultCode == Activity.RESULT_OK) {
-                    AddressCompanyBean companyBean = data.getParcelableExtra("addressCompanyBean");
+                    companyBean = data.getParcelableExtra("addressCompanyBean");
                     //获取已选择用户信息
-                    mBarChooseCompany.setRightText(companyBean.getOrgTitle());
+                    mBarChooseCompany.setLeftText(companyBean.getOrgTitle());
                 }
                 break;
 
         }
+    }
+    @Override
+    public void queryOrgRspCallBack(AddressCompanyBean data) {
+        //缓存组织机构
+        CacheUtils.initMMKV().encode(Constants.APP_USER_ORGAN, data);
     }
 
 

@@ -14,6 +14,7 @@ import com.jess.arms.utils.ArmsUtils;
 import com.yway.scomponent.commonres.view.layout.NiceImageView;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 import com.yway.scomponent.commonsdk.imgaEngine.config.CommonImageConfigImpl;
+import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;

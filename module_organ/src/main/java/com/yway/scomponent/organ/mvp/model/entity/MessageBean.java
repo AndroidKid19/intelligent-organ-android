@@ -12,6 +12,15 @@ public class MessageBean {
 
     private String title;
     private String createTime;
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getCreateTime() {
         return createTime;

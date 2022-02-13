@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:id="@+id/view_information"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="15dp"
+    android:background="@color/public_white"
+    android:paddingLeft="@dimen/public_padding_20dp"
+    android:paddingRight="@dimen/public_padding_20dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/public_ic_collect_ed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <View
+        android:id="@+id/view_collect"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_msg_title"
+        style="@style/TextDefault.Medium"
+        android:layout_width="0dp"
+        android:layout_marginRight="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        tools:text="榆阳区委工作通报【2021】第 1 期榆阳区委工作通报"
+        app:layout_constraintLeft_toRightOf="@+id/iv_collect"
+        app:layout_constraintRight_toLeftOf="@+id/tv_msg_cover"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_msg_date"
+        style="@style/TextGray.Small"
+        tools:text="2021-11-04  09:00:00"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_collect" />
+
+    <com.yway.scomponent.commonres.view.layout.NiceImageView
+        android:id="@+id/tv_msg_cover"
+        android:layout_width="114dp"
+        android:layout_height="65dp"
+        app:corner_radius="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

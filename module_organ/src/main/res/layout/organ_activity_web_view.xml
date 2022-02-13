@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    tools:ignore="ResourceName">
+
+    <com.yway.scomponent.commonres.view.titlebar.TitleBar
+        android:id="@+id/bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lineVisible="true"
+        />
+    <FrameLayout
+        android:id="@+id/layout_webview"
+        android:background="@color/public_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bar_title">
+    </FrameLayout>
+</RelativeLayout>

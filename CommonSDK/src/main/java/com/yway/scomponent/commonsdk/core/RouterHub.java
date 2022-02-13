@@ -143,6 +143,10 @@ public interface RouterHub {
     String HOME_INFORMATIONACTIVITY = HOME + "/InformationActivity";
 
     /**
+     * webview
+     */
+    String HOME_WEBVIEWACTIVITY = HOME + "/WebViewActivity";
+    /**
      * 我的
      * *********************************************************************
      */
@@ -218,6 +222,11 @@ public interface RouterHub {
      * 消息详情
      */
     String USER_MESSAGEDETAILSACTIVITY = USER + "/MessageDetailsActivity";
+
+    /**
+     * 收藏
+     */
+    String USER_COLLECTACTIVITY = USER + "/CollectActivity";
 
     /**
      * 登陆

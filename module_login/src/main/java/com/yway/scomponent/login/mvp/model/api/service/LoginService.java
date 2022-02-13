@@ -1,6 +1,7 @@
 
 package com.yway.scomponent.login.mvp.model.api.service;
 
+import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 import com.yway.scomponent.login.mvp.model.api.Api;
@@ -75,5 +76,10 @@ public interface LoginService {
     @Headers({DOMAIN_NAME_HEADER + Api.LOGIN_DOMAIN_NAME})
     @POST(Api.API_MODIFYFORGETPASSWORDBYPHONE)
     Observable<BaseResponse> modifyForgetPasswordByPhone(@Body() Map<String, Object> params);
-
+    /**
+     * 通讯录查询
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.LOGIN_DOMAIN_NAME})
+    @POST(Api.API_QUERYALLSYSORGANDSYSUSERLIST)
+    Observable<BaseResponse<AddressCompanyBean>> queryAllSysOrgAndSysUserList(@Body() Map<String, Object> params);
 }

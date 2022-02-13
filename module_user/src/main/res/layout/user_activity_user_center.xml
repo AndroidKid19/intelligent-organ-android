@@ -171,6 +171,7 @@
                 app:bar_rightText="" />
 
             <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_organ"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -181,6 +182,7 @@
                 app:bar_rightText="" />
 
             <com.yway.scomponent.commonres.view.layout.SettingBar
+                android:id="@+id/bar_jop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:bar_leftText="所任职务"

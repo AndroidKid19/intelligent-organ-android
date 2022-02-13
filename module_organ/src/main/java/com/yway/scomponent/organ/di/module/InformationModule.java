@@ -14,11 +14,13 @@ import dagger.Module;
 import dagger.Provides;
 
 import com.jess.arms.di.scope.FragmentScope;
+import com.yway.scomponent.commonsdk.BuildConfig;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
 import com.yway.scomponent.organ.mvp.contract.InformationContract;
 import com.yway.scomponent.organ.mvp.model.InformationModel;
+import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 import com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter;
 
 import org.jetbrains.annotations.NotNull;
@@ -56,9 +58,15 @@ public abstract class InformationModule {
     @Provides
     static HomeAdapter provideAdapter(List<Object> list,InformationContract.View view) {
         HomeAdapter adapter = new HomeAdapter(list);
-        adapter.setOnItemClickListener((view1, viewType, data, position) -> Utils.postcard(RouterHub.APP_AGENTWEBACTIVITY)
-                .withString(RouterHub.PARAM_WEBVIEWXURL,"http://www.baidu.com")
-                .navigation(view1.getContext()));
+        adapter.setOnItemClickListener((view1, viewType, data, position) -> {
+            MessageBean messageBean = (MessageBean) data;
+            Utils.postcard(RouterHub.HOME_WEBVIEWACTIVITY)
+                    .withString(RouterHub.PARAM_WEBVIEWXURL,Utils.appendStr(BuildConfig.H5_HOST_ROOT,"articleMobile?id=",messageBean.getId()))
+                    .withInt("pageFrom",2)
+                    .withString("articleId",messageBean.getId())
+                    .navigation(view1.getContext());
+
+        });
         return adapter;
     }
 }

@@ -30,4 +30,6 @@ public interface Api {
     String  API_MODIFYFORGETPASSWORDBYPHONE = "organ/modifyForgetPasswordByPhone";
 
 
+    //通讯录查询
+    String API_QUERYALLSYSORGANDSYSUSERLIST = "/organ/org/queryAllSysOrgAndSysUserList";
 }

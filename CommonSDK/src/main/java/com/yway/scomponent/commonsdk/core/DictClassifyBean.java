@@ -44,6 +44,19 @@ public class DictClassifyBean implements Parcelable {
      */
     private List<DictClassifyBean> dictMeetingCheckInTime;
 
+    /**
+     * 岗位 字典
+     */
+    private List<DictClassifyBean> dictJop;
+
+    public List<DictClassifyBean> getDictJop() {
+        return dictJop;
+    }
+
+    public void setDictJop(List<DictClassifyBean> dictJop) {
+        this.dictJop = dictJop;
+    }
+
     public List<DictClassifyBean> getDictMeetingCheckInTime() {
         return dictMeetingCheckInTime;
     }
@@ -124,6 +137,7 @@ public class DictClassifyBean implements Parcelable {
         dest.writeString(this.sysDictName);
         dest.writeTypedList(this.dictDevice);
         dest.writeTypedList(this.dictMeetingCheckInTime);
+        dest.writeTypedList(this.dictJop);
     }
 
     public void readFromParcel(Parcel source) {
@@ -135,6 +149,7 @@ public class DictClassifyBean implements Parcelable {
         this.sysDictName = source.readString();
         this.dictDevice = source.createTypedArrayList(DictClassifyBean.CREATOR);
         this.dictMeetingCheckInTime = source.createTypedArrayList(DictClassifyBean.CREATOR);
+        this.dictJop = source.createTypedArrayList(DictClassifyBean.CREATOR);
     }
 
     public DictClassifyBean() {
@@ -149,6 +164,7 @@ public class DictClassifyBean implements Parcelable {
         this.sysDictName = in.readString();
         this.dictDevice = in.createTypedArrayList(DictClassifyBean.CREATOR);
         this.dictMeetingCheckInTime = in.createTypedArrayList(DictClassifyBean.CREATOR);
+        this.dictJop = in.createTypedArrayList(DictClassifyBean.CREATOR);
     }
 
     public static final Creator<DictClassifyBean> CREATOR = new Creator<DictClassifyBean>() {

@@ -4,13 +4,15 @@
 
     <application>
         <activity
+            android:name=".mvp.ui.activity.CollectActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".mvp.ui.activity.UserDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".mvp.ui.activity.CertificationActivity"
-            android:screenOrientation="portrait"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".mvp.ui.activity.FeedbackActivity"
             android:screenOrientation="portrait" />

@@ -9,6 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
+
+import com.blankj.utilcode.util.CollectionUtils;
+import com.blankj.utilcode.util.ObjectUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
@@ -97,6 +100,7 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
         mRefreshLayout.setOnRefreshListener(mOnRefreshListener);
         initViewData();
 
+        initUserInfoData();
     }
 
     /**
@@ -139,9 +143,8 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
      * */
     @OnClick(R2.id.bar_collections)
     void onEvaluateClick(View view) {
-        Utils.navigation(getActivity(), RouterHub.USER_PATIENTSAPPRAISEACTIVITY);
+        Utils.navigation(getActivity(), RouterHub.USER_COLLECTACTIVITY);
     }
-
 
     /***
      * 实名认证
@@ -234,7 +237,13 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
     private void initViewData() {
         //初始化个人信息
         mTvUsername.setText(CacheUtils.queryName());
-        mTvJop.setText(CacheUtils.queryUserInfo().getOrgTitle());
+        if (ObjectUtils.isEmpty(CacheUtils.queryDictData()) || CollectionUtils.isEmpty(CacheUtils.queryDictData().getDictJop())){
+            mTvJop.setText(CacheUtils.queryUserInfo().getOrgTitle());
+        }else{
+            String jop = Utils.appendStr(CacheUtils.queryUserInfo().getOrgTitle(),"-",CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),CacheUtils.queryUserInfo().getPosition()+""));
+            mTvJop.setText(jop);
+        }
+
         mPresenter.imageLoader(CacheUtils.queryUserInfo().getSysUserFilePath(), mNivHead);
         if (CacheUtils.isAuthUser()) {
             mTvUserAuth.setText("已完成实名认证");

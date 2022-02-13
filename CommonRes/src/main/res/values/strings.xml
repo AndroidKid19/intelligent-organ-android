@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="public_app_name">智慧机关</string>
+    <string name="public_app_name">榆阳智云</string>
     <string name="public_module_name">app</string>
     <string name="public_loading">加载中</string>
 
