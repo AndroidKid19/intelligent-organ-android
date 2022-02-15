@@ -4,6 +4,7 @@ import android.view.View;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.base.BaseHolder;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.mvp.model.entity.VisitorRecordBean;
@@ -41,9 +42,9 @@ public class VisitorItemHolder extends BaseHolder<VisitorRecordBean> {
         mTvUserName.setText(data.getName());
         mTvPhone.setText(data.getCellPhone());
         mTvOrganName.setText(data.getOrgTitle());
-        if (data.getVisitStatus() == 1){
+        if (!StringUtils.isEmpty(data.getVisitStatus()) && data.getVisitStatus().equals("1")){
             mTvStatus.setText("已到访");
-            mTvTime.setText(data.getVisitStatus());
+            mTvTime.setText(data.getVisitTime());
         }
         itemView.setOnClickListener(this);
     }

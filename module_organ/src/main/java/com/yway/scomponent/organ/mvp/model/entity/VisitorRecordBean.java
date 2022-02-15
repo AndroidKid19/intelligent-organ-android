@@ -39,7 +39,7 @@ public class VisitorRecordBean {
     /**
      * 到访状态；0未到访；1已到访
      */
-    private int visitStatus;
+    private String visitStatus;
     /**
      * 到访时间
      */
@@ -129,11 +129,11 @@ public class VisitorRecordBean {
         this.orgTitle = orgTitle;
     }
 
-    public int getVisitStatus() {
+    public String getVisitStatus() {
         return visitStatus;
     }
 
-    public void setVisitStatus(int visitStatus) {
+    public void setVisitStatus(String visitStatus) {
         this.visitStatus = visitStatus;
     }
 

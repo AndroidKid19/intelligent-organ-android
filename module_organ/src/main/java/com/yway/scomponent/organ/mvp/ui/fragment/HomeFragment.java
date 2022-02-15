@@ -122,7 +122,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         //初始化字段数据
         mPresenter.queryDict();
         //查询我的会议
-//        mPresenter.queryMyMeetingList();
+        mPresenter.queryMyMeetingList();
         //查询资讯
         mPresenter.queryArticlePublishPageList();
     }
@@ -207,9 +207,8 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         mContentBanner.setDelegate(this);
         mContentBanner.setAdapter(this);
         List<String> bannerLs = new ArrayList<>();
-        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/ae7f-a1af70c602eb1a330311be5f27267a6a.png");
-        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/626516f9edd04aeaa50a0f73d21961f5.jpeg");
-        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/1b4c510fd9f9d72a3dca02673e85c93d359bbb53.jpeg");
+        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/20220214140555.png");
+        bannerLs.add("https://bdp-dev-bucket.oss-cn-beijing.aliyuncs.com/app/20220214140548.png");
         mContentBanner.setAutoPlayAble(bannerLs.size() > 1);
         mContentBanner.setData(bannerLs, null);
     }

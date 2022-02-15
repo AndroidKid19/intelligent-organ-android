@@ -13,6 +13,7 @@
         android:id="@+id/banner_view"
         android:layout_width="match_parent"
         android:layout_height="159dp"
+        android:scaleType="fitXY"
         tools:background="@color/public_colorLine"
         app:banner_pointContainerBackground="@color/public_color_transparent"
         app:banner_pointDrawable="@drawable/organ_stytle_shape_search"

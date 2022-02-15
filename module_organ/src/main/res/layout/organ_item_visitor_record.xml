@@ -31,6 +31,7 @@
             style="@style/TextGray.Medium"
             android:layout_weight="1"
             android:gravity="right"
+            android:layout_marginRight="10dp"
             android:textColor="@color/public_color_text_sign"
             tools:text="已到访" />
     </androidx.appcompat.widget.LinearLayoutCompat>

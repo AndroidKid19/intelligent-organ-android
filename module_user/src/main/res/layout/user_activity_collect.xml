@@ -21,7 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/organ_shape_search_grey"
+            android:background="@drawable/user_shape_search_grey"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="16dp"
@@ -31,11 +31,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/organ_ic_user_search" />
+                android:src="@mipmap/user_ic_user_search" />
 
             <com.yway.scomponent.commonres.view.layout.ClearEditText
                 android:id="@+id/et_search_text"
-                style="@style/organ_edittextstyle"
+                style="@style/user_edittextstyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

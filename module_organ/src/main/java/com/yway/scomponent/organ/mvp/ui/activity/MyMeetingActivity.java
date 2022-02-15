@@ -130,9 +130,9 @@ public class MyMeetingActivity extends BaseActivity<MyMeetingPresenter> implemen
      */
     private RadioGroup.OnCheckedChangeListener mOnCheckedChangeListener = (group, checkedId) -> {
         if (checkedId == R.id.rb_1) {//会议中
-            paramMap.put("reqType", "1");
-        } else if (checkedId == R.id.rb_2) {//未开会
             paramMap.put("reqType", "2");
+        } else if (checkedId == R.id.rb_2) {//未开会
+            paramMap.put("reqType", "1");
         } else if (checkedId == R.id.rb_3) {//已结束
             paramMap.put("reqType", "3");
         }
@@ -164,7 +164,7 @@ public class MyMeetingActivity extends BaseActivity<MyMeetingPresenter> implemen
      * @author: YIWUANYUAN
      */
     private void initSkeletonScreen() {
-        paramMap.put("reqType", "1");
+        paramMap.put("reqType", "2");
         //初始化数据
         mPresenter.queryMyMeetingPageList(paramMap, true);
         mSkeletonScreen = Skeleton.bind(mRecyclerView)
