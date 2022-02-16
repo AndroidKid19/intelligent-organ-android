@@ -118,13 +118,13 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      */
     private RadioGroup.OnCheckedChangeListener mOnCheckedChangeListener = (group, checkedId) -> {
         if (checkedId == R.id.rb_1) {//全部
-            paramMap.put("approvalStatusStrs", "1,2,3");
+            paramMap.put("approvalStatusStrs", "1,2,3,4,5");
         } else if (checkedId == R.id.rb_2) {//未审批
             paramMap.put("approvalStatusStrs", "1");
         } else if (checkedId == R.id.rb_3) {//通过
-            paramMap.put("approvalStatusStrs", "2");
+            paramMap.put("approvalStatusStrs", "2,4");
         } else if (checkedId == R.id.rb_4) {//驳回
-            paramMap.put("approvalStatusStrs", "3");
+            paramMap.put("approvalStatusStrs", "3,5");
         }
         mRefreshLayout.autoRefresh();
     };
@@ -167,7 +167,7 @@ public class MyInitiateFragment extends BaseFragment<MyInitiatePresenter> implem
      * @author: YIWUANYUAN
      */
     private void initSkeletonScreen() {
-        paramMap.put("approvalStatusStrs", "1,2,3");
+        paramMap.put("approvalStatusStrs", "1,2,3,4,5");
         //初始化数据
         mPresenter.queryMeetingRecordPageList(paramMap, true);
         mSkeletonScreen = Skeleton.bind(mRecyclerView)

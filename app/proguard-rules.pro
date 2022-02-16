@@ -304,7 +304,9 @@
 -keep public class com.yway.scomponent.commonsdk.core.DictClassifyBean { *; }
 -keep public class com.yway.scomponent.commonsdk.core.UploadFileBean { *; }
 
-
+-keep class com.yway.scomponent.commonres.calendar.** { *; }
+-keep class com.yway.scomponent.commonres.view.** { *; }
+-keep class com.yway.scomponent.organ.mvp.ui.listener.** { *; }
 -keep class com.yway.scomponent.login.mvp.model.entity.** { *; }
 -keep class com.yway.scomponent.organ.mvp.model.entity.** { *; }
 -keep class com.yway.scomponent.user.mvp.model.entity.** { *; }

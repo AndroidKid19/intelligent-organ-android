@@ -37,3 +37,9 @@
 5.将渠道包打成zip压缩包的文件名
 
     def zipFileName = "小数定位_${version}_渠道包_${date}.zip"
+    
+        
+注意
+Cygwin $'\r': command not found
+在cygwin中先cd到“.sh”所在的路径，之后执行sh脚本就没错了。
+执行dos2unix xxx.sh xxx.sh

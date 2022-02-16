@@ -30,7 +30,7 @@
         android:hint="@string/login_hint_input_phone"
         android:inputType="phone"
         android:singleLine="true"
-        android:text="18515875329"
+        android:text="19937350592"
         android:textCursorDrawable="@drawable/login_edit_cursor_color"
         app:regexType="nonnull" />
 
@@ -41,7 +41,7 @@
         android:fontFamily="sans-serif"
         android:hint="@string/login_hint_input_pwd"
         android:singleLine="true"
-        android:text="11111111"
+        android:text="111111"
         android:textCursorDrawable="@drawable/login_edit_cursor_color"
         android:textSize="@dimen/public_font_16sp"
         app:regexType="nonnull" />

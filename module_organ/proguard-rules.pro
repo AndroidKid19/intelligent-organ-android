@@ -283,3 +283,4 @@
 
 -keep class com.yway.scomponent.commonres.view.** { *; }
 -keep class com.yway.scomponent.organ.mvp.model.entity.** { *; }
+-keep class com.yway.scomponent.organ.mvp.ui.listener.** { *; }

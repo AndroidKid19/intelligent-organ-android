@@ -30,7 +30,7 @@ def keystoreAliasPwd = rootProject.ext.keystore["storePassword"]
  */
 task packagejiaguPgyRelease {
 
-    def apkDir = new File("./app/build/outputs/apk/release/")
+    def apkDir = new File("$projectDir/build/outputs/apk/release/")
     filterApk(apkDir)
 
     //执行编译
@@ -41,7 +41,7 @@ task packagejiaguPgyRelease {
         //查找需要加固的apk
         def apkPath = findApkFile("release").absolutePath
         //jiagu.db中缓存了多渠道信息，如果不删除会合并到当前多渠道配置
-        def db = new File("./buildPackage/jiagu.db")
+        def db = new File("D:/StudioProjects/intelligent-organ-android/buildPackage/jiagu.db")
         if (db.exists()) {
             if (!db.delete()) {
                 throw new RuntimeException("delete jiagu.db failure!")
@@ -58,9 +58,9 @@ task packagejiaguPgyRelease {
             commandLine "sh",jiaguSh, userName,password,apkPath,outputPath,keystorePath,keystorePwd,keystoreAlias,keystoreAliasPwd,jiaguBase
         }
         println "=======加固shell执行完成========"
-        def outputDir = new File("./buildPackage/output")
+        def outputDir = new File("D:/StudioProjects/intelligent-organ-android/buildPackage/output")
         filterApk(outputDir)
-        compressDir(outputDir)
+//        compressDir(outputDir)
         uploadApk(outputDir)
     }
 }
@@ -68,13 +68,30 @@ task packagejiaguPgyRelease {
 
 /**
  * shell 命令形式  不懂shell 自行www.baidu.com
+ * 上传蒲公英
+ */
+task uploadPgyRelease {
+    //执行加固
+    doLast {
+        println "=======开始上传========"
+        def outputDir = new File("D:/StudioProjects/intelligent-organ-android/buildPackage/output")
+        uploadApk(outputDir)
+    }
+}
+
+/**
+ * shell 命令形式  不懂shell 自行www.baidu.com
  * 打包加固包apk
  */
 task packagejiaguRelease {
+    println "=======项目路径========"
+    println "$projectDir"
+    println "=======项目路径========"
     def apkDir = new File("./app/build/outputs/apk/release/")
     filterApk(apkDir)
     //执行编译
     dependsOn("assembleRelease")
+
 
     //执行加固
     doLast {
@@ -115,7 +132,8 @@ task packagejiaguRelease {
  */
 def findApkFile(String buildType) {
     println "findApkFiles buildType: " + buildType
-    def apkDir = new File("./app/build/outputs/apk/"+buildType+"/")
+    def apkDir = new File("D:/StudioProjects/intelligent-organ-android/app/build/outputs/apk/release")
+    println "findApkFiles apkDir: " + apkDir
     if (!apkDir.exists()) {
         throw new RuntimeException("apk output path not exists!")
     }
@@ -215,7 +233,7 @@ def renameApk(File outputDir) {
  */
 def uploadApk(File apkDir) {
     def apiKey = rootProject.ext.pgy["apiKey"] // todo 这里替换为自己的蒲公英的apiKey
-    def buildUpdateDescription = "release "
+    def buildUpdateDescription = "release"
     //查找上传的apk文件，这里需要换成自己apk路径
     if (!apkDir.exists()) {
         throw new RuntimeException("apk output path not exists!")
@@ -235,9 +253,13 @@ def uploadApk(File apkDir) {
 
     println "*************** start upload file ***************"
 
+    println "*************** apiKey ***************"+apiKey
     //release修改这里
     logger.log(LogLevel.ERROR, "start up load apk file : ${apk.absolutePath}")
     def uploadCommand = "curl -F \"file=@${apk.absolutePath}\" -F \"_api_key=${apiKey}\" -F \"buildUpdateDescription=${buildUpdateDescription}\"  https://www.pgyer.com/apiv2/app/upload"
+
+    println "*************** uploadCommand ***************"+uploadCommand
+
     Runtime runtime = Runtime.getRuntime()
     Process p = runtime.exec(uploadCommand)
     InputStream fis = p.getInputStream()

@@ -7,6 +7,7 @@
 	-importmulpkg <mulpkg_filepath>		导入多渠道配置信息，txt格式
 	-showsign				查看已配置的签名信息
 	-showmulpkg				查看已配置的多渠道信息
+	-deletemulpkg			清除已配置的多渠道信息
 	-help					显示帮助信息
 	-config 				配置加固可选项
 	----------------------可选增强服务-------------------------------
@@ -14,6 +15,7 @@
 		[-x86]					【x86支持】
 		[-analyse]				【加固数据分析】
 		[-nocert]				【跳过签名校验】
+		[-piracy]				【盗版监测】
 	----------------------高级加固选项-------------------------------
 		[-vmp]					【全VMP保护】
 		[-data]					【本地数据文件保护】
@@ -25,11 +27,12 @@
 		[-string_obfus]				【字符串加密】
 		[-dex_shadow]				【DexShadow】
 		[-so_private]				【SO防盗用】
+		[-double_check]				【双开检测】
 	-----------------------------------------------------------------
 	-config_so			配置需要加固的SO文件，以空格分隔
 	-config_assets			配置需要忽略的资源文件，以空格分隔
 	-config_so_private		配置防盗用的SO文件，以空格分隔
-	
+
 	-showconfig				显示已配置加固项
 	-version				显示当前版本号
 	-update					升级到最新版本

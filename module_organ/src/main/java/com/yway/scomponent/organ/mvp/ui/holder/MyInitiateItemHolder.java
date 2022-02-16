@@ -71,6 +71,14 @@ public class MyInitiateItemHolder extends BaseHolder<MeetingRecordBean> {
                 mTvApplyState.setText("已驳回");
                 mTvApplyState.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.public_color_text_sign));
                 break;
+            case 4:
+                mTvApplyState.setText("已准备");
+                mTvApplyState.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.public_color_text_success));
+                break;
+            case 5:
+                mTvApplyState.setText("已取消");
+                mTvApplyState.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.public_color_text_sign));
+                break;
         }
         itemView.setOnClickListener(this);
     }

@@ -1,597 +1,513 @@
 # compiler: R8
 # compiler_version: 1.5.68
-# pg_map_id: 656e497
-com.fatalsignal.outsourcing.login.app.AppLifecyclesImpl -> com.fatalsignal.outsourcing.login.app.a:
-    1:1:void <init>():27:27 -> <init>
-    1:1:void onCreate(android.app.Application):36:36 -> onCreate
-com.fatalsignal.outsourcing.login.app.GlobalConfiguration -> com.fatalsignal.outsourcing.login.app.GlobalConfiguration:
-    1:1:void <init>():34:34 -> <init>
-    1:1:void injectAppLifecycle(android.content.Context,java.util.List):45:45 -> injectAppLifecycle
-com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent -> com.fatalsignal.outsourcing.login.a.a.a:
-    javax.inject.Provider viewProvider -> c
-    javax.inject.Provider loginModelProvider -> b
-    com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> e
-    com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> d
-    javax.inject.Provider provideGankHomeAdapterProvider -> h
-    com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
-    javax.inject.Provider provideListProvider -> g
-    com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> f
-    javax.inject.Provider loginPresenterProvider -> i
-    1:1:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder,com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$1):31:31 -> <init>
-    2:3:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder):50:51 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.di.component.LoginComponent$Builder builder():55:55 -> a
-    2:18:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder):60:76 -> a
-    19:19:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder):75:75 -> a
-    20:20:void inject(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):88:88 -> a
-    1:1:com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity injectLoginActivity(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):93:93 -> b
-com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$1 -> com.fatalsignal.outsourcing.login.a.a.a$a:
-com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder -> com.fatalsignal.outsourcing.login.a.a.a$b:
-    com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$View view -> b
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:1:void <init>():97:97 -> <init>
-    2:2:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$1):97:97 -> <init>
-    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder):97:97 -> a
-    2:2:com.fatalsignal.outsourcing.login.di.component.LoginComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):97:97 -> a
-    3:3:com.fatalsignal.outsourcing.login.di.component.LoginComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$View):97:97 -> a
-    4:11:com.fatalsignal.outsourcing.login.di.component.LoginComponent build():104:111 -> a
-    12:13:com.fatalsignal.outsourcing.login.di.component.LoginComponent build():108:109 -> a
-    14:14:com.fatalsignal.outsourcing.login.di.component.LoginComponent build():105:105 -> a
-    15:15:com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$View):116:116 -> a
-    16:16:com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):122:122 -> a
-    1:1:com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$View access$200(com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$Builder):97:97 -> b
-com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.login.a.a.a$c:
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):163:164 -> <init>
-    1:1:java.lang.Object get():159:159 -> get
-    2:3:com.jess.arms.integration.AppManager get():169:170 -> get
-    4:4:com.jess.arms.integration.AppManager get():169:169 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.login.a.a.a$d:
+# pg_map_id: 24d363f
+com.yway.scomponent.login.app.AppLifecyclesImpl -> com.yway.scomponent.login.app.a:
+    1:1:void <init>():20:20 -> <init>
+com.yway.scomponent.login.app.GlobalConfiguration -> com.yway.scomponent.login.app.GlobalConfiguration:
+    1:1:void <init>():32:32 -> <init>
+    1:1:void injectAppLifecycle(android.content.Context,java.util.List):43:43 -> injectAppLifecycle
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent -> com.yway.scomponent.login.a.a.a:
+    javax.inject.Provider forgetPwdModelProvider -> d
+    javax.inject.Provider applicationProvider -> c
+    javax.inject.Provider rxErrorHandlerProvider -> f
+    javax.inject.Provider viewProvider -> e
+    javax.inject.Provider gsonProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    javax.inject.Provider appManagerProvider -> h
+    javax.inject.Provider imageLoaderProvider -> g
+    javax.inject.Provider forgetPwdPresenterProvider -> i
+    1:1:void <init>(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View,com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$1):32:32 -> <init>
+    2:4:void <init>(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View):52:54 -> <init>
+    1:1:com.yway.scomponent.login.di.component.ForgetPwdComponent$Builder builder():58:58 -> a
+    2:10:void initialize(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View):64:72 -> a
+    11:11:void inject(com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity):77:77 -> a
+    1:1:com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity injectForgetPwdActivity(com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity):81:81 -> b
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$1 -> com.yway.scomponent.login.a.a.a$a:
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$Builder -> com.yway.scomponent.login.a.a.a$b:
+    com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View view -> a
+    com.jess.arms.di.component.AppComponent appComponent -> b
+    1:1:void <init>():85:85 -> <init>
+    2:2:void <init>(com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$1):85:85 -> <init>
+    1:1:com.yway.scomponent.login.di.component.ForgetPwdComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):85:85 -> a
+    2:2:com.yway.scomponent.login.di.component.ForgetPwdComponent$Builder view(com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View):85:85 -> a
+    3:3:com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$Builder view(com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View):92:92 -> a
+    4:4:com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):98:98 -> a
+    5:7:com.yway.scomponent.login.di.component.ForgetPwdComponent build():104:106 -> a
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$com_jess_arms_di_component_AppComponent_appManager -> com.yway.scomponent.login.a.a.a$c:
     com.jess.arms.di.component.AppComponent appComponent -> a
     1:2:void <init>(com.jess.arms.di.component.AppComponent):178:179 -> <init>
-    1:1:java.lang.Object get():174:174 -> get
-    2:3:android.app.Application get():184:185 -> get
-    4:4:android.app.Application get():184:184 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.login.a.a.a$e:
+    1:1:java.lang.Object get():175:175 -> get
+    2:2:com.jess.arms.integration.AppManager get():184:184 -> get
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$com_jess_arms_di_component_AppComponent_application -> com.yway.scomponent.login.a.a.a$d:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):131:132 -> <init>
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):139:140 -> <init>
+    1:1:java.lang.Object get():136:136 -> get
+    2:2:android.app.Application get():145:145 -> get
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$com_jess_arms_di_component_AppComponent_gson -> com.yway.scomponent.login.a.a.a$e:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):126:127 -> <init>
+    1:1:java.lang.Object get():123:123 -> get
+    2:2:com.google.gson.Gson get():132:132 -> get
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.yway.scomponent.login.a.a.a$f:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):165:166 -> <init>
+    1:1:java.lang.Object get():162:162 -> get
+    2:2:com.jess.arms.http.imageloader.ImageLoader get():171:171 -> get
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.yway.scomponent.login.a.a.a$g:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):113:114 -> <init>
+    1:1:java.lang.Object get():110:110 -> get
+    2:2:com.jess.arms.integration.IRepositoryManager get():119:119 -> get
+com.yway.scomponent.login.di.component.DaggerForgetPwdComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.yway.scomponent.login.a.a.a$h:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):152:153 -> <init>
+    1:1:java.lang.Object get():149:149 -> get
+    2:2:me.jessyan.rxerrorhandler.core.RxErrorHandler get():158:158 -> get
+com.yway.scomponent.login.di.component.DaggerLoginComponent -> com.yway.scomponent.login.a.a.b:
+    javax.inject.Provider rxErrorHandlerProvider -> d
+    javax.inject.Provider viewProvider -> c
+    javax.inject.Provider applicationProvider -> f
+    javax.inject.Provider appManagerProvider -> e
+    javax.inject.Provider loginModelProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    javax.inject.Provider loginPresenterProvider -> g
+    1:1:void <init>(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.LoginHomeContract$View,com.yway.scomponent.login.di.component.DaggerLoginComponent$1):30:30 -> <init>
+    2:4:void <init>(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.LoginHomeContract$View):45:47 -> <init>
+    1:1:com.yway.scomponent.login.di.component.LoginComponent$Builder builder():51:51 -> a
+    2:8:void initialize(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.LoginHomeContract$View):57:63 -> a
+    9:9:void inject(com.yway.scomponent.login.mvp.ui.activity.LoginActivity):68:68 -> a
+    1:1:com.yway.scomponent.login.mvp.ui.activity.LoginActivity injectLoginActivity(com.yway.scomponent.login.mvp.ui.activity.LoginActivity):72:72 -> b
+com.yway.scomponent.login.di.component.DaggerLoginComponent$1 -> com.yway.scomponent.login.a.a.b$a:
+com.yway.scomponent.login.di.component.DaggerLoginComponent$Builder -> com.yway.scomponent.login.a.a.b$b:
+    com.yway.scomponent.login.mvp.contract.LoginHomeContract$View view -> a
+    com.jess.arms.di.component.AppComponent appComponent -> b
+    1:1:void <init>():76:76 -> <init>
+    2:2:void <init>(com.yway.scomponent.login.di.component.DaggerLoginComponent$1):76:76 -> <init>
+    1:1:com.yway.scomponent.login.di.component.LoginComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):76:76 -> a
+    2:2:com.yway.scomponent.login.di.component.LoginComponent$Builder view(com.yway.scomponent.login.mvp.contract.LoginHomeContract$View):76:76 -> a
+    3:3:com.yway.scomponent.login.di.component.DaggerLoginComponent$Builder view(com.yway.scomponent.login.mvp.contract.LoginHomeContract$View):83:83 -> a
+    4:4:com.yway.scomponent.login.di.component.DaggerLoginComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):89:89 -> a
+    5:7:com.yway.scomponent.login.di.component.LoginComponent build():95:97 -> a
+com.yway.scomponent.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_appManager -> com.yway.scomponent.login.a.a.b$c:
+    com.jess.arms.di.component.AppComponent appComponent -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):130:131 -> <init>
     1:1:java.lang.Object get():127:127 -> get
-    2:3:com.jess.arms.integration.IRepositoryManager get():137:138 -> get
-    4:4:com.jess.arms.integration.IRepositoryManager get():137:137 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.login.a.a.a$f:
+    2:2:com.jess.arms.integration.AppManager get():136:136 -> get
+com.yway.scomponent.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_application -> com.yway.scomponent.login.a.a.b$d:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):147:148 -> <init>
-    1:1:java.lang.Object get():143:143 -> get
-    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():153:154 -> get
-    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():153:153 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent -> com.fatalsignal.outsourcing.login.a.a.b:
-    javax.inject.Provider passwordForgetModelProvider -> d
-    com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> h
-    com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
-    com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> f
-    javax.inject.Provider viewProvider -> e
-    com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> c
-    com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_gson gsonProvider -> b
-    com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_imageLoader imageLoaderProvider -> g
-    javax.inject.Provider passwordForgetPresenterProvider -> i
-    1:1:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder,com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$1):28:28 -> <init>
-    2:3:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder):47:48 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent$Builder builder():52:52 -> a
-    2:9:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder):57:64 -> a
-    10:22:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder):63:75 -> a
-    23:23:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder):74:74 -> a
-    24:24:void inject(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):86:86 -> a
-    1:1:com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity injectPasswordForgetActivity(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):91:91 -> b
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$1 -> com.fatalsignal.outsourcing.login.a.a.b$a:
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder -> com.fatalsignal.outsourcing.login.a.a.b$b:
-    com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$View view -> b
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):143:144 -> <init>
+    1:1:java.lang.Object get():140:140 -> get
+    2:2:android.app.Application get():149:149 -> get
+com.yway.scomponent.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.yway.scomponent.login.a.a.b$e:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:1:void <init>():95:95 -> <init>
-    2:2:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$1):95:95 -> <init>
-    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder):95:95 -> a
-    2:2:com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):95:95 -> a
-    3:3:com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$View):95:95 -> a
-    4:11:com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent build():102:109 -> a
-    12:13:com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent build():106:107 -> a
-    14:14:com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent build():103:103 -> a
-    15:15:com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$View):114:114 -> a
-    16:16:com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):120:120 -> a
-    1:1:com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$View access$200(com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$Builder):95:95 -> b
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.login.a.a.b$c:
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):104:105 -> <init>
+    1:1:java.lang.Object get():101:101 -> get
+    2:2:com.jess.arms.integration.IRepositoryManager get():110:110 -> get
+com.yway.scomponent.login.di.component.DaggerLoginComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.yway.scomponent.login.a.a.b$f:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):205:206 -> <init>
-    1:1:java.lang.Object get():201:201 -> get
-    2:3:com.jess.arms.integration.AppManager get():211:212 -> get
-    4:4:com.jess.arms.integration.AppManager get():211:211 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.login.a.a.b$d:
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):159:160 -> <init>
-    1:1:java.lang.Object get():155:155 -> get
-    2:3:android.app.Application get():165:166 -> get
-    4:4:android.app.Application get():165:165 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_gson -> com.fatalsignal.outsourcing.login.a.a.b$e:
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):144:145 -> <init>
-    1:1:java.lang.Object get():141:141 -> get
-    2:3:com.google.gson.Gson get():150:151 -> get
-    4:4:com.google.gson.Gson get():150:150 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.fatalsignal.outsourcing.login.a.a.b$f:
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):190:191 -> <init>
-    1:1:java.lang.Object get():186:186 -> get
-    2:3:com.jess.arms.http.imageloader.ImageLoader get():196:197 -> get
-    4:4:com.jess.arms.http.imageloader.ImageLoader get():196:196 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.login.a.a.b$g:
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):129:130 -> <init>
-    1:1:java.lang.Object get():125:125 -> get
-    2:3:com.jess.arms.integration.IRepositoryManager get():135:136 -> get
-    4:4:com.jess.arms.integration.IRepositoryManager get():135:135 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerPasswordForgetComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.login.a.a.b$h:
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):174:175 -> <init>
-    1:1:java.lang.Object get():170:170 -> get
-    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:181 -> get
-    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:180 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent -> com.fatalsignal.outsourcing.login.a.a.c:
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):117:118 -> <init>
+    1:1:java.lang.Object get():114:114 -> get
+    2:2:me.jessyan.rxerrorhandler.core.RxErrorHandler get():123:123 -> get
+com.yway.scomponent.login.di.component.DaggerRegisterComponent -> com.yway.scomponent.login.a.a.c:
     javax.inject.Provider registerModelProvider -> d
-    com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler rxErrorHandlerProvider -> f
-    com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_appManager appManagerProvider -> h
-    com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_repositoryManager repositoryManagerProvider -> a
+    javax.inject.Provider applicationProvider -> c
+    javax.inject.Provider rxErrorHandlerProvider -> f
     javax.inject.Provider viewProvider -> e
-    com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_gson gsonProvider -> b
-    com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_imageLoader imageLoaderProvider -> g
-    com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_application applicationProvider -> c
+    javax.inject.Provider gsonProvider -> b
+    javax.inject.Provider repositoryManagerProvider -> a
+    javax.inject.Provider appManagerProvider -> h
+    javax.inject.Provider imageLoaderProvider -> g
     javax.inject.Provider registerPresenterProvider -> i
-    1:1:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder,com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$1):28:28 -> <init>
-    2:3:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder):47:48 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.di.component.RegisterComponent$Builder builder():52:52 -> a
-    2:9:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder):57:64 -> a
-    10:22:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder):63:75 -> a
-    23:23:void initialize(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder):74:74 -> a
-    24:24:void inject(com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity):86:86 -> a
-    1:1:com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity injectRegisterActivity(com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity):91:91 -> b
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$1 -> com.fatalsignal.outsourcing.login.a.a.c$a:
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder -> com.fatalsignal.outsourcing.login.a.a.c$b:
-    com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$View view -> b
+    1:1:void <init>(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.RegisterContract$View,com.yway.scomponent.login.di.component.DaggerRegisterComponent$1):32:32 -> <init>
+    2:4:void <init>(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.RegisterContract$View):51:53 -> <init>
+    1:1:com.yway.scomponent.login.di.component.RegisterComponent$Builder builder():57:57 -> a
+    2:10:void initialize(com.jess.arms.di.component.AppComponent,com.yway.scomponent.login.mvp.contract.RegisterContract$View):63:71 -> a
+    11:11:void inject(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity):76:76 -> a
+    1:1:com.yway.scomponent.login.mvp.ui.activity.RegisterActivity injectRegisterActivity(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity):80:80 -> b
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$1 -> com.yway.scomponent.login.a.a.c$a:
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$Builder -> com.yway.scomponent.login.a.a.c$b:
+    com.jess.arms.di.component.AppComponent appComponent -> b
+    com.yway.scomponent.login.mvp.contract.RegisterContract$View view -> a
+    1:1:void <init>():84:84 -> <init>
+    2:2:void <init>(com.yway.scomponent.login.di.component.DaggerRegisterComponent$1):84:84 -> <init>
+    1:1:com.yway.scomponent.login.di.component.RegisterComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):84:84 -> a
+    2:2:com.yway.scomponent.login.di.component.RegisterComponent$Builder view(com.yway.scomponent.login.mvp.contract.RegisterContract$View):84:84 -> a
+    3:3:com.yway.scomponent.login.di.component.DaggerRegisterComponent$Builder view(com.yway.scomponent.login.mvp.contract.RegisterContract$View):91:91 -> a
+    4:4:com.yway.scomponent.login.di.component.DaggerRegisterComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):97:97 -> a
+    5:7:com.yway.scomponent.login.di.component.RegisterComponent build():103:105 -> a
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_appManager -> com.yway.scomponent.login.a.a.c$c:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:1:void <init>():95:95 -> <init>
-    2:2:void <init>(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$1):95:95 -> <init>
-    1:1:com.jess.arms.di.component.AppComponent access$100(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder):95:95 -> a
-    2:2:com.fatalsignal.outsourcing.login.di.component.RegisterComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):95:95 -> a
-    3:3:com.fatalsignal.outsourcing.login.di.component.RegisterComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$View):95:95 -> a
-    4:11:com.fatalsignal.outsourcing.login.di.component.RegisterComponent build():102:109 -> a
-    12:13:com.fatalsignal.outsourcing.login.di.component.RegisterComponent build():106:107 -> a
-    14:14:com.fatalsignal.outsourcing.login.di.component.RegisterComponent build():103:103 -> a
-    15:15:com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$View):114:114 -> a
-    16:16:com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder appComponent(com.jess.arms.di.component.AppComponent):120:120 -> a
-    1:1:com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$View access$200(com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$Builder):95:95 -> b
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_appManager -> com.fatalsignal.outsourcing.login.a.a.c$c:
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):177:178 -> <init>
+    1:1:java.lang.Object get():174:174 -> get
+    2:2:com.jess.arms.integration.AppManager get():183:183 -> get
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_application -> com.yway.scomponent.login.a.a.c$d:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):205:206 -> <init>
-    1:1:java.lang.Object get():201:201 -> get
-    2:3:com.jess.arms.integration.AppManager get():211:212 -> get
-    4:4:com.jess.arms.integration.AppManager get():211:211 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_application -> com.fatalsignal.outsourcing.login.a.a.c$d:
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):138:139 -> <init>
+    1:1:java.lang.Object get():135:135 -> get
+    2:2:android.app.Application get():144:144 -> get
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_gson -> com.yway.scomponent.login.a.a.c$e:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):159:160 -> <init>
-    1:1:java.lang.Object get():155:155 -> get
-    2:3:android.app.Application get():165:166 -> get
-    4:4:android.app.Application get():165:165 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_gson -> com.fatalsignal.outsourcing.login.a.a.c$e:
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):125:126 -> <init>
+    1:1:java.lang.Object get():122:122 -> get
+    2:2:com.google.gson.Gson get():131:131 -> get
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.yway.scomponent.login.a.a.c$f:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):144:145 -> <init>
-    1:1:java.lang.Object get():141:141 -> get
-    2:3:com.google.gson.Gson get():150:151 -> get
-    4:4:com.google.gson.Gson get():150:150 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_imageLoader -> com.fatalsignal.outsourcing.login.a.a.c$f:
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):164:165 -> <init>
+    1:1:java.lang.Object get():161:161 -> get
+    2:2:com.jess.arms.http.imageloader.ImageLoader get():170:170 -> get
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.yway.scomponent.login.a.a.c$g:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):190:191 -> <init>
-    1:1:java.lang.Object get():186:186 -> get
-    2:3:com.jess.arms.http.imageloader.ImageLoader get():196:197 -> get
-    4:4:com.jess.arms.http.imageloader.ImageLoader get():196:196 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_repositoryManager -> com.fatalsignal.outsourcing.login.a.a.c$g:
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):112:113 -> <init>
+    1:1:java.lang.Object get():109:109 -> get
+    2:2:com.jess.arms.integration.IRepositoryManager get():118:118 -> get
+com.yway.scomponent.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.yway.scomponent.login.a.a.c$h:
     com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):129:130 -> <init>
-    1:1:java.lang.Object get():125:125 -> get
-    2:3:com.jess.arms.integration.IRepositoryManager get():135:136 -> get
-    4:4:com.jess.arms.integration.IRepositoryManager get():135:135 -> get
-com.fatalsignal.outsourcing.login.di.component.DaggerRegisterComponent$com_jess_arms_di_component_AppComponent_rxErrorHandler -> com.fatalsignal.outsourcing.login.a.a.c$h:
-    com.jess.arms.di.component.AppComponent appComponent -> a
-    1:2:void <init>(com.jess.arms.di.component.AppComponent):174:175 -> <init>
-    1:1:java.lang.Object get():170:170 -> get
-    2:3:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:181 -> get
-    4:4:me.jessyan.rxerrorhandler.core.RxErrorHandler get():180:180 -> get
-com.fatalsignal.outsourcing.login.di.component.LoginComponent -> com.fatalsignal.outsourcing.login.a.a.d:
-    void inject(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity) -> a
-com.fatalsignal.outsourcing.login.di.component.LoginComponent$Builder -> com.fatalsignal.outsourcing.login.a.a.d$a:
-    com.fatalsignal.outsourcing.login.di.component.LoginComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
-    com.fatalsignal.outsourcing.login.di.component.LoginComponent build() -> a
-    com.fatalsignal.outsourcing.login.di.component.LoginComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$View) -> a
-com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent -> com.fatalsignal.outsourcing.login.a.a.e:
-    void inject(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity) -> a
-com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent$Builder -> com.fatalsignal.outsourcing.login.a.a.e$a:
-    com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
-    com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent build() -> a
-    com.fatalsignal.outsourcing.login.di.component.PasswordForgetComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$View) -> a
-com.fatalsignal.outsourcing.login.di.component.RegisterComponent -> com.fatalsignal.outsourcing.login.a.a.f:
-    void inject(com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity) -> a
-com.fatalsignal.outsourcing.login.di.component.RegisterComponent$Builder -> com.fatalsignal.outsourcing.login.a.a.f$a:
-    com.fatalsignal.outsourcing.login.di.component.RegisterComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
-    com.fatalsignal.outsourcing.login.di.component.RegisterComponent build() -> a
-    com.fatalsignal.outsourcing.login.di.component.RegisterComponent$Builder view(com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$View) -> a
-com.fatalsignal.outsourcing.login.di.module.LoginModule -> com.fatalsignal.outsourcing.login.a.b.a:
-    1:1:java.util.List provideList():37:37 -> a
-    2:2:androidx.recyclerview.widget.RecyclerView$Adapter provideGankHomeAdapter(java.util.List):43:43 -> a
-com.fatalsignal.outsourcing.login.di.module.LoginModule_ProvideGankHomeAdapterFactory -> com.fatalsignal.outsourcing.login.a.b.b:
-    javax.inject.Provider listProvider -> a
-    1:2:void <init>(javax.inject.Provider):19:20 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.di.module.LoginModule_ProvideGankHomeAdapterFactory create(javax.inject.Provider):34:34 -> a
-    2:2:androidx.recyclerview.widget.RecyclerView$Adapter proxyProvideGankHomeAdapter(java.util.List):39:39 -> a
-    3:3:androidx.recyclerview.widget.RecyclerView$Adapter proxyProvideGankHomeAdapter(java.util.List):38:38 -> a
-    1:1:androidx.recyclerview.widget.RecyclerView$Adapter provideInstance(javax.inject.Provider):29:29 -> b
-    1:1:java.lang.Object get():11:11 -> get
-    2:2:androidx.recyclerview.widget.RecyclerView$Adapter get():25:25 -> get
-com.fatalsignal.outsourcing.login.di.module.LoginModule_ProvideListFactory -> com.fatalsignal.outsourcing.login.a.b.c:
-    com.fatalsignal.outsourcing.login.di.module.LoginModule_ProvideListFactory INSTANCE -> a
-    1:1:void <clinit>():14:14 -> <clinit>
-    1:1:void <init>():13:13 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.di.module.LoginModule_ProvideListFactory create():27:27 -> a
-    1:1:java.util.List provideInstance():23:23 -> b
-    1:1:java.util.List proxyProvideList():32:32 -> c
-    2:2:java.util.List proxyProvideList():31:31 -> c
-    1:1:java.lang.Object get():9:9 -> get
-    2:2:java.util.List get():19:19 -> get
-com.fatalsignal.outsourcing.login.di.module.PasswordForgetModule -> com.fatalsignal.outsourcing.login.a.b.d:
-com.fatalsignal.outsourcing.login.di.module.RegisterModule -> com.fatalsignal.outsourcing.login.a.b.e:
-com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$Model -> com.fatalsignal.outsourcing.login.b.a.a:
-    io.reactivex.Observable login(java.lang.String,java.lang.String,java.lang.String) -> a
-    io.reactivex.Observable pfx() -> a
-com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$View -> com.fatalsignal.outsourcing.login.b.a.b:
-    void getMobilePfxBeanData(java.util.List) -> a
+    1:2:void <init>(com.jess.arms.di.component.AppComponent):151:152 -> <init>
+    1:1:java.lang.Object get():148:148 -> get
+    2:2:me.jessyan.rxerrorhandler.core.RxErrorHandler get():157:157 -> get
+com.yway.scomponent.login.di.component.ForgetPwdComponent -> com.yway.scomponent.login.a.a.d:
+    void inject(com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity) -> a
+com.yway.scomponent.login.di.component.ForgetPwdComponent$Builder -> com.yway.scomponent.login.a.a.d$a:
+    com.yway.scomponent.login.di.component.ForgetPwdComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.yway.scomponent.login.di.component.ForgetPwdComponent build() -> a
+    com.yway.scomponent.login.di.component.ForgetPwdComponent$Builder view(com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View) -> a
+com.yway.scomponent.login.di.component.LoginComponent -> com.yway.scomponent.login.a.a.e:
+    void inject(com.yway.scomponent.login.mvp.ui.activity.LoginActivity) -> a
+com.yway.scomponent.login.di.component.LoginComponent$Builder -> com.yway.scomponent.login.a.a.e$a:
+    com.yway.scomponent.login.di.component.LoginComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.yway.scomponent.login.di.component.LoginComponent build() -> a
+    com.yway.scomponent.login.di.component.LoginComponent$Builder view(com.yway.scomponent.login.mvp.contract.LoginHomeContract$View) -> a
+com.yway.scomponent.login.di.component.RegisterComponent -> com.yway.scomponent.login.a.a.f:
+    void inject(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity) -> a
+com.yway.scomponent.login.di.component.RegisterComponent$Builder -> com.yway.scomponent.login.a.a.f$a:
+    com.yway.scomponent.login.di.component.RegisterComponent$Builder appComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.yway.scomponent.login.di.component.RegisterComponent build() -> a
+    com.yway.scomponent.login.di.component.RegisterComponent$Builder view(com.yway.scomponent.login.mvp.contract.RegisterContract$View) -> a
+com.yway.scomponent.login.di.module.ForgetPwdModule -> com.yway.scomponent.login.a.b.a:
+com.yway.scomponent.login.di.module.LoginModule -> com.yway.scomponent.login.a.b.b:
+com.yway.scomponent.login.di.module.RegisterModule -> com.yway.scomponent.login.a.b.c:
+com.yway.scomponent.login.mvp.contract.ForgetPwdContract$Model -> com.yway.scomponent.login.b.a.a:
+    io.reactivex.Observable sendSms(java.util.Map) -> a
+    io.reactivex.Observable modifyForgetPasswordByPhone(java.util.Map) -> c
+com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View -> com.yway.scomponent.login.b.a.b:
+    void sendSmsSuccess() -> a
+    void modifyForgetPasswordSuccess() -> b
+com.yway.scomponent.login.mvp.contract.LoginHomeContract$Model -> com.yway.scomponent.login.b.a.c:
+    io.reactivex.Observable login(java.util.Map) -> d
+com.yway.scomponent.login.mvp.contract.LoginHomeContract$View -> com.yway.scomponent.login.b.a.d:
     void loginError(java.lang.String) -> a
-    void loginSuccess(java.lang.String) -> b
-com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$Model -> com.fatalsignal.outsourcing.login.b.a.c:
-    io.reactivex.Observable pfx() -> a
-com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$View -> com.fatalsignal.outsourcing.login.b.a.d:
-    void getMobilePfxBeanData(java.util.List) -> a
-com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$Model -> com.fatalsignal.outsourcing.login.b.a.e:
-com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$View -> com.fatalsignal.outsourcing.login.b.a.f:
-com.fatalsignal.outsourcing.login.mvp.model.LoginModel -> com.fatalsignal.outsourcing.login.mvp.model.LoginModel:
-    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):37:37 -> <init>
-    1:3:io.reactivex.Observable login(java.lang.String,java.lang.String,java.lang.String):50:52 -> a
-    4:6:io.reactivex.Observable pfx():57:59 -> a
-com.fatalsignal.outsourcing.login.mvp.model.LoginModel_Factory -> com.fatalsignal.outsourcing.login.mvp.model.a:
+    void loginSuccess(com.yway.scomponent.commonsdk.core.UserInfoBean) -> a
+com.yway.scomponent.login.mvp.contract.RegisterContract$Model -> com.yway.scomponent.login.b.a.e:
+    io.reactivex.Observable sendSms(java.util.Map) -> a
+    io.reactivex.Observable queryAllSysOrgAndSysUserList(java.util.Map) -> b
+    io.reactivex.Observable register(java.util.Map) -> e
+com.yway.scomponent.login.mvp.contract.RegisterContract$View -> com.yway.scomponent.login.b.a.f:
+    void queryOrgRspCallBack(com.yway.scomponent.commonsdk.core.AddressCompanyBean) -> a
+    void sendSmsSuccess() -> a
+    void registerSuccess(java.lang.String) -> b
+com.yway.scomponent.login.mvp.model.ForgetPwdModel -> com.yway.scomponent.login.mvp.model.ForgetPwdModel:
+    android.app.Application mApplication -> b
+    com.google.gson.Gson mGson -> a
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):38:38 -> <init>
+    1:3:io.reactivex.Observable sendSms(java.util.Map):43:45 -> a
+    1:3:io.reactivex.Observable modifyForgetPasswordByPhone(java.util.Map):50:52 -> c
+    1:1:void onDestroy():57:57 -> onDestroy
+com.yway.scomponent.login.mvp.model.ForgetPwdModel_Factory -> com.yway.scomponent.login.mvp.model.a:
+    javax.inject.Provider mApplicationProvider -> c
+    javax.inject.Provider mGsonProvider -> b
     javax.inject.Provider repositoryManagerProvider -> a
-    1:2:void <init>(javax.inject.Provider):15:16 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.mvp.model.LoginModel_Factory create(javax.inject.Provider):29:29 -> a
-    1:1:com.fatalsignal.outsourcing.login.mvp.model.LoginModel provideInstance(javax.inject.Provider):25:25 -> b
+    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):26:29 -> <init>
+    1:1:com.yway.scomponent.login.mvp.model.ForgetPwdModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):43:43 -> a
+    1:1:java.lang.Object get():10:10 -> get
+    2:4:com.yway.scomponent.login.mvp.model.ForgetPwdModel get():34:36 -> get
+com.yway.scomponent.login.mvp.model.ForgetPwdModel_MembersInjector -> com.yway.scomponent.login.mvp.model.b:
+    1:1:void injectMGson(com.yway.scomponent.login.mvp.model.ForgetPwdModel,com.google.gson.Gson):39:39 -> a
+    2:2:void injectMApplication(com.yway.scomponent.login.mvp.model.ForgetPwdModel,android.app.Application):43:43 -> a
+com.yway.scomponent.login.mvp.model.LoginModel -> com.yway.scomponent.login.mvp.model.LoginModel:
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):30:30 -> <init>
+    1:3:io.reactivex.Observable login(java.util.Map):43:45 -> d
+com.yway.scomponent.login.mvp.model.LoginModel_Factory -> com.yway.scomponent.login.mvp.model.c:
+    javax.inject.Provider repositoryManagerProvider -> a
+    1:2:void <init>(javax.inject.Provider):19:20 -> <init>
+    1:1:com.yway.scomponent.login.mvp.model.LoginModel_Factory create(javax.inject.Provider):29:29 -> a
     1:1:java.lang.Object get():8:8 -> get
-    2:2:com.fatalsignal.outsourcing.login.mvp.model.LoginModel get():21:21 -> get
-com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel -> com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel:
+    2:2:com.yway.scomponent.login.mvp.model.LoginModel get():25:25 -> get
+com.yway.scomponent.login.mvp.model.RegisterModel -> com.yway.scomponent.login.mvp.model.RegisterModel:
     android.app.Application mApplication -> b
     com.google.gson.Gson mGson -> a
-    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):40:40 -> <init>
-    1:3:io.reactivex.Observable pfx():44:46 -> a
-    1:1:void onDestroy():50:50 -> onDestroy
-com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel_Factory -> com.fatalsignal.outsourcing.login.mvp.model.b:
+    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):37:37 -> <init>
+    1:3:io.reactivex.Observable sendSms(java.util.Map):42:44 -> a
+    1:3:io.reactivex.Observable queryAllSysOrgAndSysUserList(java.util.Map):55:57 -> b
+    1:3:io.reactivex.Observable register(java.util.Map):49:51 -> e
+    1:1:void onDestroy():62:62 -> onDestroy
+com.yway.scomponent.login.mvp.model.RegisterModel_Factory -> com.yway.scomponent.login.mvp.model.d:
     javax.inject.Provider mApplicationProvider -> c
     javax.inject.Provider mGsonProvider -> b
     javax.inject.Provider repositoryManagerProvider -> a
-    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):24:27 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):49:49 -> a
-    1:3:com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):39:41 -> b
+    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):26:29 -> <init>
+    1:1:com.yway.scomponent.login.mvp.model.RegisterModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):42:42 -> a
     1:1:java.lang.Object get():10:10 -> get
-    2:2:com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel get():32:32 -> get
-com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel_MembersInjector -> com.fatalsignal.outsourcing.login.mvp.model.c:
-    1:1:void injectMGson(com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel,com.google.gson.Gson):37:37 -> a
-    2:2:void injectMApplication(com.fatalsignal.outsourcing.login.mvp.model.PasswordForgetModel,android.app.Application):41:41 -> a
-com.fatalsignal.outsourcing.login.mvp.model.RegisterModel -> com.fatalsignal.outsourcing.login.mvp.model.RegisterModel:
+    2:4:com.yway.scomponent.login.mvp.model.RegisterModel get():34:36 -> get
+com.yway.scomponent.login.mvp.model.RegisterModel_MembersInjector -> com.yway.scomponent.login.mvp.model.e:
+    1:1:void injectMGson(com.yway.scomponent.login.mvp.model.RegisterModel,com.google.gson.Gson):39:39 -> a
+    2:2:void injectMApplication(com.yway.scomponent.login.mvp.model.RegisterModel,android.app.Application):43:43 -> a
+com.yway.scomponent.login.mvp.model.api.service.LoginService -> com.yway.scomponent.login.mvp.model.f.a.a:
+    io.reactivex.Observable sendSms(java.util.Map) -> a
+    io.reactivex.Observable queryAllSysOrgAndSysUserList(java.util.Map) -> b
+    io.reactivex.Observable modifyForgetPasswordByPhone(java.util.Map) -> c
+    io.reactivex.Observable login(java.util.Map) -> d
+    io.reactivex.Observable register(java.util.Map) -> e
+com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter -> com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter:
+    com.jess.arms.integration.AppManager mAppManager -> d
     android.app.Application mApplication -> b
-    com.google.gson.Gson mGson -> a
-    1:1:void <init>(com.jess.arms.integration.IRepositoryManager):33:33 -> <init>
-    1:1:void onDestroy():38:38 -> onDestroy
-com.fatalsignal.outsourcing.login.mvp.model.RegisterModel_Factory -> com.fatalsignal.outsourcing.login.mvp.model.d:
-    javax.inject.Provider mApplicationProvider -> c
-    javax.inject.Provider mGsonProvider -> b
-    javax.inject.Provider repositoryManagerProvider -> a
-    1:4:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):24:27 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.mvp.model.RegisterModel_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):49:49 -> a
-    1:3:com.fatalsignal.outsourcing.login.mvp.model.RegisterModel provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):39:41 -> b
-    1:1:java.lang.Object get():10:10 -> get
-    2:2:com.fatalsignal.outsourcing.login.mvp.model.RegisterModel get():32:32 -> get
-com.fatalsignal.outsourcing.login.mvp.model.RegisterModel_MembersInjector -> com.fatalsignal.outsourcing.login.mvp.model.e:
-    1:1:void injectMGson(com.fatalsignal.outsourcing.login.mvp.model.RegisterModel,com.google.gson.Gson):36:36 -> a
-    2:2:void injectMApplication(com.fatalsignal.outsourcing.login.mvp.model.RegisterModel,android.app.Application):40:40 -> a
-com.fatalsignal.outsourcing.login.mvp.model.api.service.LoginService -> com.fatalsignal.outsourcing.login.mvp.model.f.a.a:
-    io.reactivex.Observable login(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
-    io.reactivex.Observable pfx(java.lang.String) -> a
-com.fatalsignal.outsourcing.login.mvp.model.entity.LoginItemBean -> com.fatalsignal.outsourcing.login.mvp.model.entity.LoginItemBean:
-    java.lang.String url -> a
-    1:1:void <init>():27:27 -> <init>
-    1:1:java.lang.String getUrl():107:107 -> a
-com.fatalsignal.outsourcing.login.mvp.model.entity.LoginTokenBean -> com.fatalsignal.outsourcing.login.mvp.model.entity.LoginTokenBean:
-    java.lang.String token -> a
-    1:1:void <init>():5:5 -> <init>
-    1:1:java.lang.String getToken():13:13 -> a
-com.fatalsignal.outsourcing.login.mvp.model.entity.MobilePfxBean -> com.fatalsignal.outsourcing.login.mvp.model.entity.MobilePfxBean:
-    java.lang.String pfx -> a
-    java.lang.String pfx_name -> b
-    1:1:void <init>():7:7 -> <init>
-    1:1:java.lang.String getPfx():28:28 -> a
-    1:1:java.lang.String getPickerViewText():45:45 -> getPickerViewText
-com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter -> com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter:
+    me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
+    1:1:void <init>(com.yway.scomponent.login.mvp.contract.ForgetPwdContract$Model,com.yway.scomponent.login.mvp.contract.ForgetPwdContract$View):53:53 -> <init>
+    1:1:com.jess.arms.mvp.IView access$000(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter):38:38 -> a
+    2:13:void modifyForgetPasswordByPhone(java.util.Map):96:107 -> a
+    14:14:void lambda$modifyForgetPasswordByPhone$2(io.reactivex.disposables.Disposable):100:100 -> a
+    15:15:void lambda$modifyForgetPasswordByPhone$3():104:104 -> a
+    1:1:com.jess.arms.mvp.IView access$100(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter):38:38 -> b
+    2:13:void sendSms(java.util.Map):62:73 -> b
+    14:14:void lambda$sendSms$0(io.reactivex.disposables.Disposable):66:66 -> b
+    15:15:void lambda$sendSms$1():70:70 -> b
+    1:2:void onDestroy():122:123 -> onDestroy
+com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter$1 -> com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter$a:
+    com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter this$0 -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):73:73 -> <init>
+    1:4:void onNext(com.yway.scomponent.commonsdk.core.BaseResponse):76:79 -> a
+    1:1:void onNext(java.lang.Object):73:73 -> onNext
+com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter$2 -> com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter$b:
+    com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter this$0 -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):107:107 -> <init>
+    1:4:void onNext(com.yway.scomponent.commonsdk.core.BaseResponse):110:113 -> a
+    1:1:void onNext(java.lang.Object):107:107 -> onNext
+com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter_Factory -> com.yway.scomponent.login.mvp.presenter.a:
+    javax.inject.Provider mApplicationProvider -> d
+    javax.inject.Provider mErrorHandlerProvider -> c
+    javax.inject.Provider mAppManagerProvider -> f
+    javax.inject.Provider mImageLoaderProvider -> e
+    javax.inject.Provider rootViewProvider -> b
+    javax.inject.Provider modelProvider -> a
+    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):36:42 -> <init>
+    1:1:com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):59:59 -> a
+    1:1:java.lang.Object get():12:12 -> get
+    2:6:com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter get():47:51 -> get
+com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter_MembersInjector -> com.yway.scomponent.login.mvp.presenter.b:
+    1:1:void injectMErrorHandler(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):52:52 -> a
+    2:2:void injectMApplication(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter,android.app.Application):56:56 -> a
+    3:3:void injectMImageLoader(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter,com.jess.arms.http.imageloader.ImageLoader):60:60 -> a
+    4:4:void injectMAppManager(com.yway.scomponent.login.mvp.presenter.ForgetPwdPresenter,com.jess.arms.integration.AppManager):64:64 -> a
+com.yway.scomponent.login.mvp.presenter.LoginPresenter -> com.yway.scomponent.login.mvp.presenter.LoginPresenter:
     android.app.Application mApplication -> c
     me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
-    java.util.List mDatas -> d
     com.jess.arms.integration.AppManager mAppManager -> b
-    androidx.recyclerview.widget.RecyclerView$Adapter mAdapter -> e
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$Model,com.fatalsignal.outsourcing.login.mvp.contract.LoginHomeContract$View):63:63 -> <init>
-    1:1:com.jess.arms.mvp.IView access$200(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter):46:46 -> a
-    2:15:void login(java.lang.String,java.lang.String,java.lang.String):117:130 -> a
-    16:16:void lambda$login$2(io.reactivex.disposables.Disposable):122:122 -> a
-    17:17:void lambda$login$3():126:126 -> a
-    1:1:com.jess.arms.mvp.IView access$300(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter):46:46 -> b
-    2:2:void lambda$pfx$4(io.reactivex.disposables.Disposable):163:163 -> b
-    3:3:void lambda$pfx$5():167:167 -> b
-    1:1:com.jess.arms.mvp.IView access$400(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter):46:46 -> c
-    2:15:void pfx():158:171 -> c
-    1:1:com.jess.arms.mvp.IView access$500(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter):46:46 -> d
-    1:1:com.jess.arms.mvp.IView access$600(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter):46:46 -> e
-    1:1:void onCreate():73:73 -> onCreate
-    1:4:void onDestroy():183:186 -> onDestroy
-com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter$2 -> com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter$a:
-    com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):130:130 -> <init>
-    1:6:void onNext(com.fatalsignal.outsourcing.commonsdk.core.BaseResponse):133:138 -> a
-    1:2:void onError(java.lang.Throwable):144:145 -> onError
-    1:1:void onNext(java.lang.Object):130:130 -> onNext
-com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter$3 -> com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter$b:
-    com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):171:171 -> <init>
-    1:2:void onNext(com.fatalsignal.outsourcing.commonsdk.core.BaseResponse):174:175 -> a
-    1:1:void onNext(java.lang.Object):171:171 -> onNext
-com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter_Factory -> com.fatalsignal.outsourcing.login.mvp.presenter.a:
+    1:1:void <init>(com.yway.scomponent.login.mvp.contract.LoginHomeContract$Model,com.yway.scomponent.login.mvp.contract.LoginHomeContract$View):46:46 -> <init>
+    1:1:com.jess.arms.mvp.IView access$000(com.yway.scomponent.login.mvp.presenter.LoginPresenter):35:35 -> a
+    2:13:void login(java.util.Map):59:70 -> a
+    14:14:void lambda$login$0(io.reactivex.disposables.Disposable):63:63 -> a
+    15:15:void lambda$login$1():67:67 -> a
+    1:1:com.jess.arms.mvp.IView access$100(com.yway.scomponent.login.mvp.presenter.LoginPresenter):35:35 -> b
+    1:2:void onDestroy():114:115 -> onDestroy
+com.yway.scomponent.login.mvp.presenter.LoginPresenter$1 -> com.yway.scomponent.login.mvp.presenter.LoginPresenter$a:
+    com.yway.scomponent.login.mvp.presenter.LoginPresenter this$0 -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.presenter.LoginPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):70:70 -> <init>
+    1:4:void onNext(com.yway.scomponent.commonsdk.core.BaseResponse):73:76 -> a
+    1:1:void onNext(java.lang.Object):70:70 -> onNext
+com.yway.scomponent.login.mvp.presenter.LoginPresenter_Factory -> com.yway.scomponent.login.mvp.presenter.c:
     javax.inject.Provider mAppManagerProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
-    javax.inject.Provider mDatasProvider -> f
     javax.inject.Provider mApplicationProvider -> e
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
-    javax.inject.Provider mAdapterProvider -> g
-    1:8:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):40:47 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):87:87 -> a
-    1:6:com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):70:75 -> b
-    1:1:java.lang.Object get():14:14 -> get
-    2:2:com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter get():52:52 -> get
-com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter_MembersInjector -> com.fatalsignal.outsourcing.login.mvp.presenter.b:
-    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):65:65 -> a
-    2:2:void injectMAppManager(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter,com.jess.arms.integration.AppManager):69:69 -> a
-    3:3:void injectMApplication(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter,android.app.Application):73:73 -> a
-    4:4:void injectMDatas(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter,java.util.List):77:77 -> a
-    5:5:void injectMAdapter(com.fatalsignal.outsourcing.login.mvp.presenter.LoginPresenter,androidx.recyclerview.widget.RecyclerView$Adapter):81:81 -> a
-com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter -> com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter:
+    1:6:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):33:38 -> <init>
+    1:1:com.yway.scomponent.login.mvp.presenter.LoginPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):54:54 -> a
+    1:1:java.lang.Object get():11:11 -> get
+    2:5:com.yway.scomponent.login.mvp.presenter.LoginPresenter get():43:46 -> get
+com.yway.scomponent.login.mvp.presenter.LoginPresenter_MembersInjector -> com.yway.scomponent.login.mvp.presenter.d:
+    1:1:void injectMErrorHandler(com.yway.scomponent.login.mvp.presenter.LoginPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):45:45 -> a
+    2:2:void injectMAppManager(com.yway.scomponent.login.mvp.presenter.LoginPresenter,com.jess.arms.integration.AppManager):49:49 -> a
+    3:3:void injectMApplication(com.yway.scomponent.login.mvp.presenter.LoginPresenter,android.app.Application):53:53 -> a
+com.yway.scomponent.login.mvp.presenter.RegisterPresenter -> com.yway.scomponent.login.mvp.presenter.RegisterPresenter:
     com.jess.arms.integration.AppManager mAppManager -> d
     android.app.Application mApplication -> b
     me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$Model,com.fatalsignal.outsourcing.login.mvp.contract.PasswordForgetContract$View):52:52 -> <init>
-    1:1:com.jess.arms.mvp.IView access$000(com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter):40:40 -> a
-    2:2:void lambda$pfx$0(io.reactivex.disposables.Disposable):78:78 -> a
-    3:3:void lambda$pfx$1():82:82 -> a
-    1:14:void pfx():73:86 -> b
-    1:1:void onCreate():62:62 -> onCreate
-    1:2:void onDestroy():99:100 -> onDestroy
-com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter$1 -> com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter$a:
-    com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):86:86 -> <init>
-    1:2:void onNext(com.fatalsignal.outsourcing.commonsdk.core.BaseResponse):89:90 -> a
-    1:1:void onNext(java.lang.Object):86:86 -> onNext
-com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter_Factory -> com.fatalsignal.outsourcing.login.mvp.presenter.c:
+    1:1:void <init>(com.yway.scomponent.login.mvp.contract.RegisterContract$Model,com.yway.scomponent.login.mvp.contract.RegisterContract$View):46:46 -> <init>
+    1:1:com.jess.arms.mvp.IView access$000(com.yway.scomponent.login.mvp.presenter.RegisterPresenter):34:34 -> a
+    2:13:void register(java.util.Map):90:101 -> a
+    14:25:void queryAllSysOrgAndSysUserList():117:128 -> a
+    26:26:void lambda$queryAllSysOrgAndSysUserList$4(io.reactivex.disposables.Disposable):121:121 -> a
+    1:1:com.jess.arms.mvp.IView access$100(com.yway.scomponent.login.mvp.presenter.RegisterPresenter):34:34 -> b
+    2:13:void sendSms(java.util.Map):56:67 -> b
+    14:14:void lambda$register$2(io.reactivex.disposables.Disposable):94:94 -> b
+    15:15:void lambda$queryAllSysOrgAndSysUserList$5():125:125 -> b
+    1:1:com.jess.arms.mvp.IView access$200(com.yway.scomponent.login.mvp.presenter.RegisterPresenter):34:34 -> c
+    2:2:void lambda$sendSms$0(io.reactivex.disposables.Disposable):60:60 -> c
+    3:3:void lambda$register$3():98:98 -> c
+    1:1:com.jess.arms.mvp.IView access$300(com.yway.scomponent.login.mvp.presenter.RegisterPresenter):34:34 -> d
+    2:2:void lambda$sendSms$1():64:64 -> d
+    1:1:com.jess.arms.mvp.IView access$400(com.yway.scomponent.login.mvp.presenter.RegisterPresenter):34:34 -> e
+    1:2:void onDestroy():144:145 -> onDestroy
+com.yway.scomponent.login.mvp.presenter.RegisterPresenter$1 -> com.yway.scomponent.login.mvp.presenter.RegisterPresenter$a:
+    com.yway.scomponent.login.mvp.presenter.RegisterPresenter this$0 -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.presenter.RegisterPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):67:67 -> <init>
+    1:4:void onNext(com.yway.scomponent.commonsdk.core.BaseResponse):70:73 -> a
+    1:1:void onNext(java.lang.Object):67:67 -> onNext
+com.yway.scomponent.login.mvp.presenter.RegisterPresenter$2 -> com.yway.scomponent.login.mvp.presenter.RegisterPresenter$b:
+    com.yway.scomponent.login.mvp.presenter.RegisterPresenter this$0 -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.presenter.RegisterPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):101:101 -> <init>
+    1:4:void onNext(com.yway.scomponent.commonsdk.core.BaseResponse):104:107 -> a
+    1:1:void onNext(java.lang.Object):101:101 -> onNext
+com.yway.scomponent.login.mvp.presenter.RegisterPresenter$3 -> com.yway.scomponent.login.mvp.presenter.RegisterPresenter$c:
+    com.yway.scomponent.login.mvp.presenter.RegisterPresenter this$0 -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.presenter.RegisterPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):128:128 -> <init>
+    1:5:void onNext(com.yway.scomponent.commonsdk.core.BaseResponse):131:135 -> a
+    1:1:void onNext(java.lang.Object):128:128 -> onNext
+com.yway.scomponent.login.mvp.presenter.RegisterPresenter_Factory -> com.yway.scomponent.login.mvp.presenter.e:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
     javax.inject.Provider mImageLoaderProvider -> e
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
-    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):35:41 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):81:81 -> a
-    1:4:com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):62:65 -> b
-    5:8:com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):64:67 -> b
-    9:12:com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):66:69 -> b
-    13:15:com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):68:70 -> b
+    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):36:42 -> <init>
+    1:1:com.yway.scomponent.login.mvp.presenter.RegisterPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):59:59 -> a
     1:1:java.lang.Object get():12:12 -> get
-    2:2:com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter get():46:46 -> get
-com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter_MembersInjector -> com.fatalsignal.outsourcing.login.mvp.presenter.d:
-    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):55:55 -> a
-    2:2:void injectMApplication(com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter,android.app.Application):60:60 -> a
-    3:3:void injectMImageLoader(com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter,com.jess.arms.http.imageloader.ImageLoader):65:65 -> a
-    4:4:void injectMAppManager(com.fatalsignal.outsourcing.login.mvp.presenter.PasswordForgetPresenter,com.jess.arms.integration.AppManager):69:69 -> a
-com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter -> com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter:
-    com.jess.arms.integration.AppManager mAppManager -> d
-    android.app.Application mApplication -> b
-    me.jessyan.rxerrorhandler.core.RxErrorHandler mErrorHandler -> a
-    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> c
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$Model,com.fatalsignal.outsourcing.login.mvp.contract.RegisterContract$View):38:38 -> <init>
-    1:1:void onDestroy():43:43 -> onDestroy
-com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter_Factory -> com.fatalsignal.outsourcing.login.mvp.presenter.e:
-    javax.inject.Provider mApplicationProvider -> d
-    javax.inject.Provider mErrorHandlerProvider -> c
-    javax.inject.Provider mAppManagerProvider -> f
-    javax.inject.Provider mImageLoaderProvider -> e
-    javax.inject.Provider rootViewProvider -> b
-    javax.inject.Provider modelProvider -> a
-    1:7:void <init>(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):35:41 -> <init>
-    1:1:com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):77:77 -> a
-    1:5:com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter provideInstance(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider):62:66 -> b
-    1:1:java.lang.Object get():12:12 -> get
-    2:2:com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter get():46:46 -> get
-com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter_MembersInjector -> com.fatalsignal.outsourcing.login.mvp.presenter.f:
-    1:1:void injectMErrorHandler(com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):53:53 -> a
-    2:2:void injectMApplication(com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter,android.app.Application):57:57 -> a
-    3:3:void injectMImageLoader(com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter,com.jess.arms.http.imageloader.ImageLoader):61:61 -> a
-    4:4:void injectMAppManager(com.fatalsignal.outsourcing.login.mvp.presenter.RegisterPresenter,com.jess.arms.integration.AppManager):65:65 -> a
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity:
-    java.util.List mMobilePfxLs -> b
-    com.bigkoo.pickerview.view.OptionsPickerView pvCustomOptions -> a
-    int selectOptionPosition -> c
-    1:16:void <init>():55:70 -> <init>
-    1:1:com.bigkoo.pickerview.view.OptionsPickerView access$000(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):55:55 -> a
-    2:2:void loginError(java.lang.String):208:208 -> a
-    3:11:void getMobilePfxBeanData(java.util.List):213:221 -> a
-    1:1:java.util.List access$100(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):55:55 -> b
-    2:9:void loginSuccess(java.lang.String):191:198 -> b
-    10:45:void initCustomOptionPfx(java.util.List):234:269 -> b
-    1:1:void hideLoading():167:167 -> hideLoading
-    1:12:void initData(android.os.Bundle):89:100 -> initData
-    1:2:void initImmersionBar():105:106 -> initImmersionBar
-    1:1:int initView(android.os.Bundle):84:84 -> initView
-    1:1:void killMyself():182:182 -> killMyself
-    1:1:void launchActivity(android.content.Intent):177:177 -> launchActivity
-    1:1:void onDestroy():277:277 -> onDestroy
-    1:1:void onForgetPwdClick(android.view.View):149:149 -> onForgetPwdClick
-    1:9:void onLoginClick(android.view.View):114:122 -> onLoginClick
-    1:2:void onMobilePfxClick(android.view.View):156:157 -> onMobilePfxClick
-    1:2:void onRegisterClick(android.view.View):139:140 -> onRegisterClick
-    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):75:79 -> setupActivityComponent
-    1:1:void showLoading():162:162 -> showLoading
-    1:1:void showMessage(java.lang.String):172:172 -> showMessage
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):93:93 -> <init>
-    1:2:boolean onInputChange(com.fatalsignal.outsourcing.commonres.utils.InputTextHelper):96:97 -> onInputChange
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$2 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$b:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):241:241 -> <init>
-    1:11:void customLayout(android.view.View):244:254 -> customLayout
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$2$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$b$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$2 this$1 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$2):246:246 -> <init>
-    1:2:void onClick(android.view.View):249:250 -> onClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$2$2 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$b$b:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$2 this$1 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$2):254:254 -> <init>
-    1:1:void onClick(android.view.View):257:257 -> onClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$3 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity$c:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):234:234 -> <init>
-    1:1:void onOptionsSelect(int,int,int,android.view.View):238:238 -> onOptionsSelect
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity target -> a
-    android.view.View view7f0b004c -> c
-    android.view.View view7f0b0054 -> b
-    android.view.View view7f0b0182 -> d
-    1:28:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity,android.view.View):32:59 -> <init>
-    1:16:void unbind():70:85 -> unbind
-    17:17:void unbind():71:71 -> unbind
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity val$target -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding,com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):43:43 -> <init>
-    1:1:void doClick(android.view.View):46:46 -> doClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding$2 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding$b:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity val$target -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding,com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):51:51 -> <init>
-    1:1:void doClick(android.view.View):54:54 -> doClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding$3 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding$c:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity val$target -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity_ViewBinding,com.fatalsignal.outsourcing.login.mvp.ui.activity.LoginActivity):59:59 -> <init>
-    1:1:void doClick(android.view.View):62:62 -> doClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity:
-    java.util.List mMobilePfxLs -> b
-    com.bigkoo.pickerview.view.OptionsPickerView pvCustomOptions -> a
-    int selectOptionPosition -> c
-    1:16:void <init>():53:68 -> <init>
-    1:1:com.bigkoo.pickerview.view.OptionsPickerView access$000(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):53:53 -> a
-    2:10:void getMobilePfxBeanData(java.util.List):215:223 -> a
-    1:1:java.util.List access$100(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):53:53 -> b
-    2:37:void initCustomOptionPfx(java.util.List):168:203 -> b
-    1:12:void initData(android.os.Bundle):87:98 -> initData
-    1:2:void initImmersionBar():103:104 -> initImmersionBar
-    1:1:int initView(android.os.Bundle):82:82 -> initView
-    1:1:void killMyself():210:210 -> killMyself
-    1:2:void launchActivity(android.content.Intent):155:156 -> launchActivity
-    1:9:void onClick(android.view.View):109:117 -> onClick
-    1:2:void onMobilePfxClick(android.view.View):133:134 -> onMobilePfxClick
-    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):73:77 -> setupActivityComponent
-    1:2:void showMessage(java.lang.String):149:150 -> showMessage
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):91:91 -> <init>
-    1:1:boolean onInputChange(com.fatalsignal.outsourcing.commonres.utils.InputTextHelper):95:95 -> onInputChange
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$2 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$b:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):175:175 -> <init>
-    1:11:void customLayout(android.view.View):178:188 -> customLayout
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$2$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$b$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$2 this$1 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$2):180:180 -> <init>
-    1:2:void onClick(android.view.View):183:184 -> onClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$2$2 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$b$b:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$2 this$1 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$2):188:188 -> <init>
-    1:1:void onClick(android.view.View):191:191 -> onClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$3 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity$c:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):168:168 -> <init>
-    1:1:void onOptionsSelect(int,int,int,android.view.View):172:172 -> onOptionsSelect
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity target -> a
-    android.view.View view7f0b0055 -> c
-    android.view.View view7f0b0073 -> b
-    1:25:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity,android.view.View):31:55 -> <init>
-    1:14:void unbind():61:74 -> unbind
-    15:15:void unbind():62:62 -> unbind
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity val$target -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding,com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):40:40 -> <init>
-    1:1:void doClick(android.view.View):43:43 -> doClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding$2 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding$b:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity val$target -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity_ViewBinding,com.fatalsignal.outsourcing.login.mvp.ui.activity.PasswordForgetActivity):49:49 -> <init>
-    1:1:void doClick(android.view.View):52:52 -> doClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity -> com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity:
-    1:1:void <init>():44:44 -> <init>
-    1:16:void initData(android.os.Bundle):84:99 -> initData
-    1:2:void initImmersionBar():74:75 -> initImmersionBar
-    1:1:int initView(android.os.Bundle):79:79 -> initView
-    1:1:void killMyself():149:149 -> killMyself
-    1:2:void launchActivity(android.content.Intent):143:144 -> launchActivity
-    1:15:void onClick(android.view.View):104:118 -> onClick
-    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):65:69 -> setupActivityComponent
-    1:2:void showMessage(java.lang.String):137:138 -> showMessage
-com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity this$0 -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity):90:90 -> <init>
-    1:3:boolean onInputChange(com.fatalsignal.outsourcing.commonres.utils.InputTextHelper):94:96 -> onInputChange
-com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding -> com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity target -> a
-    android.view.View view7f0b0057 -> c
-    android.view.View view7f0b0074 -> b
-    1:21:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity,android.view.View):30:50 -> <init>
-    1:15:void unbind():61:75 -> unbind
-    16:16:void unbind():62:62 -> unbind
-com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding$1 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding$a:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity val$target -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding,com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity):38:38 -> <init>
-    1:1:void doClick(android.view.View):41:41 -> doClick
-com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding$2 -> com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding$b:
-    com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity val$target -> a
-    1:1:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity_ViewBinding,com.fatalsignal.outsourcing.login.mvp.ui.activity.RegisterActivity):50:50 -> <init>
-    1:1:void doClick(android.view.View):53:53 -> doClick
-com.fatalsignal.outsourcing.login.mvp.ui.adapter.LoginAdapter -> com.fatalsignal.outsourcing.login.b.b.a.a:
-    1:1:void <init>(java.util.List):26:26 -> <init>
-    1:1:com.jess.arms.base.BaseHolder getHolder(android.view.View,int):31:31 -> getHolder
-    1:1:int getLayoutId(int):36:36 -> getLayoutId
-com.fatalsignal.outsourcing.login.mvp.ui.holder.LoginItemHolder -> com.fatalsignal.outsourcing.login.mvp.ui.holder.LoginItemHolder:
-    com.jess.arms.di.component.AppComponent mAppComponent -> a
-    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> b
-    1:4:void <init>(android.view.View):37:40 -> <init>
-    1:7:void setData(com.fatalsignal.outsourcing.login.mvp.model.entity.LoginItemBean,int):46:52 -> a
-    8:15:void setData(com.fatalsignal.outsourcing.login.mvp.model.entity.LoginItemBean,int):47:54 -> a
-    1:3:void onRelease():60:62 -> onRelease
-    4:4:void onRelease():60:60 -> onRelease
-    1:1:void setData(java.lang.Object,int):29:29 -> setData
-com.fatalsignal.outsourcing.login.mvp.ui.holder.LoginItemHolder_ViewBinding -> com.fatalsignal.outsourcing.login.mvp.ui.holder.LoginItemHolder_ViewBinding:
-    com.fatalsignal.outsourcing.login.mvp.ui.holder.LoginItemHolder target -> a
-    1:4:void <init>(com.fatalsignal.outsourcing.login.mvp.ui.holder.LoginItemHolder,android.view.View):18:21 -> <init>
+    2:6:com.yway.scomponent.login.mvp.presenter.RegisterPresenter get():47:51 -> get
+com.yway.scomponent.login.mvp.presenter.RegisterPresenter_MembersInjector -> com.yway.scomponent.login.mvp.presenter.f:
+    1:1:void injectMErrorHandler(com.yway.scomponent.login.mvp.presenter.RegisterPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler):51:51 -> a
+    2:2:void injectMApplication(com.yway.scomponent.login.mvp.presenter.RegisterPresenter,android.app.Application):55:55 -> a
+    3:3:void injectMImageLoader(com.yway.scomponent.login.mvp.presenter.RegisterPresenter,com.jess.arms.http.imageloader.ImageLoader):59:59 -> a
+    4:4:void injectMAppManager(com.yway.scomponent.login.mvp.presenter.RegisterPresenter,com.jess.arms.integration.AppManager):63:63 -> a
+com.yway.scomponent.login.mvp.ui.activity.CommonItemHolder_ViewBinding -> com.yway.scomponent.login.mvp.ui.activity.CommonItemHolder_ViewBinding:
+    com.yway.scomponent.login.mvp.ui.activity.CommonItemHolder target -> a
+    1:4:void <init>(com.yway.scomponent.login.mvp.ui.activity.CommonItemHolder,android.view.View):18:21 -> <init>
     1:5:void unbind():27:31 -> unbind
     6:6:void unbind():28:28 -> unbind
+com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity -> com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity:
+    1:1:void <init>():42:42 -> <init>
+    1:1:boolean lambda$initData$0(com.yway.scomponent.commonres.utils.InputTextHelper):102:102 -> a
+    2:2:void sendSmsSuccess():176:176 -> a
+    1:2:void modifyForgetPasswordSuccess():181:182 -> b
+    1:1:void hideLoading():153:153 -> hideLoading
+    1:9:void initData(android.os.Bundle):95:103 -> initData
+    1:1:int initView(android.os.Bundle):89:89 -> initView
+    1:1:void killMyself():171:171 -> killMyself
+    1:2:void launchActivity(android.content.Intent):165:166 -> launchActivity
+    1:1:void onDestroy():143:143 -> onDestroy
+    1:13:void onRegisterClick(android.view.View):125:137 -> onRegisterClick
+    1:12:void onSendCodeClick(android.view.View):108:119 -> onSendCodeClick
+    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):80:84 -> setupActivityComponent
+    1:1:void showLoading():148:148 -> showLoading
+    1:2:void showMessage(java.lang.String):159:160 -> showMessage
+com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding -> com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding:
+    com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity target -> a
+    android.view.View view7f0b0062 -> c
+    android.view.View view7f0b008c -> b
+    1:22:void <init>(com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity,android.view.View):30:51 -> <init>
+    1:16:void unbind():62:77 -> unbind
+    17:17:void unbind():63:63 -> unbind
+com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$1 -> com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$a:
+    com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity val$target -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding,com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity):39:39 -> <init>
+    1:1:void doClick(android.view.View):42:42 -> doClick
+com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$2 -> com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$b:
+    com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity val$target -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding,com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity):51:51 -> <init>
+    1:1:void doClick(android.view.View):54:54 -> doClick
+com.yway.scomponent.login.mvp.ui.activity.LoginActivity -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity:
+    android.view.View$OnClickListener mOnRegProtocolClickListener -> b
+    android.view.View$OnClickListener mOnRegisterClickListener1 -> a
+    android.view.View$OnClickListener mOnAuthProtocolClickListener1 -> c
+    1:116:void <init>():49:164 -> <init>
+    1:1:boolean lambda$initData$0(com.yway.scomponent.commonres.utils.InputTextHelper):98:98 -> a
+    2:13:void initAgreement():129:140 -> a
+    14:15:void lambda$new$1(android.view.View):147:148 -> a
+    16:21:void loginSuccess(com.yway.scomponent.commonsdk.core.UserInfoBean):261:266 -> a
+    22:22:void loginError(java.lang.String):281:281 -> a
+    void lambda$new$2(android.view.View) -> b
+    1:7:void initRegisterView():112:118 -> b
+    void lambda$new$3(android.view.View) -> c
+    1:1:void hideLoading():235:235 -> hideLoading
+    1:12:void initData(android.os.Bundle):94:105 -> initData
+    1:1:int initView(android.os.Bundle):88:88 -> initView
+    1:1:void killMyself():250:250 -> killMyself
+    1:1:void launchActivity(android.content.Intent):245:245 -> launchActivity
+    1:1:void onDestroy():302:302 -> onDestroy
+    1:2:void onForgetPwdClick(android.view.View):223:224 -> onForgetPwdClick
+    1:28:void onLoginClick(android.view.View):181:208 -> onLoginClick
+    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):79:83 -> setupActivityComponent
+    1:1:void showLoading():230:230 -> showLoading
+    1:1:void showMessage(java.lang.String):240:240 -> showMessage
+com.yway.scomponent.login.mvp.ui.activity.LoginActivity$1 -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity$a:
+    com.yway.scomponent.login.mvp.ui.activity.LoginActivity this$0 -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.LoginActivity):266:266 -> <init>
+    1:1:void onArrival(com.alibaba.android.arouter.facade.Postcard):269:269 -> onArrival
+com.yway.scomponent.login.mvp.ui.activity.LoginActivity$Clickable -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity$b:
+    android.view.View$OnClickListener mListener -> a
+    1:2:void <init>(com.yway.scomponent.login.mvp.ui.activity.LoginActivity,android.view.View$OnClickListener):312:313 -> <init>
+    1:1:void onClick(android.view.View):318:318 -> onClick
+    1:1:void updateDrawState(android.text.TextPaint):323:323 -> updateDrawState
+com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding:
+    android.view.View view7f0b0213 -> c
+    android.view.View view7f0b0063 -> b
+    com.yway.scomponent.login.mvp.ui.activity.LoginActivity target -> a
+    1:20:void <init>(com.yway.scomponent.login.mvp.ui.activity.LoginActivity,android.view.View):29:48 -> <init>
+    1:14:void unbind():59:72 -> unbind
+    15:15:void unbind():60:60 -> unbind
+com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding$1 -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding$a:
+    com.yway.scomponent.login.mvp.ui.activity.LoginActivity val$target -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding,com.yway.scomponent.login.mvp.ui.activity.LoginActivity):40:40 -> <init>
+    1:1:void doClick(android.view.View):43:43 -> doClick
+com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding$2 -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding$b:
+    com.yway.scomponent.login.mvp.ui.activity.LoginActivity val$target -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding,com.yway.scomponent.login.mvp.ui.activity.LoginActivity):48:48 -> <init>
+    1:1:void doClick(android.view.View):51:51 -> doClick
+com.yway.scomponent.login.mvp.ui.activity.RegisterActivity -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity:
+    com.yway.scomponent.commonsdk.core.AddressCompanyBean companyBean -> a
+    android.view.View$OnClickListener mOnRegisterClickListener -> b
+    1:103:void <init>():69:171 -> <init>
+    1:1:boolean lambda$initData$0(com.yway.scomponent.commonres.utils.InputTextHelper):146:146 -> a
+    2:2:void lambda$new$1(android.view.View):172:172 -> a
+    3:3:void queryOrgRspCallBack(com.yway.scomponent.commonsdk.core.AddressCompanyBean):242:242 -> a
+    4:4:void sendSmsSuccess():279:279 -> a
+    android.app.Activity getActivity() -> b
+    1:2:void registerSuccess(java.lang.String):284:285 -> b
+    1:7:void initRegisterView():159:165 -> c
+    1:1:void hideLoading():253:253 -> hideLoading
+    1:18:void initData(android.os.Bundle):135:152 -> initData
+    1:1:int initView(android.os.Bundle):129:129 -> initView
+    1:2:void launchActivity(android.content.Intent):264:265 -> launchActivity
+    1:7:void onActivityResult(int,int,android.content.Intent):227:233 -> onActivityResult
+    1:2:void onBarChooseCompanyClick(android.view.View):220:221 -> onBarChooseCompanyClick
+    1:14:void onRegisterClick(android.view.View):199:212 -> onRegisterClick
+    1:12:void onSendCodeClick(android.view.View):180:191 -> onSendCodeClick
+    1:5:void setupActivityComponent(com.jess.arms.di.component.AppComponent):120:124 -> setupActivityComponent
+    1:1:void showLoading():248:248 -> showLoading
+    1:2:void showMessage(java.lang.String):258:259 -> showMessage
+com.yway.scomponent.login.mvp.ui.activity.RegisterActivity$Clickable -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity$a:
+    android.view.View$OnClickListener mListener -> a
+    1:2:void <init>(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity,android.view.View$OnClickListener):294:295 -> <init>
+    1:1:void onClick(android.view.View):300:300 -> onClick
+    1:1:void updateDrawState(android.text.TextPaint):305:305 -> updateDrawState
+com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding:
+    android.view.View view7f0b0062 -> c
+    android.view.View view7f0b008c -> b
+    android.view.View view7f0b0053 -> d
+    com.yway.scomponent.login.mvp.ui.activity.RegisterActivity target -> a
+    1:32:void <init>(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity,android.view.View):34:65 -> <init>
+    1:20:void unbind():76:95 -> unbind
+    21:21:void unbind():77:77 -> unbind
+com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$1 -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$a:
+    com.yway.scomponent.login.mvp.ui.activity.RegisterActivity val$target -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding,com.yway.scomponent.login.mvp.ui.activity.RegisterActivity):44:44 -> <init>
+    1:1:void doClick(android.view.View):47:47 -> doClick
+com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$2 -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$b:
+    com.yway.scomponent.login.mvp.ui.activity.RegisterActivity val$target -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding,com.yway.scomponent.login.mvp.ui.activity.RegisterActivity):55:55 -> <init>
+    1:1:void doClick(android.view.View):58:58 -> doClick
+com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$3 -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$c:
+    com.yway.scomponent.login.mvp.ui.activity.RegisterActivity val$target -> a
+    1:1:void <init>(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding,com.yway.scomponent.login.mvp.ui.activity.RegisterActivity):65:65 -> <init>
+    1:1:void doClick(android.view.View):68:68 -> doClick
