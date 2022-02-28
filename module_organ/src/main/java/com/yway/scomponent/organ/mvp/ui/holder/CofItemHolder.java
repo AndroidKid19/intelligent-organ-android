@@ -31,13 +31,15 @@ public class CofItemHolder extends BaseHolder<Object> {
 
     @Override
     public void setData(Object data, int position) {
-        ConferenceBean conferenceBean = (ConferenceBean) data;
-        mTvConfDate.setText(conferenceBean.getIsToDay());
-        mTvConfTime.setText(conferenceBean.getStartTime());
-        mTvConfTitle.setText(conferenceBean.getMeetingSubject());
-        mTvConfLocation.setText(conferenceBean.getMeetingName());
-        mTvConfRemark.setText(conferenceBean.getMeetingRemark());
-        mView.setOnClickListener(this);
+        if (data instanceof ConferenceBean){
+            ConferenceBean conferenceBean = (ConferenceBean) data;
+            mTvConfDate.setText(conferenceBean.getIsToDay());
+            mTvConfTime.setText(conferenceBean.getStartTime());
+            mTvConfTitle.setText(conferenceBean.getMeetingSubject());
+            mTvConfLocation.setText(conferenceBean.getMeetingName());
+            mTvConfRemark.setText(conferenceBean.getMeetingRemark());
+            mView.setOnClickListener(this);
+        }
     }
 
     @Override

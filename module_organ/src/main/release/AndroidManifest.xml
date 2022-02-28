@@ -4,6 +4,12 @@
 
     <application>
         <activity
+            android:name=".mvp.ui.activity.TransactionRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.ui.activity.CanteenActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".mvp.ui.activity.WebViewActivity"
             android:screenOrientation="portrait" />
         <activity

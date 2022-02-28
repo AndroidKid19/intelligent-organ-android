@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F0F0F0"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/public_mar_10dp"
+        app:cardBackgroundColor="@color/public_white"
+        app:cardCornerRadius="@dimen/public_dialog_message_round_size"
+        app:cardElevation="0px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextDefault"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/public_white"
+                android:gravity="center"
+                android:text="饭卡充值"
+                android:textSize="@dimen/public_font_18sp" />
+
+            <include layout="@layout/public_include_view_line" />
+
+            <RadioGroup
+                android:id="@+id/rg_recharge_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <RadioButton
+                    android:id="@+id/rb_1"
+                    style="@style/organ_radio_button_style_recharge"
+                    android:text="50元" />
+
+                <RadioButton
+                    android:id="@+id/rb_2"
+                    style="@style/organ_radio_button_style_recharge"
+                    android:text="100元" />
+
+                <RadioButton
+                    android:id="@+id/rb_3"
+                    style="@style/organ_radio_button_style_recharge"
+                    android:text="150元" />
+
+                <RadioButton
+                    android:id="@+id/rb_4"
+                    style="@style/organ_radio_button_style_recharge"
+                    android:text="200元" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/public_white"
+        app:cardElevation="0px">
+
+        <com.yway.scomponent.commonres.view.layout.SmartTextView
+            style="@style/TextDefault.Medium"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/public_mar_16dp"
+            android:text="@string/public_common_cancel" />
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

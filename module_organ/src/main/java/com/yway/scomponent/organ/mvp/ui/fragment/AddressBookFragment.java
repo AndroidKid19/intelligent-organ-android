@@ -178,7 +178,7 @@ public class AddressBookFragment extends BaseFragment<AddressBookPresenter> impl
             //人员
             Utils.postcard(RouterHub.USER_USERDETAILSACTIVITY)
                     .withParcelable(Constants.APP_USER_INFO, (UserInfoBean) data)
-                    .withString("organName", mDataLs.get(mDataLs.size() - 1).getOrgTitle())
+                    .withString(Constants.APP_USER_ORGAN, mDataLs.get(mDataLs.size() - 1).getOrgTitle())
                     .navigation(getActivity());
         }
     };

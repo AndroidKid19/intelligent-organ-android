@@ -88,4 +88,25 @@
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
     </style>
+
+
+    <!-- RadioButton stytle -->
+    <style name="organ_radio_button_style_recharge" >
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">40dp</item>
+        <!--背景-->
+        <item name="android:background">@drawable/public_selector_radio_rectangle_button</item>
+        <!--字体-->
+        <item name="android:textSize">@dimen/public_font_14sp</item>
+        <!--字体颜色-->
+        <item name="android:textColor">@drawable/public_selector_radio_button_text</item>
+        <!--是否显示原点-->
+        <item name="android:button">@null</item>
+        <!--边距-->
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
 </resources>

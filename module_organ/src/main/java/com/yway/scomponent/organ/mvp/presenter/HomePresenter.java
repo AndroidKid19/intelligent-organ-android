@@ -3,9 +3,7 @@ package com.yway.scomponent.organ.mvp.presenter;
 import android.app.Application;
 import android.widget.ImageView;
 
-import com.blankj.utilcode.util.CollectionUtils;
 import com.blankj.utilcode.util.ObjectUtils;
-import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.di.scope.FragmentScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
@@ -15,15 +13,16 @@ import com.jess.arms.utils.RxLifecycleUtils;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.Constants;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
-import com.yway.scomponent.commonsdk.core.UploadFileBean;
+import com.yway.scomponent.commonsdk.core.EventBusHub;
 import com.yway.scomponent.commonsdk.imgaEngine.config.CommonImageConfigImpl;
-import com.yway.scomponent.commonsdk.utils.ArithUtils;
 import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
+import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
-import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
+
+import org.simple.eventbus.EventBus;
 
 import java.util.HashMap;
 import java.util.List;
@@ -116,6 +115,7 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                         if (datas.isSuccess()) {
                             if (ObjectUtils.isEmpty(datas.getData()))return;
                             mRootView.metingListCallBack(datas.getData());
+
                         } else {
                             ArmsUtils.snackbarText(datas.getMessage());
                         }
@@ -224,6 +224,39 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
         }
         //缓存数据字典
         CacheUtils.initMMKV().encode(Constants.APP_COMMON_DICT, dictClassifyBean);
+
+        //刷新个人信息
+        EventBus.getDefault().post(1, EventBusHub.EVENTBUS_TAG_USER_REFRESH);
+    }
+
+    /**
+     * 查询权限
+     */
+    public void queryApprovalConfigureList() {
+        mModel.queryApprovalConfigureList(new HashMap<>())
+                .subscribeOn(Schedulers.io())
+                //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .retryWhen(new RetryWithDelay(3, 2))
+                .doOnSubscribe(disposable -> {
+
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+
+                })
+                //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseResponse<ConfigureBean>>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseResponse<ConfigureBean> datas) {
+                        if (datas.isSuccess()) {
+                            //缓存数据字典
+                            CacheUtils.initMMKV().encode(Constants.APP_COMMON_config, datas.getData());
+                        } else {
+                            ArmsUtils.snackbarText(datas.getMessage());
+                        }
+                    }
+                });
     }
 
     @Override

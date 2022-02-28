@@ -25,8 +25,10 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.yway.scomponent.commonres.dialog.IToast;
 import com.yway.scomponent.commonres.view.banner.BGABanner;
 import com.yway.scomponent.commonsdk.BuildConfig;
+import com.yway.scomponent.commonsdk.core.Constants;
 import com.yway.scomponent.commonsdk.core.EventBusHub;
 import com.yway.scomponent.commonsdk.core.RouterHub;
+import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
@@ -34,6 +36,7 @@ import com.yway.scomponent.organ.di.component.DaggerHomeComponent;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceTitleBean;
+import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageTitleBean;
@@ -119,6 +122,8 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     }
 
     private void initQueryData(){
+        //查询权限
+        mPresenter.queryApprovalConfigureList();
         //初始化字段数据
         mPresenter.queryDict();
         //查询我的会议
@@ -242,7 +247,20 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      */
     @OnClick(R2.id.tv_menu_room)
     void onRoomClick(View view){
-        Utils.navigation(getActivity(), RouterHub.HOME_CONFERENCEROOMACTIVITY);
+        //预约人员
+        ConfigureBean configureBean = CacheUtils.initMMKV().decodeParcelable(Constants.APP_COMMON_config, ConfigureBean.class);
+        boolean isAuth = false;
+        for (ConfigureBean config : configureBean.getList()) {
+            if (config.getType() == 3 && config.getUserId().equals(CacheUtils.queryUserId())){
+                //预约权限
+                isAuth = true;
+            }
+        }
+        if (isAuth){//有预约权限
+            Utils.navigation(getActivity(), RouterHub.HOME_CONFERENCEROOMACTIVITY);
+        }else{
+            IToast.showFinishShort("您无预约权限");
+        }
     }
 
     /**
@@ -412,12 +430,12 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      */
     @Override
     public void onBannerItemClick(BGABanner banner, ImageView itemView, @Nullable @org.jetbrains.annotations.Nullable String model, int position) {
-        String newUrl = "https://www.baidu.com";
-        if (!StringUtils.isEmpty(newUrl)) {
-            Utils.postcard(RouterHub.APP_AGENTWEBACTIVITY)
-                    .withString(RouterHub.PARAM_WEBVIEWXURL, newUrl)
-                    .navigation(getContext());
-        }
+//        String newUrl = "https://www.baidu.com";
+//        if (!StringUtils.isEmpty(newUrl)) {
+//            Utils.postcard(RouterHub.APP_AGENTWEBACTIVITY)
+//                    .withString(RouterHub.PARAM_WEBVIEWXURL, newUrl)
+//                    .navigation(getContext());
+//        }
     }
 
     /**

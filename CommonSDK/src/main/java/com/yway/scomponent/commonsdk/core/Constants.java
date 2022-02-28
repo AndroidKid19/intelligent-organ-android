@@ -47,6 +47,9 @@ public interface Constants {
     //字典
     String APP_COMMON_DICT = "common_dict";
 
+    //权限
+    String APP_COMMON_config = "common_configure";
+
 
     int RESULT_COMMON_CODE = 10001;
 

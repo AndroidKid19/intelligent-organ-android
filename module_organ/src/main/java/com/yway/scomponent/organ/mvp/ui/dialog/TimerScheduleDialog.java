@@ -265,6 +265,9 @@ public final class TimerScheduleDialog extends BasePopupWindow {
         @RequiresApi(api = Build.VERSION_CODES.M)
         public Builder initHour(int hour, int minute) {
             mDialog.tpLeft.setHour(hour);  //设置当前小时
+            if (minute == 30){
+                minute = 2;
+            }
             mDialog.tpLeft.setMinute(minute); //设置当前分（0-59）
             return this;
         }

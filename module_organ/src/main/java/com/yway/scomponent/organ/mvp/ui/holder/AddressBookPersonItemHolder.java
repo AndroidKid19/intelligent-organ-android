@@ -2,6 +2,9 @@ package com.yway.scomponent.organ.mvp.ui.holder;
 
 import android.view.View;
 import androidx.appcompat.widget.AppCompatTextView;
+
+import com.blankj.utilcode.util.CollectionUtils;
+import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.base.BaseHolder;
 import com.jess.arms.di.component.AppComponent;
@@ -65,9 +68,13 @@ public class AddressBookPersonItemHolder extends BaseHolder<Object> {
                             .placeholder(R.mipmap.public_ic_default_head)
                             .build());
         }
-        String jop = Utils.appendStr(CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),userInfoBean.getPosition()+""));
 
-        mTvUserOffice.setText(jop);
+        if (ObjectUtils.isEmpty(CacheUtils.queryDictData()) || CollectionUtils.isEmpty(CacheUtils.queryDictData().getDictJop())){
+        }else{
+            String jop = Utils.appendStr(CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),userInfoBean.getPosition()+""));
+            mTvUserOffice.setText(jop);
+        }
+
         itemView.setOnClickListener(this);
     }
 

@@ -171,7 +171,7 @@ public class GlobalConfiguration implements ConfigModule {
                 strategy.setUploadProcess(processName == null || processName.equals(packageName));
                 // 初始化Bugly
                 //第三个参数为SDK调试模式开关，测试阶段建议设置成true，发布时设置为false。
-                CrashReport.initCrashReport(application, "beff630402", BuildConfig.LOG_DEBUG);
+                CrashReport.initCrashReport(application, "79ad7e07aa", BuildConfig.LOG_DEBUG);
                 //初始化MMKV
                 String rootDir = MMKV.initialize(application);
                 Timber.i("mmkv root: " + rootDir);

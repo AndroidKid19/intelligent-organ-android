@@ -467,7 +467,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
         paramMap.put("meetingSubject", meetingSubject);
         //会议开始时间
         if (StringUtils.isEmpty(meetingStartTime)){
-            IToast.showWarnShort("请选择会议开始时间");
+            IToast.showWarnShort("请选择会议结束时间");
             return;
         }
         paramMap.put("meetingStartTime", meetingStartTime);

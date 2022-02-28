@@ -21,11 +21,13 @@ import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.organ.mvp.model.api.Api;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
+import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.FavoritesBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
+import com.yway.scomponent.organ.mvp.model.entity.RechargeRecordBean;
 import com.yway.scomponent.organ.mvp.model.entity.RoomDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.VisitorRecordBean;
 
@@ -223,4 +225,39 @@ public interface HomeService {
     @POST(Api.API_QUERYVISITCOUNTBYYEARANDMONTHANDTODAY)
     Observable<BaseResponse<VisitorRecordBean>> queryVisitCountByYearAndMonthAndToday(@Body() Map<String, Object> params);
 
+
+    /**
+     * 查询权限
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYAPPROVALCONFIGURELIST)
+    Observable<BaseResponse<ConfigureBean>> queryApprovalConfigureList(@Body() Map<String, Object> params);
+
+    /**
+     * 本月账单
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYACCOUNTTRANSACTIONRECORDLISTBYTHISMONTH)
+    Observable<BaseResponse<RechargeRecordBean>> queryAccountTransactionRecordListByThisMonth(@Body() Map<String, Object> params);
+
+    /**
+     * 充值记录
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYACCOUNTTRANSACTIONRECORDPAGELIST)
+    Observable<BaseResponse<RechargeRecordBean>> queryPayRecordPageList(@Body() Map<String, Object> params);
+
+    /**
+     * 充值消费
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_CREATEACCOUNTTRANSACTIONRECORD)
+    Observable<BaseResponse> createAccountTransactionRecord(@Body() Map<String, Object> params);
+
+    /**
+     * 当前账户信息
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERYBYUSERACCOUNT)
+    Observable<BaseResponse<RechargeRecordBean>> queryByUserAccount(@Body() Map<String, Object> params);
 }

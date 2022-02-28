@@ -152,13 +152,16 @@
                     android:layout_marginTop="20dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_card"
                         style="@style/TextDefault"
                         android:drawableTop="@mipmap/organ_ic_electron_card"
                         android:drawablePadding="8dp"
-                        android:text="电子饭卡"
+                        android:text="扫码付款"
+                        android:gravity="center"
                         android:textSize="@dimen/public_font_14sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_pay"
                         style="@style/TextDefault"
                         android:drawableTop="@mipmap/organ_ic_online_pay"
                         android:drawablePadding="8dp"

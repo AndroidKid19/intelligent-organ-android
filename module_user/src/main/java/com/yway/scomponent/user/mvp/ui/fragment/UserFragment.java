@@ -11,6 +11,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.blankj.utilcode.util.CollectionUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseFragment;
@@ -69,7 +70,6 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
     @BindView(R2.id.tv_jop)
     AppCompatTextView mTvJop;
 
-
     public static UserFragment newInstance() {
         UserFragment fragment = new UserFragment();
         return fragment;
@@ -110,6 +110,15 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
     private OnRefreshListener mOnRefreshListener = refreshLayout -> {
         initUserInfoData();
     };
+
+    /**
+     * @description : TODO 跳转页面
+     */
+    @Subscriber(tag = EventBusHub.EVENTBUS_TAG_USER_REFRESH, mode = ThreadMode.MAIN)
+    public void onCurrentItemEventBus(int code) {
+        //使用咱们接收过来的消息
+        initUserInfoData();
+    }
 
     private void initUserInfoData() {
         Map<String, Object> paramMap = new HashMap<>();
@@ -237,6 +246,7 @@ public class UserFragment extends BaseFragment<UserPresenter> implements UserCon
     private void initViewData() {
         //初始化个人信息
         mTvUsername.setText(CacheUtils.queryName());
+        LogUtils.json(CacheUtils.queryDictData());
         if (ObjectUtils.isEmpty(CacheUtils.queryDictData()) || CollectionUtils.isEmpty(CacheUtils.queryDictData().getDictJop())){
             mTvJop.setText(CacheUtils.queryUserInfo().getOrgTitle());
         }else{

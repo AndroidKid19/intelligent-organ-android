@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.68
-# min_api: 21
-# pg_map_id: b11d3b9
+# min_api: 23
+# pg_map_id: 7de89e4
 androidx.activity.Cancellable -> androidx.activity.a:
 androidx.activity.ComponentActivity$1 -> androidx.activity.ComponentActivity$a:
     androidx.activity.ComponentActivity this$0 -> b
@@ -13248,6 +13248,7 @@ com.blankj.utilcode.util.MessengerUtils$ServerService$1 -> com.blankj.utilcode.u
     com.blankj.utilcode.util.MessengerUtils$ServerService this$0 -> a
 com.blankj.utilcode.util.ObjectUtils -> com.blankj.utilcode.util.h:
     boolean isEmpty(java.lang.Object) -> a
+    boolean isNotEmpty(java.lang.Object) -> b
 com.blankj.utilcode.util.PermissionUtils -> com.blankj.utilcode.util.PermissionUtils:
     com.blankj.utilcode.util.PermissionUtils$SimpleCallback mSimpleCallback -> b
     com.blankj.utilcode.util.PermissionUtils$FullCallback mFullCallback -> c
@@ -23402,7 +23403,7 @@ com.yway.scomponent.login.mvp.contract.LoginHomeContract$View -> com.yway.scompo
     void loginSuccess(com.yway.scomponent.commonsdk.core.UserInfoBean) -> b
     void loginError(java.lang.String) -> c
 com.yway.scomponent.login.mvp.contract.RegisterContract$Model -> com.yway.scomponent.login.c.a.e:
-    io.reactivex.Observable register(java.util.Map) -> B
+    io.reactivex.Observable register(java.util.Map) -> C
     io.reactivex.Observable sendSms(java.util.Map) -> a
     io.reactivex.Observable queryAllSysOrgAndSysUserList(java.util.Map) -> e
 com.yway.scomponent.login.mvp.contract.RegisterContract$View -> com.yway.scomponent.login.c.a.f:
@@ -23430,7 +23431,7 @@ com.yway.scomponent.login.mvp.model.LoginModel_Factory -> com.yway.scomponent.lo
 com.yway.scomponent.login.mvp.model.RegisterModel -> com.yway.scomponent.login.mvp.model.RegisterModel:
     android.app.Application mApplication -> d
     com.google.gson.Gson mGson -> c
-    io.reactivex.Observable register(java.util.Map) -> B
+    io.reactivex.Observable register(java.util.Map) -> C
     io.reactivex.Observable sendSms(java.util.Map) -> a
     io.reactivex.Observable queryAllSysOrgAndSysUserList(java.util.Map) -> e
 com.yway.scomponent.login.mvp.model.RegisterModel_Factory -> com.yway.scomponent.login.mvp.model.d:
@@ -23442,7 +23443,7 @@ com.yway.scomponent.login.mvp.model.RegisterModel_MembersInjector -> com.yway.sc
     void injectMApplication(com.yway.scomponent.login.mvp.model.RegisterModel,android.app.Application) -> a
     void injectMGson(com.yway.scomponent.login.mvp.model.RegisterModel,com.google.gson.Gson) -> a
 com.yway.scomponent.login.mvp.model.api.service.LoginService -> com.yway.scomponent.login.mvp.model.f.a.a:
-    io.reactivex.Observable register(java.util.Map) -> B
+    io.reactivex.Observable register(java.util.Map) -> C
     io.reactivex.Observable sendSms(java.util.Map) -> a
     io.reactivex.Observable queryAllSysOrgAndSysUserList(java.util.Map) -> e
     io.reactivex.Observable login(java.util.Map) -> o
@@ -25032,7 +25033,7 @@ com.yway.scomponent.organ.mvp.contract.AddressBookContract$View -> com.yway.scom
     void queryOrgRspCallBack(com.yway.scomponent.commonsdk.core.AddressCompanyBean) -> a
     com.scwang.smartrefresh.layout.api.RefreshLayout refreshLayout() -> c
 com.yway.scomponent.organ.mvp.contract.AfterPrepareContract$Model -> com.yway.scomponent.organ.c.a.c:
-    io.reactivex.Observable getMeetingRecordReadyedList(java.util.Map) -> E
+    io.reactivex.Observable getMeetingRecordReadyedList(java.util.Map) -> F
 com.yway.scomponent.organ.mvp.contract.AfterPrepareContract$View -> com.yway.scomponent.organ.c.a.d:
     com.scwang.smartrefresh.layout.api.RefreshLayout refreshLayout() -> c
     com.yway.scomponent.commonres.view.layout.MultipleStatusView multipleStatusView() -> d
@@ -25080,6 +25081,7 @@ com.yway.scomponent.organ.mvp.contract.DraftsContract$View -> com.yway.scomponen
     com.ethanhua.skeleton.SkeletonScreen skeletonScreen() -> e
     void delMeetingSuccess() -> m
 com.yway.scomponent.organ.mvp.contract.HomeContract$Model -> com.yway.scomponent.organ.c.a.w:
+    io.reactivex.Observable queryApprovalConfigureList(java.util.Map) -> B
     io.reactivex.Observable queryArticlePublishPageList(java.util.Map) -> i
     io.reactivex.Observable querySysByDictClassify(java.util.Map) -> k
     io.reactivex.Observable queryMyMeetingList(java.util.Map) -> r
@@ -25118,12 +25120,12 @@ com.yway.scomponent.organ.mvp.contract.MyMeetingContract$View -> com.yway.scompo
 com.yway.scomponent.organ.mvp.contract.MySubscribeContract$Model -> com.yway.scomponent.organ.c.a.g0:
 com.yway.scomponent.organ.mvp.contract.MySubscribeContract$View -> com.yway.scomponent.organ.c.a.h0:
 com.yway.scomponent.organ.mvp.contract.OnlineSubscribeRoomContract$Model -> com.yway.scomponent.organ.c.a.i0:
-    io.reactivex.Observable queryMeetingRoomPageList(java.util.Map) -> C
+    io.reactivex.Observable queryMeetingRoomPageList(java.util.Map) -> D
 com.yway.scomponent.organ.mvp.contract.OnlineSubscribeRoomContract$View -> com.yway.scomponent.organ.c.a.j0:
 com.yway.scomponent.organ.mvp.contract.PrepareMetingContract$Model -> com.yway.scomponent.organ.c.a.k0:
 com.yway.scomponent.organ.mvp.contract.PrepareMetingContract$View -> com.yway.scomponent.organ.c.a.l0:
 com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract$Model -> com.yway.scomponent.organ.c.a.m0:
-    io.reactivex.Observable getMeetingRecordApprovalingList(java.util.Map) -> F
+    io.reactivex.Observable getMeetingRecordApprovalingList(java.util.Map) -> G
     io.reactivex.Observable doMeetingRecordApproval(java.util.Map) -> g
 com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract$View -> com.yway.scomponent.organ.c.a.n0:
     void approvalResultsCallBack(int) -> a
@@ -25143,7 +25145,7 @@ com.yway.scomponent.organ.mvp.contract.VisitorRecordContract$View -> com.yway.sc
     com.yway.scomponent.commonres.view.layout.MultipleStatusView multipleStatusView() -> d
     com.ethanhua.skeleton.SkeletonScreen skeletonScreen() -> e
 com.yway.scomponent.organ.mvp.contract.WebViewContract$Model -> com.yway.scomponent.organ.c.a.u0:
-    io.reactivex.Observable queryUserIsArticleFavorites(java.util.Map) -> G
+    io.reactivex.Observable queryUserIsArticleFavorites(java.util.Map) -> H
     io.reactivex.Observable createArticleFavorites(java.util.Map) -> b
     io.reactivex.Observable cancelArticleFavorites(java.util.Map) -> d
 com.yway.scomponent.organ.mvp.contract.WebViewContract$View -> com.yway.scomponent.organ.c.a.v0:
@@ -25171,7 +25173,7 @@ com.yway.scomponent.organ.mvp.model.AddressBookModel_MembersInjector -> com.yway
 com.yway.scomponent.organ.mvp.model.AfterPrepareModel -> com.yway.scomponent.organ.mvp.model.AfterPrepareModel:
     android.app.Application mApplication -> d
     com.google.gson.Gson mGson -> c
-    io.reactivex.Observable getMeetingRecordReadyedList(java.util.Map) -> E
+    io.reactivex.Observable getMeetingRecordReadyedList(java.util.Map) -> F
 com.yway.scomponent.organ.mvp.model.AfterPrepareModel_Factory -> com.yway.scomponent.organ.mvp.model.c:
     javax.inject.Provider mApplicationProvider -> c
     javax.inject.Provider mGsonProvider -> b
@@ -25281,6 +25283,7 @@ com.yway.scomponent.organ.mvp.model.DraftsModel_MembersInjector -> com.yway.scom
 com.yway.scomponent.organ.mvp.model.HomeModel -> com.yway.scomponent.organ.mvp.model.HomeModel:
     android.app.Application mApplication -> d
     com.google.gson.Gson mGson -> c
+    io.reactivex.Observable queryApprovalConfigureList(java.util.Map) -> B
     io.reactivex.Observable queryArticlePublishPageList(java.util.Map) -> i
     io.reactivex.Observable querySysByDictClassify(java.util.Map) -> k
     io.reactivex.Observable queryMyMeetingList(java.util.Map) -> r
@@ -25357,7 +25360,7 @@ com.yway.scomponent.organ.mvp.model.MySubscribeModel_MembersInjector -> com.yway
 com.yway.scomponent.organ.mvp.model.OnlineSubscribeRoomModel -> com.yway.scomponent.organ.mvp.model.OnlineSubscribeRoomModel:
     android.app.Application mApplication -> d
     com.google.gson.Gson mGson -> c
-    io.reactivex.Observable queryMeetingRoomPageList(java.util.Map) -> C
+    io.reactivex.Observable queryMeetingRoomPageList(java.util.Map) -> D
 com.yway.scomponent.organ.mvp.model.OnlineSubscribeRoomModel_Factory -> com.yway.scomponent.organ.mvp.model.g0:
     javax.inject.Provider mApplicationProvider -> c
     javax.inject.Provider mGsonProvider -> b
@@ -25380,7 +25383,7 @@ com.yway.scomponent.organ.mvp.model.PrepareMetingModel_MembersInjector -> com.yw
 com.yway.scomponent.organ.mvp.model.SubscribeApplyModel -> com.yway.scomponent.organ.mvp.model.SubscribeApplyModel:
     android.app.Application mApplication -> d
     com.google.gson.Gson mGson -> c
-    io.reactivex.Observable getMeetingRecordApprovalingList(java.util.Map) -> F
+    io.reactivex.Observable getMeetingRecordApprovalingList(java.util.Map) -> G
     io.reactivex.Observable doMeetingRecordApproval(java.util.Map) -> g
 com.yway.scomponent.organ.mvp.model.SubscribeApplyModel_Factory -> com.yway.scomponent.organ.mvp.model.k0:
     javax.inject.Provider mApplicationProvider -> c
@@ -25428,7 +25431,7 @@ com.yway.scomponent.organ.mvp.model.VisitorRecordModel_MembersInjector -> com.yw
 com.yway.scomponent.organ.mvp.model.WebViewModel -> com.yway.scomponent.organ.mvp.model.WebViewModel:
     android.app.Application mApplication -> d
     com.google.gson.Gson mGson -> c
-    io.reactivex.Observable queryUserIsArticleFavorites(java.util.Map) -> G
+    io.reactivex.Observable queryUserIsArticleFavorites(java.util.Map) -> H
     io.reactivex.Observable createArticleFavorites(java.util.Map) -> b
     io.reactivex.Observable cancelArticleFavorites(java.util.Map) -> d
 com.yway.scomponent.organ.mvp.model.WebViewModel_Factory -> com.yway.scomponent.organ.mvp.model.s0:
@@ -25452,10 +25455,11 @@ com.yway.scomponent.organ.mvp.model.WorkPanelModel_MembersInjector -> com.yway.s
     void injectMGson(com.yway.scomponent.organ.mvp.model.WorkPanelModel,com.google.gson.Gson) -> a
 com.yway.scomponent.organ.mvp.model.api.service.HomeService -> com.yway.scomponent.organ.mvp.model.w0.a.a:
     io.reactivex.Observable draftSubmitMeetingRecord(java.util.Map) -> A
-    io.reactivex.Observable queryMeetingRoomPageList(java.util.Map) -> C
-    io.reactivex.Observable getMeetingRecordReadyedList(java.util.Map) -> E
-    io.reactivex.Observable getMeetingRecordApprovalingList(java.util.Map) -> F
-    io.reactivex.Observable queryUserIsArticleFavorites(java.util.Map) -> G
+    io.reactivex.Observable queryApprovalConfigureList(java.util.Map) -> B
+    io.reactivex.Observable queryMeetingRoomPageList(java.util.Map) -> D
+    io.reactivex.Observable getMeetingRecordReadyedList(java.util.Map) -> F
+    io.reactivex.Observable getMeetingRecordApprovalingList(java.util.Map) -> G
+    io.reactivex.Observable queryUserIsArticleFavorites(java.util.Map) -> H
     io.reactivex.Observable uploadPictureMore(okhttp3.MultipartBody) -> a
     io.reactivex.Observable createArticleFavorites(java.util.Map) -> b
     io.reactivex.Observable cancelArticleFavorites(java.util.Map) -> d
@@ -25523,84 +25527,88 @@ com.yway.scomponent.organ.mvp.presenter.-$$Lambda$DraftsPresenter$xNyowR4UJRyd7f
     com.yway.scomponent.organ.mvp.presenter.DraftsPresenter f$0 -> b
 com.yway.scomponent.organ.mvp.presenter.-$$Lambda$DraftsPresenter$yMp85-8X_dx2ytC8nW6jS_Bja-Q -> com.yway.scomponent.organ.mvp.presenter.v:
     com.yway.scomponent.organ.mvp.presenter.DraftsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$EPFzzyzETIkA9flN3MoqWYk8ptI -> com.yway.scomponent.organ.mvp.presenter.w:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$8fx_atVJu5rCSkkpP6eBzwJd00k -> com.yway.scomponent.organ.mvp.presenter.w:
+    com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$8fx_atVJu5rCSkkpP6eBzwJd00k INSTANCE -> b
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$EPFzzyzETIkA9flN3MoqWYk8ptI -> com.yway.scomponent.organ.mvp.presenter.x:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$EPFzzyzETIkA9flN3MoqWYk8ptI INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$M2ZpD3JqBjZEacg0cwTaGF9VfgE -> com.yway.scomponent.organ.mvp.presenter.x:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$M2ZpD3JqBjZEacg0cwTaGF9VfgE -> com.yway.scomponent.organ.mvp.presenter.y:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$M2ZpD3JqBjZEacg0cwTaGF9VfgE INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$kpPvYLOk7oozTgZIVGJqfTOUK_8 -> com.yway.scomponent.organ.mvp.presenter.y:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$kpPvYLOk7oozTgZIVGJqfTOUK_8 -> com.yway.scomponent.organ.mvp.presenter.z:
     com.yway.scomponent.organ.mvp.presenter.HomePresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$s_Pmo_QSGV9SVGjHebwyVDRQuv0 -> com.yway.scomponent.organ.mvp.presenter.z:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$s_Pmo_QSGV9SVGjHebwyVDRQuv0 -> com.yway.scomponent.organ.mvp.presenter.a0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$s_Pmo_QSGV9SVGjHebwyVDRQuv0 INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xZA5DwkAoe1B8Lv5VEkBAD80I3k -> com.yway.scomponent.organ.mvp.presenter.a0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$t2o2UD2jdfhvopyz81e_ncdTLNo -> com.yway.scomponent.organ.mvp.presenter.b0:
+    com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$t2o2UD2jdfhvopyz81e_ncdTLNo INSTANCE -> b
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xZA5DwkAoe1B8Lv5VEkBAD80I3k -> com.yway.scomponent.organ.mvp.presenter.c0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xZA5DwkAoe1B8Lv5VEkBAD80I3k INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xdrUVwef_8Swn02kSBKppIZk-I4 -> com.yway.scomponent.organ.mvp.presenter.b0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xdrUVwef_8Swn02kSBKppIZk-I4 -> com.yway.scomponent.organ.mvp.presenter.d0:
     com.yway.scomponent.organ.mvp.presenter.HomePresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xyGH0IcATukxtXrnqXxYIDQuwDM -> com.yway.scomponent.organ.mvp.presenter.c0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xyGH0IcATukxtXrnqXxYIDQuwDM -> com.yway.scomponent.organ.mvp.presenter.e0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$HomePresenter$xyGH0IcATukxtXrnqXxYIDQuwDM INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$InformationPresenter$2acsBECRHEnNaCZgT3o1fadFJ58 -> com.yway.scomponent.organ.mvp.presenter.d0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$InformationPresenter$2acsBECRHEnNaCZgT3o1fadFJ58 -> com.yway.scomponent.organ.mvp.presenter.f0:
     com.yway.scomponent.organ.mvp.presenter.InformationPresenter f$0 -> b
     boolean f$1 -> c
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$InformationPresenter$UWDFWhsCFXe1wQ1GbudZz94dlQ8 -> com.yway.scomponent.organ.mvp.presenter.e0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$InformationPresenter$UWDFWhsCFXe1wQ1GbudZz94dlQ8 -> com.yway.scomponent.organ.mvp.presenter.g0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$InformationPresenter$UWDFWhsCFXe1wQ1GbudZz94dlQ8 INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$23m2xF4IxCOtUHDaP4sEu50XhYw -> com.yway.scomponent.organ.mvp.presenter.f0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$23m2xF4IxCOtUHDaP4sEu50XhYw -> com.yway.scomponent.organ.mvp.presenter.h0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$DHlZJ0LkkDVj3D5pr_NhQpxdLZk -> com.yway.scomponent.organ.mvp.presenter.g0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$DHlZJ0LkkDVj3D5pr_NhQpxdLZk -> com.yway.scomponent.organ.mvp.presenter.i0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$E8Iu7FFW37mhj4o4E8Hyqb2xFt8 -> com.yway.scomponent.organ.mvp.presenter.h0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$E8Iu7FFW37mhj4o4E8Hyqb2xFt8 -> com.yway.scomponent.organ.mvp.presenter.j0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$FLUUj3TfwAzlbUrzoyIHLhOripc -> com.yway.scomponent.organ.mvp.presenter.i0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$FLUUj3TfwAzlbUrzoyIHLhOripc -> com.yway.scomponent.organ.mvp.presenter.k0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$GzBKUl-2dfixgB8nIbKytJ1trIk -> com.yway.scomponent.organ.mvp.presenter.j0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$GzBKUl-2dfixgB8nIbKytJ1trIk -> com.yway.scomponent.organ.mvp.presenter.l0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$Nyni6h3lwcfi9jwLBXU57W5SSyY -> com.yway.scomponent.organ.mvp.presenter.k0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$Nyni6h3lwcfi9jwLBXU57W5SSyY -> com.yway.scomponent.organ.mvp.presenter.m0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$oPsd6sFS4cP2zZAApBDu8dIOjyw -> com.yway.scomponent.organ.mvp.presenter.l0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$oPsd6sFS4cP2zZAApBDu8dIOjyw -> com.yway.scomponent.organ.mvp.presenter.n0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$uyiNXSjzRIlUrPhvlEjzjr9xx7E -> com.yway.scomponent.organ.mvp.presenter.m0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MeetingDetailsPresenter$uyiNXSjzRIlUrPhvlEjzjr9xx7E -> com.yway.scomponent.organ.mvp.presenter.o0:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyInitiatePresenter$FYTAs47V2tOqIgpMVc8mYWK9xww -> com.yway.scomponent.organ.mvp.presenter.n0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyInitiatePresenter$FYTAs47V2tOqIgpMVc8mYWK9xww -> com.yway.scomponent.organ.mvp.presenter.p0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyInitiatePresenter$FYTAs47V2tOqIgpMVc8mYWK9xww INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyInitiatePresenter$nRX3xbaroVp2k5M6JTZlfzF0pNc -> com.yway.scomponent.organ.mvp.presenter.o0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyInitiatePresenter$nRX3xbaroVp2k5M6JTZlfzF0pNc -> com.yway.scomponent.organ.mvp.presenter.q0:
     com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter f$0 -> b
     boolean f$1 -> c
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyMeetingPresenter$1OyjOtHPYmHfKUt9eaXDdcxAfto -> com.yway.scomponent.organ.mvp.presenter.p0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyMeetingPresenter$1OyjOtHPYmHfKUt9eaXDdcxAfto -> com.yway.scomponent.organ.mvp.presenter.r0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyMeetingPresenter$1OyjOtHPYmHfKUt9eaXDdcxAfto INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyMeetingPresenter$6ig5sXv6Or1PTRYQDGnTjf19WPA -> com.yway.scomponent.organ.mvp.presenter.q0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$MyMeetingPresenter$6ig5sXv6Or1PTRYQDGnTjf19WPA -> com.yway.scomponent.organ.mvp.presenter.s0:
     com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter f$0 -> b
     boolean f$1 -> c
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$OnlineSubscribeRoomPresenter$KxPveVH6Ak3ZI8cChM1AkNKNHpw -> com.yway.scomponent.organ.mvp.presenter.r0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$OnlineSubscribeRoomPresenter$KxPveVH6Ak3ZI8cChM1AkNKNHpw -> com.yway.scomponent.organ.mvp.presenter.t0:
     boolean f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$OnlineSubscribeRoomPresenter$aI16-qt76sOUBG889tojaotGpVU -> com.yway.scomponent.organ.mvp.presenter.s0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$OnlineSubscribeRoomPresenter$aI16-qt76sOUBG889tojaotGpVU -> com.yway.scomponent.organ.mvp.presenter.u0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$OnlineSubscribeRoomPresenter$aI16-qt76sOUBG889tojaotGpVU INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$CbGzO3Ve-YUHeF5oL9_kD1r7nKY -> com.yway.scomponent.organ.mvp.presenter.t0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$CbGzO3Ve-YUHeF5oL9_kD1r7nKY -> com.yway.scomponent.organ.mvp.presenter.v0:
     com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$aidieX1m0IK9R3MrpbVOF-v4VMg -> com.yway.scomponent.organ.mvp.presenter.u0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$aidieX1m0IK9R3MrpbVOF-v4VMg -> com.yway.scomponent.organ.mvp.presenter.w0:
     com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter f$0 -> b
     boolean f$1 -> c
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$lSmGZzv6Fli8Qu8mllsHvKQZVm8 -> com.yway.scomponent.organ.mvp.presenter.v0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$lSmGZzv6Fli8Qu8mllsHvKQZVm8 -> com.yway.scomponent.organ.mvp.presenter.x0:
     com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$yqrVv3TdrwL4VCZrIljk5_4KVZk -> com.yway.scomponent.organ.mvp.presenter.w0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$yqrVv3TdrwL4VCZrIljk5_4KVZk -> com.yway.scomponent.organ.mvp.presenter.y0:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$SubscribeApplyPresenter$yqrVv3TdrwL4VCZrIljk5_4KVZk INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$1YMmVmW918gkvHYsBPJW8jmB5Cg -> com.yway.scomponent.organ.mvp.presenter.x0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$1YMmVmW918gkvHYsBPJW8jmB5Cg -> com.yway.scomponent.organ.mvp.presenter.z0:
     com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter f$0 -> b
     boolean f$1 -> c
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$F_CpZimkj3qVMjcl8su3esxOVyE -> com.yway.scomponent.organ.mvp.presenter.y0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$F_CpZimkj3qVMjcl8su3esxOVyE -> com.yway.scomponent.organ.mvp.presenter.a1:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$F_CpZimkj3qVMjcl8su3esxOVyE INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$SbL7lbFPtW3IE5RJoy-NiKy3Hbc -> com.yway.scomponent.organ.mvp.presenter.z0:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$SbL7lbFPtW3IE5RJoy-NiKy3Hbc -> com.yway.scomponent.organ.mvp.presenter.b1:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$SbL7lbFPtW3IE5RJoy-NiKy3Hbc INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$sRMF-w9wtjzRUFHq-YAt9CbtP8Q -> com.yway.scomponent.organ.mvp.presenter.a1:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$sRMF-w9wtjzRUFHq-YAt9CbtP8Q -> com.yway.scomponent.organ.mvp.presenter.c1:
     com.yway.scomponent.organ.mvp.presenter.-$$Lambda$VisitorRecordPresenter$sRMF-w9wtjzRUFHq-YAt9CbtP8Q INSTANCE -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$86Ko68hnM59hLm9Qikycv3iRawo -> com.yway.scomponent.organ.mvp.presenter.b1:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$86Ko68hnM59hLm9Qikycv3iRawo -> com.yway.scomponent.organ.mvp.presenter.d1:
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$HDpN9ZAodcz4YeAcZcYYw36zYzM -> com.yway.scomponent.organ.mvp.presenter.c1:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$HDpN9ZAodcz4YeAcZcYYw36zYzM -> com.yway.scomponent.organ.mvp.presenter.e1:
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$HPgNXX7yo_2eUhz_fIAus_mRTbE -> com.yway.scomponent.organ.mvp.presenter.d1:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$HPgNXX7yo_2eUhz_fIAus_mRTbE -> com.yway.scomponent.organ.mvp.presenter.f1:
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$KOBDFvOdsmgx_HvwmsW3pH0ECtM -> com.yway.scomponent.organ.mvp.presenter.e1:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$KOBDFvOdsmgx_HvwmsW3pH0ECtM -> com.yway.scomponent.organ.mvp.presenter.g1:
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$PgsyVlxnUPSyHTH4eGnRNiS4TdQ -> com.yway.scomponent.organ.mvp.presenter.f1:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$PgsyVlxnUPSyHTH4eGnRNiS4TdQ -> com.yway.scomponent.organ.mvp.presenter.h1:
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter f$0 -> b
-com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$VRkGE9PB3e2BLop1vJHUrm4m9yk -> com.yway.scomponent.organ.mvp.presenter.g1:
+com.yway.scomponent.organ.mvp.presenter.-$$Lambda$WebViewPresenter$VRkGE9PB3e2BLop1vJHUrm4m9yk -> com.yway.scomponent.organ.mvp.presenter.i1:
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter f$0 -> b
 com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter -> com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter:
     java.util.List sysUserRspBOList -> j
@@ -25624,7 +25632,7 @@ com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter -> com.yway.scompon
 com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter$1 -> com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter$a:
     com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.h1:
+com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.j1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25632,7 +25640,7 @@ com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter_Factory -> com.yway
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.i1:
+com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.k1:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -25667,7 +25675,7 @@ com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter$1 -> com.yway.scom
     com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter this$0 -> c
     boolean val$pullToRefresh -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.j1:
+com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.l1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25677,7 +25685,7 @@ com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter_Factory -> com.ywa
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.k1:
+com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.m1:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter,com.yway.scomponent.organ.mvp.ui.adapter.AfterPrepareAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.AfterPreparePresenter,android.app.Application) -> a
@@ -25717,7 +25725,7 @@ com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter$2 -> com.yway.scompon
 com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter$3 -> com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter$c:
     com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.l1:
+com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.n1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25725,7 +25733,7 @@ com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter_Factory -> com.yway.s
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.m1:
+com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.o1:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.ApplyRoomPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -25735,7 +25743,7 @@ com.yway.scomponent.organ.mvp.presenter.ApprovePresenter -> com.yway.scomponent.
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
-com.yway.scomponent.organ.mvp.presenter.ApprovePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.n1:
+com.yway.scomponent.organ.mvp.presenter.ApprovePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.p1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25743,7 +25751,7 @@ com.yway.scomponent.organ.mvp.presenter.ApprovePresenter_Factory -> com.yway.sco
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.ApprovePresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.ApprovePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.o1:
+com.yway.scomponent.organ.mvp.presenter.ApprovePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.q1:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.ApprovePresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.ApprovePresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.ApprovePresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -25778,7 +25786,7 @@ com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter$1 -> com.yway.scompone
     com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter this$0 -> c
     boolean val$pullToRefresh -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.p1:
+com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.r1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25788,7 +25796,7 @@ com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter_Factory -> com.yway.sc
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.q1:
+com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.s1:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter,com.yway.scomponent.organ.mvp.ui.adapter.ApprovedAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.ApprovedPresenter,android.app.Application) -> a
@@ -25833,7 +25841,7 @@ com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter$1 -> com.yway.sco
 com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter$2 -> com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter$b:
     com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.r1:
+com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.t1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25843,7 +25851,7 @@ com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter_Factory -> com.yw
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.s1:
+com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.u1:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter,com.yway.scomponent.organ.mvp.ui.adapter.BeforePrepareAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.BeforePreparePresenter,android.app.Application) -> a
@@ -25860,7 +25868,7 @@ com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter -> com.yway.scomp
     void setSysOrgRspBOList(java.util.List) -> a
     void setSysUserRspBOList(java.util.List) -> b
     java.util.List getSysOrgRspBOList() -> d
-com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.t1:
+com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.v1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25868,7 +25876,7 @@ com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter_Factory -> com.yw
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.u1:
+com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.w1:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.ChooseCompanyPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -25886,7 +25894,7 @@ com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter -> com.yway.scompone
     void setSysUserRspBOList(java.util.List) -> b
     java.util.List getSysOrgRspBOList() -> d
     java.util.List getSysUserRspBOList() -> e
-com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.v1:
+com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.x1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25894,7 +25902,7 @@ com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter_Factory -> com.yway.
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.w1:
+com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.y1:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.ChooseUserPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -25904,7 +25912,7 @@ com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter -> com.yway.scom
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
-com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.x1:
+com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.z1:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25912,7 +25920,7 @@ com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter_Factory -> com.y
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.y1:
+com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.a2:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.ConferenceRoomPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -25964,7 +25972,7 @@ com.yway.scomponent.organ.mvp.presenter.DraftsPresenter$2 -> com.yway.scomponent
 com.yway.scomponent.organ.mvp.presenter.DraftsPresenter$3 -> com.yway.scomponent.organ.mvp.presenter.DraftsPresenter$c:
     com.yway.scomponent.organ.mvp.presenter.DraftsPresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.DraftsPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.z1:
+com.yway.scomponent.organ.mvp.presenter.DraftsPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.b2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -25974,7 +25982,7 @@ com.yway.scomponent.organ.mvp.presenter.DraftsPresenter_Factory -> com.yway.scom
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.DraftsPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.DraftsPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.a2:
+com.yway.scomponent.organ.mvp.presenter.DraftsPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.c2:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.DraftsPresenter,com.yway.scomponent.organ.mvp.ui.adapter.DraftsAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.DraftsPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.DraftsPresenter,android.app.Application) -> a
@@ -25990,19 +25998,22 @@ com.yway.scomponent.organ.mvp.presenter.HomePresenter -> com.yway.scomponent.org
     void access$300(com.yway.scomponent.organ.mvp.presenter.HomePresenter,java.util.List) -> a
     void cacheDict(java.util.List) -> a
     void imageLoader(java.lang.String,android.widget.ImageView) -> a
-    void lambda$queryArticlePublishPageList$0(io.reactivex.disposables.Disposable) -> a
+    void lambda$queryApprovalConfigureList$7(io.reactivex.disposables.Disposable) -> a
     io.reactivex.ObservableSource lambda$queryArticlePublishPageList$1(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
     void querySysByDictClassify(java.lang.String) -> a
     com.jess.arms.mvp.IView access$100(com.yway.scomponent.organ.mvp.presenter.HomePresenter) -> b
-    void lambda$queryMyMeetingList$3(io.reactivex.disposables.Disposable) -> b
+    void lambda$queryArticlePublishPageList$0(io.reactivex.disposables.Disposable) -> b
     com.jess.arms.mvp.IView access$200(com.yway.scomponent.organ.mvp.presenter.HomePresenter) -> c
-    void lambda$querySysByDictClassify$5(io.reactivex.disposables.Disposable) -> c
+    void lambda$queryMyMeetingList$3(io.reactivex.disposables.Disposable) -> c
+    void lambda$querySysByDictClassify$5(io.reactivex.disposables.Disposable) -> d
     void lambda$querySysByDictClassify$6() -> d
-    void queryArticlePublishPageList() -> e
-    void queryDict() -> f
-    void queryMyMeetingList() -> g
-    void lambda$queryArticlePublishPageList$2() -> h
-    void lambda$queryMyMeetingList$4() -> i
+    void queryApprovalConfigureList() -> e
+    void queryArticlePublishPageList() -> f
+    void queryDict() -> g
+    void queryMyMeetingList() -> h
+    void lambda$queryApprovalConfigureList$8() -> i
+    void lambda$queryArticlePublishPageList$2() -> j
+    void lambda$queryMyMeetingList$4() -> k
 com.yway.scomponent.organ.mvp.presenter.HomePresenter$1 -> com.yway.scomponent.organ.mvp.presenter.HomePresenter$a:
     com.yway.scomponent.organ.mvp.presenter.HomePresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
@@ -26012,7 +26023,9 @@ com.yway.scomponent.organ.mvp.presenter.HomePresenter$2 -> com.yway.scomponent.o
 com.yway.scomponent.organ.mvp.presenter.HomePresenter$3 -> com.yway.scomponent.organ.mvp.presenter.HomePresenter$c:
     com.yway.scomponent.organ.mvp.presenter.HomePresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.HomePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.b2:
+com.yway.scomponent.organ.mvp.presenter.HomePresenter$4 -> com.yway.scomponent.organ.mvp.presenter.HomePresenter$d:
+    void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
+com.yway.scomponent.organ.mvp.presenter.HomePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.d2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26020,7 +26033,7 @@ com.yway.scomponent.organ.mvp.presenter.HomePresenter_Factory -> com.yway.scompo
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.HomePresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.HomePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.c2:
+com.yway.scomponent.organ.mvp.presenter.HomePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.e2:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.HomePresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.HomePresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.HomePresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26055,7 +26068,7 @@ com.yway.scomponent.organ.mvp.presenter.InformationPresenter$1 -> com.yway.scomp
     com.yway.scomponent.organ.mvp.presenter.InformationPresenter this$0 -> c
     boolean val$pullToRefresh -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.InformationPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.d2:
+com.yway.scomponent.organ.mvp.presenter.InformationPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.f2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26065,7 +26078,7 @@ com.yway.scomponent.organ.mvp.presenter.InformationPresenter_Factory -> com.yway
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.InformationPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.InformationPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.e2:
+com.yway.scomponent.organ.mvp.presenter.InformationPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.g2:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.InformationPresenter,com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.InformationPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.InformationPresenter,android.app.Application) -> a
@@ -26112,7 +26125,7 @@ com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter$3 -> com.yway.sc
 com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter$4 -> com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter$d:
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.f2:
+com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.h2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26120,7 +26133,7 @@ com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter_Factory -> com.y
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.g2:
+com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.i2:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.MeetingDetailsPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26155,7 +26168,7 @@ com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter$1 -> com.yway.scompo
     com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter this$0 -> c
     boolean val$pullToRefresh -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.h2:
+com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.j2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26165,7 +26178,7 @@ com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter_Factory -> com.yway.
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.i2:
+com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.k2:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter,com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.MyInitiatePresenter,android.app.Application) -> a
@@ -26202,7 +26215,7 @@ com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter$1 -> com.yway.scompon
     boolean val$pullToRefresh -> b
     com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter this$0 -> c
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.j2:
+com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.l2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26212,7 +26225,7 @@ com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter_Factory -> com.yway.s
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.k2:
+com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.m2:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter,com.yway.scomponent.organ.mvp.ui.adapter.ConfirmMeetingAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.MyMeetingPresenter,android.app.Application) -> a
@@ -26224,7 +26237,7 @@ com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter -> com.yway.scompon
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
-com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.l2:
+com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.n2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26232,7 +26245,7 @@ com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter_Factory -> com.yway
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.m2:
+com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.o2:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.MySubscribePresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26256,7 +26269,7 @@ com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter$1 -> com.yw
     boolean val$pullToRefresh -> b
     com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter this$0 -> c
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.n2:
+com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.p2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26266,7 +26279,7 @@ com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter_Factory -> 
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.o2:
+com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.q2:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter,com.yway.scomponent.organ.mvp.ui.adapter.ConferenceRoomAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.OnlineSubscribeRoomPresenter,android.app.Application) -> a
@@ -26278,7 +26291,7 @@ com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter -> com.yway.scomp
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
-com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.p2:
+com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.r2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26286,7 +26299,7 @@ com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter_Factory -> com.yw
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.q2:
+com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.s2:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.PrepareMetingPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26330,7 +26343,7 @@ com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter$2 -> com.yway.sc
     java.util.Map val$params -> b
     com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter this$0 -> c
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.r2:
+com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.t2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26340,7 +26353,7 @@ com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter_Factory -> com.y
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.s2:
+com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.u2:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter,com.yway.scomponent.organ.mvp.ui.adapter.SubscribeApplyAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.SubscribeApplyPresenter,android.app.Application) -> a
@@ -26352,7 +26365,7 @@ com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter -> com.yway.sc
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
-com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.t2:
+com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.v2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26360,7 +26373,7 @@ com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter_Factory -> com
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.u2:
+com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.w2:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.SubscribeSucceesPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26370,7 +26383,7 @@ com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter -> com.yway.scompone
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
-com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.v2:
+com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.x2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26378,7 +26391,7 @@ com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter_Factory -> com.yway.
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.w2:
+com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.y2:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.UserSearchPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26420,7 +26433,7 @@ com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter$1 -> com.yway.sco
 com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter$2 -> com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter$b:
     com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.x2:
+com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.z2:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26430,7 +26443,7 @@ com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter_Factory -> com.yw
     javax.inject.Provider mAdapterProvider -> h
     javax.inject.Provider mDataLsProvider -> g
     com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.y2:
+com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.a3:
     void injectMAdapter(com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter,com.yway.scomponent.organ.mvp.ui.adapter.VisitorAdapter) -> a
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.VisitorRecordPresenter,android.app.Application) -> a
@@ -26466,7 +26479,7 @@ com.yway.scomponent.organ.mvp.presenter.WebViewPresenter$2 -> com.yway.scomponen
 com.yway.scomponent.organ.mvp.presenter.WebViewPresenter$3 -> com.yway.scomponent.organ.mvp.presenter.WebViewPresenter$c:
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter this$0 -> b
     void onNext(com.yway.scomponent.commonsdk.core.BaseResponse) -> a
-com.yway.scomponent.organ.mvp.presenter.WebViewPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.z2:
+com.yway.scomponent.organ.mvp.presenter.WebViewPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.b3:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26474,7 +26487,7 @@ com.yway.scomponent.organ.mvp.presenter.WebViewPresenter_Factory -> com.yway.sco
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.WebViewPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.WebViewPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.a3:
+com.yway.scomponent.organ.mvp.presenter.WebViewPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.c3:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.WebViewPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.WebViewPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.WebViewPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26484,7 +26497,7 @@ com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter -> com.yway.scomponen
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
-com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.b3:
+com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter_Factory -> com.yway.scomponent.organ.mvp.presenter.d3:
     javax.inject.Provider mApplicationProvider -> d
     javax.inject.Provider mErrorHandlerProvider -> c
     javax.inject.Provider mAppManagerProvider -> f
@@ -26492,7 +26505,7 @@ com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter_Factory -> com.yway.s
     javax.inject.Provider rootViewProvider -> b
     javax.inject.Provider modelProvider -> a
     com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter_Factory create(javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider,javax.inject.Provider) -> a
-com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.c3:
+com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter_MembersInjector -> com.yway.scomponent.organ.mvp.presenter.e3:
     void injectMAppManager(com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter,com.jess.arms.integration.AppManager) -> a
     void injectMApplication(com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter,android.app.Application) -> a
     void injectMErrorHandler(com.yway.scomponent.organ.mvp.presenter.WorkPanelPresenter,me.jessyan.rxerrorhandler.core.RxErrorHandler) -> a
@@ -26625,7 +26638,7 @@ com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding -> com.y
     android.view.View view7f0b0054 -> e
     android.view.View view7f0b005e -> d
     android.view.View view7f0b006f -> g
-    android.view.View view7f0b0257 -> f
+    android.view.View view7f0b0258 -> f
 com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$b:
@@ -26721,7 +26734,7 @@ com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity -> com.yway.sco
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity$1 -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity$a:
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity this$0 -> a
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding:
-    android.view.View view7f0b02c3 -> b
+    android.view.View view7f0b02c5 -> b
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity target -> a
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity val$target -> b
@@ -26908,7 +26921,7 @@ com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding -> com.
     android.text.TextWatcher view7f0b00b9TextWatcher -> c
     android.view.View view7f0b00b9 -> b
     com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity target -> a
-    android.view.View view7f0b0246 -> d
+    android.view.View view7f0b0247 -> d
 com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$b:
@@ -27178,7 +27191,7 @@ com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_MembersInjector ->
     void injectMObjectDataLs(com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment,java.util.List) -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment target -> a
-    android.view.View view7f0b0282 -> b
+    android.view.View view7f0b0284 -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AfterPrepareFragment -> com.yway.scomponent.organ.mvp.ui.fragment.AfterPrepareFragment:
@@ -27328,12 +27341,12 @@ com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_MembersInjector -> com.yw
     void injectMDataLs(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,java.util.List) -> a
     void injectMLayoutManager(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding:
-    android.view.View view7f0b0262 -> c
-    android.view.View view7f0b0281 -> b
+    android.view.View view7f0b0263 -> c
+    android.view.View view7f0b0283 -> b
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment target -> a
-    android.view.View view7f0b0264 -> e
-    android.view.View view7f0b0269 -> d
-    android.view.View view7f0b0265 -> f
+    android.view.View view7f0b0265 -> e
+    android.view.View view7f0b026a -> d
+    android.view.View view7f0b0266 -> f
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$b:
@@ -27405,13 +27418,15 @@ com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment -> com.yway.scompone
     void setupFragmentComponent(com.jess.arms.di.component.AppComponent) -> a
     void showLoading() -> b
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding:
-    android.view.View view7f0b0266 -> c
-    android.view.View view7f0b026a -> b
-    android.view.View view7f0b0263 -> e
+    android.view.View view7f0b027c -> i
+    android.view.View view7f0b0245 -> h
+    android.view.View view7f0b0267 -> c
+    android.view.View view7f0b026b -> b
+    android.view.View view7f0b0264 -> e
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment target -> a
-    android.view.View view7f0b0267 -> d
-    android.view.View view7f0b0296 -> g
-    android.view.View view7f0b0268 -> f
+    android.view.View view7f0b0268 -> d
+    android.view.View view7f0b0298 -> g
+    android.view.View view7f0b0269 -> f
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$b:
@@ -27423,6 +27438,10 @@ com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$4 -> com
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$5 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$e:
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$6 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$f:
+    com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment val$target -> b
+com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$7 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$g:
+    com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment val$target -> b
+com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$8 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$h:
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.holder.-$$Lambda$ConferenceRoomItemHolder$MDr8Xb1B9rSf6WhU48SrWuZOx9o -> com.yway.scomponent.organ.mvp.ui.holder.a:
     com.yway.scomponent.organ.mvp.ui.adapter.SubscribeTimeAdapter f$0 -> a
@@ -28149,7 +28168,7 @@ com.yway.scomponent.user.mvp.contract.UserCenterContract$View -> com.yway.scompo
     void modifySuccess() -> f
     void modifyHeadPicSuccess() -> s
 com.yway.scomponent.user.mvp.contract.UserContract$Model -> com.yway.scomponent.user.c.a.w:
-    io.reactivex.Observable queryloginUserInfoById(java.util.Map) -> D
+    io.reactivex.Observable queryloginUserInfoById(java.util.Map) -> E
 com.yway.scomponent.user.mvp.contract.UserContract$View -> com.yway.scomponent.user.c.a.x:
     void queryUserInfoSuccess(com.yway.scomponent.commonsdk.core.UserInfoBean) -> a
 com.yway.scomponent.user.mvp.contract.UserDetailsContract$Model -> com.yway.scomponent.user.c.a.y:
@@ -28302,7 +28321,7 @@ com.yway.scomponent.user.mvp.model.UserDetailsModel_MembersInjector -> com.yway.
 com.yway.scomponent.user.mvp.model.UserModel -> com.yway.scomponent.user.mvp.model.UserModel:
     android.app.Application mApplication -> d
     com.google.gson.Gson mGson -> c
-    io.reactivex.Observable queryloginUserInfoById(java.util.Map) -> D
+    io.reactivex.Observable queryloginUserInfoById(java.util.Map) -> E
 com.yway.scomponent.user.mvp.model.UserModel_Factory -> com.yway.scomponent.user.mvp.model.y:
     javax.inject.Provider mApplicationProvider -> c
     javax.inject.Provider mGsonProvider -> b
@@ -28312,7 +28331,7 @@ com.yway.scomponent.user.mvp.model.UserModel_MembersInjector -> com.yway.scompon
     void injectMApplication(com.yway.scomponent.user.mvp.model.UserModel,android.app.Application) -> a
     void injectMGson(com.yway.scomponent.user.mvp.model.UserModel,com.google.gson.Gson) -> a
 com.yway.scomponent.user.mvp.model.api.service.UserService -> com.yway.scomponent.user.mvp.model.a0.a.a:
-    io.reactivex.Observable queryloginUserInfoById(java.util.Map) -> D
+    io.reactivex.Observable queryloginUserInfoById(java.util.Map) -> E
     io.reactivex.Observable sendSms(java.util.Map) -> a
     io.reactivex.Observable uploadPictureMore(okhttp3.MultipartBody) -> a
     io.reactivex.Observable modifyAppUserInfoById(java.util.Map) -> c
@@ -28697,6 +28716,7 @@ com.yway.scomponent.user.mvp.presenter.UserDetailsPresenter -> com.yway.scompone
     com.jess.arms.integration.AppManager mAppManager -> h
     android.app.Application mApplication -> f
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> g
+    com.tbruyelle.rxpermissions2.RxPermissions getRxPermissions(android.app.Activity) -> a
     void imageLoader(java.lang.String,android.widget.ImageView) -> a
 com.yway.scomponent.user.mvp.presenter.UserDetailsPresenter_Factory -> com.yway.scomponent.user.mvp.presenter.v0:
     javax.inject.Provider mApplicationProvider -> d
@@ -28771,6 +28791,9 @@ com.yway.scomponent.user.mvp.ui.activity.-$$Lambda$UserCenterActivity$fLr5Rq545U
     com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity f$0 -> a
     java.util.List f$2 -> c
     void onOptionsSelect(int,int,int,android.view.View) -> a
+com.yway.scomponent.user.mvp.ui.activity.-$$Lambda$UserDetailsActivity$Tg_bxGL1lBt8K5ZveHEe_ObT6v0 -> com.yway.scomponent.user.mvp.ui.activity.k:
+    com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity f$0 -> a
+    void onViewClick(android.view.View) -> a
 com.yway.scomponent.user.mvp.ui.activity.AboutActivity -> com.yway.scomponent.user.mvp.ui.activity.AboutActivity:
     void hideLoading() -> a
     void initData(android.os.Bundle) -> a
@@ -28795,9 +28818,9 @@ com.yway.scomponent.user.mvp.ui.activity.CertificationActivity -> com.yway.scomp
     void initUserInfo() -> t
 com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.CertificationActivity target -> a
-    android.view.View view7f0b0108 -> c
-    android.view.View view7f0b0107 -> b
-    android.view.View view7f0b0078 -> d
+    android.view.View view7f0b010a -> c
+    android.view.View view7f0b0109 -> b
+    android.view.View view7f0b0079 -> d
 com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.CertificationActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$b:
@@ -28826,13 +28849,13 @@ com.yway.scomponent.user.mvp.ui.activity.CollectActivity -> com.yway.scomponent.
     void cancelArticleFavoritesCallBack() -> j
     void initRecyclerView() -> p
     void initSkeletonScreen() -> t
-com.yway.scomponent.user.mvp.ui.activity.CollectActivity_MembersInjector -> com.yway.scomponent.user.mvp.ui.activity.k:
+com.yway.scomponent.user.mvp.ui.activity.CollectActivity_MembersInjector -> com.yway.scomponent.user.mvp.ui.activity.l:
     void injectMAdapter(com.yway.scomponent.user.mvp.ui.activity.CollectActivity,com.yway.scomponent.user.mvp.ui.adapter.CollectAdapter) -> a
     void injectMLayoutManager(com.yway.scomponent.user.mvp.ui.activity.CollectActivity,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
 com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.CollectActivity target -> a
-    android.text.TextWatcher view7f0b00c3TextWatcher -> c
-    android.view.View view7f0b00c3 -> b
+    android.text.TextWatcher view7f0b00c5TextWatcher -> c
+    android.view.View view7f0b00c5 -> b
 com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.CollectActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity -> com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity:
@@ -28880,8 +28903,8 @@ com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity$4 -> com.yway.scompone
     com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity this$0 -> a
 com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity target -> a
-    android.text.TextWatcher view7f0b00beTextWatcher -> c
-    android.view.View view7f0b00be -> b
+    android.text.TextWatcher view7f0b00c0TextWatcher -> c
+    android.view.View view7f0b00c0 -> b
 com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.MessageActivity -> com.yway.scomponent.user.mvp.ui.activity.MessageActivity:
@@ -28895,7 +28918,7 @@ com.yway.scomponent.user.mvp.ui.activity.MessageActivity -> com.yway.scomponent.
     void showLoading() -> b
     com.yway.scomponent.commonres.view.layout.MultipleStatusView multipleStatusView() -> d
     void initRecyclerView() -> p
-com.yway.scomponent.user.mvp.ui.activity.MessageActivity_MembersInjector -> com.yway.scomponent.user.mvp.ui.activity.l:
+com.yway.scomponent.user.mvp.ui.activity.MessageActivity_MembersInjector -> com.yway.scomponent.user.mvp.ui.activity.m:
     void injectMAdapter(com.yway.scomponent.user.mvp.ui.activity.MessageActivity,com.yway.scomponent.user.mvp.ui.adapter.MessageAdapter) -> a
     void injectMDataLs(com.yway.scomponent.user.mvp.ui.activity.MessageActivity,java.util.List) -> a
     void injectMLayoutManager(com.yway.scomponent.user.mvp.ui.activity.MessageActivity,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
@@ -28921,8 +28944,8 @@ com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity -> com.yway.scompon
     void sendSmsSuccess() -> g
 com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity target -> a
-    android.view.View view7f0b00a4 -> c
-    android.view.View view7f0b0078 -> b
+    android.view.View view7f0b00a6 -> c
+    android.view.View view7f0b0079 -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$b:
@@ -28938,10 +28961,10 @@ com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity -> com.yway.scomponen
     int initView(android.os.Bundle) -> b
     void showLoading() -> b
     void modifySuccess() -> f
-com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity$1 -> com.yway.scomponent.user.mvp.ui.activity.m:
+com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity$1 -> com.yway.scomponent.user.mvp.ui.activity.n:
 com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity target -> a
-    android.view.View view7f0b0078 -> b
+    android.view.View view7f0b0079 -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity -> com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity:
@@ -28954,7 +28977,7 @@ com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity -> com.yway.scom
     void modifySuccess() -> f
 com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity target -> a
-    android.view.View view7f0b0078 -> b
+    android.view.View view7f0b0079 -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity:
@@ -28965,7 +28988,7 @@ com.yway.scomponent.user.mvp.ui.activity.SettingActivity -> com.yway.scomponent.
     void showLoading() -> b
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity$1 -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity$a:
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding:
-    android.view.View view7f0b0079 -> h
+    android.view.View view7f0b007a -> h
     android.view.View view7f0b0059 -> c
     com.yway.scomponent.user.mvp.ui.activity.SettingActivity target -> a
     android.view.View view7f0b0069 -> b
@@ -29037,7 +29060,7 @@ com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity$3 -> com.yway.scompo
 com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity target -> a
     android.view.View view7f0b0061 -> c
-    android.view.View view7f0b010d -> b
+    android.view.View view7f0b010f -> b
     android.view.View view7f0b005d -> e
     android.view.View view7f0b0067 -> d
     android.view.View view7f0b005c -> g
@@ -29056,14 +29079,31 @@ com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding$6 -> com
     com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity:
     java.lang.String mOrganName -> h
+    com.jess.arms.utils.PermissionUtil$RequestPermission mRequestPermission -> i
     com.yway.scomponent.commonsdk.core.UserInfoBean mUserInfoBean -> g
+    void access$000(com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity) -> a
     void hideLoading() -> a
     void initData(android.os.Bundle) -> a
+    void lambda$callPhone$0(android.view.View) -> a
     void setupActivityComponent(com.jess.arms.di.component.AppComponent) -> a
+    com.jess.arms.utils.PermissionUtil$RequestPermission access$100(com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity) -> b
     int initView(android.os.Bundle) -> b
     void showLoading() -> b
+    com.jess.arms.mvp.IPresenter access$200(com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity) -> c
+    void callPhone() -> p
+com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity$1 -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity$a:
+    com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity this$0 -> a
+    void onRequestPermissionFailureWithAskNeverAgain(java.util.List) -> a
+    void onRequestPermissionSuccess() -> a
+    void onRequestPermissionFailure(java.util.List) -> b
 com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity target -> a
+    android.view.View view7f0b0077 -> c
+    android.view.View view7f0b007b -> b
+com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$a:
+    com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity val$target -> b
+com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$b:
+    com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.adapter.-$$Lambda$GridImageAdapter$Bu9CRleQgsvKjWNylvZeu1o7Vlw -> com.yway.scomponent.user.c.b.a.a:
     com.yway.scomponent.user.mvp.ui.adapter.GridImageAdapter$ViewHolder f$1 -> c
     com.yway.scomponent.user.mvp.ui.adapter.GridImageAdapter f$0 -> b
@@ -29126,7 +29166,7 @@ com.yway.scomponent.user.mvp.ui.fragment.UserFragment -> com.yway.scomponent.use
 com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding -> com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding:
     android.view.View view7f0b0076 -> c
     com.yway.scomponent.user.mvp.ui.fragment.UserFragment target -> a
-    android.view.View view7f0b0175 -> b
+    android.view.View view7f0b0177 -> b
     android.view.View view7f0b005a -> e
     android.view.View view7f0b0064 -> d
     android.view.View view7f0b0066 -> f

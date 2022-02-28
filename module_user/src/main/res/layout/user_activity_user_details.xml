@@ -87,7 +87,7 @@
                     android:id="@+id/tv_jop"
                     style="@style/public_layout_wrap"
                     android:layout_marginTop="5dp"
-                    android:text="干部"
+                    tools:text="干部"
                     android:textColor="@color/public_color_text_gray"
                     android:textSize="@dimen/public_font_16sp"
                     app:layout_constraintLeft_toLeftOf="@+id/tv_username"
@@ -153,10 +153,12 @@
             android:padding="20dp"
             tools:layoutAnimation="@null">
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_sendmsg"
                 style="@style/public_style_rect_small_button"
                 android:text="发消息"
                 />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_call_user"
                 style="@style/public_style2_rect_small_button"
                 android:layout_marginTop="15dp"
                 android:text="语音通话"

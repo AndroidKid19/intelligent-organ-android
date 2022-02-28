@@ -1,7 +1,10 @@
 package com.yway.scomponent.user.mvp.presenter;
 
+import android.app.Activity;
 import android.app.Application;
 import android.widget.ImageView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.integration.AppManager;
@@ -13,6 +16,7 @@ import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 
 import javax.inject.Inject;
 
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yway.scomponent.commonsdk.imgaEngine.config.CommonImageConfigImpl;
 import com.yway.scomponent.user.R;
 import com.yway.scomponent.user.mvp.contract.UserDetailsContract;
@@ -56,6 +60,9 @@ public class UserDetailsPresenter extends BasePresenter<UserDetailsContract.Mode
                         .build());
     }
 
+    public RxPermissions getRxPermissions(Activity activity){
+        return new RxPermissions((FragmentActivity) activity);
+    }
     @Override
     public void onDestroy() {
         super.onDestroy();

@@ -10,6 +10,7 @@ import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
 import com.yway.scomponent.organ.mvp.model.api.service.HomeService;
+import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 
@@ -74,6 +75,13 @@ public class HomeModel extends BaseModel implements HomeContract.Model {
         return mRepositoryManager
                 .obtainRetrofitService(HomeService.class)
                 .queryArticlePublishPageList(params);
+    }
+
+    @Override
+    public Observable<BaseResponse<ConfigureBean>> queryApprovalConfigureList(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .queryApprovalConfigureList(params);
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.jess.arms.mvp.IView;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
+import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 
@@ -48,5 +49,7 @@ public interface HomeContract {
         Observable<BaseResponse<HomeMetingBean>> queryMyMeetingList(Map<String, Object> params);
 
         Observable<BaseResponse<MessageBean>> queryArticlePublishPageList(Map<String, Object> params);
+
+        Observable<BaseResponse<ConfigureBean>> queryApprovalConfigureList(Map<String, Object> params);
     }
 }

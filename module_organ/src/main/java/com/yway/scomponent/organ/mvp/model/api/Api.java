@@ -116,4 +116,20 @@ public interface Api {
 
     //查询本年度，本月份，今日总数
     String API_QUERYVISITCOUNTBYYEARANDMONTHANDTODAY = "/organ/visitRegisterRecord/queryVisitCountByYearAndMonthAndToday";
+
+    //查询权限
+    String API_QUERYAPPROVALCONFIGURELIST = "/organ/approvalConfigure/queryApprovalConfigureList";
+
+    //查询本月账单
+    String API_QUERYACCOUNTTRANSACTIONRECORDLISTBYTHISMONTH = "/organ/accountTransactionRecord/queryAccountTransactionRecordListByThisMonth";
+
+    //记录
+    String API_QUERYACCOUNTTRANSACTIONRECORDPAGELIST = "/organ/accountTransactionRecord/queryAccountTransactionRecordPageList";
+
+    //查询当前登录用户的账户信息
+    String API_QUERYBYUSERACCOUNT = "/organ/userAccount/queryByUserAccount";
+
+
+    //app端调用（微信/支付宝）支付后回调接口（交易记录）
+    String API_CREATEACCOUNTTRANSACTIONRECORD = "/organ/accountTransactionRecord/createAccountTransactionRecord";
 }

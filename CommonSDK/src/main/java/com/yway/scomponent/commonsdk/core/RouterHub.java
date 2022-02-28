@@ -146,6 +146,17 @@ public interface RouterHub {
      * webview
      */
     String HOME_WEBVIEWACTIVITY = HOME + "/WebViewActivity";
+
+    /**
+     * 充值记录
+     */
+    String HOME_CANTEENACTIVITY = HOME + "/CanteenActivity";
+
+    /**
+     * 交易记录
+     */
+    String HOME_TRANSACTIONRECORDACTIVITY = HOME + "/TransactionRecordActivity";
+
     /**
      * 我的
      * *********************************************************************

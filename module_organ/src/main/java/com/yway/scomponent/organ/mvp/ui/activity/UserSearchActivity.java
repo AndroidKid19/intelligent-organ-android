@@ -137,7 +137,7 @@ public class UserSearchActivity extends BaseActivity<UserSearchPresenter> implem
             //人员
             Utils.postcard(RouterHub.USER_USERDETAILSACTIVITY)
                     .withParcelable(Constants.APP_USER_INFO, (UserInfoBean) data)
-                    .withString("organName", "")
+                    .withString(Constants.APP_USER_ORGAN, "")
                     .navigation(getActivity());
         }
     };

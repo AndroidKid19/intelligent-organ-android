@@ -36,7 +36,7 @@
                 style="@style/TextDefault.Medium"
                 android:padding="13dp"
                 android:lineSpacingExtra="5dp"
-                tools:text="欢迎使用医生端app。
+                tools:text="欢迎使用app。
 在这里你可以：与患者实时沟通、查看患者健康档案、为患者提供指导意见、查看收入情况…
                             "
                 />

@@ -166,17 +166,22 @@ public class OnlineSubscribeRoomActivity extends BaseActivity<OnlineSubscribeRoo
         ArmsUtils.configRecyclerView(mRecyclerView, mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-
         mAdapter.setOnItemClickListener((view, viewType, data, position) -> {
             RoomDetailsBean roomDetailsBean1 = (RoomDetailsBean)data;
-            String month = mCalendarView.getCurMonth() < 10 ? Utils.appendStr("0",mCalendarView.getCurMonth()) : mCalendarView.getCurMonth()+"";
-            String day = mCalendarView.getCurDay() < 10 ? Utils.appendStr("0",mCalendarView.getCurDay()) : mCalendarView.getCurDay()+"";
-            String strDate = Utils.appendStr(mCalendarView.getCurYear(),"-",month,"-",day);
+            //获取选中的日历
+            Calendar calendar = mCalendarView.getSelectedCalendar();
+            //获取选中的月
+            String month = calendar.getMonth() < 10 ? Utils.appendStr("0",calendar.getMonth()) : calendar.getMonth()+"";
+            //获取选中的日
+            String day = calendar.getDay() < 10 ? Utils.appendStr("0",calendar.getDay()) : calendar.getDay()+"";
+            //获取选中的年月日
+            String strDate = Utils.appendStr(calendar.getYear(),"-",month,"-",day);
             roomDetailsBean1.setMeetingDate(strDate);
             if (ObjectUtils.isEmpty(roomDetailsBean1.getSubscribeTimeBean()) || StringUtils.isEmpty(roomDetailsBean1.getSubscribeTimeBean().getTime())){
                 ArmsUtils.snackbarText("请选择会议时间");
                 return;
             }
+            //会议详情填写
             Utils.postcard(RouterHub.HOME_APPLYROOMACTIVITY)
                     .withParcelable("roomDetailsBean",roomDetailsBean1)
                     .navigation(getActivity());
