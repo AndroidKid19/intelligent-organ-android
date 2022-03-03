@@ -3,7 +3,6 @@ package com.yway.scomponent.organ.mvp.presenter;
 import android.app.Application;
 
 import com.blankj.utilcode.util.CollectionUtils;
-import com.blankj.utilcode.util.ObjectUtils;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.integration.AppManager;
@@ -14,6 +13,7 @@ import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.Constants;
 import com.yway.scomponent.commonsdk.utils.ArithUtils;
 import com.yway.scomponent.organ.mvp.contract.CanteenContract;
+import com.yway.scomponent.organ.mvp.model.entity.PayDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.RechargeRecordBean;
 import com.yway.scomponent.organ.mvp.ui.adapter.RechargeRecordAdapter;
 
@@ -62,14 +62,14 @@ public class CanteenPresenter extends BasePresenter<CanteenContract.Model, Cante
         super(model, rootView);
     }
 
-    public void queryPayRecordPageList(Map<String, Object> params, boolean pullToRefresh){
-        if (pullToRefresh){
+    public void queryPayRecordPageList(Map<String, Object> params, boolean pullToRefresh) {
+        if (pullToRefresh) {
             pageNo = 1;
-        }else{
+        } else {
             pageNo = (int) Math.ceil(ArithUtils.div(mDataLs.size(), Constants.pageSize)) + 1;
         }
-        params.put("pageNo",pageNo);
-        params.put("pageSize",pageSize);
+        params.put("pageNo", pageNo);
+        params.put("pageSize", pageSize);
         mModel.queryPayRecordPageList(params)
                 .subscribeOn(Schedulers.io())
                 //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
@@ -78,12 +78,12 @@ public class CanteenPresenter extends BasePresenter<CanteenContract.Model, Cante
                 }).subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doFinally(() -> {
-                    if (pullToRefresh){
+                    if (pullToRefresh) {
                         //首次加载则隐藏骨架屏view
                         mRootView.skeletonScreen().hide();
                         //下拉刷新报错则关闭刷新状态
                         mRootView.refreshLayout().finishRefresh();
-                    }else{
+                    } else {
                         //如果上拉加载文档不够一页则标识没有更多数据
                         mRootView.refreshLayout().finishLoadMoreWithNoMoreData();
                     }
@@ -94,15 +94,15 @@ public class CanteenPresenter extends BasePresenter<CanteenContract.Model, Cante
                     @Override
                     public void onNext(BaseResponse<RechargeRecordBean> datas) {
                         //文档列表是否为空
-                        if (CollectionUtils.isEmpty(datas.getData().getList())){
-                            if(pullToRefresh){
+                        if (CollectionUtils.isEmpty(datas.getData().getList())) {
+                            if (pullToRefresh) {
                                 //首次加载则隐藏骨架屏view
                                 mRootView.skeletonScreen().hide();
                                 //下拉刷新文档没有文档则显示缺省页
                                 mRootView.multipleStatusView().showEmpty();
                                 //下拉刷新报错则关闭刷新状态
                                 mRootView.refreshLayout().finishRefresh();
-                            }else{
+                            } else {
                                 //如果上拉加载文档不够一页则标识没有更多数据
                                 mRootView.refreshLayout().finishLoadMoreWithNoMoreData();
                             }
@@ -119,13 +119,13 @@ public class CanteenPresenter extends BasePresenter<CanteenContract.Model, Cante
                         mDataLs.addAll(datas.getData().getList());
                         if (pullToRefresh) {
                             mAdapter.notifyDataSetChanged();
-                            if (mDataLs.size() < Constants.pageSize){
+                            if (mDataLs.size() < Constants.pageSize) {
                                 //如果上拉加载文档不够一页则标识没有更多数据
                                 mRootView.refreshLayout().finishLoadMoreWithNoMoreData();
                             }
                         } else {
                             mAdapter.notifyItemRangeInserted(preEndIndex, mDataLs.size());
-                            if (datas.getData().getRows().size() < Constants.pageSize){
+                            if (datas.getData().getRows().size() < Constants.pageSize) {
                                 //如果上拉加载文档不够一页则标识没有更多数据
                                 mRootView.refreshLayout().finishLoadMoreWithNoMoreData();
                             }
@@ -135,14 +135,14 @@ public class CanteenPresenter extends BasePresenter<CanteenContract.Model, Cante
                     @Override
                     public void onError(Throwable t) {
                         super.onError(t);
-                        if (pullToRefresh){
+                        if (pullToRefresh) {
                             //首次加载则隐藏骨架屏view
                             mRootView.skeletonScreen().hide();
                             //下拉刷新报错则关闭刷新状态
                             mRootView.refreshLayout().finishRefresh();
                             //下拉刷新报错则显示缺省页
                             mRootView.multipleStatusView().showEmpty();
-                        }else{
+                        } else {
                             //上拉加载报错则关闭加载状态
                             mRootView.refreshLayout().finishLoadMore();
                         }
@@ -159,7 +159,6 @@ public class CanteenPresenter extends BasePresenter<CanteenContract.Model, Cante
                 //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
                 .retryWhen(new RetryWithDelay(3, 2))
                 .doOnSubscribe(disposable -> {
-
                 }).subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doFinally(() -> {
@@ -182,25 +181,56 @@ public class CanteenPresenter extends BasePresenter<CanteenContract.Model, Cante
     /**
      * 充值
      */
-    public void createAccountTransactionRecord(Map<String,Object> map) {
+    public void createAccountTransactionRecord(Map<String, Object> map) {
         mModel.createAccountTransactionRecord(map)
                 .subscribeOn(Schedulers.io())
                 //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
                 .retryWhen(new RetryWithDelay(0, 0))
                 .doOnSubscribe(disposable -> {
-
+                    mRootView.showLoading();
                 }).subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doFinally(() -> {
-
+                    mRootView.hideLoading();
                 })
                 //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
                 .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
                 .subscribe(new ErrorHandleSubscriber<BaseResponse>(mErrorHandler) {
                     @Override
                     public void onNext(BaseResponse datas) {
+                        mRootView.hideLoading();
                         if (datas.isSuccess()) {
                             mRootView.paymentCallBack();
+                        } else {
+                            ArmsUtils.snackbarText(datas.getMessage());
+                        }
+                    }
+                });
+    }
+
+    /**
+     * 统一下单
+     */
+    public void wxPay(Map<String,Object> paramsMap) {
+        mModel.wxPay(paramsMap)
+                .subscribeOn(Schedulers.io())
+                //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .retryWhen(new RetryWithDelay(0, 0))
+                .doOnSubscribe(disposable -> {
+                    mRootView.showLoading();
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+                    mRootView.hideLoading();
+                })
+                //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseResponse<PayDetailsBean>>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseResponse<PayDetailsBean> datas) {
+                        mRootView.hideLoading();
+                        if (datas.isSuccess()) {
+                            mRootView.unifiedorderCallBack(datas.getData().getRspMap());
                         } else {
                             ArmsUtils.snackbarText(datas.getMessage());
                         }

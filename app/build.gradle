@@ -13,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.yway.scomponent.wheel"
+        applicationId "com.yway.scomponent.yyzy"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]

@@ -121,4 +121,7 @@ dependencies {
 
     api 'com.google.android:flexbox:2.0.1'
     api 'com.github.lzyzsd:jsbridge:1.0.4'
+    //微信支付
+    api project(':easypay')
+    api project(':wechatpay')
 }

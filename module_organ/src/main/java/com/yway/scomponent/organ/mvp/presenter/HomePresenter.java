@@ -18,6 +18,7 @@ import com.yway.scomponent.commonsdk.imgaEngine.config.CommonImageConfigImpl;
 import com.yway.scomponent.commonsdk.utils.CacheUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
+import com.yway.scomponent.organ.mvp.model.entity.AppVersion;
 import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
@@ -69,6 +70,34 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                 Constants.SYS_DICT_MEETING_CHECK_IN_TIME, ",",
                 Constants.SYS_DICT_POSITION);
         querySysByDictClassify(dictKey);
+    }
+
+    public void upgradeApp() {
+        Map<String, Object> params = new HashMap<>();
+        /**
+         * 类型：0为ios端 1为android端
+         */
+        params.put("type", 1);
+        mModel.queryLatestVersionByEntity(params)
+                .subscribeOn(Schedulers.io())
+                //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .retryWhen(new RetryWithDelay(3, 2))
+                .doOnSubscribe(disposable -> {
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+                })
+                //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseResponse<AppVersion>>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseResponse<AppVersion> datas) {
+                        if (datas.isSuccess() && !ObjectUtils.isEmpty(datas.getData())){
+                            mRootView.upgradeAppBcakCall(datas.getData());
+                        }
+
+                    }
+                });
     }
 
     /**

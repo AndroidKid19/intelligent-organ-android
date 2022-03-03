@@ -8,6 +8,7 @@ import com.jess.arms.mvp.IView;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
+import com.yway.scomponent.organ.mvp.model.entity.AppVersion;
 import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
@@ -38,11 +39,15 @@ public interface HomeContract {
         void metingListCallBack(HomeMetingBean data);
 
         void queryArticleCallBack(List<MessageBean> rows);
+
+        void upgradeAppBcakCall(AppVersion data);
     }
 
     //Model层定义接口,外部只需关心Model返回的数据,无需关心内部细节,即是否使用缓存
     interface Model extends IModel {
 
+
+        Observable<BaseResponse<AppVersion>> queryLatestVersionByEntity(Map<String, Object> params);
 
         Observable<BaseResponse<DictClassifyBean>> querySysByDictClassify(Map<String, Object> params);
 

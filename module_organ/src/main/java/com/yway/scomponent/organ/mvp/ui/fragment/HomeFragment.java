@@ -9,8 +9,11 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.CollectionUtils;
+import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
@@ -22,7 +25,9 @@ import com.jess.arms.utils.ArmsUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yway.scomponent.commonres.dialog.IToast;
+import com.yway.scomponent.commonres.dialog.UpgradeDialog;
 import com.yway.scomponent.commonres.view.banner.BGABanner;
 import com.yway.scomponent.commonsdk.BuildConfig;
 import com.yway.scomponent.commonsdk.core.Constants;
@@ -34,6 +39,7 @@ import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.di.component.DaggerHomeComponent;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
+import com.yway.scomponent.organ.mvp.model.entity.AppVersion;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceTitleBean;
 import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
@@ -120,6 +126,13 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 //        initSkeletonScreen();
         initQueryData();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mPresenter.upgradeApp();
+    }
+
 
     private void initQueryData(){
         //查询权限
@@ -268,7 +281,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      */
     @OnClick(R2.id.tv_menu_canteen)
     void onCanteenClick(View view){
-        IToast.showWarnShort("正在努力开发中");
+        Utils.navigation(getActivity(), RouterHub.HOME_CANTEENACTIVITY);
     }
 
     /**
@@ -337,6 +350,44 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         }
         mDataLs.addAll(rows);
     }
+
+    /**
+     * @description 版本更新请求
+     * @date: 2021/3/5 17:49
+     * @author: Yuan
+     * @return
+     */
+    @Override
+    public void upgradeAppBcakCall(AppVersion data) {
+        upgradeApp(data);
+    }
+
+    /**
+     * @description 升级
+     * @date: 2021/3/5 17:48
+     * @author: Yuan
+     * @return
+     */
+    private UpgradeDialog.Builder mUpdateDialog;
+    private void upgradeApp(AppVersion data) {
+        if (Long.parseLong(data.getVersion()) > AppUtils.getAppVersionCode()) {
+            RxPermissions mRxPermissions = new RxPermissions(this);
+            if (!ObjectUtils.isEmpty(mUpdateDialog) && mUpdateDialog.isShowing())return;
+            mUpdateDialog = new UpgradeDialog.Builder(getActivity(), mRxPermissions)
+                    // 版本名
+                    .setVersionName(Utils.appendStr("新版本V",data.getUserVersion(),"发布了"))
+                    // 是否强制更新
+                    .setForceUpdate(data.getUpgradeMode() == 1 ? true : false)
+                    // 更新日志
+                    .setUpdateLog(data.getRemark().replace("##","\n"))
+                    // 下载 url
+                    .setDownloadUrl(data.getPackageDownloadLink())
+                    // 文件大小
+                    .setFileSize(Utils.appendStr("包大小",data.getPackageSize(),"M"))
+                    .showPopupWindow();
+        }
+    }
+
 
     /**
      * 校验当前会议是否展示到首页

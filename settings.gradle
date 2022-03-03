@@ -13,7 +13,9 @@ include ':app',
         ':popuplibrary',
         ':wheelview',
         ':pickerview',
-        ':recyclertreelibrary'
+        ':recyclertreelibrary',
+        ':wechatpay',
+        ':easypay'
 project(':shimmerlayout').projectDir = new File('ThirdLibrarys/shimmerlayout')
 project(':wheelview').projectDir = new File('ThirdLibrarys/wheelview')
 project(':pickerview').projectDir = new File('ThirdLibrarys/pickerview')
@@ -23,3 +25,5 @@ project(':umlibrary').projectDir = new File('ThirdLibrarys/umlibrary')
 project(':doubleclicklibrary').projectDir = new File('ThirdLibrarys/doubleclicklibrary')
 project(':popuplibrary').projectDir = new File('ThirdLibrarys/popuplibrary')
 project(':recyclertreelibrary').projectDir = new File('ThirdLibrarys/recyclertreelibrary')
+project(':wechatpay').projectDir = new File('ThirdLibrarys/wechatpay')
+project(':easypay').projectDir = new File('ThirdLibrarys/easypay')

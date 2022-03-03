@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.yway.scomponent.wheel">
+    package="com.yway.scomponent.yyzy">
 
     <uses-sdk tools:overrideLibrary="tv.danmaku.ijk.media.player_arm64, tv.danmaku.ijk.media.player_x86_64" />
     <!-- 访问网络 -->
@@ -26,7 +26,7 @@
         android:supportsRtl="true"
         android:theme="@style/public_AppTheme"
         tools:replace="android:label">
-        <activity android:name=".mvp.ui.activity.WebViewActivity" />
+        <activity android:name="com.yway.scomponent.yyzy.mvp.ui.activity.WebViewActivity" />
         <!-- 适配Android 7.0文件意图 -->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -39,7 +39,7 @@
         </provider>
 
         <activity
-            android:name=".mvp.ui.activity.SplashActivity"
+            android:name="com.yway.scomponent.yyzy.mvp.ui.activity.SplashActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|fontScale"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".mvp.ui.activity.MainActivity"
+            android:name="com.yway.scomponent.yyzy.mvp.ui.activity.MainActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -96,7 +96,7 @@
             android:name="com.yway.scomponent.commonsdk.core.GlobalConfiguration"
             android:value="ConfigModule" />
         <meta-data
-            android:name="com.yway.scomponent.wheel.app.GlobalConfiguration"
+            android:name="com.yway.scomponent.yyzy.app.GlobalConfiguration"
             android:value="ConfigModule" />
     </application>
 

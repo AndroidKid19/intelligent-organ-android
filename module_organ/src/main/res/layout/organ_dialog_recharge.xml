@@ -29,15 +29,26 @@
                 android:textSize="@dimen/public_font_18sp" />
 
             <include layout="@layout/public_include_view_line" />
-
-            <RadioGroup
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextDefault.Medium"
+                android:text="充值金额"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                />
+            <com.yway.scomponent.commonres.view.layout.FlowRadioGroup
                 android:id="@+id/rg_recharge_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal"
                 android:paddingLeft="20dp">
+                <RadioButton
+                    android:id="@+id/rb_0"
+                    style="@style/organ_radio_button_style_recharge"
+                    android:layout_marginTop="10dp"
+                    android:text="0.01元" />
 
                 <RadioButton
                     android:id="@+id/rb_1"
@@ -58,23 +69,90 @@
                     android:id="@+id/rb_4"
                     style="@style/organ_radio_button_style_recharge"
                     android:text="200元" />
-            </RadioGroup>
+            </com.yway.scomponent.commonres.view.layout.FlowRadioGroup>
 
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextDefault.Medium"
+                android:text="请选择支付方式"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                />
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="30dp"
+               android:layout_marginLeft="20dp">
+
+               <androidx.appcompat.widget.AppCompatTextView
+                   android:id="@+id/tv_wcpay"
+                   style="@style/TextDefault"
+                   android:textSize="@dimen/public_font_14sp"
+                   android:text="微信支付"
+                   android:drawablePadding="8dp"
+                   android:layout_marginTop="15dp"
+                   android:drawableLeft="@mipmap/organ_ic_wcpay"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintLeft_toLeftOf="parent"
+                   />
+
+               <RadioGroup
+                   android:id="@+id/rg_pay_amount"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:layout_marginRight="20dp"
+                   app:layout_constraintRight_toRightOf="parent"
+                   app:layout_constraintTop_toTopOf="@+id/tv_wcpay"
+                   >
+
+                   <RadioButton
+                       android:id="@+id/rb_pay_1"
+                       android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:checked="true"
+                       android:button="@drawable/public_selector_radio_pay_button" />
+
+               </RadioGroup>
+           </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/tv_cancel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         app:cardBackgroundColor="@color/public_white"
         app:cardElevation="0px">
 
-        <com.yway.scomponent.commonres.view.layout.SmartTextView
-            style="@style/TextDefault.Medium"
-            android:layout_gravity="center_horizontal"
-            android:padding="@dimen/public_mar_16dp"
-            android:text="@string/public_common_cancel" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tv_cancel"
+                style="@style/public_style2_button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:paddingRight="10dp"
+                android:text="取消"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:textSize="@dimen/public_font_12sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_opt_adopt"
+                style="@style/public_style_button"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:paddingRight="10dp"
+                android:text="立即充值"
+                android:layout_marginRight="20dp"
+                android:textSize="@dimen/public_font_12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
 

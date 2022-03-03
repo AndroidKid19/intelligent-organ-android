@@ -22,16 +22,11 @@ import android.net.Uri;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.blankj.utilcode.util.TimeUtils;
-
-import java.util.Calendar;
-
-import static com.yway.scomponent.commonsdk.core.Constants.USER_TOKEN;
 
 /**
  * ================================================
  * Created by Yuanweiwei on 30/03/2018 17:16
-
+ * <p>
  * ================================================
  */
 public class Utils {
@@ -77,15 +72,15 @@ public class Utils {
     /**
      * 获取缓存token 校验是否登陆
      */
-    public static boolean isLogin(){
-        String token =  CacheUtils.queryToken();
+    public static boolean isLogin() {
+        String token = CacheUtils.queryToken();
         return token == null || "".equals(token) ? false : true;
     }
 
     /**
      * 字符串拼接
-     * */
-    public static String appendStr(Object...param){
+     */
+    public static String appendStr(Object... param) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < param.length; i++) {
             stringBuilder.append(param[i]);
@@ -101,13 +96,28 @@ public class Utils {
      * @return
      * @throws Exception
      */
-    public static void goToBrowser(String url,Activity activity){
-        if(!url.equals("")){
+    public static void goToBrowser(String url, Activity activity) {
+        if (!url.equals("")) {
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             activity.startActivity(i);
         }
 
+    }
+
+    public static String getNonceStr() {
+//      Random random = new Random();
+//      return MD5.getMessageDigest(String.valueOf(random.nextInt(10000))
+//              .getBytes());
+        final String[] Strarray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+                "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+                "U", "V", "W", "X", "Y", "Z"};
+        StringBuffer nonceStr = new StringBuffer();
+        for (int i = 0; i < 15; i++) {
+            nonceStr.append(Strarray[(int) (Math.random() * Strarray.length)]);
+        }
+        return nonceStr.toString();
     }
 
 }

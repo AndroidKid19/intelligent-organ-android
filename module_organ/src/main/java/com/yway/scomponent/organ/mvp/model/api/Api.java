@@ -30,6 +30,11 @@ public interface Api {
 
     //请求成功
     int REQUEST_SUCCESS = 1000;
+    /**
+     *App版本升级
+     * */
+    String API_QUERY_LATESTVERSIONBYENTITY = "withOut/withOutQueryLatestVersionByEntity";
+
 
     /**
      *上传图片
@@ -129,7 +134,10 @@ public interface Api {
     //查询当前登录用户的账户信息
     String API_QUERYBYUSERACCOUNT = "/organ/userAccount/queryByUserAccount";
 
-
     //app端调用（微信/支付宝）支付后回调接口（交易记录）
     String API_CREATEACCOUNTTRANSACTIONRECORD = "/organ/accountTransactionRecord/createAccountTransactionRecord";
+
+    //统一下单
+    String API_WXPAY = "/organ/wxPay/pay";
+
 }

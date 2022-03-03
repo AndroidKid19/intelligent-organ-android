@@ -10,6 +10,7 @@ import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
 import com.yway.scomponent.organ.mvp.model.api.service.HomeService;
+import com.yway.scomponent.organ.mvp.model.entity.AppVersion;
 import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
@@ -40,7 +41,12 @@ public class HomeModel extends BaseModel implements HomeContract.Model {
     public HomeModel(IRepositoryManager repositoryManager) {
         super(repositoryManager);
     }
-
+    @Override
+    public Observable<BaseResponse<AppVersion>> queryLatestVersionByEntity(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .queryLatestVersionByEntity(params);
+    }
     /**
      * @description 查询字典数据
      * @author: Yuan

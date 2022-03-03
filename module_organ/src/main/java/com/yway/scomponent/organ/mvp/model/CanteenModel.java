@@ -9,6 +9,7 @@ import com.jess.arms.mvp.BaseModel;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.organ.mvp.contract.CanteenContract;
 import com.yway.scomponent.organ.mvp.model.api.service.HomeService;
+import com.yway.scomponent.organ.mvp.model.entity.PayDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.RechargeRecordBean;
 
 import java.util.Map;
@@ -56,7 +57,12 @@ public class CanteenModel extends BaseModel implements CanteenContract.Model {
                 .obtainRetrofitService(HomeService.class)
                 .queryByUserAccount(params);
     }
-
+    @Override
+    public Observable<BaseResponse<PayDetailsBean>> wxPay(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .wxPay(params);
+    }
     @Override
     public void onDestroy() {
         super.onDestroy();

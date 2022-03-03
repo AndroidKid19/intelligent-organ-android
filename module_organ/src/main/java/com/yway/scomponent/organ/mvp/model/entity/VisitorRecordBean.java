@@ -73,6 +73,16 @@ public class VisitorRecordBean {
      */
     private int todayVisitRecordCount;
 
+    private String personalPhotos;
+
+    public String getPersonalPhotos() {
+        return personalPhotos;
+    }
+
+    public void setPersonalPhotos(String personalPhotos) {
+        this.personalPhotos = personalPhotos;
+    }
+
     public List<VisitorRecordBean> getRows() {
         return rows;
     }

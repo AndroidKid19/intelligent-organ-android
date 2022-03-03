@@ -20,6 +20,7 @@ import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
 import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.organ.mvp.model.api.Api;
+import com.yway.scomponent.organ.mvp.model.entity.AppVersion;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
 import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.FavoritesBean;
@@ -27,6 +28,7 @@ import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.MeetingRecordBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
+import com.yway.scomponent.organ.mvp.model.entity.PayDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.RechargeRecordBean;
 import com.yway.scomponent.organ.mvp.model.entity.RoomDetailsBean;
 import com.yway.scomponent.organ.mvp.model.entity.VisitorRecordBean;
@@ -52,6 +54,15 @@ import static me.jessyan.retrofiturlmanager.RetrofitUrlManager.DOMAIN_NAME_HEADE
  * ================================================
  */
 public interface HomeService {
+
+
+    /**
+     * App版本升级
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_QUERY_LATESTVERSIONBYENTITY)
+    Observable<BaseResponse<AppVersion>> queryLatestVersionByEntity(@Body() Map<String, Object> params);
+
     /**
      * 通讯录查询
      */
@@ -260,4 +271,11 @@ public interface HomeService {
     @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
     @POST(Api.API_QUERYBYUSERACCOUNT)
     Observable<BaseResponse<RechargeRecordBean>> queryByUserAccount(@Body() Map<String, Object> params);
+
+    /**
+     * 统一下单
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.HOME_DOMAIN_NAME})
+    @POST(Api.API_WXPAY)
+    Observable<BaseResponse<PayDetailsBean>> wxPay(@Body() Map<String, Object> params);
 }

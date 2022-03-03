@@ -11,10 +11,12 @@ import android.widget.RadioGroup;
 
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.utils.ThirdViewUtil;
+import com.yway.scomponent.commonres.dialog.IToast;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import razerdp.basepopup.BasePopupWindow;
 import razerdp.util.SimpleAnimationUtils;
 
@@ -29,6 +31,9 @@ public final class RechargeDialog extends BasePopupWindow {
     View mCancelView;
     @BindView(R2.id.rg_recharge_amount)
     RadioGroup mRgRechargeAmount;
+    @BindView(R2.id.btn_opt_adopt)
+    View mBtnOptView;
+    private double amount = 0;
 
     public RechargeDialog(Context context) {
         super(context);
@@ -41,7 +46,6 @@ public final class RechargeDialog extends BasePopupWindow {
      * 状态监听回调
      */
     private RadioGroup.OnCheckedChangeListener mOnCheckedChangeListener = (group, checkedId) -> {
-        int amount = 50;
         if (checkedId == R.id.rb_1) {//50
             amount = 50;
         } else if (checkedId == R.id.rb_2) {//100
@@ -50,10 +54,20 @@ public final class RechargeDialog extends BasePopupWindow {
             amount = 150;
         } else if (checkedId == R.id.rb_4) {//200
             amount = 200;
+        } else if (checkedId == R.id.rb_0) {//200
+            amount = 0.01;
+        }
+    };
+
+    @OnClick(R2.id.btn_opt_adopt)
+    void onBtnOptView(View view){
+        if (amount <= 0){
+            IToast.showWarnShort("请选择充值金额");
+            return;
         }
         mOnRechargeListener.onRecharge(amount);
         this.dismiss();
-    };
+    }
 
     @Override
     public View onCreateContentView() {
@@ -173,6 +187,6 @@ public final class RechargeDialog extends BasePopupWindow {
         /**
          * 充值回调
          */
-        void onRecharge(int amount);
+        void onRecharge(double amount);
     }
 }
