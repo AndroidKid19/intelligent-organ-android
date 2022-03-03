@@ -40,15 +40,11 @@ import com.yway.scomponent.organ.mvp.model.entity.RechargeRecordBean;
 import com.yway.scomponent.organ.mvp.presenter.CanteenPresenter;
 import com.yway.scomponent.organ.mvp.ui.adapter.RechargeRecordAdapter;
 import com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.inject.Inject;
-
 import butterknife.BindView;
 import butterknife.OnClick;
-
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 /**
