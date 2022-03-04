@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.blankj.utilcode.util.LogUtils;
 import com.ethanhua.skeleton.Skeleton;
@@ -40,11 +42,15 @@ import com.yway.scomponent.organ.mvp.model.entity.RechargeRecordBean;
 import com.yway.scomponent.organ.mvp.presenter.CanteenPresenter;
 import com.yway.scomponent.organ.mvp.ui.adapter.RechargeRecordAdapter;
 import com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog;
+
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 /**
@@ -180,7 +186,7 @@ public class CanteenActivity extends BaseActivity<CanteenPresenter> implements C
     /***
      * 微信支付
      * */
-    private void wxpay(String sign, String prepayId, String partnerid, String appid, String timestamp, String noncestr, String packageValue) {
+    private void wxpay(String sign, String prepayId, String partnerid, String appid, String timestamp, String noncestr, String outTradeNo) {
         //实例化微信支付策略
         WXPay wxPay = WXPay.getInstance();
         //构造微信订单实体。一般都是由服务端直接返回。
@@ -203,19 +209,19 @@ public class CanteenActivity extends BaseActivity<CanteenPresenter> implements C
         EasyPay.pay(wxPay, this, wxPayInfoImpli, new IPayCallback() {
             @Override
             public void success() {
-                createAccountTransactionRecord(prepayId, partnerid, 0);
+                createAccountTransactionRecord(outTradeNo, partnerid, 0);
                 IToast.showFinishShort("支付成功");
             }
 
             @Override
             public void failed(int code, String message) {
-                createAccountTransactionRecord(prepayId, partnerid, 1);
-                IToast.showFinishShort(Utils.appendStr(code,"-",message));
+                createAccountTransactionRecord(outTradeNo, partnerid, 1);
+                IToast.showFinishShort(Utils.appendStr(code, "-", message));
             }
 
             @Override
             public void cancel() {
-                createAccountTransactionRecord(prepayId, partnerid, 1);
+                createAccountTransactionRecord(outTradeNo, partnerid, 1);
                 IToast.showFinishShort("支付取消");
             }
         });
@@ -360,6 +366,6 @@ public class CanteenActivity extends BaseActivity<CanteenPresenter> implements C
     @Override
     public void unifiedorderCallBack(PayDetailsBean data) {
         //调用微信支付
-        wxpay(data.getSign(), data.getPrepayid(), data.getPartnerid(), data.getAppid(), data.getTimestamp(), data.getNoncestr(), data.getPackageValue());
+        wxpay(data.getSign(), data.getPrepayid(), data.getPartnerid(), data.getAppid(), data.getTimestamp(), data.getNoncestr(), data.getOutTradeNo());
     }
 }

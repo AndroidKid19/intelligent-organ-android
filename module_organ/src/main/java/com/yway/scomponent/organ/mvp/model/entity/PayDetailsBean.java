@@ -33,6 +33,16 @@ public class PayDetailsBean {
 
     private String timestamp;
 
+    private String outTradeNo;
+
+    public String getOutTradeNo() {
+        return outTradeNo;
+    }
+
+    public void setOutTradeNo(String outTradeNo) {
+        this.outTradeNo = outTradeNo;
+    }
+
     public String getPackageValue() {
         return packageValue;
     }

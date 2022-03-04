@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.68
 # min_api: 23
-# pg_map_id: fb16953
+# pg_map_id: ee7c6c3
 androidx.activity.Cancellable -> androidx.activity.a:
 androidx.activity.ComponentActivity$1 -> androidx.activity.ComponentActivity$a:
     androidx.activity.ComponentActivity this$0 -> b
@@ -24294,6 +24294,8 @@ com.yway.scomponent.organ.di.component.DaggerHomeComponent -> com.yway.scomponen
     javax.inject.Provider repositoryManagerProvider -> a
     javax.inject.Provider provideAdapterProvider -> l
     javax.inject.Provider provideListProvider -> k
+    javax.inject.Provider provideMeetingAdapterProvider -> n
+    javax.inject.Provider provideConferenceBeanListProvider -> m
     javax.inject.Provider appManagerProvider -> h
     javax.inject.Provider imageLoaderProvider -> g
     javax.inject.Provider provideLayoutManagerProvider -> j
@@ -25172,155 +25174,165 @@ com.yway.scomponent.organ.di.module.DraftsModule_ProvideListFactory -> com.yway.
     com.yway.scomponent.organ.di.module.DraftsModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
 com.yway.scomponent.organ.di.module.HomeModule -> com.yway.scomponent.organ.b.b.c1:
-    com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter provideAdapter(java.util.List) -> a
+    com.yway.scomponent.organ.mvp.ui.adapter.InformationAdapter provideAdapter(java.util.List) -> a
+    java.util.List provideConferenceBeanList() -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.HomeContract$View) -> a
-    java.util.List provideList() -> a
+    java.util.List provideList() -> b
+    com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter provideMeetingAdapter(java.util.List) -> b
 com.yway.scomponent.organ.di.module.HomeModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.d1:
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.HomeModule_ProvideAdapterFactory create(javax.inject.Provider) -> a
-    com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter provideAdapter(java.util.List) -> a
-com.yway.scomponent.organ.di.module.HomeModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.e1:
+    com.yway.scomponent.organ.mvp.ui.adapter.InformationAdapter provideAdapter(java.util.List) -> a
+com.yway.scomponent.organ.di.module.HomeModule_ProvideConferenceBeanListFactory -> com.yway.scomponent.organ.b.b.e1:
+    com.yway.scomponent.organ.di.module.HomeModule_ProvideConferenceBeanListFactory INSTANCE -> a
+    com.yway.scomponent.organ.di.module.HomeModule_ProvideConferenceBeanListFactory create() -> a
+    java.util.List provideConferenceBeanList() -> b
+com.yway.scomponent.organ.di.module.HomeModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.f1:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.HomeModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.HomeContract$View) -> a
-com.yway.scomponent.organ.di.module.HomeModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.f1:
+com.yway.scomponent.organ.di.module.HomeModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.g1:
     com.yway.scomponent.organ.di.module.HomeModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.HomeModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
-com.yway.scomponent.organ.di.module.InformationModule -> com.yway.scomponent.organ.b.b.g1:
+com.yway.scomponent.organ.di.module.HomeModule_ProvideMeetingAdapterFactory -> com.yway.scomponent.organ.b.b.h1:
+    javax.inject.Provider listProvider -> a
+    com.yway.scomponent.organ.di.module.HomeModule_ProvideMeetingAdapterFactory create(javax.inject.Provider) -> a
+    com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter provideMeetingAdapter(java.util.List) -> a
+com.yway.scomponent.organ.di.module.InformationModule -> com.yway.scomponent.organ.b.b.i1:
     void lambda$provideAdapter$0(android.view.View,int,java.lang.Object,int) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.InformationContract$View) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.InformationContract$View) -> a
     java.util.List provideList() -> a
-com.yway.scomponent.organ.di.module.InformationModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.h1:
+com.yway.scomponent.organ.di.module.InformationModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.j1:
     javax.inject.Provider viewProvider -> b
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.InformationModule_ProvideAdapterFactory create(javax.inject.Provider,javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.InformationContract$View) -> a
-com.yway.scomponent.organ.di.module.InformationModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.i1:
+com.yway.scomponent.organ.di.module.InformationModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.k1:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.InformationModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.InformationContract$View) -> a
-com.yway.scomponent.organ.di.module.InformationModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.j1:
+com.yway.scomponent.organ.di.module.InformationModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.l1:
     com.yway.scomponent.organ.di.module.InformationModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.InformationModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
-com.yway.scomponent.organ.di.module.MyInitiateModule -> com.yway.scomponent.organ.b.b.k1:
+com.yway.scomponent.organ.di.module.MyInitiateModule -> com.yway.scomponent.organ.b.b.m1:
     void lambda$provideAdapter$0(com.yway.scomponent.organ.mvp.contract.MyInitiateContract$View,android.view.View,int,java.lang.Object,int) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.MyInitiateContract$View) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.MyInitiateContract$View) -> a
     java.util.List provideList() -> a
-com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.l1:
+com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.n1:
     javax.inject.Provider iviewProvider -> b
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideAdapterFactory create(javax.inject.Provider,javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.MyInitiateContract$View) -> a
-com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.m1:
+com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.o1:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.MyInitiateContract$View) -> a
-com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.n1:
+com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.p1:
     com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.MyInitiateModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
-com.yway.scomponent.organ.di.module.MyMeetingModule -> com.yway.scomponent.organ.b.b.o1:
+com.yway.scomponent.organ.di.module.MyMeetingModule -> com.yway.scomponent.organ.b.b.q1:
     void lambda$provideAdapter$0(com.yway.scomponent.organ.mvp.contract.MyMeetingContract$View,android.view.View,int,java.lang.Object,int) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.ConfirmMeetingAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.MyMeetingContract$View) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.MyMeetingContract$View) -> a
     java.util.List provideList() -> a
-com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.p1:
+com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.r1:
     javax.inject.Provider iviewProvider -> b
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideAdapterFactory create(javax.inject.Provider,javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.ConfirmMeetingAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.MyMeetingContract$View) -> a
-com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.q1:
+com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.s1:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.MyMeetingContract$View) -> a
-com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.r1:
+com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.t1:
     com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.MyMeetingModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
-com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule -> com.yway.scomponent.organ.b.b.s1:
+com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule -> com.yway.scomponent.organ.b.b.u1:
     com.yway.scomponent.organ.mvp.ui.adapter.ConferenceRoomAdapter provideAdapter(java.util.List) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.OnlineSubscribeRoomContract$View) -> a
     java.util.List provideList() -> a
-com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.t1:
+com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.v1:
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideAdapterFactory create(javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.ConferenceRoomAdapter provideAdapter(java.util.List) -> a
-com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.u1:
+com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.w1:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.OnlineSubscribeRoomContract$View) -> a
-com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.v1:
+com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.x1:
     com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.OnlineSubscribeRoomModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
-com.yway.scomponent.organ.di.module.RechargeRecordModule -> com.yway.scomponent.organ.b.b.w1:
+com.yway.scomponent.organ.di.module.RechargeRecordModule -> com.yway.scomponent.organ.b.b.y1:
     com.yway.scomponent.organ.mvp.ui.adapter.RechargeRecordAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.RechargeRecordContract$View) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.RechargeRecordContract$View) -> a
     java.util.List provideList() -> a
-com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.x1:
+com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.z1:
     javax.inject.Provider iviewProvider -> b
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideAdapterFactory create(javax.inject.Provider,javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.RechargeRecordAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.RechargeRecordContract$View) -> a
-com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.y1:
+com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.a2:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.RechargeRecordContract$View) -> a
-com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.z1:
+com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.b2:
     com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.RechargeRecordModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
-com.yway.scomponent.organ.di.module.SubscribeApplyModule -> com.yway.scomponent.organ.b.b.a2:
+com.yway.scomponent.organ.di.module.SubscribeApplyModule -> com.yway.scomponent.organ.b.b.c2:
     com.yway.scomponent.organ.mvp.ui.adapter.SubscribeApplyAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract$View) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract$View) -> a
     java.util.List provideList() -> a
-com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.b2:
+com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.d2:
     javax.inject.Provider iviewProvider -> b
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideAdapterFactory create(javax.inject.Provider,javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.SubscribeApplyAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract$View) -> a
-com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.c2:
+com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.e2:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.SubscribeApplyContract$View) -> a
-com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.d2:
+com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.f2:
     com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.SubscribeApplyModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
-com.yway.scomponent.organ.di.module.UserSearchModule -> com.yway.scomponent.organ.b.b.e2:
+com.yway.scomponent.organ.di.module.UserSearchModule -> com.yway.scomponent.organ.b.b.g2:
     com.yway.scomponent.organ.mvp.ui.adapter.AddressBookPartsAdapter provideAddressBookPartsAdapter(java.util.List) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.UserSearchContract$View) -> a
     java.util.List provideObjectList() -> a
-com.yway.scomponent.organ.di.module.UserSearchModule_ProvideAddressBookPartsAdapterFactory -> com.yway.scomponent.organ.b.b.f2:
+com.yway.scomponent.organ.di.module.UserSearchModule_ProvideAddressBookPartsAdapterFactory -> com.yway.scomponent.organ.b.b.h2:
     javax.inject.Provider dataProvider -> a
     com.yway.scomponent.organ.di.module.UserSearchModule_ProvideAddressBookPartsAdapterFactory create(javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.AddressBookPartsAdapter provideAddressBookPartsAdapter(java.util.List) -> a
-com.yway.scomponent.organ.di.module.UserSearchModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.g2:
+com.yway.scomponent.organ.di.module.UserSearchModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.i2:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.UserSearchModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.UserSearchContract$View) -> a
-com.yway.scomponent.organ.di.module.UserSearchModule_ProvideObjectListFactory -> com.yway.scomponent.organ.b.b.h2:
+com.yway.scomponent.organ.di.module.UserSearchModule_ProvideObjectListFactory -> com.yway.scomponent.organ.b.b.j2:
     com.yway.scomponent.organ.di.module.UserSearchModule_ProvideObjectListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.UserSearchModule_ProvideObjectListFactory create() -> a
     java.util.List provideObjectList() -> b
-com.yway.scomponent.organ.di.module.VisitorRecordModule -> com.yway.scomponent.organ.b.b.i2:
+com.yway.scomponent.organ.di.module.VisitorRecordModule -> com.yway.scomponent.organ.b.b.k2:
     com.yway.scomponent.organ.mvp.ui.adapter.VisitorAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.VisitorRecordContract$View) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.VisitorRecordContract$View) -> a
     java.util.List provideList() -> a
-com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.j2:
+com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideAdapterFactory -> com.yway.scomponent.organ.b.b.l2:
     javax.inject.Provider iviewProvider -> b
     javax.inject.Provider listProvider -> a
     com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideAdapterFactory create(javax.inject.Provider,javax.inject.Provider) -> a
     com.yway.scomponent.organ.mvp.ui.adapter.VisitorAdapter provideAdapter(java.util.List,com.yway.scomponent.organ.mvp.contract.VisitorRecordContract$View) -> a
-com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.k2:
+com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideLayoutManagerFactory -> com.yway.scomponent.organ.b.b.m2:
     javax.inject.Provider viewProvider -> a
     com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideLayoutManagerFactory create(javax.inject.Provider) -> a
     androidx.recyclerview.widget.RecyclerView$LayoutManager provideLayoutManager(com.yway.scomponent.organ.mvp.contract.VisitorRecordContract$View) -> a
-com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.l2:
+com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideListFactory -> com.yway.scomponent.organ.b.b.n2:
     com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideListFactory INSTANCE -> a
     com.yway.scomponent.organ.di.module.VisitorRecordModule_ProvideListFactory create() -> a
     java.util.List provideList() -> b
@@ -27194,7 +27206,7 @@ com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding -> com.y
     android.view.View view7f0b0055 -> e
     android.view.View view7f0b005f -> d
     android.view.View view7f0b0070 -> g
-    android.view.View view7f0b025f -> f
+    android.view.View view7f0b0260 -> f
 com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$b:
@@ -27251,7 +27263,7 @@ com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity$1 -> com.yway.scompone
     com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity this$0 -> a
 com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity$2 -> com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity$b:
     com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity this$0 -> c
-    java.lang.String val$prepayId -> a
+    java.lang.String val$outTradeNo -> a
     java.lang.String val$partnerid -> b
     void failed(int,java.lang.String) -> a
     void success() -> a
@@ -27260,7 +27272,7 @@ com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_MembersInjector -> com
     void injectMLayoutManager(com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
 com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity target -> a
-    android.view.View view7f0b027a -> c
+    android.view.View view7f0b027b -> c
     android.view.View view7f0b0071 -> b
 com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity val$target -> b
@@ -27336,7 +27348,7 @@ com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity -> com.yway.sco
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity$1 -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity$a:
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity this$0 -> a
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding:
-    android.view.View view7f0b02cf -> b
+    android.view.View view7f0b02d0 -> b
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity target -> a
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity val$target -> b
@@ -27537,7 +27549,7 @@ com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding -> com.
     android.text.TextWatcher view7f0b00baTextWatcher -> c
     android.view.View view7f0b00ba -> b
     com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity target -> a
-    android.view.View view7f0b024e -> d
+    android.view.View view7f0b024f -> d
 com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$b:
@@ -27655,26 +27667,32 @@ com.yway.scomponent.organ.mvp.ui.adapter.DraftsAdapter -> com.yway.scomponent.or
 com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter -> com.yway.scomponent.organ.c.b.a.n:
     com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
     int getLayoutId(int) -> a
-com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter -> com.yway.scomponent.organ.c.b.a.o:
+com.yway.scomponent.organ.mvp.ui.adapter.InformationAdapter -> com.yway.scomponent.organ.c.b.a.o:
     com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
     int getLayoutId(int) -> a
-com.yway.scomponent.organ.mvp.ui.adapter.RechargeRecordAdapter -> com.yway.scomponent.organ.c.b.a.p:
+com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter -> com.yway.scomponent.organ.c.b.a.p:
+    com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
+    int getLayoutId(int) -> a
+com.yway.scomponent.organ.mvp.ui.adapter.MyInitiateAdapter -> com.yway.scomponent.organ.c.b.a.q:
+    com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
+    int getLayoutId(int) -> a
+com.yway.scomponent.organ.mvp.ui.adapter.RechargeRecordAdapter -> com.yway.scomponent.organ.c.b.a.r:
     int optType -> d
     com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
     int getLayoutId(int) -> a
     void setOptType(int) -> b
-com.yway.scomponent.organ.mvp.ui.adapter.SubscribeApplyAdapter -> com.yway.scomponent.organ.c.b.a.q:
+com.yway.scomponent.organ.mvp.ui.adapter.SubscribeApplyAdapter -> com.yway.scomponent.organ.c.b.a.s:
     com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
     int getLayoutId(int) -> a
-com.yway.scomponent.organ.mvp.ui.adapter.SubscribeTimeAdapter -> com.yway.scomponent.organ.c.b.a.r:
+com.yway.scomponent.organ.mvp.ui.adapter.SubscribeTimeAdapter -> com.yway.scomponent.organ.c.b.a.t:
     int lastClickPosition -> d
     com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
     int getLayoutId(int) -> a
     void singleChoose(int) -> b
-com.yway.scomponent.organ.mvp.ui.adapter.ViewPagerAdapter -> com.yway.scomponent.organ.c.b.a.s:
+com.yway.scomponent.organ.mvp.ui.adapter.ViewPagerAdapter -> com.yway.scomponent.organ.c.b.a.u:
     java.util.List mTitles -> b
     java.util.List mFragments -> a
-com.yway.scomponent.organ.mvp.ui.adapter.VisitorAdapter -> com.yway.scomponent.organ.c.b.a.t:
+com.yway.scomponent.organ.mvp.ui.adapter.VisitorAdapter -> com.yway.scomponent.organ.c.b.a.v:
     com.jess.arms.base.BaseHolder getHolder(android.view.View,int) -> a
     int getLayoutId(int) -> a
 com.yway.scomponent.organ.mvp.ui.dialog.-$$Lambda$RechargeDialog$zlU--RZF8tfVmjTFAmzw2ljYWE8 -> com.yway.scomponent.organ.mvp.ui.dialog.a:
@@ -27854,7 +27872,7 @@ com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_MembersInjector ->
     void injectMObjectDataLs(com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment,java.util.List) -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment target -> a
-    android.view.View view7f0b028c -> b
+    android.view.View view7f0b028d -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AfterPrepareFragment -> com.yway.scomponent.organ.mvp.ui.fragment.AfterPrepareFragment:
@@ -27975,11 +27993,13 @@ com.yway.scomponent.organ.mvp.ui.fragment.DraftsFragment_MembersInjector -> com.
 com.yway.scomponent.organ.mvp.ui.fragment.DraftsFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.DraftsFragment_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.fragment.DraftsFragment target -> a
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment:
-    com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter mAdapter -> f
-    com.scwang.smartrefresh.layout.listener.OnRefreshListener mOnRefreshListener -> i
-    com.yway.scomponent.commonres.dialog.UpgradeDialog$Builder mUpdateDialog -> j
-    java.util.List mDataLs -> g
-    com.jess.arms.base.DefaultAdapter$OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener -> h
+    com.scwang.smartrefresh.layout.listener.OnRefreshListener mOnRefreshListener -> k
+    com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter mMeetingAdapter -> g
+    com.jess.arms.base.DefaultAdapter$OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener -> j
+    java.util.List mConferenceBeanDataLs -> i
+    java.util.List mDataLs -> h
+    com.yway.scomponent.commonres.dialog.UpgradeDialog$Builder mUpdateDialog -> l
+    com.yway.scomponent.organ.mvp.ui.adapter.InformationAdapter mAdapter -> f
     androidx.recyclerview.widget.RecyclerView$LayoutManager mLayoutManager -> e
     void fillBannerItem(com.yway.scomponent.commonres.view.banner.BGABanner,android.widget.ImageView,java.lang.String,int) -> a
     void hideLoading() -> a
@@ -27991,27 +28011,28 @@ com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment -> com.yway.scomponent.or
     void queryArticleCallBack(java.util.List) -> a
     void setupFragmentComponent(com.jess.arms.di.component.AppComponent) -> a
     void upgradeAppBcakCall(com.yway.scomponent.organ.mvp.model.entity.AppVersion) -> a
-    boolean checkMeting(java.lang.String) -> b
     void lambda$new$2(com.scwang.smartrefresh.layout.api.RefreshLayout) -> b
     void onBannerItemClick(com.yway.scomponent.commonres.view.banner.BGABanner,android.widget.ImageView,java.lang.String,int) -> b
     void showLoading() -> b
     void upgradeApp(com.yway.scomponent.organ.mvp.model.entity.AppVersion) -> b
     com.scwang.smartrefresh.layout.api.RefreshLayout refreshLayout() -> c
-    boolean checkMetingTitle() -> f
-    boolean checkMsgTitle() -> g
-    void initBanner() -> j
-    void initQueryData() -> k
-    void initRecyclerView() -> o
+    void initBanner() -> f
+    void initQueryData() -> g
+    void initRecyclerView() -> j
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_MembersInjector -> com.yway.scomponent.organ.mvp.ui.fragment.h0:
-    void injectMAdapter(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter) -> a
-    void injectMDataLs(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,java.util.List) -> a
+    void injectMAdapter(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,com.yway.scomponent.organ.mvp.ui.adapter.InformationAdapter) -> a
+    void injectMConferenceBeanDataLs(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,java.util.List) -> a
     void injectMLayoutManager(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
+    void injectMMeetingAdapter(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter) -> a
+    void injectMDataLs(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,java.util.List) -> b
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding:
-    android.view.View view7f0b026a -> c
-    android.view.View view7f0b028b -> b
+    android.view.View view7f0b027b -> h
+    android.view.View view7f0b028c -> c
+    android.view.View view7f0b0287 -> b
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment target -> a
-    android.view.View view7f0b026c -> e
-    android.view.View view7f0b0271 -> d
+    android.view.View view7f0b0272 -> e
+    android.view.View view7f0b026b -> d
+    android.view.View view7f0b026e -> g
     android.view.View view7f0b026d -> f
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment val$target -> b
@@ -28022,6 +28043,10 @@ com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$3 -> com.yway
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$4 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$d:
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$5 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$e:
+    com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment val$target -> b
+com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$6 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$f:
+    com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment val$target -> b
+com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$7 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$g:
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.MyInitiateFragment -> com.yway.scomponent.organ.mvp.ui.fragment.MyInitiateFragment:
     com.scwang.smartrefresh.layout.listener.OnRefreshListener mOnRefreshListener -> j
@@ -28125,15 +28150,15 @@ com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment$2 -> com.yway.scompo
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment this$0 -> a
     void onCompleted(java.lang.String) -> a
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding:
-    android.view.View view7f0b0284 -> i
-    android.view.View view7f0b024b -> h
-    android.view.View view7f0b026e -> c
-    android.view.View view7f0b0272 -> b
-    android.view.View view7f0b026b -> e
+    android.view.View view7f0b0285 -> i
+    android.view.View view7f0b024c -> h
+    android.view.View view7f0b026f -> c
+    android.view.View view7f0b0273 -> b
+    android.view.View view7f0b026c -> e
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment target -> a
-    android.view.View view7f0b026f -> d
-    android.view.View view7f0b02a1 -> g
-    android.view.View view7f0b0270 -> f
+    android.view.View view7f0b0270 -> d
+    android.view.View view7f0b02a2 -> g
+    android.view.View view7f0b0271 -> f
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$b:
@@ -28235,6 +28260,18 @@ com.yway.scomponent.organ.mvp.ui.holder.DraftsItemHolder -> com.yway.scomponent.
     void setData(java.lang.Object,int) -> a
 com.yway.scomponent.organ.mvp.ui.holder.DraftsItemHolder_ViewBinding -> com.yway.scomponent.organ.mvp.ui.holder.DraftsItemHolder_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.holder.DraftsItemHolder target -> a
+com.yway.scomponent.organ.mvp.ui.holder.InformationItemHolder -> com.yway.scomponent.organ.mvp.ui.holder.InformationItemHolder:
+    com.jess.arms.http.imageloader.ImageLoader mImageLoader -> e
+    com.jess.arms.di.component.AppComponent mAppComponent -> d
+    void setData(com.yway.scomponent.organ.mvp.model.entity.MessageBean,int) -> a
+    void setData(java.lang.Object,int) -> a
+com.yway.scomponent.organ.mvp.ui.holder.InformationItemHolder_ViewBinding -> com.yway.scomponent.organ.mvp.ui.holder.InformationItemHolder_ViewBinding:
+    com.yway.scomponent.organ.mvp.ui.holder.InformationItemHolder target -> a
+com.yway.scomponent.organ.mvp.ui.holder.MeetingItemHolder -> com.yway.scomponent.organ.mvp.ui.holder.MeetingItemHolder:
+    void setData(com.yway.scomponent.organ.mvp.model.entity.ConferenceBean,int) -> a
+    void setData(java.lang.Object,int) -> a
+com.yway.scomponent.organ.mvp.ui.holder.MeetingItemHolder_ViewBinding -> com.yway.scomponent.organ.mvp.ui.holder.MeetingItemHolder_ViewBinding:
+    com.yway.scomponent.organ.mvp.ui.holder.MeetingItemHolder target -> a
 com.yway.scomponent.organ.mvp.ui.holder.MsgItemHolder -> com.yway.scomponent.organ.mvp.ui.holder.MsgItemHolder:
     com.jess.arms.http.imageloader.ImageLoader mImageLoader -> e
     com.jess.arms.di.component.AppComponent mAppComponent -> d
