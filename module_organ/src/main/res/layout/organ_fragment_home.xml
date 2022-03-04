@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/public_white"
     android:orientation="vertical">
     <!-- 搜索框 -->
@@ -58,11 +59,72 @@
                 <!-- 金刚区 -->
                 <include layout="@layout/organ_include_view_menu" />
                 <!-- 消息 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="@dimen/public_padding_20dp"
+                    android:paddingRight="@dimen/public_padding_20dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextDefault.Large"
+                        android:layout_centerVertical="true"
+                        android:text="资讯"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_more"
+                        style="@style/TextGray.Medium"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="查看更多" />
+                </RelativeLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_view_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0dp"
+                    android:overScrollMode="never"
+                    android:scrollbarSize="2dp"
+                    android:scrollbarThumbVertical="@color/public_colorPrimary"
+                    android:scrollbars="vertical" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="@dimen/public_padding_20dp"
+                    android:paddingRight="@dimen/public_padding_20dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_conf_title"
+                        style="@style/TextDefault.Large"
+                        android:layout_centerVertical="true"
+                        android:text="我的会议"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_conf_count"
+                        style="@style/TextGray.Medium"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/tv_conf_title"
+                        android:textStyle="bold"
+                        tools:text="(3)" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_queryall"
+                        style="@style/TextGray.Medium"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="查看全部"
+                        android:textColor="@color/public_color_text_sign" />
+                </RelativeLayout>
                 <!-- 我的会议 -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycle_view"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:divider="@android:color/transparent"
                     android:dividerHeight="0dp"

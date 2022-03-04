@@ -6,15 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.CollectionUtils;
 import com.blankj.utilcode.util.ObjectUtils;
-import com.blankj.utilcode.util.StringUtils;
 import com.ethanhua.skeleton.Skeleton;
 import com.ethanhua.skeleton.SkeletonScreen;
 import com.gyf.immersionbar.ImmersionBar;
@@ -48,13 +50,20 @@ import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageTitleBean;
 import com.yway.scomponent.organ.mvp.presenter.HomePresenter;
 import com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter;
+import com.yway.scomponent.organ.mvp.ui.adapter.InformationAdapter;
+import com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter;
+
 import org.simple.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import timber.log.Timber;
+
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 /**
@@ -66,7 +75,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @BindView(R2.id.banner_view)
     BGABanner mContentBanner;
     /**
-     * 消息及会议内容
+     * 会议内容
      */
     @BindView(R2.id.recycle_view)
     RecyclerView mRecyclerView;
@@ -75,19 +84,36 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      */
     @BindView(R2.id.refresh_layout)
     RefreshLayout mRefreshLayout;
+    /**
+     * 消息
+     */
+    @BindView(R2.id.recycle_view_msg)
+    RecyclerView mRecyclerViewMsg;
 
+    @BindView(R2.id.tv_queryall)
+    AppCompatTextView mTvQueryAll;
+    @BindView(R2.id.tv_conf_count)
+    AppCompatTextView mTvMetingCount;
     /**
      * 注入列表管理器
      */
     @Inject
     RecyclerView.LayoutManager mLayoutManager;
     @Inject
-    HomeAdapter mAdapter;
+    InformationAdapter mAdapter;
+
+    @Inject
+    MeetingAdapter mMeetingAdapter;
     /**
      * 注入列表数据源
      */
     @Inject
-    List<Object> mDataLs;
+    List<MessageBean> mDataLs;
+    /**
+     * 注入列表数据源
+     */
+    @Inject
+    List<ConferenceBean> mConferenceBeanDataLs;
     /**
      * 骨架屏
      **/
@@ -134,7 +160,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     }
 
 
-    private void initQueryData(){
+    private void initQueryData() {
         //查询权限
         mPresenter.queryApprovalConfigureList();
         //初始化字段数据
@@ -147,9 +173,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 
     /**
      * 搜索点击事件回调
-     * */
+     */
     @OnClick(R2.id.tv_search)
-    void onSearchClick(View view){
+    void onSearchClick(View view) {
         Utils.postcard(RouterHub.HOME_INFORMATIONACTIVITY)
                 .navigation(getActivity());
     }
@@ -159,8 +185,12 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      * 初始化RecyclerView
      */
     private void initRecyclerView() {
-        ArmsUtils.configRecyclerView(mRecyclerView, mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
+        ArmsUtils.configRecyclerView(mRecyclerViewMsg, mLayoutManager);
+        mRecyclerViewMsg.setAdapter(mAdapter);
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setAdapter(mMeetingAdapter);
+
         //设置下拉刷新监听
         mRefreshLayout.setOnRefreshListener(mOnRefreshListener);
         //设置上拉加载
@@ -169,30 +199,25 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 
         //列表事件监听
         mAdapter.setOnItemClickListener(mOnRecyclerViewItemClickListener);
+
+        //列表事件监听
+        mMeetingAdapter.setOnItemClickListener(mOnRecyclerViewItemClickListener);
     }
 
     private DefaultAdapter.OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener = (view, viewType, data, position) -> {
-        if (view.getId() == R.id.tv_queryall){
-            //查看更多会议 - 我的会议
-            Utils.navigation(getActivity(), RouterHub.HOME_MYMEETINGACTIVITY);
-        }else if(view.getId() == R.id.view_metting){
+        if (view.getId() == R.id.view_metting) {
             ConferenceBean conferenceBean = (ConferenceBean) data;
             Utils.postcard(RouterHub.HOME_MEETINGDETAILSACTIVITY)
-                    .withString("mettingId",conferenceBean.getMeetingRecordId())
-                    .withInt("pageFrom",6)
+                    .withString("mettingId", conferenceBean.getMeetingRecordId())
+                    .withInt("pageFrom", 6)
                     .navigation(getActivity());
-        }else if(view.getId() == R.id.tv_more){
-            //文章查看更多
-            MessageTitleBean messageTitleBean = (MessageTitleBean) data;
-            Utils.postcard(RouterHub.HOME_INFORMATIONACTIVITY)
-                    .navigation(getActivity());
-        }else if(view.getId() == R.id.view_information){
+        } else if (view.getId() == R.id.view_information) {
             MessageBean messageBean = (MessageBean) data;
-            Timber.i(Utils.appendStr(BuildConfig.H5_HOST_ROOT,"articleMobile?id=",messageBean.getId()));
+            Timber.i(Utils.appendStr(BuildConfig.H5_HOST_ROOT, "articleMobile?id=", messageBean.getId()));
             Utils.postcard(RouterHub.HOME_WEBVIEWACTIVITY)
-                    .withString(RouterHub.PARAM_WEBVIEWXURL,Utils.appendStr(BuildConfig.H5_HOST_ROOT,"articleMobile?id=",messageBean.getId()))
-                    .withInt("pageFrom",2)
-                    .withString("articleId",messageBean.getId())
+                    .withString(RouterHub.PARAM_WEBVIEWXURL, Utils.appendStr(BuildConfig.H5_HOST_ROOT, "articleMobile?id=", messageBean.getId()))
+                    .withInt("pageFrom", 2)
+                    .withString("articleId", messageBean.getId())
                     .navigation(getActivity());
         }
     };
@@ -251,7 +276,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      * 通讯录
      */
     @OnClick(R2.id.tv_menu_address)
-    void onAddressClick(View view){
+    void onAddressClick(View view) {
         EventBus.getDefault().post(1, EventBusHub.EVENTBUS_TAG_HOME_CURRENTITEM_REFRESH);
     }
 
@@ -259,19 +284,19 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      * 会议室
      */
     @OnClick(R2.id.tv_menu_room)
-    void onRoomClick(View view){
+    void onRoomClick(View view) {
         //预约人员
         ConfigureBean configureBean = CacheUtils.initMMKV().decodeParcelable(Constants.APP_COMMON_config, ConfigureBean.class);
         boolean isAuth = false;
         for (ConfigureBean config : configureBean.getList()) {
-            if (config.getType() == 3 && config.getUserId().equals(CacheUtils.queryUserId())){
+            if (config.getType() == 3 && config.getUserId().equals(CacheUtils.queryUserId())) {
                 //预约权限
                 isAuth = true;
             }
         }
-        if (isAuth){//有预约权限
+        if (isAuth) {//有预约权限
             Utils.navigation(getActivity(), RouterHub.HOME_CONFERENCEROOMACTIVITY);
-        }else{
+        } else {
             IToast.showFinishShort("您无预约权限");
         }
     }
@@ -280,7 +305,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      * 健康食堂
      */
     @OnClick(R2.id.tv_menu_canteen)
-    void onCanteenClick(View view){
+    void onCanteenClick(View view) {
         Utils.navigation(getActivity(), RouterHub.HOME_CANTEENACTIVITY);
     }
 
@@ -288,10 +313,29 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      * 卡包
      */
     @OnClick(R2.id.tv_menu_card)
-    void onCardClick(View view){
+    void onCardClick(View view) {
         IToast.showWarnShort("正在努力开发中");
     }
 
+    /**
+     * 更多会议
+     */
+    @OnClick(R2.id.tv_queryall)
+    void onMoreMettingClick(View view) {
+        //查看更多会议 - 我的会议
+        Utils.navigation(getActivity(), RouterHub.HOME_MYMEETINGACTIVITY);
+    }
+
+
+    /**
+     * 更多资讯
+     */
+    @OnClick(R2.id.tv_more)
+    void onMoreMsgClick(View view) {
+        //文章查看更多
+        Utils.postcard(RouterHub.HOME_INFORMATIONACTIVITY)
+                .navigation(getActivity());
+    }
 
     /**
      * 我的会议
@@ -302,60 +346,39 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         List<ConferenceBean> inMeetingPersonnelRspBOList = data.getInMeetingPersonnelRspBOList();
         //待开会议
         List<ConferenceBean> todoMeetingPersonnelRspBOList = data.getTodoMeetingPersonnelRspBOList();
-
-        //创建我的会议标题
-        if (!checkMetingTitle()){
-            ConferenceTitleBean conferenceTitleBean = new ConferenceTitleBean();
-            conferenceTitleBean.setMetingCount(inMeetingPersonnelRspBOList.size()+todoMeetingPersonnelRspBOList.size());
-            mDataLs.add(conferenceTitleBean);
-        }
-
+        mConferenceBeanDataLs.clear();
         //校验正在开的会议
-        if (CollectionUtils.isNotEmpty(inMeetingPersonnelRspBOList)){
-            for (ConferenceBean conferenceBean :inMeetingPersonnelRspBOList) {
+        if (CollectionUtils.isNotEmpty(inMeetingPersonnelRspBOList)) {
+            for (ConferenceBean conferenceBean : inMeetingPersonnelRspBOList) {
                 conferenceBean.setConfIng(true);
-                /**
-                 * 校验会议是否展示 未展示则添加到首页展示
-                 * */
-                if (!checkMeting(conferenceBean.getMeetingRecordId())){
-                    mDataLs.add(conferenceBean);
-                }
+                mConferenceBeanDataLs.add(conferenceBean);
             }
         }
         //校验待开会议
-        if (CollectionUtils.isNotEmpty(todoMeetingPersonnelRspBOList)){
-            for (ConferenceBean conferenceBean :todoMeetingPersonnelRspBOList) {
-                /**
-                 * 校验会议是否展示 未展示则添加到首页展示
-                 * */
-                if (!checkMeting(conferenceBean.getMeetingRecordId())){
-                    mDataLs.add(conferenceBean);
-                }
+        if (CollectionUtils.isNotEmpty(todoMeetingPersonnelRspBOList)) {
+            for (ConferenceBean conferenceBean : todoMeetingPersonnelRspBOList) {
+                mConferenceBeanDataLs.add(conferenceBean);
             }
         }
-        mAdapter.notifyDataSetChanged();
+        mTvMetingCount.setText(Utils.appendStr("(",inMeetingPersonnelRspBOList.size()+todoMeetingPersonnelRspBOList.size(),")"));
+        mMeetingAdapter.notifyDataSetChanged();
     }
 
     /**
      * 资讯
-     * */
+     */
     @Override
     public void queryArticleCallBack(List<MessageBean> rows) {
         mDataLs.clear();
-        //创建我的会议标题
-        if (!checkMsgTitle()){
-            //初始化默认数据
-            MessageTitleBean messageTitleBean = new MessageTitleBean();
-            mDataLs.add(messageTitleBean);
-        }
         mDataLs.addAll(rows);
+        mAdapter.notifyDataSetChanged();
     }
 
     /**
+     * @return
      * @description 版本更新请求
      * @date: 2021/3/5 17:49
      * @author: Yuan
-     * @return
      */
     @Override
     public void upgradeAppBcakCall(AppVersion data) {
@@ -369,68 +392,26 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
      * @return
      */
     private UpgradeDialog.Builder mUpdateDialog;
+
     private void upgradeApp(AppVersion data) {
         if (Long.parseLong(data.getVersion()) > AppUtils.getAppVersionCode()) {
             RxPermissions mRxPermissions = new RxPermissions(this);
-            if (!ObjectUtils.isEmpty(mUpdateDialog) && mUpdateDialog.isShowing())return;
+            if (!ObjectUtils.isEmpty(mUpdateDialog) && mUpdateDialog.isShowing()) return;
             mUpdateDialog = new UpgradeDialog.Builder(getActivity(), mRxPermissions)
                     // 版本名
-                    .setVersionName(Utils.appendStr("新版本V",data.getUserVersion(),"发布了"))
+                    .setVersionName(Utils.appendStr("新版本V", data.getUserVersion(), "发布了"))
                     // 是否强制更新
                     .setForceUpdate(data.getUpgradeMode() == 1 ? true : false)
                     // 更新日志
-                    .setUpdateLog(data.getRemark().replace("##","\n"))
+                    .setUpdateLog(data.getRemark().replace("##", "\n"))
                     // 下载 url
                     .setDownloadUrl(data.getPackageDownloadLink())
                     // 文件大小
-                    .setFileSize(Utils.appendStr("包大小",data.getPackageSize(),"M"))
+                    .setFileSize(Utils.appendStr("包大小", data.getPackageSize(), "M"))
                     .showPopupWindow();
         }
     }
 
-
-    /**
-     * 校验当前会议是否展示到首页
-     * */
-    public boolean checkMeting(String id){
-      List<Object> objectList =  mAdapter.getInfos();
-        for (Object o : objectList) {
-            if (o instanceof ConferenceBean){
-                ConferenceBean conferenceBean = (ConferenceBean) o;
-                if (conferenceBean.getMeetingRecordId().equals(id)){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    /**
-     * 校验当前会议是否展示到首页
-     * */
-    public boolean checkMetingTitle(){
-        List<Object> objectList =  mAdapter.getInfos();
-        for (Object o : objectList) {
-            if (o instanceof ConferenceTitleBean){
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-    /**
-     * 校验当前会议是否展示到首页
-     * */
-    public boolean checkMsgTitle(){
-        List<Object> objectList =  mAdapter.getInfos();
-        for (Object o : objectList) {
-            if (o instanceof MessageTitleBean){
-                return true;
-            }
-        }
-        return false;
-    }
 
     @Override
     public void setData(@Nullable Object data) {
