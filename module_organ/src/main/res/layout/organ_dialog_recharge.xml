@@ -69,8 +69,22 @@
                     android:id="@+id/rb_4"
                     style="@style/organ_radio_button_style_recharge"
                     android:text="200元" />
+                <com.yway.scomponent.commonres.view.layout.ClearEditText
+                    android:id="@+id/et_other_amount"
+                    style="@style/organ_style_edittext"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="sans-serif"
+                    android:hint="其它金额"
+                    android:maxLength="5"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    app:regexType="count" />
             </com.yway.scomponent.commonres.view.layout.FlowRadioGroup>
 
+
+            
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/TextDefault.Medium"
                 android:text="请选择支付方式"

@@ -91,6 +91,13 @@ public class HomeModel extends BaseModel implements HomeContract.Model {
     }
 
     @Override
+    public Observable<BaseResponse> createAccountTransactionRecord(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(HomeService.class)
+                .createAccountTransactionRecord(params);
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         this.mGson = null;

@@ -41,6 +41,8 @@ public interface HomeContract {
         void queryArticleCallBack(List<MessageBean> rows);
 
         void upgradeAppBcakCall(AppVersion data);
+
+        void paymentCallBack();
     }
 
     //Model层定义接口,外部只需关心Model返回的数据,无需关心内部细节,即是否使用缓存
@@ -56,5 +58,7 @@ public interface HomeContract {
         Observable<BaseResponse<MessageBean>> queryArticlePublishPageList(Map<String, Object> params);
 
         Observable<BaseResponse<ConfigureBean>> queryApprovalConfigureList(Map<String, Object> params);
+
+        Observable<BaseResponse> createAccountTransactionRecord(Map<String, Object> params);
     }
 }

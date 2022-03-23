@@ -24,11 +24,16 @@ import com.jess.arms.base.BaseFragment;
 import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.PermissionUtil;
+import com.jwsd.libzxing.OnQRCodeListener;
+import com.jwsd.libzxing.QRCodeManager;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yway.scomponent.commonres.dialog.IToast;
+import com.yway.scomponent.commonres.dialog.MessageDialog;
+import com.yway.scomponent.commonres.dialog.ProgresDialog;
 import com.yway.scomponent.commonres.dialog.UpgradeDialog;
 import com.yway.scomponent.commonres.view.banner.BGABanner;
 import com.yway.scomponent.commonsdk.BuildConfig;
@@ -36,6 +41,7 @@ import com.yway.scomponent.commonsdk.core.Constants;
 import com.yway.scomponent.commonsdk.core.EventBusHub;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.utils.CacheUtils;
+import com.yway.scomponent.commonsdk.utils.SystemUtils;
 import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
@@ -43,20 +49,19 @@ import com.yway.scomponent.organ.di.component.DaggerHomeComponent;
 import com.yway.scomponent.organ.mvp.contract.HomeContract;
 import com.yway.scomponent.organ.mvp.model.entity.AppVersion;
 import com.yway.scomponent.organ.mvp.model.entity.ConferenceBean;
-import com.yway.scomponent.organ.mvp.model.entity.ConferenceTitleBean;
 import com.yway.scomponent.organ.mvp.model.entity.ConfigureBean;
 import com.yway.scomponent.organ.mvp.model.entity.HomeMetingBean;
 import com.yway.scomponent.organ.mvp.model.entity.MessageBean;
-import com.yway.scomponent.organ.mvp.model.entity.MessageTitleBean;
 import com.yway.scomponent.organ.mvp.presenter.HomePresenter;
-import com.yway.scomponent.organ.mvp.ui.adapter.HomeAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.InformationAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter;
 
 import org.simple.eventbus.EventBus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -178,6 +183,12 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     void onSearchClick(View view) {
         Utils.postcard(RouterHub.HOME_INFORMATIONACTIVITY)
                 .navigation(getActivity());
+    }
+
+
+    @OnClick({R2.id.ibtn_scan_pay})
+    void onBtnCard(View view){
+        PermissionUtil.launchCamera(mRequestPermission, mPresenter.getRxPermissions(getActivity()), ArmsUtils.obtainAppComponentFromContext(getActivity()).rxErrorHandler());
     }
 
 
@@ -413,6 +424,56 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     }
 
 
+
+    private PermissionUtil.RequestPermission mRequestPermission = new PermissionUtil.RequestPermission() {
+        @Override
+        public void onRequestPermissionSuccess() {
+            QRCodeManager.getInstance().with(getActivity()).setReqeustType(1).scanningQRCode(mOnQRCodeListener);
+        }
+
+        @Override
+        public void onRequestPermissionFailure(List<String> permissions) {
+            PermissionUtil.launchCamera(mRequestPermission, mPresenter.getRxPermissions(getActivity()), ArmsUtils.obtainAppComponentFromContext(getActivity()).rxErrorHandler());
+        }
+
+        @Override
+        public void onRequestPermissionFailureWithAskNeverAgain(List<String> permissions) {
+            ArmsUtils.snackbarText(getString(R.string.public_common_permission_fail));
+        }
+    };
+
+    /**
+     * @description 扫描二维码监听
+     * @date: 2020/12/7 18:57
+     * @author: Yuan
+     * @return
+     */
+    private OnQRCodeListener mOnQRCodeListener = new OnQRCodeListener() {
+        @Override
+        public void onCompleted(String result) {
+            //获取二维码解析内容
+            String transactionType = SystemUtils.getTransactionType(result);
+            //支付
+            Map<String, Object> paramsMap = new HashMap<>();
+            paramsMap.put("transactionType", transactionType);
+            paramsMap.put("transactionPayType", transactionType);
+            paramsMap.put("transactionStatus", 0);
+            mPresenter.createAccountTransactionRecord(paramsMap);
+        }
+
+        @Override
+        public void onError(Throwable errorMsg) {
+            ArmsUtils.snackbarText(errorMsg.getMessage());
+        }
+
+        @Override
+        public void onCancel() {
+
+        }
+    };
+
+
+
     @Override
     public void setData(@Nullable Object data) {
 
@@ -431,13 +492,14 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 
     @Override
     public void showLoading() {
-
+        ProgresDialog.getInstance(getActivity()).show();
     }
 
     @Override
     public void hideLoading() {
-
+        ProgresDialog.getInstance(getActivity()).dismissDialog();
     }
+
 
 
     @Override
@@ -476,5 +538,16 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @Override
     public void fillBannerItem(BGABanner banner, ImageView itemView, @Nullable @org.jetbrains.annotations.Nullable String model, int position) {
         mPresenter.imageLoader(model, itemView);
+    }
+
+    @Override
+    public void paymentCallBack() {
+        new MessageDialog.Builder()
+                .setTitle("支付提醒")
+                .setMessage("您已支付成功,请取餐")
+                .setOnViewItemClickListener(v -> {
+
+                })
+                .showPopupWindow();
     }
 }

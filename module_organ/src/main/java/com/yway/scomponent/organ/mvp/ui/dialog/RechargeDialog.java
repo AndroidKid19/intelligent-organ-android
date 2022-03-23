@@ -9,9 +9,11 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.RadioGroup;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.integration.AppManager;
 import com.jess.arms.utils.ThirdViewUtil;
 import com.yway.scomponent.commonres.dialog.IToast;
+import com.yway.scomponent.commonres.view.layout.ClearEditText;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
 
@@ -33,6 +35,8 @@ public final class RechargeDialog extends BasePopupWindow {
     RadioGroup mRgRechargeAmount;
     @BindView(R2.id.btn_opt_adopt)
     View mBtnOptView;
+    @BindView(R2.id.et_other_amount)
+    ClearEditText mEtOhterAmount;
     private double amount = 0;
 
     public RechargeDialog(Context context) {
@@ -48,19 +52,28 @@ public final class RechargeDialog extends BasePopupWindow {
     private RadioGroup.OnCheckedChangeListener mOnCheckedChangeListener = (group, checkedId) -> {
         if (checkedId == R.id.rb_1) {//50
             amount = 50;
+            mEtOhterAmount.getText().clear();
         } else if (checkedId == R.id.rb_2) {//100
             amount = 100;
+            mEtOhterAmount.getText().clear();
         } else if (checkedId == R.id.rb_3) {//150
             amount = 150;
+            mEtOhterAmount.getText().clear();
         } else if (checkedId == R.id.rb_4) {//200
             amount = 200;
+            mEtOhterAmount.getText().clear();
         } else if (checkedId == R.id.rb_0) {//200
             amount = 0.01;
+            mEtOhterAmount.getText().clear();
         }
     };
 
     @OnClick(R2.id.btn_opt_adopt)
     void onBtnOptView(View view){
+        String otherAmount = mEtOhterAmount.getText().toString();
+        if (!StringUtils.isEmpty(otherAmount)){
+            amount = Integer.parseInt(otherAmount);
+        }
         if (amount <= 0){
             IToast.showWarnShort("请选择充值金额");
             return;

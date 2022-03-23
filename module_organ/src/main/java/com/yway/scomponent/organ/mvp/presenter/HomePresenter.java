@@ -1,7 +1,10 @@
 package com.yway.scomponent.organ.mvp.presenter;
 
+import android.app.Activity;
 import android.app.Application;
 import android.widget.ImageView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.blankj.utilcode.util.ObjectUtils;
 import com.jess.arms.di.scope.FragmentScope;
@@ -10,6 +13,7 @@ import com.jess.arms.integration.AppManager;
 import com.jess.arms.mvp.BasePresenter;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.RxLifecycleUtils;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.Constants;
 import com.yway.scomponent.commonsdk.core.DictClassifyBean;
@@ -64,6 +68,11 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
         super(model, rootView);
     }
 
+
+    public RxPermissions getRxPermissions(Activity activity){
+        return new RxPermissions((FragmentActivity) activity);
+    }
+
     public void queryDict() {
         String dictKey = Utils.appendStr(
                 Constants.SYS_DICT_MEETING_DEVICE, ",",
@@ -115,6 +124,9 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                         .build());
     }
 
+    /**
+     * 查询资讯
+     */
     public void queryArticlePublishPageList() {
         Map<String, Object> params = new HashMap<>();
         params.put("pageNo", 1);
@@ -124,40 +136,27 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                 //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
                 .retryWhen(new RetryWithDelay(3, 2))
                 .doOnSubscribe(disposable -> {
-                }).subscribeOn(AndroidSchedulers.mainThread())
 
-                .flatMap((Function<BaseResponse<MessageBean>, ObservableSource<BaseResponse<HomeMetingBean>>>) baseResponse -> {
-                    mRootView.queryArticleCallBack(baseResponse.getData().getRows());
-                    Map<String, Object> paramsMap = new HashMap<>();
-                    //我的会议
-                    return mModel.queryMyMeetingList(paramsMap);
-                })
+                }).subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doFinally(() -> {
 
                 })
                 //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
                 .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
-                .subscribe(new ErrorHandleSubscriber<BaseResponse<HomeMetingBean>>(mErrorHandler) {
+                .subscribe(new ErrorHandleSubscriber<BaseResponse<MessageBean>>(mErrorHandler) {
                     @Override
-                    public void onNext(BaseResponse<HomeMetingBean> datas) {
+                    public void onNext(BaseResponse<MessageBean> datas) {
                         if (datas.isSuccess()) {
                             if (ObjectUtils.isEmpty(datas.getData()))return;
-                            mRootView.metingListCallBack(datas.getData());
-
+                            mRootView.queryArticleCallBack(datas.getData().getRows());
                         } else {
                             ArmsUtils.snackbarText(datas.getMessage());
                         }
-
-                    }
-
-                    @Override
-                    public void onError(Throwable t) {
-                        super.onError(t);
-
                     }
                 });
     }
+
 
     /**
      * 我的会议
@@ -281,6 +280,35 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                         if (datas.isSuccess()) {
                             //缓存数据字典
                             CacheUtils.initMMKV().encode(Constants.APP_COMMON_config, datas.getData());
+                        } else {
+                            ArmsUtils.snackbarText(datas.getMessage());
+                        }
+                    }
+                });
+    }
+
+    /**
+     * 消费
+     */
+    public void createAccountTransactionRecord(Map<String,Object> map) {
+        mModel.createAccountTransactionRecord(map)
+                .subscribeOn(Schedulers.io())
+                //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
+                .retryWhen(new RetryWithDelay(0, 0))
+                .doOnSubscribe(disposable -> {
+
+                }).subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(() -> {
+
+                })
+                //使用 Rxlifecycle,使 Disposable 和 Activity 一起销毁
+                .compose(RxLifecycleUtils.bindToLifecycle(mRootView))
+                .subscribe(new ErrorHandleSubscriber<BaseResponse>(mErrorHandler) {
+                    @Override
+                    public void onNext(BaseResponse datas) {
+                        if (datas.isSuccess()) {
+                            mRootView.paymentCallBack();
                         } else {
                             ArmsUtils.snackbarText(datas.getMessage());
                         }

@@ -112,4 +112,19 @@
         <item name="android:layout_marginRight">10dp</item>
     </style>
 
+    <!-- 登录页默认文本框样式 -->
+    <style name="organ_style_edittext">
+        <item name="android:background">@drawable/public_edittext_normal_background_rect</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/public_color_text_gray</item>
+        <item name="android:textColor">@color/public_color_text_default</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
 </resources>

@@ -119,8 +119,11 @@
                             android:text="准备会议"
                             android:textSize="@dimen/public_font_14sp" />
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_menu_draft_box"
                             style="@style/TextDefault"
+                            android:drawableTop="@mipmap/organ_ic_online_subscribe"
                             android:drawablePadding="8dp"
+                            android:text="我的草稿"
                             android:textSize="@dimen/public_font_14sp" />
                     </com.yway.scomponent.commonres.view.layout.AverageLayout>
                 </androidx.appcompat.widget.LinearLayoutCompat>

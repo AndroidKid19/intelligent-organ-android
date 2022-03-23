@@ -259,14 +259,17 @@ public class AddressBookFragment extends BaseFragment<AddressBookPresenter> impl
 
     @Override
     public void queryOrgRspCallBack(AddressCompanyBean data) {
-        //缓存组织机构
-        CacheUtils.initMMKV().encode(Constants.APP_USER_ORGAN, data);
+        if (CollectionUtils.isNotEmpty(data.getSysOrgRspBOList())) {
+            //默认删除一级组织机构
+            data.getSysOrgRspBOList().remove(0);
+            //缓存组织机构
+            CacheUtils.initMMKV().encode(Constants.APP_USER_ORGAN, data);
+        }
 
         //缓存用户信息
         if (CollectionUtils.isNotEmpty(data.getSysUserRspBOList())) {
             mPresenter.setSysUserRspBOList(data.getSysUserRspBOList());
         }
-
         if (CollectionUtils.isNotEmpty(data.getSysOrgRspBOList())) {
             //缓存组织信息
             mPresenter.setSysOrgRspBOList(data.getSysOrgRspBOList());

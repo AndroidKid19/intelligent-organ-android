@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:textSize="16sp"
+        android:textSize="@dimen/public_font_18sp"
         app:layout_constraintLeft_toRightOf="@+id/niv_head"
         app:layout_constraintTop_toTopOf="@+id/niv_head"
         tools:text="@string/app_name" />

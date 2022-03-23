@@ -114,6 +114,9 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
     private int sex = 0;
     //记录选择的岗位
     private int jop = 0;
+    //修改类型 1 = 单位  2 = 职务
+    private int modifyType = -1;
+    private String modifyValue = "";
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -258,7 +261,9 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
         OptionsPickerView pvOptions = new OptionsPickerBuilder(this, (options1, option2, options3, v) -> {
             //返回的分别是三个级别的选中位置
             this.jop = options1;
-            mBarJop.setRightText(strArr.get(options1));
+            mBarJop.setRightText(dictJop.get(options1).getSysDictName());
+            modifyType = 2;
+            modifyValue = dictJop.get(options1).getSysDictCode();
             Map<String, Object> mapParams = new HashMap<>();
             mapParams.put("position", dictJop.get(options1).getSysDictCode());
             mPresenter.modifyAppUserInfoById(mapParams);
@@ -408,7 +413,8 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
                     AddressCompanyBean companyBean = data.getParcelableExtra("addressCompanyBean");
                     //获取已选择用户信息
                     mBarOrgan.setRightText(companyBean.getOrgTitle());
-
+                    modifyType = 1;
+                    modifyValue = companyBean.getOrgTitle();
                     Map<String, Object> mapParams = new HashMap<>();
                     mapParams.put("orgId", companyBean.getOrgId());
                     mPresenter.modifyAppUserInfoById(mapParams);
@@ -440,9 +446,16 @@ public class UserCenterActivity extends BaseActivity<UserCenterPresenter> implem
     public void modifySuccess() {
         UserInfoBean userInfoBean = CacheUtils.queryUserInfo();
         userInfoBean.setSex(sex);
+        if (modifyType == 1){
+            userInfoBean.setOrgTitle(modifyValue);
+        }else if (modifyType == 2){
+            userInfoBean.setPosition(Integer.parseInt(modifyValue));
+        }
         //更新缓存昵称
         CacheUtils.cacheIsUserInfo(userInfoBean);
         initUserData();
+        //刷新个人信息
+        EventBus.getDefault().post(1, EventBusHub.EVENTBUS_TAG_USER_REFRESH);
         IToast.showFinishShort("修改成功");
     }
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseActivity;
@@ -49,6 +50,9 @@ public class MySubscribeActivity extends BaseActivity<MySubscribePresenter> impl
     private List<String> mTitles = null;
     private ViewPagerAdapter mViewPagerAdapter = null;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
+    @Autowired()
+    int pageFrom;
+
 
     @Override
     public void setupActivityComponent(@NonNull AppComponent appComponent) {
@@ -84,6 +88,7 @@ public class MySubscribeActivity extends BaseActivity<MySubscribePresenter> impl
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mFragments, mTitles);
         mViewPageContent.setAdapter(mViewPagerAdapter);
         mTabLayout.setViewPager(mViewPageContent);
+        mViewPageContent.setCurrentItem(pageFrom);
     }
 
 

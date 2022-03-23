@@ -114,12 +114,36 @@ public class WorkPanelFragment extends BaseFragment<WorkPanelPresenter> implemen
             }
         }
         if (isAuth){//有预约权限
-            Utils.navigation(getActivity(), RouterHub.HOME_MYSUBSCRIBEACTIVITY);
+            Utils.postcard(RouterHub.HOME_MYSUBSCRIBEACTIVITY).withInt("pageFrom",0).navigation(getActivity());
         }else{
             IToast.showFinishShort("您无预约权限");
         }
 
     }
+
+    /**
+     * 草稿箱
+     * */
+    @OnClick(R2.id.tv_menu_draft_box)
+    void onDraftBoxClick(View view){
+        //预约人员
+        ConfigureBean configureBean = CacheUtils.initMMKV().decodeParcelable(Constants.APP_COMMON_config, ConfigureBean.class);
+        boolean isAuth = false;
+        for (ConfigureBean config : configureBean.getList()) {
+            if (config.getType() == 3 && config.getUserId().equals(CacheUtils.queryUserId())){
+                //预约权限
+                isAuth = true;
+            }
+        }
+        if (isAuth){//有预约权限
+            Utils.postcard(RouterHub.HOME_MYSUBSCRIBEACTIVITY).withInt("pageFrom",1).navigation(getActivity());
+        }else{
+            IToast.showFinishShort("您无预约权限");
+        }
+
+    }
+
+
 
     /**
      * 我的审核
