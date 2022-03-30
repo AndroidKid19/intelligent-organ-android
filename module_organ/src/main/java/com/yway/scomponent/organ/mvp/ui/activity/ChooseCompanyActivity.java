@@ -210,7 +210,6 @@ public class ChooseCompanyActivity extends BaseActivity<ChooseCompanyPresenter> 
             UserInfoBean userInfoBean = (UserInfoBean) data;
             //人员选中/反选
             mChooseUserAdapter.checkedUser(position);
-
         }
     };
 
@@ -251,6 +250,23 @@ public class ChooseCompanyActivity extends BaseActivity<ChooseCompanyPresenter> 
         mChooseUserAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onBackPressed() {
+        int position = mAddressBookOrganAdapter.getItemCount() - 2;
+        if (position < 0) {
+            super.onBackPressed();
+        } else {
+            //获取上一级组织机构
+            AddressCompanyBean addressCompanyBean = mAddressBookOrganAdapter.getInfos().get(position);
+            if (addressCompanyBean.getFlag() == 0) {
+                return;
+            }
+            //获取当前组织机构数据
+            initOrganData(addressCompanyBean);
+            //删除除自己之后的组织机构
+            mAddressBookOrganAdapter.removeOrgan(position);
+        }
+    }
 
 
     @Override

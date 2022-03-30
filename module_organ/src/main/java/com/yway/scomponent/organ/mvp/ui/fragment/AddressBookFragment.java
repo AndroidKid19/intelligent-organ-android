@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.CollectionUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.base.DefaultAdapter;
@@ -21,6 +22,7 @@ import com.jess.arms.utils.ArmsUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.yway.scomponent.commonsdk.core.Constants;
+import com.yway.scomponent.commonsdk.core.EventBusHub;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 import com.yway.scomponent.commonsdk.utils.CacheUtils;
@@ -33,6 +35,9 @@ import com.yway.scomponent.commonsdk.core.AddressCompanyBean;
 import com.yway.scomponent.organ.mvp.presenter.AddressBookPresenter;
 import com.yway.scomponent.organ.mvp.ui.adapter.AddressBookOrganAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.AddressBookPartsAdapter;
+
+import org.simple.eventbus.Subscriber;
+import org.simple.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -184,11 +189,42 @@ public class AddressBookFragment extends BaseFragment<AddressBookPresenter> impl
     };
 
 
+    private long mPressedTime;
+    /**
+     * @description : TODO 跳转页面
+     */
+    @Subscriber(tag = EventBusHub.EVENTBUS_TAG_HOME_ONBACKPRESSED, mode = ThreadMode.MAIN)
+    public void onBackPressedEventBus(int code) {
+        //获取返回的级别
+        int position = mAddressBookOrganAdapter.getItemCount()-2;
+        if (position < 0 ){
+            //获取第一次按键时间
+            long mNowTime = System.currentTimeMillis();
+            //比较两次按键时间差
+            if ((mNowTime - mPressedTime) > 2000) {
+                ArmsUtils.makeText(getActivity(),
+                        "再按一次退出" + ArmsUtils.getString(getActivity(), R.string.public_app_name));
+                mPressedTime = mNowTime;
+            } else {
+                getActivity().finish();
+            }
+            return;
+        }
+        //获取上一级组织机构
+        AddressCompanyBean addressCompanyBean  = mAddressBookOrganAdapter.getInfos().get(position);
+        //刷新
+        resetContacts(position, addressCompanyBean);
+    }
+
     /**
      * 部门快捷筛选事件回调
      */
     private DefaultAdapter.OnRecyclerViewItemClickListener mOnAddressBookOrganItemClickListener = (view, viewType, data, position) -> {
         AddressCompanyBean addressCompanyBean = (AddressCompanyBean) data;
+        resetContacts(position, addressCompanyBean);
+    };
+
+    private void resetContacts(int position, AddressCompanyBean addressCompanyBean) {
         if (addressCompanyBean.getFlag() == 0) {
             return;
         }
@@ -210,8 +246,7 @@ public class AddressBookFragment extends BaseFragment<AddressBookPresenter> impl
         mAddressBookPartsAdapter.notifyDataSetChanged();
         //删除除自己之后的组织机构
         mAddressBookOrganAdapter.removeOrgan(position);
-
-    };
+    }
 
 
     @OnClick(R2.id.tv_search_user)

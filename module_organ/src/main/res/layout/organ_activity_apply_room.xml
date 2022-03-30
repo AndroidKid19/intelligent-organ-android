@@ -146,7 +146,10 @@
             <com.yway.scomponent.commonres.view.layout.SettingBar
                 style="@style/organ_style_bar_apply_room"
                 app:bar_leftIcon="@mipmap/organ_ic_room_circle"
-                app:bar_leftText="会议附件" />
+                app:bar_leftText="会议附件"
+                app:bar_rightText="pdf、word、excel、ppt、txt"
+                app:bar_rightColor="@color/public_color_text_sign"
+                />
             <!-- 请选择会议附件 (多选)-->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycle_view_file"

@@ -54,4 +54,11 @@ public interface EventBusHub {
      * 跳转页面 TAG
      * */
     String EVENTBUS_TAG_HOME_CURRENTITEM_REFRESH = HOME+"_currentitem_Refresh";
+
+
+
+    /**
+     * 返回健监听 TAG
+     * */
+    String EVENTBUS_TAG_HOME_ONBACKPRESSED = HOME+"_onBackPressed";
 }

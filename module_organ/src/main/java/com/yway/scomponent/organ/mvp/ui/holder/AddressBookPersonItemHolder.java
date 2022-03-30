@@ -54,6 +54,7 @@ public class AddressBookPersonItemHolder extends BaseHolder<Object> {
 
     @Override
     public void setData(Object data, int position) {
+        setIsRecyclable(false);
         UserInfoBean userInfoBean = (UserInfoBean) data;
         //加载姓名
         mTvUserName.setText(Utils.appendStr(userInfoBean.getName()));

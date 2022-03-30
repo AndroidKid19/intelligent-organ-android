@@ -1,11 +1,13 @@
 package com.yway.scomponent.organ.mvp.ui.activity;
 
 import android.app.Activity;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
@@ -15,8 +17,11 @@ import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.base.BaseActivity;
+
 import static com.jess.arms.utils.Preconditions.checkNotNull;
+
 import com.jess.arms.utils.ArmsUtils;
+
 import android.content.Intent;
 import android.view.View;
 
@@ -36,9 +41,12 @@ import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.mvp.ui.adapter.AddressBookOrganAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.CheckedUserAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.ChooseUserAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.inject.Inject;
+
 import butterknife.BindView;
 
 /**
@@ -167,7 +175,7 @@ public class ChooseUserActivity extends BaseActivity<ChooseUserPresenter> implem
         }
 
         //初始化已选择人员
-        if (CollectionUtils.isNotEmpty(mUserInfoBean.getList())){
+        if (CollectionUtils.isNotEmpty(mUserInfoBean.getList())) {
             mCheckedUserAdapter.addAllCheckedUser(mUserInfoBean.getList());
             initCheckedUserData();
         }
@@ -192,9 +200,9 @@ public class ChooseUserActivity extends BaseActivity<ChooseUserPresenter> implem
             Intent intent = new Intent();
             //已选择人员
             ArrayList<UserInfoBean> userInfoBeanList = (ArrayList<UserInfoBean>) mCheckedUserAdapter.getInfos();
-            intent.putParcelableArrayListExtra("userInfoBeans",userInfoBeanList);
+            intent.putParcelableArrayListExtra("userInfoBeans", userInfoBeanList);
             //设置参数
-            getActivity().setResult(RESULT_OK,intent);
+            getActivity().setResult(RESULT_OK, intent);
             finish();
         }
     };
@@ -238,10 +246,10 @@ public class ChooseUserActivity extends BaseActivity<ChooseUserPresenter> implem
 
         } else if (data instanceof UserInfoBean) {
             UserInfoBean userInfoBean = (UserInfoBean) data;
-            if (userInfoBean.isChecked() == false){
+            if (userInfoBean.isChecked() == false) {
                 //选中
                 mCheckedUserAdapter.addCheckedUser(userInfoBean);
-            }else{
+            } else {
                 //反选
                 mCheckedUserAdapter.removeCheckedUser(userInfoBean);
             }
@@ -258,10 +266,10 @@ public class ChooseUserActivity extends BaseActivity<ChooseUserPresenter> implem
      */
     private void initCheckedUserData() {
         //校验是否选中了人员，如果选中人员则展示选中view
-        if (mCheckedUserAdapter.getItemCount() >0){
+        if (mCheckedUserAdapter.getItemCount() > 0) {
 //            mViewCheckedUser.setVisibility(View.VISIBLE);
-            mTvCheckedCount.setText(Utils.appendStr("已选择(",mCheckedUserAdapter.getItemCount(),"):"));
-        }else{
+            mTvCheckedCount.setText(Utils.appendStr("已选择(", mCheckedUserAdapter.getItemCount(), "):"));
+        } else {
 //            mViewCheckedUser.setVisibility(View.GONE);
         }
     }
@@ -283,7 +291,7 @@ public class ChooseUserActivity extends BaseActivity<ChooseUserPresenter> implem
 
     /**
      * 已选择人员点击事件监听回调
-     * */
+     */
     private DefaultAdapter.OnRecyclerViewItemClickListener mOnRecyclerViewItemClickListener = (view, viewType, data, position) -> {
         mCheckedUserAdapter.removeCheckedUser((UserInfoBean) data);
         mChooseUserAdapter.removeChecked((UserInfoBean) data);
@@ -294,7 +302,7 @@ public class ChooseUserActivity extends BaseActivity<ChooseUserPresenter> implem
 
     /**
      * 组织机构数据展示
-     * */
+     */
     private void initOrganData(AddressCompanyBean companyBean) {
         //获取当前组织机构数据
         List<AddressCompanyBean> listOrg = mPresenter.queryCompany(companyBean.getOrgId());
@@ -329,6 +337,24 @@ public class ChooseUserActivity extends BaseActivity<ChooseUserPresenter> implem
         mChooseUserAdapter.notifyDataSetChanged();
         //初始化已选择人员数据
         initCheckedUserData();
+    }
+
+    @Override
+    public void onBackPressed() {
+        int position = mAddressBookOrganAdapter.getItemCount() - 2;
+        if (position < 0) {
+            super.onBackPressed();
+        } else {
+            //获取上一级组织机构
+            AddressCompanyBean addressCompanyBean = mAddressBookOrganAdapter.getInfos().get(position);
+            if (addressCompanyBean.getFlag() == 0) {
+                return;
+            }
+            //获取当前组织机构数据
+            initOrganData(addressCompanyBean);
+            //删除除自己之后的组织机构
+            mAddressBookOrganAdapter.removeOrgan(position);
+        }
     }
 
     @Override

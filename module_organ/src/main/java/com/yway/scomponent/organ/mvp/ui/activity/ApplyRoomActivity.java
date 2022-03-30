@@ -2,16 +2,21 @@ package com.yway.scomponent.organ.mvp.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -29,6 +34,9 @@ import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.PermissionUtil;
+import com.leon.lfilepickerlibrary.LFilePicker;
+import com.leon.lfilepickerlibrary.utils.Constant;
+import com.luck.picture.lib.tools.BitmapUtils;
 import com.yway.scomponent.commonres.dialog.IToast;
 import com.yway.scomponent.commonres.dialog.MessageDialog;
 import com.yway.scomponent.commonres.dialog.ProgresDialog;
@@ -59,16 +67,20 @@ import com.yway.scomponent.organ.mvp.ui.adapter.CheckBoxAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.ChooseCompanyAdapter;
 import com.yway.scomponent.organ.mvp.ui.adapter.ChooseFileAdapter;
 import com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import timber.log.Timber;
+
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 /**
@@ -213,13 +225,13 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
     /**
      * 页面标记
      * 1 草稿箱
-     * */
+     */
     @Autowired
     int pageFrom;
 
     /**
      * 草稿箱详细信息
-     * */
+     */
     @Autowired(name = "meetingDetailsBean")
     MeetingDetailsBean mMeetingDetailsBean;
 
@@ -271,10 +283,10 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
      * 初始化草稿箱
      */
     private void initDraftsData() {
-        if(pageFrom != 1){
+        if (pageFrom != 1) {
             //初始化预约开始时间
-            mBarDate.setLeftText(mRoomDetailsBean.getMeetingDate()+" "+mRoomDetailsBean.getSubscribeTimeBean().getTime());
-        }else{
+            mBarDate.setLeftText(mRoomDetailsBean.getMeetingDate() + " " + mRoomDetailsBean.getSubscribeTimeBean().getTime());
+        } else {
             //草稿箱初始化信息
 
             //初始化会议室信息
@@ -298,7 +310,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
             //初始化参会领导
             List<UserInfoBean> meetingPersonnelRspBOList = mMeetingDetailsBean.getMeetingPersonnelRspBOList();
             //校验参会人员
-            if(CollectionUtils.isNotEmpty(meetingPersonnelRspBOList)){
+            if (CollectionUtils.isNotEmpty(meetingPersonnelRspBOList)) {
                 //获取已选择用户信息
 //                userInfoBeans = meetingPersonnelRspBOList;
                 //展示参会领导
@@ -307,7 +319,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
             //初始化参会单位
             List<AddressCompanyBean> meetingOrganizationRspBOList = mMeetingDetailsBean.getMeetingOrganizationRspBOList();
             //校验参会单位
-            if(CollectionUtils.isNotEmpty(meetingOrganizationRspBOList)){
+            if (CollectionUtils.isNotEmpty(meetingOrganizationRspBOList)) {
                 //获取已选择单位
                 mAddressCompanyBeans.addAll(meetingOrganizationRspBOList);
                 mChooseCompanyAdapter.notifyDataSetChanged();
@@ -316,8 +328,8 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
             //初始化会议附件
             List<FileDetailsBean> meetingFileRspBOList = mMeetingDetailsBean.getMeetingFileRspBOList();
             //校验文件
-            if(CollectionUtils.isNotEmpty(meetingFileRspBOList)){
-                for (FileDetailsBean fileDetailsBean :meetingFileRspBOList) {
+            if (CollectionUtils.isNotEmpty(meetingFileRspBOList)) {
+                for (FileDetailsBean fileDetailsBean : meetingFileRspBOList) {
                     UploadFileBean uploadFileBean = new UploadFileBean();
                     uploadFileBean.setName(fileDetailsBean.getFileName());
                     uploadFileBean.setUrl(fileDetailsBean.getFilePath());
@@ -400,15 +412,15 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
         int hour = Integer.parseInt(subscribeTimeBean.getTime().split(":")[0]);
         int minute = Integer.parseInt(subscribeTimeBean.getTime().split(":")[1]);
         new TimerScheduleDialog.Builder()
-                .initHour(hour,minute)
+                .initHour(hour, minute)
                 .setOnTimepickerClickListener((startTime, endTime) -> {
                     Timber.i(startTime + "---" + endTime);
-                    startTime = startTime.length() == 4 ? Utils.appendStr("0",startTime) : startTime;
-                    endTime = endTime.length() == 4 ? Utils.appendStr("0",endTime) : endTime;
+                    startTime = startTime.length() == 4 ? Utils.appendStr("0", startTime) : startTime;
+                    endTime = endTime.length() == 4 ? Utils.appendStr("0", endTime) : endTime;
 
-                    this.meetingStartTime = mRoomDetailsBean.getMeetingDate()+" "+startTime;
-                    this.meetingEndTime = mRoomDetailsBean.getMeetingDate()+" "+endTime;
-                    mBarDate.setLeftText(Utils.appendStr(mRoomDetailsBean.getMeetingDate()," ",startTime, "-", endTime));
+                    this.meetingStartTime = mRoomDetailsBean.getMeetingDate() + " " + startTime;
+                    this.meetingEndTime = mRoomDetailsBean.getMeetingDate() + " " + endTime;
+                    mBarDate.setLeftText(Utils.appendStr(mRoomDetailsBean.getMeetingDate(), " ", startTime, "-", endTime));
                 })
                 .showPopupWindow();
     }
@@ -453,31 +465,31 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
         //创建参数
         Map<String, Object> paramMap = new HashMap<>();
         //会议室ID
-        if (pageFrom == 1){
+        if (pageFrom == 1) {
             paramMap.put("meetingRoomId", mMeetingDetailsBean.getMeetingRoomId());
-        }else{
+        } else {
             paramMap.put("meetingRoomId", mRoomDetailsBean.getId());
         }
         //会议主题
         String meetingSubject = mEtMettingSubject.getText().toString();
-        if (StringUtils.isEmpty(meetingSubject)){
+        if (StringUtils.isEmpty(meetingSubject)) {
             IToast.showWarnShort("请输入会议主题");
             return;
         }
         paramMap.put("meetingSubject", meetingSubject);
         //会议开始时间
-        if (StringUtils.isEmpty(meetingStartTime)){
+        if (StringUtils.isEmpty(meetingStartTime)) {
             IToast.showWarnShort("请选择会议结束时间");
             return;
         }
         paramMap.put("meetingStartTime", meetingStartTime);
 
-        if (StringUtils.isEmpty(meetingEndTime)){
+        if (StringUtils.isEmpty(meetingEndTime)) {
             IToast.showWarnShort("请选择会议结束时间");
             return;
         }
         //会议结束时间
-        paramMap.put("meetingEndTime",meetingEndTime);
+        paramMap.put("meetingEndTime", meetingEndTime);
         //会议报到时间（单位为分钟）字典code
         String meetingCheckInTime = CacheUtils.queryDictData().getDictMeetingCheckInTime().get(meetingOption).getSysDictCode();
         paramMap.put("meetingCheckInTime", meetingCheckInTime);
@@ -501,7 +513,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
         if (mScSetNotice4.isChecked()) {
             meetingSet = Utils.appendStr("3", ",", meetingSet);
         }
-        if (!StringUtils.isEmpty(meetingSet)){
+        if (!StringUtils.isEmpty(meetingSet)) {
             meetingSet = meetingSet.substring(0, meetingSet.length() - 1);
         }
 
@@ -541,18 +553,18 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
 
         LogUtils.json(paramMap);
         String message = "确定提交当前会议室预约吗？";
-        if (approvalStatusStrs == 0){
+        if (approvalStatusStrs == 0) {
             message = "确定当前会议室预约信息存入草稿吗？";
         }
         new MessageDialog.Builder()
                 .setTitle("预约提醒")
                 .setMessage(message)
                 .setOnViewItemClickListener(v -> {
-                    if (pageFrom == 1){
+                    if (pageFrom == 1) {
                         //草稿提交
-                        paramMap.put("id",mMeetingDetailsBean.getId());
+                        paramMap.put("id", mMeetingDetailsBean.getId());
                         mPresenter.draftSubmitMeetingRecord(paramMap);
-                    }else{
+                    } else {
                         //会议室预约提交
                         mPresenter.createMeetingRecord(paramMap);
                     }
@@ -567,23 +579,41 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
     public static final String PPT = "application/vnd.ms-powerpoint";
     public static final String PPTX = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
     public static final String PDF = "application/pdf";
+    public static final String TEXT = "text/plain";
 
     private void showFileChooser() {
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        //设置doc,docx,ppt,pptx,pdf 5种类型
-        intent.setType("*/*");
-        /*intent.setAction(Intent.ACTION_GET_CONTENT);*/
-//        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
-        //在API>=19之后设置多个类型采用以下方式，setType不再支持多个类型
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{DOC, DOCX, PPT, PPTX, PDF, XLS, XLSX});
-        }
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        try {
-            startActivityForResult(Intent.createChooser(intent, "选择文件"), Constants.RESULT_CHOOSE_FILE_CODE);
-        } catch (android.content.ActivityNotFoundException ex) {
-            ArmsUtils.snackbarText("请安装一个文件浏览器.");
-        }
+//        Uri uri = Uri.parse("content://com.android.externalstorage.documents/document/primary:");
+//        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+//        intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, uri);
+//        intent.putExtra("android.content.extra.SHOW_ADVANCED", false);
+//        intent.putExtra(" android.content.extra.FANCY", false);
+//        intent.putExtra("android.content.extra.SHOW_FILESIZE", false);
+//        //设置doc,docx,ppt,pptx,pdf 5种类型
+//        intent.setType("*/*");
+//        /*intent.setAction(Intent.ACTION_GET_CONTENT);*/
+////        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+//        //在API>=19之后设置多个类型采用以下方式，setType不再支持多个类型
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{DOC, DOCX, PPT, PPTX, PDF, XLS, XLSX, TEXT});
+//        }
+//        intent.addCategory(Intent.CATEGORY_OPENABLE);
+//        try {
+//            startActivityForResult(Intent.createChooser(intent, "选择文件"), Constants.RESULT_CHOOSE_FILE_CODE);
+//        } catch (android.content.ActivityNotFoundException ex) {
+//            ArmsUtils.snackbarText("请安装一个文件浏览器.");
+//        }
+
+        new LFilePicker()
+                .withActivity(getActivity())
+                .withRequestCode(Constants.RESULT_CHOOSE_FILE_CODE)
+//                .withStartPath("/storage/emulated/0/Download")
+//                .withIsGreater(false)
+//                .withFileSize(500 * 1024)
+                .withMutilyMode(false)
+                .withIconStyle(Constant.ICON_STYLE_BLUE)
+                .withTitle("文件选择")
+                .withFileFilter(new String[]{".txt", ".docx", ".doc", ".pdf", ".xls", ".xlsx",".pptx"})
+                .start();
     }
 
 
@@ -638,17 +668,19 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
             case Constants.RESULT_CHOOSE_FILE_CODE:
                 if (resultCode == Activity.RESULT_OK) {
                     // Get the Uri of the selected file
-                    Uri uri = data.getData();
-                    Timber.e("文件Uri: " + uri.toString());
-                    if (UriUtils.uri2File(uri) != null) {
-
+//                    Uri uri = data.getData();
+//                    Timber.e("文件Uri: " + uri.toString());
+                    //如果是文件选择模式，需要获取选择的所有文件的路径集合
+                    //List<String> list = data.getStringArrayListExtra(Constant.RESULT_INFO);//Constant.RESULT_INFO == "paths"
+                    List<String> list = data.getStringArrayListExtra("paths");
+                    //如果是文件夹选择模式，需要获取选择的文件夹路径
+                    String path = data.getStringExtra("path");
+                    if (CollectionUtils.isNotEmpty(list)) {
                         List<File> fileList = new ArrayList<>();
-                        fileList.add(UriUtils.uri2File(uri));
+                        fileList.add(new File(list.get(0)));
                         mPresenter.uploadFile(fileList);
-
-                        Timber.e("选择的文件路径: " + UriUtils.uri2File(uri).getPath());
-                    } else {
-                        Timber.e("选择的文件路径: " + FileUtils.uri2FilePath(getActivity(), uri));
+                    }else{
+                        ArmsUtils.snackbarText("文件不存在，请重新选择");
                     }
                 }
                 break;

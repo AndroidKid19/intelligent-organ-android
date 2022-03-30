@@ -43,6 +43,7 @@ import com.yway.scomponent.commonservice.user.service.UserInfoService;
 import com.yway.scomponent.yyzy.R;
 import com.yway.scomponent.yyzy.mvp.ui.adapter.ViewPageAdapter;
 
+import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 import org.simple.eventbus.ThreadMode;
 
@@ -145,6 +146,11 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     public void onBackPressed() {
+        if (previousPosition == 1){
+            EventBus.getDefault().post(previousPosition, EventBusHub.EVENTBUS_TAG_HOME_ONBACKPRESSED);
+            return;
+        }
+
         //获取第一次按键时间
         long mNowTime = System.currentTimeMillis();
         //比较两次按键时间差

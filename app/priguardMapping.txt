@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.68
 # min_api: 23
-# pg_map_id: 18a3b9e
+# pg_map_id: e074f67
 androidx.activity.Cancellable -> androidx.activity.a:
 androidx.activity.ComponentActivity$1 -> androidx.activity.ComponentActivity$a:
     androidx.activity.ComponentActivity this$0 -> b
@@ -55,11 +55,13 @@ androidx.appcompat.app.ActionBar -> androidx.appcompat.app.a:
     androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback) -> a
     void dispatchMenuVisibilityChanged(boolean) -> b
     void setDefaultDisplayHomeAsUpEnabled(boolean) -> c
-    void setDisplayShowTitleEnabled(boolean) -> d
+    void setDisplayHomeAsUpEnabled(boolean) -> d
     boolean closeOptionsMenu() -> e
-    void setShowHideAnimationEnabled(boolean) -> e
+    void setDisplayShowTitleEnabled(boolean) -> e
     boolean collapseActionView() -> f
+    void setHomeButtonEnabled(boolean) -> f
     int getDisplayOptions() -> g
+    void setShowHideAnimationEnabled(boolean) -> g
     android.content.Context getThemedContext() -> h
     boolean invalidateOptionsMenu() -> i
     void onDestroy() -> j
@@ -588,11 +590,13 @@ androidx.appcompat.app.ToolbarActionBar -> androidx.appcompat.app.l:
     void setWindowTitle(java.lang.CharSequence) -> a
     void dispatchMenuVisibilityChanged(boolean) -> b
     void setDefaultDisplayHomeAsUpEnabled(boolean) -> c
-    void setDisplayShowTitleEnabled(boolean) -> d
+    void setDisplayHomeAsUpEnabled(boolean) -> d
     boolean closeOptionsMenu() -> e
-    void setShowHideAnimationEnabled(boolean) -> e
+    void setDisplayShowTitleEnabled(boolean) -> e
     boolean collapseActionView() -> f
+    void setHomeButtonEnabled(boolean) -> f
     int getDisplayOptions() -> g
+    void setShowHideAnimationEnabled(boolean) -> g
     android.content.Context getThemedContext() -> h
     boolean invalidateOptionsMenu() -> i
     void onDestroy() -> j
@@ -687,17 +691,17 @@ androidx.appcompat.app.WindowDecorActionBar -> androidx.appcompat.app.o:
     void onContentScrollStopped() -> c
     void setDefaultDisplayHomeAsUpEnabled(boolean) -> c
     void hideForSystem() -> d
-    void setDisplayShowTitleEnabled(boolean) -> d
-    void setShowHideAnimationEnabled(boolean) -> e
-    void animateToMode(boolean) -> f
+    void setDisplayHomeAsUpEnabled(boolean) -> d
+    void setDisplayShowTitleEnabled(boolean) -> e
     boolean collapseActionView() -> f
-    void doHide(boolean) -> g
+    void setHomeButtonEnabled(boolean) -> f
     int getDisplayOptions() -> g
-    void doShow(boolean) -> h
+    void setShowHideAnimationEnabled(boolean) -> g
+    void animateToMode(boolean) -> h
     android.content.Context getThemedContext() -> h
-    void setDisplayHomeAsUpEnabled(boolean) -> i
-    void setHideOnContentScrollEnabled(boolean) -> j
-    void setHomeButtonEnabled(boolean) -> k
+    void doHide(boolean) -> i
+    void doShow(boolean) -> j
+    void setHideOnContentScrollEnabled(boolean) -> k
     void completeDeferredDestroyActionMode() -> l
     void setHasEmbeddedTabs(boolean) -> l
     int getNavigationMode() -> m
@@ -13375,10 +13379,6 @@ com.blankj.utilcode.util.ToastUtils$ToastWithoutNotification$2 -> com.blankj.uti
     com.blankj.utilcode.util.ToastUtils$ToastWithoutNotification this$0 -> b
 com.blankj.utilcode.util.ToastUtils$ToastWithoutNotification$3 -> com.blankj.utilcode.util.o$f$c:
     com.blankj.utilcode.util.ToastUtils$ToastWithoutNotification this$0 -> b
-com.blankj.utilcode.util.UriUtils -> com.blankj.utilcode.util.p:
-    java.io.File getFileFromUri(android.net.Uri,java.lang.String) -> a
-    java.io.File getFileFromUri(android.net.Uri,java.lang.String,java.lang.String[],java.lang.String) -> a
-    java.io.File uri2File(android.net.Uri) -> a
 com.blankj.utilcode.util.Utils -> com.blankj.utilcode.util.Utils:
     android.app.Application sApplication -> c
     android.os.Handler UTIL_HANDLER -> b
@@ -20182,6 +20182,214 @@ com.jwsd.libzxing.utils.SelectAlbumUtils -> com.jwsd.libzxing.utils.c:
     boolean isNumeric(java.lang.String) -> a
     java.lang.String getPicOnKitKatBefore(android.content.Context,android.content.Intent) -> b
     java.lang.String getPicPath(android.content.Context,android.content.Intent) -> c
+com.leon.lfilepickerlibrary.LFilePicker -> com.leon.lfilepickerlibrary.a:
+    int mIconStyle -> n
+    java.lang.String mBackgroundColor -> h
+    android.app.Fragment mSupportFragment -> c
+    int mRequestCode -> j
+    boolean mMutilyMode -> k
+    java.lang.String mAddText -> m
+    android.app.Fragment mFragment -> b
+    int mBackStyle -> i
+    boolean mChooseMode -> l
+    int theme -> f
+    int mTitleStyle -> g
+    java.lang.String mNotFoundFiles -> p
+    java.lang.String mStartPath -> r
+    boolean mIsGreater -> s
+    java.lang.String[] mFileTypes -> o
+    long mFileSize -> t
+    android.app.Activity mActivity -> a
+    java.lang.String mTitleColor -> e
+    java.lang.String mTitle -> d
+    int mMaxNum -> q
+    void start() -> a
+    com.leon.lfilepickerlibrary.LFilePicker withActivity(android.app.Activity) -> a
+    com.leon.lfilepickerlibrary.LFilePicker withFileFilter(java.lang.String[]) -> a
+    com.leon.lfilepickerlibrary.LFilePicker withIconStyle(int) -> a
+    com.leon.lfilepickerlibrary.LFilePicker withMutilyMode(boolean) -> a
+    com.leon.lfilepickerlibrary.LFilePicker withTitle(java.lang.String) -> a
+    android.os.Bundle getBundle() -> b
+    com.leon.lfilepickerlibrary.LFilePicker withRequestCode(int) -> b
+    android.content.Intent initIntent() -> c
+com.leon.lfilepickerlibrary.adapter.PathAdapter -> com.leon.lfilepickerlibrary.b.b:
+    java.util.List mListData -> a
+    long mFileSize -> i
+    android.content.Context mContext -> b
+    boolean[] mCheckedFlags -> e
+    boolean mMutilyMode -> f
+    int mIconStyle -> g
+    boolean mIsGreater -> h
+    com.leon.lfilepickerlibrary.adapter.PathAdapter$OnItemClickListener onItemClickListener -> c
+    java.io.FileFilter mFileFilter -> d
+    boolean[] access$500(com.leon.lfilepickerlibrary.adapter.PathAdapter) -> a
+    void onBindViewHolder(com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder,int) -> a
+    void setOnItemClickListener(com.leon.lfilepickerlibrary.adapter.PathAdapter$OnItemClickListener) -> a
+    void setmIconStyle(int) -> a
+    void setmListData(java.util.List) -> a
+    void updateAllSelelcted(boolean) -> a
+    void updateFileIconStyle(android.widget.ImageView) -> a
+    void updateFloaderIconStyle(android.widget.ImageView) -> b
+com.leon.lfilepickerlibrary.adapter.PathAdapter$1 -> com.leon.lfilepickerlibrary.b.b$a:
+    java.io.File val$file -> b
+    org.aspectj.lang.JoinPoint$StaticPart ajc$tjp_0 -> f
+    com.leon.lfilepickerlibrary.adapter.PathAdapter this$0 -> e
+    com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder val$holder -> c
+    int val$position -> d
+    void ajc$preClinit() -> a
+    void onClick_aroundBody0(com.leon.lfilepickerlibrary.adapter.PathAdapter$1,android.view.View,org.aspectj.lang.JoinPoint) -> a
+com.leon.lfilepickerlibrary.adapter.PathAdapter$1$AjcClosure1 -> com.leon.lfilepickerlibrary.b.a:
+com.leon.lfilepickerlibrary.adapter.PathAdapter$2 -> com.leon.lfilepickerlibrary.b.b$b:
+    org.aspectj.lang.JoinPoint$StaticPart ajc$tjp_0 -> d
+    int val$position -> b
+    com.leon.lfilepickerlibrary.adapter.PathAdapter this$0 -> c
+    void ajc$preClinit() -> a
+    void onClick_aroundBody0(com.leon.lfilepickerlibrary.adapter.PathAdapter$2,android.view.View,org.aspectj.lang.JoinPoint) -> a
+com.leon.lfilepickerlibrary.adapter.PathAdapter$2$AjcClosure1 -> com.leon.lfilepickerlibrary.b.c:
+com.leon.lfilepickerlibrary.adapter.PathAdapter$3 -> com.leon.lfilepickerlibrary.b.b$c:
+    com.leon.lfilepickerlibrary.adapter.PathAdapter this$0 -> b
+    int val$position -> a
+com.leon.lfilepickerlibrary.adapter.PathAdapter$OnItemClickListener -> com.leon.lfilepickerlibrary.b.b$d:
+    void click(int) -> a
+com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder -> com.leon.lfilepickerlibrary.b.b$e:
+    android.widget.CheckBox cbChoose -> e
+    android.widget.TextView tvName -> c
+    android.widget.TextView tvDetail -> d
+    android.widget.RelativeLayout layoutRoot -> a
+    android.widget.ImageView ivType -> b
+    android.widget.ImageView access$000(com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder) -> a
+    android.widget.TextView access$100(com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder) -> b
+    android.widget.TextView access$200(com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder) -> c
+    android.widget.CheckBox access$300(com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder) -> d
+    android.widget.RelativeLayout access$400(com.leon.lfilepickerlibrary.adapter.PathAdapter$PathViewHolder) -> e
+com.leon.lfilepickerlibrary.filter.LFileFilter -> com.leon.lfilepickerlibrary.c.a:
+    java.lang.String[] mTypes -> a
+com.leon.lfilepickerlibrary.model.ParamEntity -> com.leon.lfilepickerlibrary.model.ParamEntity:
+    java.lang.String backgroundColor -> f
+    boolean chooseMode -> n
+    java.lang.String addText -> i
+    int maxNum -> m
+    int iconStyle -> j
+    java.lang.String notFoundFiles -> l
+    java.lang.String path -> o
+    int backIcon -> g
+    int titleStyle -> d
+    int theme -> e
+    boolean isGreater -> q
+    java.lang.String[] fileTypes -> k
+    boolean mutilyMode -> h
+    java.lang.String titleColor -> c
+    java.lang.String title -> b
+    long fileSize -> p
+    java.lang.String getAddText() -> a
+    void setAddText(java.lang.String) -> a
+    void setBackIcon(int) -> a
+    void setChooseMode(boolean) -> a
+    void setFileSize(long) -> a
+    void setFileTypes(java.lang.String[]) -> a
+    int getBackIcon() -> b
+    void setBackgroundColor(java.lang.String) -> b
+    void setGreater(boolean) -> b
+    void setIconStyle(int) -> b
+    java.lang.String getBackgroundColor() -> c
+    void setMaxNum(int) -> c
+    void setMutilyMode(boolean) -> c
+    void setNotFoundFiles(java.lang.String) -> c
+    long getFileSize() -> d
+    void setPath(java.lang.String) -> d
+    void setTheme(int) -> d
+    java.lang.String[] getFileTypes() -> e
+    void setTitle(java.lang.String) -> e
+    void setTitleStyle(int) -> e
+    int getIconStyle() -> f
+    void setTitleColor(java.lang.String) -> f
+    int getMaxNum() -> g
+    java.lang.String getNotFoundFiles() -> h
+    java.lang.String getPath() -> i
+    int getTheme() -> j
+    java.lang.String getTitle() -> k
+    java.lang.String getTitleColor() -> l
+    int getTitleStyle() -> m
+    boolean isChooseMode() -> n
+    boolean isGreater() -> o
+    boolean isMutilyMode() -> p
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity -> com.leon.lfilepickerlibrary.ui.LFilePickerActivity:
+    java.lang.String mPath -> g
+    com.leon.lfilepickerlibrary.filter.LFileFilter mFilter -> m
+    boolean mIsAllSelected -> n
+    com.leon.lfilepickerlibrary.widget.EmptyRecyclerView mRecylerView -> b
+    android.view.Menu mMenu -> o
+    androidx.appcompat.widget.Toolbar mToolbar -> k
+    android.widget.Button mBtnAddBook -> f
+    com.leon.lfilepickerlibrary.adapter.PathAdapter mPathAdapter -> j
+    android.widget.TextView mTvBack -> e
+    java.util.ArrayList mListNumbers -> i
+    com.leon.lfilepickerlibrary.model.ParamEntity mParamEntity -> l
+    android.widget.TextView mTvPath -> d
+    android.view.View mEmptyView -> c
+    java.util.List mListFiles -> h
+    java.lang.String access$000(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> a
+    java.lang.String access$002(com.leon.lfilepickerlibrary.ui.LFilePickerActivity,java.lang.String) -> a
+    void access$1000(com.leon.lfilepickerlibrary.ui.LFilePickerActivity,int) -> a
+    java.util.List access$102(com.leon.lfilepickerlibrary.ui.LFilePickerActivity,java.util.List) -> a
+    boolean access$502(com.leon.lfilepickerlibrary.ui.LFilePickerActivity,boolean) -> a
+    void chekInDirectory(int) -> a
+    void updateOptionsMenu(android.view.Menu) -> a
+    java.util.List access$100(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> b
+    void access$800(com.leon.lfilepickerlibrary.ui.LFilePickerActivity,java.lang.String) -> b
+    void access$1100(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> c
+    com.leon.lfilepickerlibrary.filter.LFileFilter access$200(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> d
+    com.leon.lfilepickerlibrary.model.ParamEntity access$300(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> e
+    void setShowPath(java.lang.String) -> e
+    com.leon.lfilepickerlibrary.adapter.PathAdapter access$400(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> f
+    android.widget.Button access$600(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> g
+    com.leon.lfilepickerlibrary.widget.EmptyRecyclerView access$700(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> h
+    java.util.ArrayList access$900(com.leon.lfilepickerlibrary.ui.LFilePickerActivity) -> i
+    void updateMenuTitle() -> q
+    boolean checkSDState() -> u
+    void chooseDone() -> v
+    void initListener() -> w
+    void initToolbar() -> x
+    void updateAddButton() -> y
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity$1 -> com.leon.lfilepickerlibrary.ui.LFilePickerActivity$a:
+    org.aspectj.lang.JoinPoint$StaticPart ajc$tjp_0 -> c
+    com.leon.lfilepickerlibrary.ui.LFilePickerActivity this$0 -> b
+    void ajc$preClinit() -> a
+    void onClick_aroundBody0(com.leon.lfilepickerlibrary.ui.LFilePickerActivity$1,android.view.View,org.aspectj.lang.JoinPoint) -> a
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity$1$AjcClosure1 -> com.leon.lfilepickerlibrary.ui.a:
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity$2 -> com.leon.lfilepickerlibrary.ui.LFilePickerActivity$b:
+    org.aspectj.lang.JoinPoint$StaticPart ajc$tjp_0 -> c
+    com.leon.lfilepickerlibrary.ui.LFilePickerActivity this$0 -> b
+    void ajc$preClinit() -> a
+    void onClick_aroundBody0(com.leon.lfilepickerlibrary.ui.LFilePickerActivity$2,android.view.View,org.aspectj.lang.JoinPoint) -> a
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity$2$AjcClosure1 -> com.leon.lfilepickerlibrary.ui.b:
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity$3 -> com.leon.lfilepickerlibrary.ui.LFilePickerActivity$c:
+    com.leon.lfilepickerlibrary.ui.LFilePickerActivity this$0 -> a
+    void click(int) -> a
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity$4 -> com.leon.lfilepickerlibrary.ui.LFilePickerActivity$d:
+    org.aspectj.lang.JoinPoint$StaticPart ajc$tjp_0 -> c
+    com.leon.lfilepickerlibrary.ui.LFilePickerActivity this$0 -> b
+    void ajc$preClinit() -> a
+    void onClick_aroundBody0(com.leon.lfilepickerlibrary.ui.LFilePickerActivity$4,android.view.View,org.aspectj.lang.JoinPoint) -> a
+com.leon.lfilepickerlibrary.ui.LFilePickerActivity$4$AjcClosure1 -> com.leon.lfilepickerlibrary.ui.c:
+com.leon.lfilepickerlibrary.utils.FileComparator -> com.leon.lfilepickerlibrary.d.a:
+    int compare(java.io.File,java.io.File) -> a
+com.leon.lfilepickerlibrary.utils.FileUtils -> com.leon.lfilepickerlibrary.d.b:
+    long getFileLength(java.io.File) -> a
+    java.util.List getFileList(java.lang.String,java.io.FileFilter,boolean,long) -> a
+    java.util.List getFileListByDirPath(java.lang.String,java.io.FileFilter) -> a
+    java.lang.String getReadableFileSize(long) -> a
+    boolean isFile(java.io.File) -> b
+com.leon.lfilepickerlibrary.utils.StringUtils -> com.leon.lfilepickerlibrary.d.c:
+    boolean isEmpty(java.lang.CharSequence) -> a
+com.leon.lfilepickerlibrary.widget.EmptyRecyclerView -> com.leon.lfilepickerlibrary.widget.EmptyRecyclerView:
+    androidx.recyclerview.widget.RecyclerView$AdapterDataObserver observer -> c
+    android.view.View mEmptyView -> b
+    void access$000(com.leon.lfilepickerlibrary.widget.EmptyRecyclerView) -> a
+    void checkIfEmpty() -> a
+com.leon.lfilepickerlibrary.widget.EmptyRecyclerView$1 -> com.leon.lfilepickerlibrary.widget.EmptyRecyclerView$a:
+    com.leon.lfilepickerlibrary.widget.EmptyRecyclerView this$0 -> a
+    void onChanged() -> a
 com.liys.doubleclicklibrary.aspect.AspectDoubleClick -> com.liys.doubleclicklibrary.a.a:
     java.lang.String TAG -> a
     java.lang.Throwable ajc$initFailureCause -> e
@@ -23738,8 +23946,8 @@ com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity -> com.yway.scompone
     void modifyForgetPasswordSuccess() -> r
 com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding -> com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding:
     com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity target -> a
-    android.view.View view7f0b0063 -> c
-    android.view.View view7f0b008d -> b
+    android.view.View view7f0b0065 -> c
+    android.view.View view7f0b0090 -> b
 com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$1 -> com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$a:
     com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity val$target -> b
 com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$2 -> com.yway.scomponent.login.mvp.ui.activity.ForgetPwdActivity_ViewBinding$b:
@@ -23770,8 +23978,8 @@ com.yway.scomponent.login.mvp.ui.activity.LoginActivity$Clickable -> com.yway.sc
     void onClick_aroundBody0(com.yway.scomponent.login.mvp.ui.activity.LoginActivity$Clickable,android.view.View,org.aspectj.lang.JoinPoint) -> a
 com.yway.scomponent.login.mvp.ui.activity.LoginActivity$Clickable$AjcClosure1 -> com.yway.scomponent.login.mvp.ui.activity.h:
 com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding:
-    android.view.View view7f0b0214 -> c
-    android.view.View view7f0b0064 -> b
+    android.view.View view7f0b021f -> c
+    android.view.View view7f0b0066 -> b
     com.yway.scomponent.login.mvp.ui.activity.LoginActivity target -> a
 com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding$1 -> com.yway.scomponent.login.mvp.ui.activity.LoginActivity_ViewBinding$a:
     com.yway.scomponent.login.mvp.ui.activity.LoginActivity val$target -> b
@@ -23799,9 +24007,9 @@ com.yway.scomponent.login.mvp.ui.activity.RegisterActivity$Clickable -> com.yway
     void onClick_aroundBody0(com.yway.scomponent.login.mvp.ui.activity.RegisterActivity$Clickable,android.view.View,org.aspectj.lang.JoinPoint) -> a
 com.yway.scomponent.login.mvp.ui.activity.RegisterActivity$Clickable$AjcClosure1 -> com.yway.scomponent.login.mvp.ui.activity.i:
 com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding:
-    android.view.View view7f0b0063 -> c
-    android.view.View view7f0b008d -> b
-    android.view.View view7f0b0054 -> d
+    android.view.View view7f0b0065 -> c
+    android.view.View view7f0b0090 -> b
+    android.view.View view7f0b0055 -> d
     com.yway.scomponent.login.mvp.ui.activity.RegisterActivity target -> a
 com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$1 -> com.yway.scomponent.login.mvp.ui.activity.RegisterActivity_ViewBinding$a:
     com.yway.scomponent.login.mvp.ui.activity.RegisterActivity val$target -> b
@@ -27213,12 +27421,12 @@ com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_MembersInjector -> c
     void injectMFileDetailsBeans(com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity,java.util.List) -> c
 com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity target -> a
-    android.view.View view7f0b0056 -> c
-    android.view.View view7f0b0058 -> b
-    android.view.View view7f0b0055 -> e
-    android.view.View view7f0b005f -> d
-    android.view.View view7f0b0070 -> g
-    android.view.View view7f0b0262 -> f
+    android.view.View view7f0b0057 -> c
+    android.view.View view7f0b0059 -> b
+    android.view.View view7f0b0056 -> e
+    android.view.View view7f0b0060 -> d
+    android.view.View view7f0b0072 -> g
+    android.view.View view7f0b026d -> f
 com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.ApplyRoomActivity_ViewBinding$b:
@@ -27284,8 +27492,8 @@ com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_MembersInjector -> com
     void injectMLayoutManager(com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
 com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity target -> a
-    android.view.View view7f0b027e -> c
-    android.view.View view7f0b0071 -> b
+    android.view.View view7f0b0289 -> c
+    android.view.View view7f0b0073 -> b
 com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.CanteenActivity_ViewBinding$b:
@@ -27360,7 +27568,7 @@ com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity -> com.yway.sco
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity$1 -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity$a:
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity this$0 -> a
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding:
-    android.view.View view7f0b02d3 -> b
+    android.view.View view7f0b02e0 -> b
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity target -> a
 com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.ConferenceRoomActivity val$target -> b
@@ -27388,8 +27596,8 @@ com.yway.scomponent.organ.mvp.ui.activity.InformationActivity_MembersInjector ->
     void injectMLayoutManager(com.yway.scomponent.organ.mvp.ui.activity.InformationActivity,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
 com.yway.scomponent.organ.mvp.ui.activity.InformationActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.InformationActivity_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.activity.InformationActivity target -> a
-    android.text.TextWatcher view7f0b00bbTextWatcher -> c
-    android.view.View view7f0b00bb -> b
+    android.text.TextWatcher view7f0b00beTextWatcher -> c
+    android.view.View view7f0b00be -> b
 com.yway.scomponent.organ.mvp.ui.activity.InformationActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.InformationActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.InformationActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity -> com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity:
@@ -27420,11 +27628,11 @@ com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity -> com.yway.sco
     void prepareMeting() -> v
 com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity target -> a
-    android.view.View view7f0b00d0 -> c
-    android.view.View view7f0b005d -> b
-    android.view.View view7f0b0073 -> e
-    android.view.View view7f0b0072 -> d
-    android.view.View view7f0b0071 -> f
+    android.view.View view7f0b00d3 -> c
+    android.view.View view7f0b005e -> b
+    android.view.View view7f0b0075 -> e
+    android.view.View view7f0b0074 -> d
+    android.view.View view7f0b0073 -> f
 com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.MeetingDetailsActivity_ViewBinding$b:
@@ -27520,8 +27728,8 @@ com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity -> com.yway.s
 com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity$1 -> com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity$a:
     com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity this$0 -> a
 com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity_ViewBinding:
-    android.view.View view7f0b0074 -> c
-    android.view.View view7f0b006e -> b
+    android.view.View view7f0b0076 -> c
+    android.view.View view7f0b0070 -> b
     com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity target -> a
 com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.SubscribeSucceesActivity val$target -> b
@@ -27559,10 +27767,10 @@ com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_MembersInjector -> 
     void injectMLayoutManager(com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
     void injectMObjectDataLs(com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity,java.util.List) -> a
 com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding -> com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding:
-    android.text.TextWatcher view7f0b00bbTextWatcher -> c
-    android.view.View view7f0b00bb -> b
+    android.text.TextWatcher view7f0b00beTextWatcher -> c
+    android.view.View view7f0b00be -> b
     com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity target -> a
-    android.view.View view7f0b0251 -> d
+    android.view.View view7f0b025b -> d
 com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity val$target -> b
 com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.activity.UserSearchActivity_ViewBinding$b:
@@ -27738,7 +27946,7 @@ com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog$OnRechargeListener -> com
     void onRecharge(double) -> a
 com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog_ViewBinding -> com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog target -> a
-    android.view.View view7f0b0071 -> b
+    android.view.View view7f0b0073 -> b
 com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.dialog.RechargeDialog val$target -> b
 com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog -> com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog:
@@ -27765,8 +27973,8 @@ com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog$Builder -> com.yway.
     void ajc$preClinit() -> b
 com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog$Builder$AjcClosure1 -> com.yway.scomponent.organ.mvp.ui.dialog.c:
 com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog_ViewBinding -> com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog_ViewBinding:
-    android.view.View view7f0b006a -> c
-    android.view.View view7f0b006d -> b
+    android.view.View view7f0b006b -> c
+    android.view.View view7f0b006e -> b
     com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog target -> a
 com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.dialog.TimerScheduleDialog val$target -> b
@@ -27862,9 +28070,10 @@ com.yway.scomponent.organ.mvp.ui.fragment.-$$Lambda$WorkPanelFragment$EvygpdDoh_
 com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment -> com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment:
     com.yway.scomponent.organ.mvp.ui.adapter.AddressBookPartsAdapter mAddressBookPartsAdapter -> g
     com.scwang.smartrefresh.layout.listener.OnRefreshListener mOnRefreshListener -> j
+    long mPressedTime -> l
+    com.jess.arms.base.DefaultAdapter$OnRecyclerViewItemClickListener mOnAddressBookOrganItemClickListener -> m
     java.util.List mObjectDataLs -> i
     java.util.List mDataLs -> h
-    com.jess.arms.base.DefaultAdapter$OnRecyclerViewItemClickListener mOnAddressBookOrganItemClickListener -> l
     com.jess.arms.base.DefaultAdapter$OnRecyclerViewItemClickListener mOnAddressBookPartsItemClickListener -> k
     com.yway.scomponent.organ.mvp.ui.adapter.AddressBookOrganAdapter mAddressBookOrganAdapter -> f
     androidx.recyclerview.widget.RecyclerView$LayoutManager mLayoutManager -> e
@@ -27874,6 +28083,7 @@ com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment -> com.yway.scompo
     void lambda$new$0(com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
     void lambda$new$1(android.view.View,int,java.lang.Object,int) -> a
     void queryOrgRspCallBack(com.yway.scomponent.commonsdk.core.AddressCompanyBean) -> a
+    void resetContacts(int,com.yway.scomponent.commonsdk.core.AddressCompanyBean) -> a
     void setupFragmentComponent(com.jess.arms.di.component.AppComponent) -> a
     void showMessage(java.lang.String) -> a
     void lambda$new$2(android.view.View,int,java.lang.Object,int) -> b
@@ -27888,7 +28098,7 @@ com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_MembersInjector ->
     void injectMObjectDataLs(com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment,java.util.List) -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding:
     com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment target -> a
-    android.view.View view7f0b0290 -> b
+    android.view.View view7f0b029d -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.AddressBookFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.AfterPrepareFragment -> com.yway.scomponent.organ.mvp.ui.fragment.AfterPrepareFragment:
@@ -28058,15 +28268,15 @@ com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_MembersInjector -> com.yw
     void injectMMeetingAdapter(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,com.yway.scomponent.organ.mvp.ui.adapter.MeetingAdapter) -> a
     void injectMDataLs(com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment,java.util.List) -> b
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding:
-    android.view.View view7f0b027e -> i
-    android.view.View view7f0b0270 -> h
-    android.view.View view7f0b028f -> c
-    android.view.View view7f0b028a -> b
+    android.view.View view7f0b0289 -> i
+    android.view.View view7f0b027b -> h
+    android.view.View view7f0b029c -> c
+    android.view.View view7f0b0297 -> b
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment target -> a
-    android.view.View view7f0b026d -> e
-    android.view.View view7f0b00e0 -> d
-    android.view.View view7f0b026f -> g
-    android.view.View view7f0b0275 -> f
+    android.view.View view7f0b0278 -> e
+    android.view.View view7f0b00e3 -> d
+    android.view.View view7f0b027a -> g
+    android.view.View view7f0b0280 -> f
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.fragment.HomeFragment_ViewBinding$b:
@@ -28185,16 +28395,16 @@ com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment$2 -> com.yway.scompo
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment this$0 -> a
     void onCompleted(java.lang.String) -> a
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding:
-    android.view.View view7f0b024e -> i
-    android.view.View view7f0b02a5 -> h
-    android.view.View view7f0b0288 -> j
-    android.view.View view7f0b0272 -> c
-    android.view.View view7f0b0276 -> b
-    android.view.View view7f0b0271 -> e
+    android.view.View view7f0b0258 -> i
+    android.view.View view7f0b02b2 -> h
+    android.view.View view7f0b0295 -> j
+    android.view.View view7f0b027d -> c
+    android.view.View view7f0b0281 -> b
+    android.view.View view7f0b027c -> e
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment target -> a
-    android.view.View view7f0b0273 -> d
-    android.view.View view7f0b0274 -> g
-    android.view.View view7f0b026e -> f
+    android.view.View view7f0b027e -> d
+    android.view.View view7f0b027f -> g
+    android.view.View view7f0b0279 -> f
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$1 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$a:
     com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment val$target -> b
 com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$2 -> com.yway.scomponent.organ.mvp.ui.fragment.WorkPanelFragment_ViewBinding$b:
@@ -29606,9 +29816,9 @@ com.yway.scomponent.user.mvp.ui.activity.CertificationActivity -> com.yway.scomp
     void initUserInfo() -> u
 com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.CertificationActivity target -> a
-    android.view.View view7f0b010b -> c
-    android.view.View view7f0b010a -> b
-    android.view.View view7f0b007a -> d
+    android.view.View view7f0b010e -> c
+    android.view.View view7f0b010d -> b
+    android.view.View view7f0b007c -> d
 com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.CertificationActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.CertificationActivity_ViewBinding$b:
@@ -29642,8 +29852,8 @@ com.yway.scomponent.user.mvp.ui.activity.CollectActivity_MembersInjector -> com.
     void injectMLayoutManager(com.yway.scomponent.user.mvp.ui.activity.CollectActivity,androidx.recyclerview.widget.RecyclerView$LayoutManager) -> a
 com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.CollectActivity target -> a
-    android.text.TextWatcher view7f0b00c6TextWatcher -> c
-    android.view.View view7f0b00c6 -> b
+    android.text.TextWatcher view7f0b00c9TextWatcher -> c
+    android.view.View view7f0b00c9 -> b
 com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.CollectActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.CollectActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity -> com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity:
@@ -29691,8 +29901,8 @@ com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity$4 -> com.yway.scompone
     com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity this$0 -> a
 com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity target -> a
-    android.text.TextWatcher view7f0b00c1TextWatcher -> c
-    android.view.View view7f0b00c1 -> b
+    android.text.TextWatcher view7f0b00c4TextWatcher -> c
+    android.view.View view7f0b00c4 -> b
 com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.FeedbackActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.MessageActivity -> com.yway.scomponent.user.mvp.ui.activity.MessageActivity:
@@ -29732,8 +29942,8 @@ com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity -> com.yway.scompon
     void sendSmsSuccess() -> h
 com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity target -> a
-    android.view.View view7f0b00a7 -> c
-    android.view.View view7f0b007a -> b
+    android.view.View view7f0b00aa -> c
+    android.view.View view7f0b007c -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.ModifyPhoneActivity_ViewBinding$b:
@@ -29752,7 +29962,7 @@ com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity -> com.yway.scomponen
 com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity$1 -> com.yway.scomponent.user.mvp.ui.activity.n:
 com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity target -> a
-    android.view.View view7f0b007a -> b
+    android.view.View view7f0b007c -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.ModifyPwdActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity -> com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity:
@@ -29765,7 +29975,7 @@ com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity -> com.yway.scom
     void modifySuccess() -> f
 com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity target -> a
-    android.view.View view7f0b007a -> b
+    android.view.View view7f0b007c -> b
 com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.ModifyUserInfoActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity:
@@ -29776,14 +29986,14 @@ com.yway.scomponent.user.mvp.ui.activity.SettingActivity -> com.yway.scomponent.
     void showLoading() -> b
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity$1 -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity$a:
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding:
-    android.view.View view7f0b007b -> h
-    android.view.View view7f0b005a -> c
+    android.view.View view7f0b007d -> h
+    android.view.View view7f0b005b -> c
     com.yway.scomponent.user.mvp.ui.activity.SettingActivity target -> a
-    android.view.View view7f0b006a -> b
-    android.view.View view7f0b0060 -> e
-    android.view.View view7f0b005f -> d
-    android.view.View view7f0b0056 -> g
-    android.view.View view7f0b005c -> f
+    android.view.View view7f0b006b -> b
+    android.view.View view7f0b0061 -> e
+    android.view.View view7f0b0060 -> d
+    android.view.View view7f0b0057 -> g
+    android.view.View view7f0b005d -> f
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.SettingActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.SettingActivity_ViewBinding$b:
@@ -29849,12 +30059,12 @@ com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity$3 -> com.yway.scompo
     com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity this$0 -> a
 com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity target -> a
-    android.view.View view7f0b0062 -> c
-    android.view.View view7f0b0110 -> b
-    android.view.View view7f0b005e -> e
-    android.view.View view7f0b0068 -> d
-    android.view.View view7f0b005d -> g
-    android.view.View view7f0b0063 -> f
+    android.view.View view7f0b0063 -> c
+    android.view.View view7f0b0114 -> b
+    android.view.View view7f0b005f -> e
+    android.view.View view7f0b0069 -> d
+    android.view.View view7f0b005e -> g
+    android.view.View view7f0b0064 -> f
 com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.UserCenterActivity_ViewBinding$b:
@@ -29888,8 +30098,8 @@ com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity$1 -> com.yway.scomp
     void onRequestPermissionFailure(java.util.List) -> b
 com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding:
     com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity target -> a
-    android.view.View view7f0b0078 -> c
-    android.view.View view7f0b007c -> b
+    android.view.View view7f0b007a -> c
+    android.view.View view7f0b007e -> b
 com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity val$target -> b
 com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.activity.UserDetailsActivity_ViewBinding$b:
@@ -29954,12 +30164,12 @@ com.yway.scomponent.user.mvp.ui.fragment.UserFragment -> com.yway.scomponent.use
     void initUserInfoData() -> f
     void initViewData() -> h
 com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding -> com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding:
-    android.view.View view7f0b0077 -> c
+    android.view.View view7f0b0079 -> c
     com.yway.scomponent.user.mvp.ui.fragment.UserFragment target -> a
-    android.view.View view7f0b0178 -> b
-    android.view.View view7f0b005b -> e
-    android.view.View view7f0b0065 -> d
-    android.view.View view7f0b0067 -> f
+    android.view.View view7f0b0180 -> b
+    android.view.View view7f0b005c -> e
+    android.view.View view7f0b0066 -> d
+    android.view.View view7f0b0068 -> f
 com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding$1 -> com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding$a:
     com.yway.scomponent.user.mvp.ui.fragment.UserFragment val$target -> b
 com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding$2 -> com.yway.scomponent.user.mvp.ui.fragment.UserFragment_ViewBinding$b:
