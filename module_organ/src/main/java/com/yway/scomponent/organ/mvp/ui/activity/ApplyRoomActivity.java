@@ -541,6 +541,11 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
             companyList.add(companyMap);
         }
         paramMap.put("meetingOrganizationReqBOList", companyList);
+        if (CollectionUtils.isEmpty(companyList)) {
+            IToast.showWarnShort("请选择参会单位");
+            return;
+        }
+
         //会议附件
         List<Map<String, Object>> fileList = new ArrayList<>();
         for (UploadFileBean uploadFileBean : mChooseFileAdapter.getInfos()) {
@@ -612,7 +617,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
                 .withMutilyMode(false)
                 .withIconStyle(Constant.ICON_STYLE_BLUE)
                 .withTitle("文件选择")
-                .withFileFilter(new String[]{".txt", ".docx", ".doc", ".pdf", ".xls", ".xlsx",".pptx"})
+                .withFileFilter(new String[]{".txt", ".docx", ".doc", ".pdf", ".xls", ".xlsx", ".pptx"})
                 .start();
     }
 
@@ -679,7 +684,7 @@ public class ApplyRoomActivity extends BaseActivity<ApplyRoomPresenter> implemen
                         List<File> fileList = new ArrayList<>();
                         fileList.add(new File(list.get(0)));
                         mPresenter.uploadFile(fileList);
-                    }else{
+                    } else {
                         ArmsUtils.snackbarText("文件不存在，请重新选择");
                     }
                 }

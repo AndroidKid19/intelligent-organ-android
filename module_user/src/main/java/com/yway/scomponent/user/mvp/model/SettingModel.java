@@ -2,6 +2,7 @@ package com.yway.scomponent.user.mvp.model;
 
 import android.app.Application;
 
+import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.user.mvp.model.api.service.UserService;
 import com.google.gson.Gson;
 import com.jess.arms.integration.IRepositoryManager;
@@ -12,6 +13,11 @@ import com.jess.arms.di.scope.ActivityScope;
 import javax.inject.Inject;
 
 import com.yway.scomponent.user.mvp.contract.SettingContract;
+import com.yway.scomponent.user.mvp.model.entity.AppVersion;
+
+import java.util.Map;
+
+import io.reactivex.Observable;
 
 
 /**
@@ -33,7 +39,12 @@ public class SettingModel extends BaseModel implements SettingContract.Model {
     public SettingModel(IRepositoryManager repositoryManager) {
         super(repositoryManager);
     }
-
+    @Override
+    public Observable<BaseResponse<AppVersion>> queryLatestVersionByEntity(Map<String, Object> params) {
+        return mRepositoryManager
+                .obtainRetrofitService(UserService.class)
+                .queryLatestVersionByEntity(params);
+    }
 
     @Override
     public void onDestroy() {

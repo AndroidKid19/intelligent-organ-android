@@ -73,7 +73,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:maxHeight="200dp"
+                android:minHeight="200dp"
                 android:layout_marginTop="30dp"
                 android:scaleType="fitXY"
                 android:src="@mipmap/organ_ic_room_user" />

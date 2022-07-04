@@ -35,9 +35,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
@@ -69,7 +67,7 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
     }
 
 
-    public RxPermissions getRxPermissions(Activity activity){
+    public RxPermissions getRxPermissions(Activity activity) {
         return new RxPermissions((FragmentActivity) activity);
     }
 
@@ -101,7 +99,7 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                 .subscribe(new ErrorHandleSubscriber<BaseResponse<AppVersion>>(mErrorHandler) {
                     @Override
                     public void onNext(BaseResponse<AppVersion> datas) {
-                        if (datas.isSuccess() && !ObjectUtils.isEmpty(datas.getData())){
+                        if (datas.isSuccess() && !ObjectUtils.isEmpty(datas.getData())) {
                             mRootView.upgradeAppBcakCall(datas.getData());
                         }
 
@@ -148,7 +146,7 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                     @Override
                     public void onNext(BaseResponse<MessageBean> datas) {
                         if (datas.isSuccess()) {
-                            if (ObjectUtils.isEmpty(datas.getData()))return;
+                            if (ObjectUtils.isEmpty(datas.getData())) return;
                             mRootView.queryArticleCallBack(datas.getData().getRows());
                         } else {
                             ArmsUtils.snackbarText(datas.getMessage());
@@ -179,7 +177,7 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
                     @Override
                     public void onNext(BaseResponse<HomeMetingBean> datas) {
                         if (datas.isSuccess()) {
-                            if (ObjectUtils.isEmpty(datas.getData()))return;
+                            if (ObjectUtils.isEmpty(datas.getData())) return;
                             mRootView.metingListCallBack(datas.getData());
                         } else {
                             ArmsUtils.snackbarText(datas.getMessage());
@@ -250,6 +248,7 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
             //缓存岗位
             dictClassifyBean.setDictJop(dictDevice);
         }
+
         //缓存数据字典
         CacheUtils.initMMKV().encode(Constants.APP_COMMON_DICT, dictClassifyBean);
 
@@ -290,7 +289,7 @@ public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContrac
     /**
      * 消费
      */
-    public void createAccountTransactionRecord(Map<String,Object> map) {
+    public void createAccountTransactionRecord(Map<String, Object> map) {
         mModel.createAccountTransactionRecord(map)
                 .subscribeOn(Schedulers.io())
                 //遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔

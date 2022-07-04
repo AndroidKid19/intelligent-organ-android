@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.blankj.utilcode.constant.TimeConstants;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.TimeUtils;
@@ -41,6 +42,8 @@ import java.util.Map;
 
 import javax.inject.Inject;
 import butterknife.BindView;
+import timber.log.Timber;
+
 import static com.jess.arms.utils.Preconditions.checkNotNull;
 
 
@@ -177,10 +180,21 @@ public class OnlineSubscribeRoomActivity extends BaseActivity<OnlineSubscribeRoo
             //获取选中的年月日
             String strDate = Utils.appendStr(calendar.getYear(),"-",month,"-",day);
             roomDetailsBean1.setMeetingDate(strDate);
+            //获取当前选中开会日期
+            String strStartDate = Utils.appendStr(roomDetailsBean1.getMeetingDate()," ",roomDetailsBean1.getSubscribeTimeBean().getTime(),":00");
             if (ObjectUtils.isEmpty(roomDetailsBean1.getSubscribeTimeBean()) || StringUtils.isEmpty(roomDetailsBean1.getSubscribeTimeBean().getTime())){
                 ArmsUtils.snackbarText("请选择会议时间");
                 return;
             }
+            Timber.i(strStartDate);
+            long min = TimeUtils.getTimeSpan(TimeUtils.string2Date(strStartDate),TimeUtils.getNowDate(), TimeConstants.MIN);
+            Timber.i(min+"---");
+
+//            if (min < 0 ){
+//                IToast.showErrorShort("开始时间不能小于当前时间");
+//                return;
+//            }
+
             //会议详情填写
             Utils.postcard(RouterHub.HOME_APPLYROOMACTIVITY)
                     .withParcelable("roomDetailsBean",roomDetailsBean1)

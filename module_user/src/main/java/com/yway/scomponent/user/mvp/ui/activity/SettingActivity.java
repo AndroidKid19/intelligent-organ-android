@@ -12,12 +12,15 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.ObjectUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yway.scomponent.commonres.dialog.IToast;
 import com.yway.scomponent.commonres.dialog.ProgresDialog;
+import com.yway.scomponent.commonres.dialog.UpgradeDialog;
 import com.yway.scomponent.commonres.view.layout.SettingBar;
 import com.yway.scomponent.commonsdk.core.RouterHub;
 import com.yway.scomponent.commonsdk.utils.CacheDataManager;
@@ -27,6 +30,7 @@ import com.yway.scomponent.user.R;
 import com.yway.scomponent.user.R2;
 import com.yway.scomponent.user.di.component.DaggerSettingComponent;
 import com.yway.scomponent.user.mvp.contract.SettingContract;
+import com.yway.scomponent.user.mvp.model.entity.AppVersion;
 import com.yway.scomponent.user.mvp.presenter.SettingPresenter;
 
 import butterknife.BindView;
@@ -111,6 +115,7 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
     @OnClick(R2.id.bar_update)
     void onUpdateClick(View view) {
 
+        mPresenter.upgradeApp();
     }
     /***
      * 清楚缓存
@@ -174,5 +179,40 @@ public class SettingActivity extends BaseActivity<SettingPresenter> implements S
     public void resultError(String msg) {
         ArmsUtils.snackbarText(msg);
     }
+
+    @Override
+    public void upgradeAppBcakCall(AppVersion data) {
+        upgradeApp(data);
+    }
+
+    /**
+     * @description 升级
+     * @date: 2021/3/5 17:48
+     * @author: Yuan
+     * @return
+     */
+    private UpgradeDialog.Builder mUpdateDialog;
+
+    private void upgradeApp(AppVersion data) {
+        if (Long.parseLong(data.getVersion()) > AppUtils.getAppVersionCode()) {
+            RxPermissions mRxPermissions = new RxPermissions(this);
+            if (!ObjectUtils.isEmpty(mUpdateDialog) && mUpdateDialog.isShowing()) return;
+            mUpdateDialog = new UpgradeDialog.Builder(this, mRxPermissions)
+                    // 版本名
+                    .setVersionName(Utils.appendStr("新版本V", data.getUserVersion(), "发布了"))
+                    // 是否强制更新
+                    .setForceUpdate(data.getUpgradeMode() == 1 ? true : false)
+                    // 更新日志
+                    .setUpdateLog(data.getRemark().replace("##", "\n"))
+                    // 下载 url
+                    .setDownloadUrl(data.getPackageDownloadLink())
+                    // 文件大小
+                    .setFileSize(Utils.appendStr("包大小", data.getPackageSize(), "M"))
+                    .showPopupWindow();
+        }else{
+            IToast.showWarnShort("当前版本已是最新版本");
+        }
+    }
+
 
 }

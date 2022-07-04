@@ -6,6 +6,7 @@ import com.yway.scomponent.commonsdk.core.BaseResponse;
 import com.yway.scomponent.commonsdk.core.UploadFileBean;
 import com.yway.scomponent.commonsdk.core.UserInfoBean;
 import com.yway.scomponent.user.mvp.model.api.Api;
+import com.yway.scomponent.user.mvp.model.entity.AppVersion;
 import com.yway.scomponent.user.mvp.model.entity.ArticleBean;
 import com.yway.scomponent.user.mvp.model.entity.MessageBean;
 
@@ -124,4 +125,12 @@ public interface UserService {
     @Headers({DOMAIN_NAME_HEADER + Api.USER_DOMAIN_NAME})
     @POST(Api.API_QUERYALLSYSORGANDSYSUSERLIST)
     Observable<BaseResponse<AddressCompanyBean>> queryAllSysOrgAndSysUserList(@Body() Map<String, Object> params);
+
+    /**
+     * App版本升级
+     */
+    @Headers({DOMAIN_NAME_HEADER + Api.USER_DOMAIN_NAME})
+    @POST(Api.API_QUERY_LATESTVERSIONBYENTITY)
+    Observable<BaseResponse<AppVersion>> queryLatestVersionByEntity(@Body() Map<String, Object> params);
+
 }

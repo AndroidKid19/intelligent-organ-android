@@ -76,4 +76,7 @@ public interface Constants {
 
     /**职务 字典**/
     String SYS_DICT_POSITION = "POSITION";
+
+    /**预约 地址**/
+    String SYS_DICT_APPOINTMENT_ADDRESS = "APPOINTMENT_ADDRESS";
 }

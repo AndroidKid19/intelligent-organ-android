@@ -37,7 +37,7 @@ public class ConfigureBean implements Parcelable {
      */
     private String userName;
     /**
-     * 类型: 1会议预约审批人员配置，2、会务员配置，3、预约会议人员配置'
+     * 类型: 1会议预约审批人员配置，2、会务员配置，3、预约会议人员配置，3、访客记录''
      */
     private int type;
 

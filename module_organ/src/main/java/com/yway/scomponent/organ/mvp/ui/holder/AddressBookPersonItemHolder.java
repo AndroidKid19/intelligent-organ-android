@@ -2,6 +2,7 @@ package com.yway.scomponent.organ.mvp.ui.holder;
 
 import android.view.View;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
 
 import com.blankj.utilcode.util.CollectionUtils;
 import com.blankj.utilcode.util.ObjectUtils;
@@ -19,6 +20,7 @@ import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
 
 import butterknife.BindView;
+import timber.log.Timber;
 
 /**
  * ================================================
@@ -73,6 +75,12 @@ public class AddressBookPersonItemHolder extends BaseHolder<Object> {
         if (ObjectUtils.isEmpty(CacheUtils.queryDictData()) || CollectionUtils.isEmpty(CacheUtils.queryDictData().getDictJop())){
         }else{
             String jop = Utils.appendStr(CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),userInfoBean.getPosition()+""));
+            Timber.i("---------"+jop);
+            if (jop.indexOf("办公室主任") != -1 || jop.indexOf("办公室副主任") != -1 ){
+                mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_sign));
+            }else{
+                mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_default));
+            }
             mTvUserOffice.setText(jop);
         }
 

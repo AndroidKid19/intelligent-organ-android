@@ -3,6 +3,7 @@ package com.yway.scomponent.organ.mvp.ui.holder;
 import android.view.View;
 
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.base.BaseHolder;
@@ -11,6 +12,7 @@ import com.jess.arms.http.imageloader.ImageLoader;
 import com.jess.arms.utils.ArmsUtils;
 import com.yway.scomponent.commonres.view.layout.NiceImageView;
 import com.yway.scomponent.commonsdk.imgaEngine.config.CommonImageConfigImpl;
+import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.mvp.model.entity.VisitorRecordBean;
@@ -19,7 +21,7 @@ import butterknife.BindView;
 
 /**
  * ================================================
- * 智慧访客
+ * approvalStatusStrs
  * ================================================
  */
 public class VisitorItemHolder extends BaseHolder<VisitorRecordBean> {
@@ -39,6 +41,8 @@ public class VisitorItemHolder extends BaseHolder<VisitorRecordBean> {
     AppCompatTextView mTvStatus;
     @BindView(R2.id.niv_head)
     NiceImageView mNiceImageView;
+    @BindView(R2.id.tv_temperature)
+    AppCompatTextView mTvTemperature;
 
     private AppComponent mAppComponent;
     private ImageLoader mImageLoader;//用于加载图片的管理类,默认使用 Glide,使用策略模式,可替换框架
@@ -56,9 +60,19 @@ public class VisitorItemHolder extends BaseHolder<VisitorRecordBean> {
         mTvUserName.setText(data.getName());
         mTvPhone.setText(data.getCellPhone());
         mTvOrganName.setText(data.getOrgTitle());
+        mTvTemperature.setText(Utils.appendStr(data.getTemperature(),"℃"));
         if (!StringUtils.isEmpty(data.getVisitStatus()) && data.getVisitStatus().equals("1")){
             mTvStatus.setText("已到访");
             mTvTime.setText(data.getUpdateTime());
+        }
+
+        if (!StringUtils.isEmpty(data.getTemperature())){
+            double d = Double.parseDouble(data.getTemperature());
+            if (d >= 37){
+                mTvTemperature.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_sign));
+            }else{
+                mTvTemperature.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_success));
+            }
         }
         //加载头像
         if (!StringUtils.isEmpty(data.getPersonalPhotos())) {

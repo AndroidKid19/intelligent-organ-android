@@ -4,6 +4,7 @@ import android.view.View;
 
 import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.content.ContextCompat;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.jess.arms.base.BaseHolder;
@@ -76,6 +77,11 @@ public class ChooseUserItemHolder extends BaseHolder<Object> {
                             .build());
         }
         String jop = Utils.appendStr(CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),userInfoBean.getPosition()+""));
+        if (jop.indexOf("办公室主任") != -1 || jop.indexOf("办公室副主任") != -1 ){
+            mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_sign));
+        }else{
+            mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_default));
+        }
         mTvUserOffice.setText(jop);
         itemView.setOnClickListener(this);
     }

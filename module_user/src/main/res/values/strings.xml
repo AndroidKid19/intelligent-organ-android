@@ -26,8 +26,8 @@
 
     <!-- 关于我们 -->
     <string name="user_about_title">关于我们</string>
-    <string name="user_about_copyright">北京蜂窝在线技术有限公司版权所有</string>
-    <string name="user_about_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</string>
+    <string name="user_about_copyright">陕西明杰数字科技有限公司版权所有</string>
+    <string name="user_about_content">\u3000\u3000智慧机关管理系统是一款事务管理服务信息化系统。为解决机关人员组织架构不清晰、共享资源、来访信息缺少数据分析等难题。建立物联网掌上APP，围绕机关人员事务管理进行会议室预约、签到、人脸识别、保密、智慧食堂、智能访客等进行全程管理，实现数字化。用数据+物联网实时监控事务管理及环境动态，及时预警相关问题，高效处理机关运行和人员工作效率，变“脑力型”为“智慧型”，数字赋能产业，为管理服务数字化升级输送纽带。</string>
 
     <!-- 设置 -->
     <string name="user_setting_title">设置</string>

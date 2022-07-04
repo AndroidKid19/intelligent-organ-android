@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:bar_leftText="@string/user_setting_common"
+        android:visibility="gone"
         app:bar_rightIcon="@mipmap/public_ic_left_identify"/>
 
     <com.yway.scomponent.commonres.view.layout.SettingBar

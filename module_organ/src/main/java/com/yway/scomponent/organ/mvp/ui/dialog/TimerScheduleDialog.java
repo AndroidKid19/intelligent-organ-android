@@ -18,18 +18,26 @@ import android.widget.TimePicker;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
+
+import com.blankj.utilcode.constant.TimeConstants;
+import com.blankj.utilcode.util.TimeUtils;
 import com.jess.arms.integration.AppManager;
+import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.ThirdViewUtil;
+import com.yway.scomponent.commonres.dialog.IToast;
+import com.yway.scomponent.commonsdk.utils.Utils;
 import com.yway.scomponent.organ.R;
 import com.yway.scomponent.organ.R2;
 import com.yway.scomponent.organ.mvp.ui.listener.OnTimepickerClickListener;
 
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import razerdp.basepopup.BasePopupWindow;
+import timber.log.Timber;
 
 /**
  * @Description: 时间选择
@@ -75,10 +83,26 @@ public final class TimerScheduleDialog extends BasePopupWindow {
         String stratTime = tpLeft.getCurrentHour() +":"+ minute[tpLeft.getCurrentMinute()];
         String endTime = tpRight.getCurrentHour() +":"+ minute[tpRight.getCurrentMinute()];
 
-        if (mOnTimepickerClickListener !=null){
-            mOnTimepickerClickListener.onItemClick(stratTime,endTime);
+        //获取当前年月日
+        String strYMd = TimeUtils.getNowString(new SimpleDateFormat("yyyy-MM-dd"));
+        //拼接开始时间
+        String strStartDate = Utils.appendStr(strYMd," ",stratTime,":00");
+        //拼接结束时间
+        String strEndDate = Utils.appendStr(strYMd," ",endTime,":00");
+
+        Timber.i(strStartDate    +"----"+  strEndDate);
+        long min = TimeUtils.getTimeSpan(TimeUtils.string2Date(strStartDate),TimeUtils.string2Date(strEndDate), TimeConstants.MIN);
+        Timber.i(min+"---");
+
+        if (min >= 0 ){
+            IToast.showErrorShort("结束时间不能小于开始时间");
         }
-        this.dismiss();
+        else{
+            if (mOnTimepickerClickListener !=null){
+                mOnTimepickerClickListener.onItemClick(stratTime,endTime);
+            }
+            this.dismiss();
+        }
     }
 
     /**
@@ -265,10 +289,12 @@ public final class TimerScheduleDialog extends BasePopupWindow {
         @RequiresApi(api = Build.VERSION_CODES.M)
         public Builder initHour(int hour, int minute) {
             mDialog.tpLeft.setHour(hour);  //设置当前小时
+            mDialog.tpRight.setHour(hour);
             if (minute == 30){
                 minute = 2;
             }
             mDialog.tpLeft.setMinute(minute); //设置当前分（0-59）
+            mDialog.tpRight.setMinute(minute+1);
             return this;
         }
 

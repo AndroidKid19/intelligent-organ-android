@@ -70,7 +70,7 @@ android {
     applicationVariants.all { variant ->
         // Apk 输出配置
         variant.outputs.all { output ->
-            def appName = "AndroidProject"
+            def appName = "YYZY"
             outputFileName = appName + '_V' + versionName + '_' + new Date().format("MMdd") + '_' + variant.buildType.name +'.apk'
         }
     }

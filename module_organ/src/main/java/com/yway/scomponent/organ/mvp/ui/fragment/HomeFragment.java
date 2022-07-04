@@ -229,6 +229,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
                     .withString(RouterHub.PARAM_WEBVIEWXURL, Utils.appendStr(BuildConfig.H5_HOST_ROOT, "articleMobile?id=", messageBean.getId()))
                     .withInt("pageFrom", 2)
                     .withString("articleId", messageBean.getId())
+                    .withString("pushTime",messageBean.getCreateTime())
                     .navigation(getActivity());
         }
     };

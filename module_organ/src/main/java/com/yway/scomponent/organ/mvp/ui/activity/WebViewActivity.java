@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 
 import android.graphics.Bitmap;
@@ -56,6 +57,9 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
     FrameLayout mLayoutWebView;
     @BindView(R2.id.bar_title)
     TitleBar mTitleBar;
+    @BindView(R2.id.tv_push_time)
+    AppCompatTextView mPushTime;
+
     private AgentWeb mAgentWeb;
     private BridgeWebView mBridgeWebView;
 
@@ -67,6 +71,9 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
 
     @Autowired
     String articleId;
+
+    @Autowired
+    String pushTime;
 
     private String favoritesStatus;
 
@@ -119,6 +126,8 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
                 }
             });
         }
+
+        mPushTime.setText(pushTime);
     }
 
     /**
@@ -131,7 +140,7 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
         mBridgeWebView = new BridgeWebView(this);
         mAgentWeb = AgentWeb.with(this)
                 .setAgentWebParent(mLayoutWebView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
-                .useDefaultIndicator(-1, 2)
+                .useDefaultIndicator(-1,2)
                 .setWebViewClient(getWebViewClient())
                 .setWebChromeClient(mWebChromeClient)
                 .setWebView(mBridgeWebView)
@@ -188,14 +197,15 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements W
     protected WebChromeClient mWebChromeClient = new WebChromeClient() {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
-            //  super.onProgressChanged(view, newProgress);
+            //解决进度条不消失问题，不要去掉super.onProgressChanged(view, newProgress);
+              super.onProgressChanged(view, newProgress);
             Log.i(TAG, "onProgressChanged:" + newProgress + "  view:" + view);
         }
 
         @Override
         public void onReceivedTitle(WebView view, String title) {
             super.onReceivedTitle(view, title);
-            mTitleBar.setTitle(title);
+//            mTitleBar.setTitle(title);
         }
     };
     /**

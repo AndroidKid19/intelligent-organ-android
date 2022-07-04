@@ -193,7 +193,20 @@ public class WorkPanelFragment extends BaseFragment<WorkPanelPresenter> implemen
      * */
     @OnClick(R2.id.tv_visitor_record)
     void onVisitorRecordClick(View view){
-        Utils.navigation(getActivity(), RouterHub.HOME_VISITORRECORDACTIVITY);
+        //访客记录
+        ConfigureBean configureBean = CacheUtils.initMMKV().decodeParcelable(Constants.APP_COMMON_config, ConfigureBean.class);
+        boolean isAuth = false;
+        for (ConfigureBean config : configureBean.getList()) {
+            if (config.getType() == 4 && config.getUserId().equals(CacheUtils.queryUserId())){
+                //访客记录
+                isAuth = true;
+            }
+        }
+        if (isAuth){//有审核权限
+            Utils.navigation(getActivity(), RouterHub.HOME_VISITORRECORDACTIVITY);
+        }else{
+            IToast.showFinishShort("您无访客记录查看权限");
+        }
     }
 
     @OnClick({R2.id.tv_card})

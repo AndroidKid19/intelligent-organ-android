@@ -41,6 +41,10 @@ public interface Api {
     String API_CANCELARTICLEFAVORITES = "/organ/articleFavorites/cancelArticleFavorites";
 
 
+    /**
+     *App版本升级
+     * */
+    String API_QUERY_LATESTVERSIONBYENTITY = "withOut/withOutQueryLatestVersionByEntity";
 
     //通讯录查询
     String API_QUERYALLSYSORGANDSYSUSERLIST = "/organ/org/queryAllSysOrgAndSysUserList";

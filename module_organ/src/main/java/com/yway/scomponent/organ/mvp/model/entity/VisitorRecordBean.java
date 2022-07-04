@@ -75,6 +75,16 @@ public class VisitorRecordBean {
 
     private String personalPhotos;
 
+    private String temperature;
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
+    }
+
     public String getPersonalPhotos() {
         return personalPhotos;
     }

@@ -23,7 +23,7 @@
         android:clickable="true"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:src="@mipmap/user_ic_about_logo"
+        android:src="@mipmap/component_logo_ic"
         app:scaleRatio="1.5" />
 
     <LinearLayout
@@ -47,20 +47,21 @@
             tools:text="V1.0.0"
             />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.yway.scomponent.commonres.view.layout.JustifyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="21dp"
             app:lineHeight="24dp"
-            android:text="@string/user_about_content"
+            android:text="\u3000\u3000智慧机关管理系统是一款事务管理服务信息化系统。为解决机关人员组织架构不清晰、共享资源、来访信息缺少数据分析等难题。建立物联网掌上APP，围绕机关人员事务管理进行会议室预约、签到、人脸识别、保密、智慧食堂、智能访客等进行全程管理，实现数字化。用数据+物联网实时监控事务管理及环境动态，及时预警相关问题，高效处理机关运行和人员工作效率，变“脑力型”为“智慧型”，数字赋能产业，为管理服务数字化升级输送纽带。"
             android:textColor="@color/public_color_text_dark_gray"
             android:textSize="@dimen/public_font_15sp" />
 
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
