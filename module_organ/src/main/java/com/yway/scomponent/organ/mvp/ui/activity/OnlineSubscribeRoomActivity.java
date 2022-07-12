@@ -190,10 +190,10 @@ public class OnlineSubscribeRoomActivity extends BaseActivity<OnlineSubscribeRoo
             long min = TimeUtils.getTimeSpan(TimeUtils.string2Date(strStartDate),TimeUtils.getNowDate(), TimeConstants.MIN);
             Timber.i(min+"---");
 
-//            if (min < 0 ){
-//                IToast.showErrorShort("开始时间不能小于当前时间");
-//                return;
-//            }
+            if (min < 0 ){
+                IToast.showErrorShort("开始时间不能小于当前时间");
+                return;
+            }
 
             //会议详情填写
             Utils.postcard(RouterHub.HOME_APPLYROOMACTIVITY)

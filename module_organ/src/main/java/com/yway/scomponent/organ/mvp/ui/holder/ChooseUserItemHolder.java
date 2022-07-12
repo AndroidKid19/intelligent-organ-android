@@ -77,11 +77,12 @@ public class ChooseUserItemHolder extends BaseHolder<Object> {
                             .build());
         }
         String jop = Utils.appendStr(CacheUtils.queryDictValue(CacheUtils.queryDictData().getDictJop(),userInfoBean.getPosition()+""));
-        if (jop.indexOf("办公室主任") != -1 || jop.indexOf("办公室副主任") != -1 ){
-            mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_sign));
-        }else{
-            mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_default));
-        }
+//        if (jop.indexOf("办公室主任") != -1 || jop.indexOf("办公室副主任") != -1 ){
+//            mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_sign));
+//        }else{
+//            mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_default));
+//        }
+        mTvUserOffice.setTextColor(ContextCompat.getColor(itemView.getContext(),R.color.public_color_text_default));
         mTvUserOffice.setText(jop);
         itemView.setOnClickListener(this);
     }
